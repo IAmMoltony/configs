@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cpfcg() {
+function cpfcg() {
     echo "Installing $1"
     cp $1 $HOME/$1
 }
@@ -19,7 +19,8 @@ echo "Copying melonDS config"
 cp melonDS.ini $HOME/.config/melonDS/melonDS.ini
 
 read -p "Do you use Xfce? " -n 1 -r
-if [[ $REPLY =~ ^[Yy]$ ]] then
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo "Okay, installing"
     cp -r xfce4 $HOME/.config/xfce4
 fi
