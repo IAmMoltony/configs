@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function cpfcg() {
+function cpcfg {
     echo "Installing $1"
     cp $1 $HOME/$1
 }
