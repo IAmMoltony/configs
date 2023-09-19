@@ -1,12 +1,22 @@
 #!/bin/bash
 
+cpfcg() {
+    echo "Installing $1"
+    cp $1 $HOME/$1
+}
+
+echo "Creating melonDS config dir"
 mkdir -p $HOME/.config/melonDS
 
-cp .bashrc $HOME/.bashrc
-cp .gitconfig $HOME/.gitconfig
+# dot files
+
+cpcfg .bashrc
+cpcfg .gitconfig
+cpcfg .profile
+cpcfg .vimrc
+
+echo "Copying melonDS config"
 cp melonDS.ini $HOME/.config/melonDS/melonDS.ini
-cp .profile $HOME/.profile
-cp .vimrc $HOME/.vimrc
 
 read -p "Do you use Xfce? " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]] then
