@@ -1,0 +1,15 @@
+[user]
+	name = IAmMoltony
+	email = koronavirusnyj@gmail.com
+[credential]
+	helper = store
+[credentials]
+	helper = store
+[gui]
+	recentrepo = /opt/devkitpro/projects/ds/ds-craft
+[merge]
+	summary = true
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
