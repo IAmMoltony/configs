@@ -11,7 +11,7 @@ cpcfg .profile
 cpcfg .vimrc
 
 echo "Syncing melonDS config"
-cp $HOME/.config/melonDS/melonDS.ini
+cp $HOME/.config/melonDS/melonDS.ini .
 
 echo "Syncing Xfce config"
 cp $HOME/.config/xfce4 . -r
