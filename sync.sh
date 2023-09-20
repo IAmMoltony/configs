@@ -14,6 +14,7 @@ echo "Syncing melonDS config"
 cp $HOME/.config/melonDS/melonDS.ini .
 
 echo "Syncing Xfce config"
+rm xfce4 -r
 cp $HOME/.config/xfce4 . -r
 rm -r xfce4/xfce4-screenshooter xfce4/desktop xfce4/panel
 
