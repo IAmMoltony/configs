@@ -128,5 +128,6 @@ alias edit-bashrc='vim ~/.bashrc'
 alias reload-bashrc='source ~/.bashrc'
 
 export EDITOR=/bin/vim
+export PATH="$PATH:$HOME/.local/bin"
 
 cls
