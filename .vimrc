@@ -1,6 +1,7 @@
 set nocompatible
 set number
 set relativenumber
-set shiftwidth=4 smarttab
-set expandtab
-set tabstop=8 softtabstop=0
+
+filetype on
+filetype plugin on
+filetype indent on
