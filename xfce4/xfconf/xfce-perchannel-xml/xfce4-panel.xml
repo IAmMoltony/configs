@@ -75,12 +75,14 @@
       <property name="names-visible" type="empty"/>
       <property name="show-frame" type="empty"/>
       <property name="known-items" type="array">
+        <value type="string" value="SimpleScreenRecorder"/>
         <value type="string" value="Fcitx"/>
         <value type="string" value="chrome_status_icon_1"/>
         <value type="string" value="pcloud1"/>
         <value type="string" value="blueman"/>
       </property>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="system-config-printer"/>
         <value type="string" value="networkmanager applet"/>
         <value type="string" value="ibus panel"/>
         <value type="string" value="ibus-ui-gtk3"/>
