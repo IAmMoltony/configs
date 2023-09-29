@@ -126,6 +126,7 @@ alias rd='rmdir'
 alias cls='clear'
 alias edit-bashrc='vim ~/.bashrc'
 alias reload-bashrc='source ~/.bashrc'
+alias pullsh='git pull && git push'
 
 export EDITOR=/bin/vim
 export PATH="$PATH:$HOME/.local/bin:$HOME/i686-elf-tools/bin"
