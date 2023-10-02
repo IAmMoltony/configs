@@ -6,8 +6,8 @@
 [credentials]
 	helper = store
 [gui]
-	recentrepo = /opt/devkitpro/projects/ds/ds-craft
 	recentrepo = /home/moltony/CodeBlocks/Squarity
+	recentrepo = /opt/devkitpro/projects/ds/ds-craft
 [merge]
 	summary = true
 [pull]

@@ -130,5 +130,6 @@ alias pullsh='git pull && git push'
 
 export EDITOR=/bin/vim
 export PATH="$PATH:$HOME/.local/bin:$HOME/i686-elf-tools/bin"
+export PATH="$PATH:/usr/lib/dart/bin"
 
 cls
