@@ -78,6 +78,7 @@
       <property name="names-visible" type="empty"/>
       <property name="show-frame" type="empty"/>
       <property name="known-items" type="array">
+        <value type="string" value="audio-recorder application"/>
         <value type="string" value="steam"/>
         <value type="string" value="SimpleScreenRecorder"/>
         <value type="string" value="Fcitx"/>
@@ -100,7 +101,7 @@
       <property name="enable-mpris" type="empty"/>
       <property name="mixer-command" type="empty"/>
       <property name="show-notifications" type="empty"/>
-      <property name="mpris-players" type="string" value="firefox.instance10189;firefox.instance15604;firefox.instance2942;io.github.celluloid_player.Celluloid.instance-1"/>
+      <property name="mpris-players" type="string" value="firefox.instance10189;firefox.instance15604;firefox.instance18691;firefox.instance2942;firefox.instance33754;io.github.celluloid_player.Celluloid.instance-1"/>
     </property>
     <property name="plugin-13" type="empty">
       <property name="digital-time-format" type="empty"/>
