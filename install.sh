@@ -22,6 +22,7 @@ read -p "Do you use Xfce? " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo "Okay, installing"
+    mv $HOME/.config/xfce4 $HOME/.config/xfce4_ # make a backup just in case
     cp -r xfce4 $HOME/.config/xfce4
 fi
 
