@@ -27,8 +27,11 @@
         <value type="int" value="6"/>
         <value type="int" value="7"/>
         <value type="int" value="22"/>
+        <value type="int" value="18"/>
         <value type="int" value="15"/>
         <value type="int" value="8"/>
+        <value type="int" value="26"/>
+        <value type="int" value="25"/>
         <value type="int" value="9"/>
         <value type="int" value="16"/>
         <value type="int" value="10"/>
@@ -75,12 +78,17 @@
       <property name="names-visible" type="empty"/>
       <property name="show-frame" type="empty"/>
       <property name="known-items" type="array">
+        <value type="string" value="audio-recorder application"/>
+        <value type="string" value="steam"/>
+        <value type="string" value="SimpleScreenRecorder"/>
         <value type="string" value="Fcitx"/>
         <value type="string" value="chrome_status_icon_1"/>
         <value type="string" value="pcloud1"/>
         <value type="string" value="blueman"/>
       </property>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="system-config-printer"/>
+        <value type="string" value="networkmanager applet"/>
         <value type="string" value="ibus panel"/>
         <value type="string" value="ibus-ui-gtk3"/>
       </property>
@@ -93,7 +101,7 @@
       <property name="enable-mpris" type="empty"/>
       <property name="mixer-command" type="empty"/>
       <property name="show-notifications" type="empty"/>
-      <property name="mpris-players" type="string" value="firefox.instance10189;firefox.instance15604;firefox.instance2942;io.github.celluloid_player.Celluloid.instance-1"/>
+      <property name="mpris-players" type="string" value="firefox.instance10189;firefox.instance15604;firefox.instance18691;firefox.instance2942;firefox.instance33754;io.github.celluloid_player.Celluloid.instance-1"/>
     </property>
     <property name="plugin-13" type="empty">
       <property name="digital-time-format" type="empty"/>
@@ -131,5 +139,42 @@
         <value type="string" value="16949607113.desktop"/>
       </property>
     </property>
+    <property name="plugin-18" type="string" value="eyes"/>
+    <property name="plugin-25" type="string" value="weather">
+      <property name="location" type="empty">
+        <property name="name" type="string" value="Шымкент, Қазақстан"/>
+        <property name="latitude" type="string" value="42.314696"/>
+        <property name="longitude" type="string" value="69.588328"/>
+      </property>
+      <property name="msl" type="int" value="516"/>
+      <property name="timezone" type="string" value="Asia/Almaty"/>
+      <property name="offset" type="string" value="+06:00"/>
+      <property name="cache-max-age" type="int" value="172800"/>
+      <property name="power-saving" type="bool" value="true"/>
+      <property name="units" type="empty">
+        <property name="temperature" type="int" value="0"/>
+        <property name="pressure" type="int" value="0"/>
+        <property name="windspeed" type="int" value="0"/>
+        <property name="precipitation" type="int" value="0"/>
+        <property name="altitude" type="int" value="0"/>
+        <property name="apparent-temperature" type="int" value="0"/>
+      </property>
+      <property name="round" type="bool" value="false"/>
+      <property name="single-row" type="bool" value="true"/>
+      <property name="tooltip-style" type="int" value="1"/>
+      <property name="forecast" type="empty">
+        <property name="layout" type="int" value="0"/>
+        <property name="days" type="int" value="5"/>
+      </property>
+      <property name="theme-dir" type="string" value="/usr/share/xfce4/weather/icons/simplistic"/>
+      <property name="scrollbox" type="empty">
+        <property name="show" type="bool" value="true"/>
+        <property name="animate" type="bool" value="true"/>
+        <property name="lines" type="int" value="1"/>
+        <property name="color" type="string" value="rgba(0,0,0,0)"/>
+        <property name="use-color" type="bool" value="false"/>
+      </property>
+    </property>
+    <property name="plugin-26" type="string" value="thunar-tpa"/>
   </property>
 </channel>
