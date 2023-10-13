@@ -11,6 +11,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'IAmMoltony/vim-dotnet'
 
 call vundle#end()
 
