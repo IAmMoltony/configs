@@ -14,3 +14,6 @@ echo "Syncing melonDS config"
 cp $HOME/.config/melonDS/melonDS.ini .
 
 echo "Success"
+
+echo "Changed files:"
+git ls-files -m
