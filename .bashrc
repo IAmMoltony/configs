@@ -158,6 +158,18 @@ export PATH="$PATH:/usr/lib/dart/bin"
 
 [ -f imrunningonwsl ] && export DISPLAY=$(grep nameserver /etc/resolv.conf | awk '{print $2}'):0.0
 
-PS1="\[\e[1;35m\] \u \[\e[0m\]is in \[\e[0m\]\[\e[1;36m\]\w \[\e[0m\]\[\e[1;32m\]\$\[\e[0m\] "
+PS1="\[\e[1;35m\] \u \[\e[0m\]is in \[\e[0m\]\[\e[1;36m\]\w \[\e[0m\]right now \[\e[1;32m\]\$\[\e[0m\] "
+
+function beforecmd-print() {
+    if [[ "`git rev-parse --is-inside-work-tree`" == "true" ]]; then
+        echo "Commit: `git show -s --oneline HEAD`"
+        echo "Branch: `git rev-parse --abbrev-ref HEAD`"
+        echo "`git diff --stat | tail -n1`"
+    else
+        echo "*** not in git repository ***"
+    fi
+}
+
+PS0='`beforecmd-print`\n'
 
 cls
