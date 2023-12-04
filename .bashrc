@@ -132,4 +132,6 @@ export EDITOR=/bin/vim
 export PATH="$PATH:$HOME/.local/bin:$HOME/i686-elf-tools/bin"
 export PATH="$PATH:/usr/lib/dart/bin"
 
+[ -f imrunningonwsl ] && export DISPLAY=$(grep nameserver /etc/resolv.conf | awk '{print $2}'):0.0
+
 cls
