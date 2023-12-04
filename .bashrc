@@ -43,7 +43,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -76,8 +76,8 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -116,6 +116,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# ~=~= ALIASES!!! =~=~
+
 alias rm='rm -v'
 alias cp='cp -v'
 alias mv='mv -v'
@@ -127,6 +129,21 @@ alias cls='clear'
 alias edit-bashrc='vim ~/.bashrc'
 alias reload-bashrc='source ~/.bashrc'
 alias pullsh='git pull && git push'
+alias lt='ls -lh --size -1 -S --classify'
+alias mnt="mount | awk -F ' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
+alias grephist='history | grep'
+alias lq='ls -tl -1'
+alias cntfiles='find . -type f | wc -l'
+alias cppb='rsync -ah --info=progress2'
+alias cdgr='cd `git rev-parse --show-toplevel`'
+
+function mdcd() {
+    md $1 && cd $1
+}
+
+function apt-full-update() {
+    sudo apt update && sudo apt upgrade -y
+}
 
 export EDITOR=/bin/vim
 export PATH="$PATH:$HOME/.local/bin:$HOME/i686-elf-tools/bin"
