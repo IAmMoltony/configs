@@ -137,6 +137,7 @@ alias lqa='la -tl -1'
 alias cntfiles='find . -type f | wc -l'
 alias cppb='rsync -ah --info=progress2'
 alias cdgr='cd `git rev-parse --show-toplevel`'
+alias llh='ll -h'
 
 function mdcd() {
     md $1 && cd $1
