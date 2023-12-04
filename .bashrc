@@ -161,14 +161,13 @@ export PATH="$PATH:/usr/lib/dart/bin"
 PS1="\[\e[1;35m\] \u \[\e[0m\]is in \[\e[0m\]\[\e[1;36m\]\w \[\e[0m\]right now \[\e[1;32m\]\$\[\e[0m\] "
 
 function beforecmd-print() {
-    if [[ "`git rev-parse --is-inside-work-tree > /dev/null 2>&1`" == "true" ]]; then
+    if git rev-parse --git-dir > /dev/null 2>&1 ; then
         echo "Commit: `git show -s --oneline HEAD`"
         echo "Branch: `git rev-parse --abbrev-ref HEAD`"
         echo "`git diff --stat | tail -n1`"
     fi
-    printf "\n"
 }
 
-PS0='`beforecmd-print`'
+PS0='`beforecmd-print`\n'
 
 cls
