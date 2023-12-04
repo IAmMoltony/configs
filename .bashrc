@@ -141,6 +141,8 @@ alias llh='ll -h'
 alias todayscommits='git log --oneline --since=midnight'
 alias numcommits='git log --oneline | wc -l'
 alias numcommtoday='todayscommits | wc -l'
+alias relbrc='reload-bashrc'
+alias edtbrc='edit-bashrc'
 
 function mdcd() {
     md $1 && cd $1
@@ -155,5 +157,7 @@ export PATH="$PATH:$HOME/.local/bin:$HOME/i686-elf-tools/bin"
 export PATH="$PATH:/usr/lib/dart/bin"
 
 [ -f imrunningonwsl ] && export DISPLAY=$(grep nameserver /etc/resolv.conf | awk '{print $2}'):0.0
+
+PS1="\[\e[1;35m\] \u \[\e[0m\]is in \[\e[0m\]\[\e[1;36m\]\w \[\e[0m\]\[\e[1;32m\]\$\[\e[0m\] "
 
 cls
