@@ -138,6 +138,9 @@ alias cntfiles='find . -type f | wc -l'
 alias cppb='rsync -ah --info=progress2'
 alias cdgr='cd `git rev-parse --show-toplevel`'
 alias llh='ll -h'
+alias todayscommits='git log --oneline --since=midnight'
+alias numcommits='git log --oneline | wc -l'
+alias numcommtoday='todayscommits | wc -l'
 
 function mdcd() {
     md $1 && cd $1
