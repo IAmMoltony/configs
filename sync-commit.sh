@@ -8,7 +8,9 @@ if [[ `git status --porcelain` ]]; then
 
     git add .
     git commit -m 'Sync'
-    git push || echo "Push failed. Please run 'git push' later manually."
+    if [[ "$1" != "--nopush" ]]; then
+        git push || echo "Push failed. Please run 'git push' later manually."
+    fi
 else
     echo "No changes, exiting"
 fi
