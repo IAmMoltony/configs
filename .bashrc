@@ -162,11 +162,28 @@ if [ -f /etc/os-release ]; then
     . /etc/os-release
     PS1="\[\e[1;35m\]\u \[\e[0m\]on $PRETTY_NAME is in \[\e[0m\]\[\e[1;36m\]\w \[\e[0m\]right now\n\[\e[1;32m\]\$\[\e[0m\] "
 else
-    PS1="\[\e[1;35m\] \u \[\e[0m\]is in \[\e[0m\]\[\e[1;36m\]\w \[\e[0m\]right now \[\e[1;32m\]\$\[\e[0m\] "
+    PS1="\[\e[1;35m\]\u \[\e[0m\]is in \[\e[0m\]\[\e[1;36m\]\w \[\e[0m\]right now\n\[\e[1;32m\]\$\[\e[0m\] "
 fi
 
-if [ -f imrunningonwsl ]; then
+function vim() {
+    # ask if they meant vim or nvim
+    echo "Did you mean nvim or nah? y/n"
+    read answer
+    if [ $answer = "y" ]; then
+        nvim $@
+    else
+        # specifying the whole path here, otherwise it enters a loop and wont let me use vanilla vim
+        /bin/vim $@
+    fi
+}
+
+if [ -f ~/imrunningonwsl ]; then
     alias mount-ubuntu='wsl.exe -d Ubuntu -u root mount --bind / /mnt/wsl/ubuntu'
+fi
+
+if [ -f ~/.custompath ]; then
+    . ~/.custompath
+    PATH="$PATH:$CUSTOMPATH"
 fi
 
 cls
