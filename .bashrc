@@ -160,7 +160,7 @@ export PATH="$PATH:/usr/lib/dart/bin"
 
 if [ -f /etc/os-release ]; then
     . /etc/os-release
-    PS1="\[\e[1;35m\] \u \[\e[0m\]on $PRETTY_NAME is in \[\e[0m\]\[\e[1;36m\]\w \[\e[0m\]right now \[\e[1;32m\]\$\[\e[0m\] "
+    PS1="\[\e[1;35m\]\u \[\e[0m\]on $PRETTY_NAME is in \[\e[0m\]\[\e[1;36m\]\w \[\e[0m\]right now\n\[\e[1;32m\]\$\[\e[0m\] "
 else
     PS1="\[\e[1;35m\] \u \[\e[0m\]is in \[\e[0m\]\[\e[1;36m\]\w \[\e[0m\]right now \[\e[1;32m\]\$\[\e[0m\] "
 fi
