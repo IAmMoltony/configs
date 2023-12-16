@@ -165,13 +165,8 @@ else
     PS1="\[\e[1;35m\] \u \[\e[0m\]is in \[\e[0m\]\[\e[1;36m\]\w \[\e[0m\]right now \[\e[1;32m\]\$\[\e[0m\] "
 fi
 
-if [ -f ~/imrunningonwsl ]; then
+if [ -f imrunningonwsl ]; then
     alias mount-ubuntu='wsl.exe -d Ubuntu -u root mount --bind / /mnt/wsl/ubuntu'
-fi
-
-if [ -f ~/.custompath ]; then
-    . ~/.custompath
-    PATH="$PATH:$CUSTOMPATH"
 fi
 
 cls
