@@ -187,3 +187,6 @@ if [ -f ~/.custompath ]; then
 fi
 
 cls
+
+# execute neofetch only if it's installed
+command -v neofetch > /dev/null 2>&1 && neofetch
