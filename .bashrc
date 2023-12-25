@@ -117,6 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 # ~=~= ALIASES!!! =~=~
+# TODO: move them into .bash_aliases
 
 alias rm='rm -v'
 alias cp='cp -v'
@@ -143,6 +144,7 @@ alias numcommits='git log --oneline | wc -l'
 alias numcommtoday='todayscommits | wc -l'
 alias relbrc='reload-bashrc'
 alias edtbrc='edit-bashrc'
+alias spsyu='sudo pacman -Syu --noconfirm'
 
 function mdcd() {
     md $1 && cd $1
@@ -194,3 +196,5 @@ command -v neofetch > /dev/null 2>&1 && neofetch
 export DEVKITPRO=/opt/devkitpro
 export DEVKITARM=$DEVKITPRO/devkitARM
 export DEVKITPPC=$DEVKITPRO/devkitPPC
+
+command -v thefuck > /dev/null 2>&1 && eval "$(thefuck --alias)"
