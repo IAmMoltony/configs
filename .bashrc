@@ -116,40 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# ~=~= ALIASES!!! =~=~
-# TODO: move them into .bash_aliases
-
-alias rm='rm -v'
-alias cp='cp -v'
-alias mv='mv -v'
-alias mkdir='mkdir -v'
-alias rmdir='rmdir -v'
-alias md='mkdir'
-alias rd='rmdir'
-alias cls='clear'
-alias edit-bashrc='$EDITOR ~/.bashrc'
-alias reload-bashrc='source ~/.bashrc'
-alias view-bashrc='cat ~/.bashrc | less'
-alias cat-bashrc='view-bashrc'
-alias pullsh='git pull && git push'
-alias lt='ls -lh --size -1 -S --classify'
-alias mnt="mount | awk -F ' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
-alias grephist='history | grep'
-alias lq='ls -tl -1'
-alias lqa='la -tl -1'
-alias cntfiles='find . -type f | wc -l'
-alias cppb='rsync -ah --info=progress2'
-alias cdgr='cd `git rev-parse --show-toplevel`'
-alias llh='ll -h'
-alias todayscommits='git log --oneline --since=midnight'
-alias numcommits='git log --oneline | wc -l'
-alias numcommtoday='todayscommits | wc -l'
-alias relbrc='reload-bashrc'
-alias edtbrc='edit-bashrc'
-alias catbrc='view-bashrc'
-alias spsyu='sudo pacman -Syu --noconfirm'
-alias spsnc='sudo pacman -S --noconfirm'
-
 function mdcd() {
     md $1 && cd $1
 }

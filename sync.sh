@@ -9,6 +9,7 @@ cpcfg .bashrc
 cpcfg .gitconfig
 cpcfg .profile
 cpcfg .vimrc
+cpcfg .bash_aliases
 
 echo "Syncing melonDS config"
 cp $HOME/.config/melonDS/melonDS.ini .
