@@ -34,6 +34,15 @@ alias view-bashrc='cat ~/.bashrc | less'
 # View bashrc (alt. spelling)
 alias cat-bashrc='view-bashrc'
 
+# Edit bash aliases using the preferred editor
+alias edit-bashaliases='$EDITOR ~/.bash_aliases'
+
+# View bash aliases
+alias view-bashaliases='cat ~/.bash_aliases | less'
+
+# View bash aliases (alt.spelling)
+alias cat-bashaliases='view-bashaliases'
+
 # Pull & push at the same time
 alias pullsh='git pull && git push'
 
@@ -76,6 +85,12 @@ alias edtbrc='edit-bashrc'
 
 # View bashrc (short)
 alias catbrc='view-bashrc'
+
+# Edit bash aliases (short)
+alias edtba='edit-bashaliases'
+
+# View bash aliases (short)
+alias catba='cat-bashaliases'
 
 # pacman: sync, update package lists, update all packages, no confirm
 alias spsyu='sudo pacman -Syu --noconfirm'
