@@ -154,6 +154,13 @@ function apt-full-update() {
     sudo apt update && sudo apt upgrade -y
 }
 
+function synccfgs() {
+    oldpwd="$(pwd)"
+    cd ~/configs
+    ./sync-commit.sh
+    cd $oldpwd
+}
+
 export EDITOR=/bin/vim
 export PATH="$PATH:$HOME/.local/bin:$HOME/i686-elf-tools/bin"
 export PATH="$PATH:/usr/lib/dart/bin"
