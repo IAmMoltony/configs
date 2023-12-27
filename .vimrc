@@ -12,6 +12,7 @@ Plugin 'ycm-core/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'IAmMoltony/vim-dotnet'
+Plugin 'iamcco/markdown-preview.nvim'
 
 call vundle#end()
 
@@ -25,3 +26,4 @@ set smartindent
 
 command Nerd NERDTree
 let g:ycm_enable_semantic_highlighting=1
+let g:mkdp_auto_start = 0
