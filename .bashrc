@@ -199,13 +199,13 @@ if [ -f ~/.custompath ]; then
     export PATH="$PATH:$CUSTOMPATH"
 fi
 
-cls
-
-# execute neofetch only if it's installed
-command -v neofetch > /dev/null 2>&1 && neofetch
-
 export DEVKITPRO=/opt/devkitpro
 export DEVKITARM=$DEVKITPRO/devkitARM
 export DEVKITPPC=$DEVKITPRO/devkitPPC
 
 command -v thefuck > /dev/null 2>&1 && eval "$(thefuck --alias)"
+
+cls
+
+# execute neofetch only if it's installed
+command -v neofetch > /dev/null 2>&1 && neofetch
