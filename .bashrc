@@ -145,6 +145,7 @@ alias numcommtoday='todayscommits | wc -l'
 alias relbrc='reload-bashrc'
 alias edtbrc='edit-bashrc'
 alias spsyu='sudo pacman -Syu --noconfirm'
+alias spsnc='sudo pacman -S --noconfirm'
 
 function mdcd() {
     md $1 && cd $1
