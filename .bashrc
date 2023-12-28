@@ -177,6 +177,8 @@ export DEVKITPRO=/opt/devkitpro
 export DEVKITARM=$DEVKITPRO/devkitARM
 export DEVKITPPC=$DEVKITPRO/devkitPPC
 
+export HTDOCS=/opt/lampp/htdocs
+
 command -v thefuck > /dev/null 2>&1 && eval "$(thefuck --alias)"
 
 cls
