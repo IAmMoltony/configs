@@ -93,7 +93,7 @@ alias edtba='edit-bashaliases'
 alias catba='cat-bashaliases'
 
 # pacman: sync, update package lists, update all packages, no confirm
-alias spsyu='sudo pacman -Syu --noconfirm'
+alias spsyu='sudo pacman -Syu --noconfirm --needed'
 
 # pacman: sync, no confirm
 alias spsnc='sudo pacman -S --noconfirm'
