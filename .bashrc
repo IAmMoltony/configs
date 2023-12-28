@@ -127,7 +127,11 @@ function apt-full-update() {
 function synccfgs() {
     oldpwd="$(pwd)"
     cd ~/configs
-    ./sync-commit.sh
+    if [ "$1" == "--nopush" ]; then
+        ./sync-commit.sh --nopush
+    else
+        ./sync-commit.sh
+    fi
     cd $oldpwd
 }
 
