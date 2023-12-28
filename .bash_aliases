@@ -43,6 +43,15 @@ alias view-bashaliases='cat ~/.bash_aliases | less'
 # View bash aliases (alt.spelling)
 alias cat-bashaliases='view-bashaliases'
 
+# Edit custom path using the preferred editor
+alias edit-custompath='$EDITOR ~/.custompath'
+
+# View custom path
+alias view-custompath='cat ~/.custompath | less'
+
+# View custom path (alt. spelling)
+alias cat-custompath='view-custompath'
+
 # Pull & push at the same time
 alias pullsh='git pull && git push'
 
@@ -91,6 +100,12 @@ alias edtba='edit-bashaliases'
 
 # View bash aliases (short)
 alias catba='cat-bashaliases'
+
+# Edit custom path (short)
+alias edtcpath='edit-custompath'
+
+# View custom path (short)
+alias catcpath='cat-custompath'
 
 # pacman: sync, update package lists, update all packages, no confirm
 alias spsyu='sudo pacman -Syu --noconfirm --needed'
