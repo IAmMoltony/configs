@@ -97,3 +97,6 @@ alias spsyu='sudo pacman -Syu --noconfirm'
 
 # pacman: sync, no confirm
 alias spsnc='sudo pacman -S --noconfirm'
+
+# Hexdump alias
+alias hd='hexdump -C'
