@@ -160,3 +160,6 @@ alias glogol='git log --oneline'
 
 # gnu make
 alias mk='make'
+
+# git add dot
+alias ga.='git add .'
