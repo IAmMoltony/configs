@@ -163,3 +163,6 @@ alias mk='make'
 
 # git add dot
 alias ga.='git add .'
+
+# git commit shortcut
+alias gcm='git commit -m'
