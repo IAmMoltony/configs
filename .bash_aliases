@@ -115,3 +115,6 @@ alias spsnc='sudo pacman -S --noconfirm'
 
 # Hexdump alias
 alias hd='hexdump -C'
+
+# Make an AUR package
+alias mkaur='makepkg -si --noconfirm'
