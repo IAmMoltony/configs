@@ -118,3 +118,45 @@ alias hd='hexdump -C'
 
 # Make an AUR package
 alias mkaur='makepkg -si --noconfirm'
+
+# git commit -am shortcut
+alias gcam='git commit -am'
+
+# git push shortcut
+alias gpsh='git push'
+
+# git pull shortcut
+alias gpll='git pull'
+
+# git status shortcut
+alias gst='git status'
+
+# git fetch shortcut
+alias gftch='git fetch'
+
+# git clone shortcut
+alias gcln='git clone'
+
+# git config shortcut
+alias gcfgg='git config --global'
+
+# git config user name shortcut
+alias gcfgun='gcfgg user.name'
+
+# git config user email shortcut
+alias gcfgue='gcfgg user.email'
+
+# git diff shortcut
+alias gdff='git diff'
+
+# git show shortcut
+alias gshw='git show'
+
+# git log shortcut
+alias glog='git log'
+
+# git log one line shortcut
+alias glogol='git log --oneline'
+
+# gnu make
+alias mk='make'
