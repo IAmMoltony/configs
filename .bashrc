@@ -183,5 +183,10 @@ command -v thefuck > /dev/null 2>&1 && eval "$(thefuck --alias)"
 
 cls
 
-# execute neofetch only if it's installed
-command -v neofetch > /dev/null 2>&1 && neofetch
+# now we execute neofetch or freshfetch depending on which is installed
+# freshfetch is preferred
+if command -v "freshfetch" >/dev/null 2>&1; then
+    freshfetch
+elif command -v "neofetch" > /dev/null 2>&1; then
+    neofetch
+fi
