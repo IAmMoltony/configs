@@ -116,6 +116,9 @@ alias spsnc='sudo pacman -S --noconfirm'
 # pacman: remove no confirm
 alias sprnc='sudo pacman -R --noconfirm'
 
+# pacman: search
+alias spss='sudo pacman -Ss'
+
 # Hexdump alias
 alias hd='hexdump -C'
 
