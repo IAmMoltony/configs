@@ -172,3 +172,6 @@ alias ga.='git add .'
 
 # git commit shortcut
 alias gcm='git commit -m'
+
+# reboot
+alias reboot='sudo reboot'
