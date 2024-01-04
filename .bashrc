@@ -141,7 +141,11 @@ export PATH="$PATH:/usr/lib/dart/bin"
 
 [ -f imrunningonwsl ] && export DISPLAY=$(grep nameserver /etc/resolv.conf | awk '{print $2}'):0.0
 
-PS1="\[\e[1;35m\]\u \[\e[0m\]on \h is in \[\e[0m\]\[\e[1;36m\]\w \[\e[0m\]right now\n\[\e[1;32m\]\$\[\e[0m\] "
+if [ "$USER" = "root" ]; then
+    PS1="\[\e[1;35m\]\u \[\e[0m\]on \h is in \[\e[0m\]\[\e[1;36m\]\w \[\e[0m\]right now\n\[\e[1;32m\]\#\[\e[0m\] "
+else
+    PS1="\[\e[1;35m\]\u \[\e[0m\]on \h is in \[\e[0m\]\[\e[1;36m\]\w \[\e[0m\]right now\n\[\e[1;32m\]\$\[\e[0m\] "
+fi
 
 function vim() {
     # check if .noaskvim is present, and if it is then just let the user use vim
