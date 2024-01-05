@@ -164,6 +164,9 @@ alias glog='git log'
 # git log one line shortcut
 alias glogol='git log --oneline'
 
+# git restore shortcut
+alias gr.='git restore .'
+
 # gnu make
 alias mk='make'
 
