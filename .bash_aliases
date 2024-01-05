@@ -111,7 +111,7 @@ alias catcpath='cat-custompath'
 alias spsyu='sudo pacman -Syu --noconfirm --needed'
 
 # pacman: sync, no confirm
-alias spsnc='sudo pacman -S --noconfirm'
+alias spsnc='sudo pacman -S --noconfirm --needed'
 
 # pacman: remove no confirm
 alias sprnc='sudo pacman -R --noconfirm'
