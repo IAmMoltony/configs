@@ -184,6 +184,7 @@ export DEVKITPPC=$DEVKITPRO/devkitPPC
 export HTDOCS=/opt/lampp/htdocs
 
 command -v thefuck > /dev/null 2>&1 && eval "$(thefuck --alias)"
+bind -s 'set completion-ignore-case on'
 
 cls
 
