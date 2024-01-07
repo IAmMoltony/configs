@@ -147,23 +147,6 @@ else
     PS1="\[\e[1;35m\]\u \[\e[0m\]on \h is in \[\e[0m\]\[\e[1;36m\]\w \[\e[0m\]right now\n\[\e[1;32m\]\$\[\e[0m\] "
 fi
 
-function vim() {
-    # check if .noaskvim is present, and if it is then just let the user use vim
-    if [ -f ~/.noaskvim ]; then
-        /bin/vim $@
-    else
-        # ask if they meant vim or nvim
-        echo "Did you mean nvim or nah? y/n"
-        read answer
-        if [ $answer = "y" ]; then
-            nvim $@
-        else
-            # specifying the whole path here, otherwise it enters a loop and wont let me use vanilla vim
-            /bin/vim $@
-        fi
-    fi
-}
-
 function catless() {
     cat $@ | less
 }
