@@ -35,10 +35,10 @@ alias view-bashrc='cat ~/.bashrc | less'
 alias cat-bashrc='view-bashrc'
 
 # Edit bash aliases using the preferred editor
-alias edit-bashaliases='$EDITOR ~/.bash_aliases'
+alias edit-bashaliases='$EDITOR ~/.bash-configs/.bash_aliases'
 
 # View bash aliases
-alias view-bashaliases='cat ~/.bash_aliases | less'
+alias view-bashaliases='cat ~/.bash-configs/.bash_aliases | less'
 
 # View bash aliases (alt.spelling)
 alias cat-bashaliases='view-bashaliases'
@@ -53,10 +53,10 @@ alias view-custompath='cat ~/.custompath | less'
 alias cat-custompath='view-custompath'
 
 # Edit bash functions using the preferred editor
-alias edit-bashfuncs='$EDITOR ~/.bash_functions'
+alias edit-bashfuncs='$EDITOR ~/.bash-configs/.bash_functions'
 
 # View bash functions
-alias view-bashfuncs='cat ~/.bash_functions | less'
+alias view-bashfuncs='cat ~/.bash-configs/.bash_functions | less'
 
 # View bash functions (alt. spelling)
 alias cat-bashfuncs='view-bashfuncs'
