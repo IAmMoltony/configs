@@ -147,7 +147,7 @@ else
     PS1="\[\e[1;35m\]\u \[\e[0m\]on \h is in \[\e[0m\]\[\e[1;36m\]\w \[\e[0m\]right now\n\[\e[1;32m\]\$\[\e[0m\] "
 fi
 
-function catless() {
+catless() {
     cat $@ | less
 }
 

@@ -178,3 +178,9 @@ alias gcm='git commit -m'
 
 # reboot
 alias reboot='sudo reboot'
+
+# how many free space
+alias freespc='df -h /dev/sda2'
+
+# pacman: clear cache
+alias spsc='sudo pacman -Sc --noconfirm'
