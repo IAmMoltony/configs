@@ -151,6 +151,16 @@ catless() {
     cat $@ | less
 }
 
+install-aur() {
+    mkdir -p "$HOME/aur"
+    oldcwd=$(pwd)
+    cd "$HOME/aur"
+    git clone https://aur.archlinux.org/$1.git
+    cd $1
+    mkaur
+    cd $oldcwd
+}
+
 if [ -f ~/imrunningonwsl ]; then
     alias mount-ubuntu='wsl.exe -d Ubuntu -u root mount --bind / /mnt/wsl/ubuntu'
 fi
