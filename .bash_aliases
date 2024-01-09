@@ -52,6 +52,15 @@ alias view-custompath='cat ~/.custompath | less'
 # View custom path (alt. spelling)
 alias cat-custompath='view-custompath'
 
+# Edit bash functions using the preferred editor
+alias edit-bashfuncs='$EDITOR ~/.bash_functions'
+
+# View bash functions
+alias view-bashfuncs='cat ~/.bash_functions | less'
+
+# View bash functions (alt. spelling)
+alias cat-bashfuncs='view-bashfuncs'
+
 # Pull & push at the same time
 alias pullsh='git pull && git push'
 
@@ -100,6 +109,12 @@ alias edtba='edit-bashaliases'
 
 # View bash aliases (short)
 alias catba='cat-bashaliases'
+
+# Edit bash functions (short)
+alias edtbf='edit-bashfuncs'
+
+# View bash functions (short)
+alias catbf='cat-bashfuncs'
 
 # Edit custom path (short)
 alias edtcpath='edit-custompath'
