@@ -15,6 +15,7 @@ cpcfg .gitconfig
 cpcfg .profile
 cpcfg .vimrc
 cpcfg .bash_aliases
+cpcfg .bash_functions
 
 echo "Copying melonDS config"
 cp melonDS.ini $HOME/.config/melonDS/melonDS.ini

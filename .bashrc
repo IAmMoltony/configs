@@ -116,25 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-function mdcd() {
-    md $1 && cd $1
-}
-
-function apt-full-update() {
-    sudo apt update && sudo apt upgrade -y
-}
-
-function synccfgs() {
-    oldpwd="$(pwd)"
-    cd ~/configs
-    if [ "$1" == "--nopush" ]; then
-        ./sync-commit.sh --nopush
-    else
-        ./sync-commit.sh
-    fi
-    cd $oldpwd
-}
-
 export EDITOR=/bin/vim
 export PATH="$PATH:$HOME/.local/bin:$HOME/i686-elf-tools/bin"
 export PATH="$PATH:/usr/lib/dart/bin"
@@ -146,20 +127,6 @@ if [ "$USER" = "root" ]; then
 else
     PS1="\[\e[1;35m\]\u \[\e[0m\]on \h is in \[\e[0m\]\[\e[1;36m\]\w \[\e[0m\]right now\n\[\e[1;32m\]\$\[\e[0m\] "
 fi
-
-catless() {
-    cat $@ | less
-}
-
-install-aur() {
-    mkdir -p "$HOME/aur"
-    oldcwd=$(pwd)
-    cd "$HOME/aur"
-    git clone https://aur.archlinux.org/$1.git
-    cd $1
-    mkaur
-    cd $oldcwd
-}
 
 if [ -f ~/imrunningonwsl ]; then
     alias mount-ubuntu='wsl.exe -d Ubuntu -u root mount --bind / /mnt/wsl/ubuntu'
