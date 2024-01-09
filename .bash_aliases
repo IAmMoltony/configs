@@ -199,3 +199,6 @@ alias freespc='df -h /dev/sda2'
 
 # pacman: clear cache
 alias spsc='sudo pacman -Sc --noconfirm'
+
+# Short doxygen
+alias doxy='doxygen'
