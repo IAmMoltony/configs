@@ -202,3 +202,6 @@ alias spsc='sudo pacman -Sc --noconfirm'
 
 # Short doxygen
 alias doxy='doxygen'
+
+# Exit but quit
+alias quit='exit'
