@@ -2,6 +2,18 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+BRCStartTime=$(date +%s)
+
+BASHRC_PROFILING=0
+
+BRCProfilingPrint() {
+    if [ "$BASHRC_PROFILING" == "1" ]; then
+        echo $@
+    fi
+}
+
+BRCProfilingPrint "brc: Hai world"
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -96,6 +108,8 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+BRCProfilingPrint "brc: Default init done"
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -109,9 +123,13 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+BRCProfilingPrint "brc: Loaded aliases"
+
 if [ -f ~/.bash-configs/.bash_functions ]; then
     . ~/.bash-configs/.bash_functions
 fi
+
+BRCProfilingPrint "brc: Loaded functions"
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -124,17 +142,21 @@ if ! shopt -oq posix; then
   fi
 fi
 
+BRCProfilingPrint "brc: Enabled programmable completion"
+
 export EDITOR=/bin/vim
 export PATH="$PATH:$HOME/.local/bin:$HOME/i686-elf-tools/bin"
 export PATH="$PATH:/usr/lib/dart/bin"
 
+BRCProfilingPrint "brc: Set PATH and EDITOR"
+
 [ -f imrunningonwsl ] && export DISPLAY=$(grep nameserver /etc/resolv.conf | awk '{print $2}'):0.0
 
-if [ "$USER" = "root" ]; then
-    PS1="\[\e[1;35m\]\u \[\e[0m\]on \h is in \[\e[0m\]\[\e[1;36m\]\w \[\e[0m\]right now\n\[\e[1;32m\]\#\[\e[0m\] "
-else
-    PS1="\[\e[1;35m\]\u \[\e[0m\]on \h is in \[\e[0m\]\[\e[1;36m\]\w \[\e[0m\]right now\n\[\e[1;32m\]\$\[\e[0m\] "
-fi
+BRCProfilingPrint "brc: Set WSL DISPLAY"
+
+PS1="\[\e[1;35m\]\u \[\e[0m\]on \h is in \[\e[0m\]\[\e[1;36m\]\w \[\e[0m\]right now\n\[\e[1;32m\]\$\[\e[0m\] "
+
+BRCProfilingPrint "brc: Set prompt"
 
 if [ -f ~/imrunningonwsl ]; then
     alias mount-ubuntu='wsl.exe -d Ubuntu -u root mount --bind / /mnt/wsl/ubuntu'
@@ -145,16 +167,27 @@ if [ -f ~/.custompath ]; then
     export PATH="$PATH:$CUSTOMPATH"
 fi
 
+BRCProfilingPrint "brc: Set custom path"
+
 export DEVKITPRO=/opt/devkitpro
 export DEVKITARM=$DEVKITPRO/devkitARM
 export DEVKITPPC=$DEVKITPRO/devkitPPC
 
 export HTDOCS=/opt/lampp/htdocs
 
+BRCProfilingPrint "brc: Set devkitPro env variables and HTDOCS"
+
 command -v thefuck > /dev/null 2>&1 && eval "$(thefuck --alias --enable-experimental-instant-mode)"
+
+BRCProfilingPrint "brc: Enabled The Fuck command corrector"
+
 bind -s 'set completion-ignore-case on'
 
-cls
+if [ "$BASHRC_PROFILING" != "1" ]; then
+    cls
+fi
+
+BRCProfilingPrint "brc: Init done! Running neofetch"
 
 # now we execute neofetch or freshfetch depending on which is installed
 # freshfetch is preferred
@@ -163,3 +196,8 @@ if command -v "freshfetch" >/dev/null 2>&1; then
 elif command -v "neofetch" > /dev/null 2>&1; then
     neofetch
 fi
+
+BRCEndTime=$(date +%s)
+BRCTimeTook=$((BRCEndTime-BRCStartTime))
+
+BRCProfilingPrint "brc: Init time is $BRCTimeTook seconds"
