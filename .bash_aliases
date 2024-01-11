@@ -86,11 +86,14 @@ alias cppb='rsync -ah --info=progress2'
 # Go to the root of Git repo
 alias cdgr='cd `git rev-parse --show-toplevel`'
 
+# git log shortcut
+alias glog='git log --all'
+
 # Show today's commits
-alias todayscommits='git log --oneline --since=midnight'
+alias todayscommits='glog --oneline --since=midnight'
 
 # Total number of commits
-alias numcommits='git log --oneline | wc -l'
+alias numcommits='glog --oneline | wc -l'
 
 # Numberr of commits today
 alias numcommtoday='todayscommits | wc -l'
@@ -173,11 +176,8 @@ alias gdff='git diff'
 # git show shortcut
 alias gshw='git show'
 
-# git log shortcut
-alias glog='git log'
-
 # git log one line shortcut
-alias glogol='git log --oneline'
+alias glogol='glog --oneline'
 
 # git restore shortcut
 alias gr.='git restore .'
