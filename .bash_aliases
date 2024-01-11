@@ -211,3 +211,18 @@ alias quit='exit'
 
 # h
 alias h='history'
+
+# edit vimrc
+alias edit-vimrc='$EDITOR ~/.vimrc'
+
+# view vimrc
+alias view-vimrc='catless ~/.vimrc'
+
+# cat vimrc
+alias cat-vimrc='view-vimrc'
+
+# edit vimrc shorter
+alias edtvrc='edit-vimrc'
+
+# view vimrc shorter
+alias catvrc='cat-vimrc'
