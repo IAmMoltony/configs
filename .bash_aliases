@@ -208,3 +208,6 @@ alias doxy='doxygen'
 
 # Exit but quit
 alias quit='exit'
+
+# h
+alias h='history'
