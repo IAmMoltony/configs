@@ -229,3 +229,6 @@ alias edtvrc='edit-vimrc'
 
 # view vimrc shorter
 alias catvrc='cat-vimrc'
+
+# shutdown
+alias shutdown='sudo shutdown'
