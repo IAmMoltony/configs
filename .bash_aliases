@@ -89,6 +89,9 @@ alias cdgr='cd `git rev-parse --show-toplevel`'
 # git log shortcut
 alias glog='git log --all'
 
+# glog shortcut
+alias glg='glog'
+
 # Show today's commits
 alias todayscommits='glog --oneline --since=midnight'
 
