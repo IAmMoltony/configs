@@ -238,3 +238,6 @@ alias catvrc='cat-vimrc'
 
 # shutdown
 alias shutdown='sudo shutdown'
+
+# sync and reload bashrc
+alias syncrbrc='synccfgs && relbrc'
