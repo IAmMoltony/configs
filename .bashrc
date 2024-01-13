@@ -177,10 +177,6 @@ export HTDOCS=/opt/lampp/htdocs
 
 BRCProfilingPrint "brc: Set devkitPro env variables and HTDOCS"
 
-command -v thefuck > /dev/null 2>&1 && eval "$(thefuck --alias --enable-experimental-instant-mode)"
-
-BRCProfilingPrint "brc: Enabled The Fuck command corrector"
-
 bind -s 'set completion-ignore-case on'
 
 if [ "$BASHRC_PROFILING" != "1" ]; then
