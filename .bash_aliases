@@ -87,10 +87,16 @@ alias cppb='rsync -ah --info=progress2'
 alias cdgr='cd `git rev-parse --show-toplevel`'
 
 # git log shortcut
-alias glog='git log --all'
+alias glog='git log'
+
+# git log all shortcut
+alias gloga='git log --all'
 
 # glog shortcut
 alias glg='glog'
+
+# gloga shortcut
+alias glga='gloga'
 
 # Show today's commits
 alias todayscommits='glog --oneline --since=midnight'
