@@ -241,3 +241,18 @@ alias shutdown='sudo shutdown'
 
 # sync and reload bashrc
 alias syncrbrc='synccfgs && relbrc'
+
+# edit custom path
+alias edit-custompath='$EDITOR ~/.custompath'
+
+# view custom path
+alias view-custompath='catless ~/.custompath'
+
+# cat custom path
+alias cat-custompath='view-custompath'
+
+# edit custompath short
+alias edtcp='edit-custompath'
+
+# view custompath short
+alias catcp='cat-custompath'
