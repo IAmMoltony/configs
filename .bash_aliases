@@ -256,3 +256,6 @@ alias edtcp='edit-custompath'
 
 # view custompath short
 alias catcp='cat-custompath'
+
+# go into dev/...
+alias devcd='cd ~/dev && cd'
