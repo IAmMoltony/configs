@@ -191,6 +191,9 @@ alias gshw='git show'
 # git log one line shortcut
 alias glogol='glog --oneline'
 
+# git log one line shortcut shortcut
+alias glgol='glogol'
+
 # git restore shortcut
 alias gr.='git restore .'
 
