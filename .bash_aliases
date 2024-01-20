@@ -265,3 +265,6 @@ alias catcp='cat-custompath'
 
 # go into dev/...
 alias devcd='cd ~/dev && cd'
+
+# git count objects
+alias gcobj='git count-objects'
