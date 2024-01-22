@@ -194,8 +194,11 @@ alias glogol='glog --oneline'
 # git log one line shortcut shortcut
 alias glgol='glogol'
 
-# git restore shortcut
+# git restore dot shortcut
 alias gr.='git restore .'
+
+# git restore
+alias grs='git restore'
 
 # gnu make
 alias mk='make'
