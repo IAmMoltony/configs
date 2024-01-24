@@ -2,19 +2,16 @@ set nocompatible
 set number
 set relativenumber
 
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin()
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'ycm-core/YouCompleteMe'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'IAmMoltony/vim-dotnet'
-Plugin 'iamcco/markdown-preview.nvim'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'IAmMoltony/vim-dotnet'
+Plug 'iamcco/markdown-preview.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-call vundle#end()
+call plug#end()
 
 filetype plugin indent on
 set tabstop=4
