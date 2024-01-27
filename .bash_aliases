@@ -271,3 +271,6 @@ alias devcd='cd ~/dev && cd'
 
 # git count objects
 alias gcobj='git count-objects'
+
+# pacman -Su
+alias spsu='sudo pacman -Su --noconfirm'
