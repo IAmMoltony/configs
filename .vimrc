@@ -10,6 +10,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'IAmMoltony/vim-dotnet'
 Plug 'iamcco/markdown-preview.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
