@@ -10,7 +10,12 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'IAmMoltony/vim-dotnet'
 Plug 'iamcco/markdown-preview.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'airblade/vim-gitgutter'
+
+if has('nvim') || has('patch-8.0.902')
+  Plug 'mhinz/vim-signify'
+else
+  Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
+endif
 
 call plug#end()
 
