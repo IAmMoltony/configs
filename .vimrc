@@ -17,6 +17,8 @@ else
   Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
 endif
 
+Plug 'ryanoasis/vim-devicons'
+
 call plug#end()
 
 filetype plugin indent on
