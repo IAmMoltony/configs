@@ -274,3 +274,5 @@ alias gcobj='git count-objects'
 
 # pacman -Su
 alias spsu='sudo pacman -Su --noconfirm'
+
+alias glgolrv='glogol --reverse'
