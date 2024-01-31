@@ -35,3 +35,5 @@ let g:mkdp_auto_start = 0
 
 command! NumsOff set nonumber norelativenumber
 command! NumsOn set number relativenumber
+
+highlight CocHighlight ctermbg=black
