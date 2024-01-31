@@ -2,6 +2,8 @@ set nocompatible
 set number
 set relativenumber
 
+" Plugins
+
 call plug#begin()
 
 Plug 'tpope/vim-fugitive'
@@ -18,6 +20,7 @@ else
 endif
 
 Plug 'ryanoasis/vim-devicons'
+Plug 'tomasiser/vim-code-dark'
 
 call plug#end()
 
@@ -30,10 +33,15 @@ syntax on
 set smartindent
 
 command Nerd NERDTree
-let g:ycm_enable_semantic_highlighting=1
 let g:mkdp_auto_start = 0
 
+" Nums on/off custom command
 command! NumsOff set nonumber norelativenumber
 command! NumsOn set number relativenumber
 
-highlight CocHighlight ctermbg=black
+" Color scheme: VSCode Dark
+colorscheme codedark
+
+" NerdTree settings
+autocmd VimEnter * NERDTree | wincmd p
+autocmd BufWinEnter * if &buftype != 'quickfix' && getcmdwintype() == '' | silent NERDTreeMirror | endif
