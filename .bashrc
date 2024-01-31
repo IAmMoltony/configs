@@ -187,8 +187,8 @@ BRCProfilingPrint "brc: Init done! Running neofetch"
 
 # now we execute neofetch or freshfetch depending on which is installed
 # freshfetch is preferred
-if command -v "freshfetch" >/dev/null 2>&1; then
-    freshfetch
+if command -v "pfetch" > /dev/null 2>&1; then
+    pfetch
 elif command -v "neofetch" > /dev/null 2>&1; then
     neofetch
 fi
