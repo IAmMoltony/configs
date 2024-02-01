@@ -7,7 +7,7 @@ set relativenumber
 call plug#begin()
 
 Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'IAmMoltony/vim-dotnet'
 Plug 'iamcco/markdown-preview.nvim'
@@ -21,6 +21,8 @@ endif
 
 Plug 'ryanoasis/vim-devicons'
 Plug 'tomasiser/vim-code-dark'
+Plug 'preservim/vim-indent-guides'
+Plug 'kamykn/spelunker.vim'
 
 call plug#end()
 
