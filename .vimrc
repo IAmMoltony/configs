@@ -21,7 +21,6 @@ endif
 
 Plug 'ryanoasis/vim-devicons'
 Plug 'tomasiser/vim-code-dark'
-Plug 'preservim/vim-indent-guides'
 Plug 'kamykn/spelunker.vim'
 
 call plug#end()
