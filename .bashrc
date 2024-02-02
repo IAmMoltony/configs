@@ -145,8 +145,7 @@ fi
 BRCProfilingPrint "brc: Enabled programmable completion"
 
 export EDITOR=/bin/vim
-export PATH="$PATH:$HOME/.local/bin:$HOME/i686-elf-tools/bin"
-export PATH="$PATH:/usr/lib/dart/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/i686-elf-tools/bin:$HOME/.cargo/bin"
 
 BRCProfilingPrint "brc: Set PATH and EDITOR"
 
