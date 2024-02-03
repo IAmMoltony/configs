@@ -7,21 +7,11 @@ set relativenumber
 call plug#begin()
 
 Plug 'tpope/vim-fugitive'
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'IAmMoltony/vim-dotnet'
 Plug 'iamcco/markdown-preview.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-if has('nvim') || has('patch-8.0.902')
-  Plug 'mhinz/vim-signify'
-else
-  Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
-endif
-
 Plug 'ryanoasis/vim-devicons'
 Plug 'tomasiser/vim-code-dark'
-Plug 'kamykn/spelunker.vim'
 
 call plug#end()
 
@@ -42,7 +32,3 @@ command! NumsOn set number relativenumber
 
 " Color scheme: VSCode Dark
 colorscheme codedark
-
-" NerdTree settings
-autocmd VimEnter * NERDTree | wincmd p
-autocmd BufWinEnter * if &buftype != 'quickfix' && getcmdwintype() == '' | silent NERDTreeMirror | endif
