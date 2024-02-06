@@ -17,6 +17,13 @@ function synccfgs() {
     cd $oldpwd
 }
 
+function updcfgs() {
+    oldpwd="$(pwd)"
+    cd ~/configs
+    ./update.sh
+    cd $oldpwd
+}
+
 catless() {
     cat $@ | less
 }
