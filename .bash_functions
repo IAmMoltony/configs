@@ -2,10 +2,6 @@ function mdcd() {
     md $1 && cd $1
 }
 
-function apt-full-update() {
-    sudo apt update && sudo apt upgrade -y
-}
-
 function synccfgs() {
     oldpwd="$(pwd)"
     cd ~/configs
@@ -26,14 +22,4 @@ function updcfgs() {
 
 catless() {
     cat $@ | less
-}
-
-install-aur() {
-    mkdir -p "$HOME/aur"
-    oldcwd=$(pwd)
-    cd "$HOME/aur"
-    git clone https://aur.archlinux.org/$1.git
-    cd $1
-    mkaur
-    cd $oldcwd
 }

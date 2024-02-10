@@ -153,6 +153,10 @@ if [ -f "$HOME/intel/oneapi/setvars.sh" ]; then
     source $HOME/intel/oneapi/setvars.sh
 fi
 
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 if command -v "pfetch" > /dev/null 2>&1; then
     pfetch
 elif command -v "neofetch" > /dev/null 2>&1; then
