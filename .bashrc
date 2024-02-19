@@ -153,6 +153,9 @@ if [ -f "$HOME/intel/oneapi/setvars.sh" ]; then
     source $HOME/intel/oneapi/setvars.sh
 fi
 
+# make ssh work
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
+
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
