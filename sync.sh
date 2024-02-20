@@ -5,12 +5,15 @@ cpcfg() {
     cp $HOME/$1 .
 }
 
+mkdir .config/kitty -p
+
 cpcfg .bashrc
 cpcfg .gitconfig
 cpcfg .profile
 cpcfg .vimrc
 cpcfg .bash-configs/.bash_aliases
 cpcfg .bash-configs/.bash_functions
+cpcfg .config/kitty/kitty.conf
 
 echo "Syncing melonDS config"
 cp $HOME/.config/melonDS/melonDS.ini .
