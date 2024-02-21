@@ -27,7 +27,7 @@ cpcfg .profile
 cpcfg .vimrc
 cpcfgd .bash_aliases .bash-configs
 cpcfgd .bash_functions .bash-configs
-cpcfgd kitty.conf .configs/kitty
+cpcfgd kitty.conf .config/kitty
 
 echo "Copying melonDS config"
 cp melonDS.ini $HOME/.config/melonDS/melonDS.ini
