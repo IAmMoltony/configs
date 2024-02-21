@@ -159,6 +159,8 @@ fi
 # do some pfetch configurationing
 export PF_INFO="ascii title os host kernel uptime pkgs memory editor wm de shell"
 
+cls
+
 if command -v "pfetch" > /dev/null 2>&1; then
     pfetch
 elif command -v "neofetch" > /dev/null 2>&1; then
