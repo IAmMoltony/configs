@@ -140,11 +140,11 @@ if [ -f ~/.custompath ]; then
     export PATH="$PATH:$CUSTOMPATH"
 fi
 
-export DEVKITPRO=/opt/devkitpro
-export DEVKITARM=$DEVKITPRO/devkitARM
-export DEVKITPPC=$DEVKITPRO/devkitPPC
-
 export HTDOCS=/opt/lampp/htdocs
+
+export DEVKITPRO=/opt/devkitpro
+export DEVKITARM=${DEVKITPRO}/devkitARM
+export DEVKITPPC=${DEVKITPRO}/devkitPPC
 
 bind -s 'set completion-ignore-case on'
 
@@ -153,7 +153,7 @@ if [ -f "$HOME/intel/oneapi/setvars.sh" ]; then
     source $HOME/intel/oneapi/setvars.sh
 fi
 
-# make ssh work
+# ssh but cooler
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
 # do some pfetch configurationing
