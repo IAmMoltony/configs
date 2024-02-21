@@ -156,6 +156,9 @@ fi
 # make ssh work
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
+# do some pfetch configurationing
+export PF_INFO="ascii title os host kernel uptime pkgs memory editor wm de shell"
+
 if command -v "pfetch" > /dev/null 2>&1; then
     pfetch
 elif command -v "neofetch" > /dev/null 2>&1; then
