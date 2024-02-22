@@ -32,3 +32,6 @@ command! NumsOn set number relativenumber
 
 " Color scheme: VSCode Dark
 colorscheme codedark
+
+" Fix background
+set t_ut=
