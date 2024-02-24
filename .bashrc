@@ -146,8 +146,6 @@ export DEVKITPRO=/opt/devkitpro
 export DEVKITARM=${DEVKITPRO}/devkitARM
 export DEVKITPPC=${DEVKITPRO}/devkitPPC
 
-bind -s 'set completion-ignore-case on'
-
 # set intel compiler
 if [ -f "$HOME/intel/oneapi/setvars.sh" ]; then
     source $HOME/intel/oneapi/setvars.sh
