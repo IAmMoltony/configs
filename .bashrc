@@ -157,6 +157,9 @@ fi
 # do some pfetch configurationing
 export PF_INFO="ascii title os host kernel uptime pkgs memory editor wm de shell"
 
+# fix vim fr
+export VIMRUNTIME=/usr/share/vim/vim91/
+
 cls
 
 if command -v "pfetch" > /dev/null 2>&1; then
