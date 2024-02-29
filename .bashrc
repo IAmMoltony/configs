@@ -129,7 +129,7 @@ export PATH="$PATH:$HOME/.local/bin:$HOME/i686-elf-tools/bin:$HOME/.cargo/bin"
 
 [ -f imrunningonwsl ] && export DISPLAY=$(grep nameserver /etc/resolv.conf | awk '{print $2}'):0.0
 
-PS1="\[\e[1;35m\]\u \[\e[0m\]on \h is in \[\e[0m\]\[\e[1;36m\]\w \[\e[0m\]right now\n\[\e[1;32m\]\$\[\e[0m\] "
+PS1="\[\e[1;35m\]\w \$"
 
 if [ -f ~/imrunningonwsl ]; then
     alias mount-ubuntu='wsl.exe -d Ubuntu -u root mount --bind / /mnt/wsl/ubuntu'

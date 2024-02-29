@@ -35,3 +35,5 @@ colorscheme codedark
 
 " Fix background
 set t_ut=
+
+set backspace=indent,eol,start
