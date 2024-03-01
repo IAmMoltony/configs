@@ -155,7 +155,7 @@ fi
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
 # do some pfetch configurationing
-export PF_INFO="ascii title os host kernel uptime pkgs memory editor wm de shell"
+export PF_INFO="ascii title os host kernel uptime pkgs memory editor wm de shell palette"
 
 # fix vim fr
 export VIMRUNTIME=/usr/share/vim/vim91/
