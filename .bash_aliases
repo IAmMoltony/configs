@@ -105,3 +105,4 @@ alias dnbld='dotnet build -v d'
 alias dnrun='dotnet run -v d'
 alias htop='btop'
 alias srbrc='syncrbrc'
+alias sl='exit' # we do a bit of trolling
