@@ -162,7 +162,9 @@ export VIMRUNTIME=/usr/share/vim/vim91/
 
 cls
 
-if command -v "pfetch" > /dev/null 2>&1; then
+if command -v "fastfetch" > /dev/null 2>&1; then
+    fastfetch
+elif command -v "pfetch" > /dev/null 2>&1; then
     pfetch
 elif command -v "neofetch" > /dev/null 2>&1; then
     neofetch
