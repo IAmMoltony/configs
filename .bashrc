@@ -163,7 +163,7 @@ export VIMRUNTIME=/usr/share/vim/vim91/
 cls
 
 if command -v "fastfetch" > /dev/null 2>&1; then
-    fastfetch
+    fastfetch -c /usr/local/share/fastfetch/presets/all.jsonc
 elif command -v "pfetch" > /dev/null 2>&1; then
     pfetch
 elif command -v "neofetch" > /dev/null 2>&1; then
