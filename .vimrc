@@ -13,6 +13,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'tomasiser/vim-code-dark'
 Plug 'wellle/context.vim'
+Plug 'Exafunction/codeium.vim'
 
 call plug#end()
 
