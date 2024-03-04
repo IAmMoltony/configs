@@ -23,3 +23,7 @@ function updcfgs() {
 catless() {
     cat $@ | less
 }
+
+cd() {
+    builtin cd $@ && ls
+}
