@@ -39,3 +39,4 @@ colorscheme codedark
 set t_ut=
 
 set backspace=indent,eol,start
+set autoread
