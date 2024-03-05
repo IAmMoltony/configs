@@ -25,5 +25,5 @@ catless() {
 }
 
 cd() {
-    builtin cd $@ && ls
+    builtin cd "$@" && ls
 }
