@@ -157,6 +157,12 @@ fi
 # do some pfetch configurationing
 export PF_INFO="ascii title os host kernel uptime pkgs memory editor wm de shell palette"
 
+export PNPM_HOME="/home/moltony/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
 cls
 
 if command -v "fastfetch" > /dev/null 2>&1; then
@@ -167,10 +173,3 @@ elif command -v "neofetch" > /dev/null 2>&1; then
     neofetch
 fi
 
-# pnpm
-export PNPM_HOME="/home/moltony/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
