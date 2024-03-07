@@ -4,20 +4,20 @@ function mdcd() {
 
 function synccfgs() {
     oldpwd="$(pwd)"
-    cd ~/configs
+    builtin cd ~/configs
     if [ "$1" == "--nopush" ]; then
         ./sync-commit.sh --nopush
     else
         ./sync-commit.sh
     fi
-    cd $oldpwd
+    builtin cd $oldpwd
 }
 
 function updcfgs() {
     oldpwd="$(pwd)"
-    cd ~/configs
+    builtin cd ~/configs
     ./update.sh
-    cd $oldpwd
+    builtin cd $oldpwd
 }
 
 catless() {
