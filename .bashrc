@@ -166,7 +166,7 @@ esac
 cls
 
 if command -v "fastfetch" > /dev/null 2>&1; then
-    fastfetch -c /usr/local/share/fastfetch/presets/all.jsonc
+    fastfetch -c /usr/local/share/fastfetch/presets/paleofetch.jsonc
 elif command -v "pfetch" > /dev/null 2>&1; then
     pfetch
 elif command -v "neofetch" > /dev/null 2>&1; then
