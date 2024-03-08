@@ -11,7 +11,6 @@ Plug 'IAmMoltony/vim-dotnet'
 Plug 'iamcco/markdown-preview.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-devicons'
-Plug 'tomasiser/vim-code-dark'
 Plug 'wellle/context.vim'
 Plug 'Exafunction/codeium.vim'
 
@@ -31,9 +30,6 @@ let g:mkdp_auto_start = 0
 " Nums on/off custom command
 command! NumsOff set nonumber norelativenumber
 command! NumsOn set number relativenumber
-
-" Color scheme: VSCode Dark
-colorscheme codedark
 
 " Fix background
 set t_ut=
