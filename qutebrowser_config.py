@@ -8,6 +8,9 @@ c.aliases["goog"] = "open google.com"
 c.aliases["gpt"] = "open chat.openai.com"
 c.aliases["gh"] = "open github.com"
 
+# Keyboard cheat sheet :3
+c.aliases["cheatsheet"] = "open qute://help/img/cheatsheet-big.png"
+
 # Config aliases
 c.aliases["cedt"] = "config-edit"
 c.aliases["csrc"] = "config-source"
