@@ -15,6 +15,9 @@ c.aliases["cheatsheet"] = "open qute://help/img/cheatsheet-big.png"
 c.aliases["cedt"] = "config-edit"
 c.aliases["csrc"] = "config-source"
 
+# Aliases for programs
+c.aliases["kitty"] = "spawn kitty"
+
 # As a vim user, I see this as necessary
 c.aliases["q"] = "tab-close"
 
