@@ -21,4 +21,7 @@ c.aliases["kitty"] = "spawn kitty"
 # As a vim user, I see this as necessary
 c.aliases["q"] = "tab-close"
 
+# Set the editor to mousepad
+c.editor.command = ["mousepad", "{file}"]
+
 config.load_autoconfig()
