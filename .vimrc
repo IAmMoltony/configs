@@ -13,6 +13,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'wellle/context.vim'
 Plug 'Exafunction/codeium.vim'
+Plug 'tomasiser/vim-code-dark'
 
 call plug#end()
 
@@ -26,6 +27,9 @@ set smartindent
 
 command Nerd NERDTree
 let g:mkdp_auto_start = 0
+
+" Color scheme: VSCode Dark
+colorscheme codedark
 
 " Nums on/off custom command
 command! NumsOff set nonumber norelativenumber
