@@ -163,7 +163,7 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
-cls
+clear
 
 if command -v "fastfetch" > /dev/null 2>&1; then
     fastfetch -c /usr/local/share/fastfetch/presets/paleofetch.jsonc
