@@ -38,9 +38,6 @@ command! NumsOn set number relativenumber
 " Bring some bash aliases to vim!
 command! Edtvrc tabnew ~/.vimrc
 command! Relvrc source ~/.vimrc
-command! Gcam G commit -am
-command! Gcn G commit -m
-command! Gpsh G push
 
 " Fix background
 set t_ut=
