@@ -118,8 +118,12 @@ alias ping='ping -c 5' # make ping stop after like 5 times that it pinged
 alias ln='ln -iv' # ln but yo need to confirm and also verboosey
 alias i-am-root='sudo -i' # i am root
 alias wget='wget -c' # Wget continue if stopped for whatever reason
-alias paipai='exit'
-alias bye='exit'
-alias byebye='exit'
-alias baibai='exit'
-alias :q='exit'
+alias paipai='exit' # Pai pai
+alias bye='exit' # Bye
+alias byebye='exit' # Bye bey
+alias baibai='exit' # bai bai
+alias :q='exit' # VIM USER DETECTED!!!!!!!!!!!!!!!!!! SEEK SHELTER IMMEDIATELY!!!!!!!!!!!!!!!!!!
+alias gaming='cd ~/Games'
+
+# Trolling!! HAHA LOL LMAO KEK XD UwU
+((RANDOM % 100 < 50)) && alias rm='echo "The rm command has been disabled for this session." && true'
