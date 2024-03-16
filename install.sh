@@ -33,6 +33,7 @@ cpcfg .bashrc
 cpcfg .gitconfig
 cpcfg .profile
 cpcfg .vimrc
+cpcfg .conkyrc
 cpcfgd .bash_aliases .bash-configs
 cpcfgd .bash_functions .bash-configs
 cpcfgd kitty.conf .config/kitty

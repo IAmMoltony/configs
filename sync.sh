@@ -19,6 +19,7 @@ cpcfg .vimrc
 cpcfg .bash-configs/.bash_aliases
 cpcfg .bash-configs/.bash_functions
 cpcfg .config/kitty/kitty.conf
+cpcfg .conkyrc
 cpcfgas .config/qutebrowser/config.py qutebrowser_config.py
 
 echo "Syncing melonDS config"
