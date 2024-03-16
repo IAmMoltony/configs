@@ -25,7 +25,7 @@ conky.config = {
     draw_outline = false,
     draw_shades = false,
     extra_newline = false,
-    font = 'DejaVu Sans Mono:size=12',
+    font = 'DejaVu Sans Mono:size=8',
     gap_x = 60,
     gap_y = 60,
     minimum_height = 5,
@@ -65,7 +65,6 @@ ${color grey}File systems:
 ${color grey}Networking:
 Up:$color ${upspeed} ${color grey} - Down:$color ${downspeed}
 $hr
-${color grey}Name              PID     CPU%   MEM%
 ${color lightgrey} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
 ${color lightgrey} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
 ${color lightgrey} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}

@@ -125,6 +125,7 @@ alias baibai='exit' # bai bai
 alias :q='exit' # VIM USER DETECTED!!!!!!!!!!!!!!!!!! SEEK SHELTER IMMEDIATELY!!!!!!!!!!!!!!!!!!
 alias gaming='cd ~/Games'
 alias edtcrc='$EDITOR ~/.conkyrc'
+alias syncpaipai='synccfgs && exit'
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 ((RANDOM % 100 < 50)) && alias rm='echo "The rm command has been disabled for this session." && true'
