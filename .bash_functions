@@ -27,3 +27,10 @@ catless() {
 cd() {
     builtin cd "$@" && ls
 }
+
+cfggst() {
+    oldpwd="$(pwd)"
+    builtin cd ~/configs
+    git status
+    builtin cd $oldpwd
+}

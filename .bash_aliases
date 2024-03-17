@@ -102,6 +102,7 @@ alias dnbld='dotnet build -v d' # Build a .NET solution with detailed verbosity
 alias dnrun='dotnet run -v d' # Run a .NET solution with detailed verbosity
 alias htop='btop' # btop is objectovely better
 alias srbrc='syncrbrc' # Wait this exists??? omg i forgor tbh
+alias scfgs='synccfgs' # Sync configs but the short version for literally no reason
 alias sl='exit' # we do a bit of trolling
 alias math='bc -l' # Bring up a calculator
 alias catbanl='catba | cat' # View aliases without pager
@@ -114,6 +115,10 @@ alias ........='cd ../../../..' # Go to parent's parent's parent's parent dir
 alias ghs='grephist' # grephist short edition
 alias nano='vim' # YEAHHHH!!!
 alias emacs='vim' # EVEN MORE YEAHAAHAHAHAAHAHAHAHAHAHAHAHAHAHAHAHAHAHAUHSWFJ2WJFWERDJRTMOIBRMLKRTMKPRPMKELMETNJDNJDRNJSNRGNOKFNMR M,S MO2N!!!!!1mu9m1MU(m91
+alias code='vim' # Okay yeah I'm replacing every editor with vim
+alias ee='vim' # I've used Easy Editor like once ever on BSD
+alias vi='vim' # iMprove Vi
+alias gvim='vim' # gVim sucks anyway imo
 alias ping='ping -c 5' # make ping stop after like 5 times that it pinged
 alias ln='ln -iv' # ln but yo need to confirm and also verboosey
 alias i-am-root='sudo -i' # i am root
@@ -126,6 +131,12 @@ alias :q='exit' # VIM USER DETECTED!!!!!!!!!!!!!!!!!! SEEK SHELTER IMMEDIATELY!!
 alias gaming='cd ~/Games'
 alias edtcrc='$EDITOR ~/.conkyrc'
 alias syncpaipai='synccfgs && exit'
+
+# Replace sudo with doas for literally no reason whatsoever
+if command -v "doas" > /dev/null 2>&1; then
+    [ -f "/etc/doas.conf" ] && alias sudo='doas'
+    [ ! -f "/etc/doas.conf" ] && echo "W: \`doas' installed, but \`/etc/doas.conf' not found. Regular \`sudo' will be used."
+fi
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 ((RANDOM % 100 < 50)) && alias rm='echo "The rm command has been disabled for this session." && true'
