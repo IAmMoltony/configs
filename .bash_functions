@@ -34,3 +34,10 @@ cfggst() {
     git status
     builtin cd $oldpwd
 }
+
+pshcfgs() {
+    oldpwd="$(pwd)"
+    builtin cd ~/configs
+    gpsh
+    builtin cd $oldpwd
+}
