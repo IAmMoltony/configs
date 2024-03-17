@@ -128,9 +128,10 @@ alias bye='exit' # Bye
 alias byebye='exit' # Bye bey
 alias baibai='exit' # bai bai
 alias :q='exit' # VIM USER DETECTED!!!!!!!!!!!!!!!!!! SEEK SHELTER IMMEDIATELY!!!!!!!!!!!!!!!!!!
-alias gaming='cd ~/Games'
-alias edtcrc='$EDITOR ~/.conkyrc'
-alias syncpaipai='synccfgs && exit'
+alias gaming='cd ~/Games' # Go to folder with GAMING
+alias edtcrc='$EDITOR ~/.conkyrc' # Edit Conky config file (Idk what rc stands for)
+alias syncpaipai='synccfgs && paipai' # Sync configs and say pai pai
+alias spaipai='syncpaipai' # Today's installment of Useless Aliases... Short version of `syncpaipai' !!!
 
 # Replace sudo with doas for literally no reason whatsoever
 if command -v "doas" > /dev/null 2>&1; then
