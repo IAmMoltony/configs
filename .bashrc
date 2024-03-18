@@ -166,10 +166,6 @@ esac
 # Car go road
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
-# asdfghjkl;'
-[ -f "$HOME/.asdf/asdf.sh" ] && . "$HOME/.asdf/asdf.sh"
-[ -f "$HOME/.asdf/completions/asdf.bash" ] && . "$HOME/.asdf/completions/asdf.bash"
-
 clear
 
 if command -v "fastfetch" > /dev/null 2>&1; then
