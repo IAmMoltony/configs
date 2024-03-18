@@ -143,4 +143,8 @@ if command -v "doas" > /dev/null 2>&1; then
 fi
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
-((RANDOM % 100 < 50)) && alias rm='echo "The rm command has been disabled for this session." && true'
+rm-roll() {
+    ((RANDOM % 100 < 50)) && {
+        alias rm='echo "The rm command has been disabled for this session.\n* Hint! Run rm-roll to hopefully enable it." && true'
+    }
+}
