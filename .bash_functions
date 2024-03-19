@@ -43,6 +43,6 @@ synccfgsm() {
     read commitmsg
     oldpwd="$(pwd)"
     builtin cd ~/configs
-    ./sync-commit.sh $commitmsg
+    ./sync-commit.sh "$commitmsg"
     builtin cd $oldpwd
 }
