@@ -135,6 +135,8 @@ alias spaipai='syncpaipai' # Today's installment of Useless Aliases... Short ver
 alias gtfo='exit'
 alias cddoc='cd ~/Documents'
 alias cdmus='cd ~/Music'
+alias scfgsm='synccfgsm'
+alias syncmrbrc='synccfgsm && relbrc'
 
 # Replace sudo with doas for literally no reason whatsoever
 if command -v "doas" > /dev/null 2>&1; then
