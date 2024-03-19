@@ -7,10 +7,12 @@ if [[ $(git status --porcelain) ]]; then
     echo "Changes found, committing"
 
     git add .
-    git commit -m 'Sync'
-    if [[ "$1" != "--nopush" ]]; then
-        git push || echo "Push failed. Please run 'git push' later manually."
+    if [ "$1" != "" ]; then
+        git commit -m 'Sync'
+    else
+        git commit -m "Sync: $1"
     fi
+    git push || echo "Push failed. Please run 'git push' later manually."
 else
     echo "No changes, exiting"
 fi

@@ -5,11 +5,7 @@ function mdcd() {
 function synccfgs() {
     oldpwd="$(pwd)"
     builtin cd ~/configs
-    if [ "$1" == "--nopush" ]; then
-        ./sync-commit.sh --nopush
-    else
-        ./sync-commit.sh
-    fi
+    ./sync-commit.sh
     builtin cd $oldpwd
 }
 
@@ -39,5 +35,14 @@ pshcfgs() {
     oldpwd="$(pwd)"
     builtin cd ~/configs
     gpsh
+    builtin cd $oldpwd
+}
+
+synccfgsm() {
+    echo -n "Please enter commit message >"
+    read commitmsg
+    oldpwd="$(pwd)"
+    builtin cd ~/configs
+    ./sync-commit.sh $commitmsg
     builtin cd $oldpwd
 }
