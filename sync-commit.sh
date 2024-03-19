@@ -7,7 +7,6 @@ if [[ $(git status --porcelain) ]]; then
     echo "Changes found, committing"
 
     git add .
-    echo "$1"
     if [ "$1" == "" ]; then
         git commit -m 'Sync'
     else
