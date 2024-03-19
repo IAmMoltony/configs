@@ -3,6 +3,8 @@
 ./sync.sh
 echo "Sync done."
 
+echo "$1"
+
 if [[ $(git status --porcelain) ]]; then
     echo "Changes found, committing"
 
