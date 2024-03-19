@@ -3,13 +3,12 @@
 ./sync.sh
 echo "Sync done."
 
-echo "$1"
-
 if [[ $(git status --porcelain) ]]; then
     echo "Changes found, committing"
 
     git add .
-    if [ "$1" != "" ]; then
+    echo "$1"
+    if [ "$1" == "" ]; then
         git commit -m 'Sync'
     else
         git commit -m "Sync: $1"
