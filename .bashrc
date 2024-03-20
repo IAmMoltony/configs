@@ -131,7 +131,7 @@ export PATH="$PATH:$HOME/.local/bin:$HOME/i686-elf-tools/bin:$HOME/.cargo/bin"
 
 # prompt customizatoin
 PROMPT_COMMAND="echo \"exited with code \$?\""
-PS1="\[\e[1;32m\]\w \[\e[0m\]₸ "
+PS1="\D{} \[\e[1;32m\]\w \[\e[0m\]₸ "
 PS2="... "
 
 if [ -f ~/imrunningonwsl ]; then
