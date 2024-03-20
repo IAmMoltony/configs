@@ -129,7 +129,10 @@ export PATH="$PATH:$HOME/.local/bin:$HOME/i686-elf-tools/bin:$HOME/.cargo/bin"
 
 [ -f imrunningonwsl ] && export DISPLAY=$(grep nameserver /etc/resolv.conf | awk '{print $2}'):0.0
 
+# prompt customizatoin
+PROMPT_COMMAND="echo \"exited with code \$?\""
 PS1="\[\e[1;32m\]\w \[\e[0m\]₸ "
+PS2="... "
 
 if [ -f ~/imrunningonwsl ]; then
     alias mount-ubuntu='wsl.exe -d Ubuntu -u root mount --bind / /mnt/wsl/ubuntu'
