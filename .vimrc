@@ -14,6 +14,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'wellle/context.vim'
 Plug 'Exafunction/codeium.vim'
 Plug 'tomasiser/vim-code-dark'
+Plug 'beyondmarc/hlsl.vim'
 
 call plug#end()
 

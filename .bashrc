@@ -166,6 +166,9 @@ esac
 # Car go road
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
+# Mono game shader thing
+export MGFXC_WINE_PATH="$HOME/.local/share/wineprefixes/monogame"
+
 clear
 
 if command -v "fastfetch" > /dev/null 2>&1; then
