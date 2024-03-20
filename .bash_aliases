@@ -138,6 +138,10 @@ alias cdmus='cd ~/Music'
 alias scfgsm='synccfgsm'
 alias syncmrbrc='synccfgsm && relbrc'
 alias syncmpaipai='syncmrbrc && paipai'
+alias saiy='sudo apt install -y'
+alias sary='sudo apt remove -y'
+alias saud='sudo apt update'
+alias saug='sudo apt upgrade'
 
 # Replace sudo with doas for literally no reason whatsoever
 if command -v "doas" > /dev/null 2>&1; then
