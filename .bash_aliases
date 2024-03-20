@@ -137,6 +137,7 @@ alias cddoc='cd ~/Documents'
 alias cdmus='cd ~/Music'
 alias scfgsm='synccfgsm'
 alias syncmrbrc='synccfgsm && relbrc'
+alias syncmrbrcpaipai='syncmrbrc && paipai'
 
 # Replace sudo with doas for literally no reason whatsoever
 if command -v "doas" > /dev/null 2>&1; then
