@@ -46,3 +46,12 @@ synccfgsm() {
     ./sync-commit.sh "$commitmsg"
     builtin cd $oldpwd
 }
+
+AfterPromptExitCodeShow() {
+    exitcode=$?
+    if [ $exitcode == 0 ];
+        echo ":)"
+    else
+        echo ":( $exitcode"
+    fi
+}

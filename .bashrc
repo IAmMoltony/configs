@@ -124,13 +124,25 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# everything below is non-default customizations
+
 export EDITOR=/bin/vim
 export PATH="$PATH:$HOME/.local/bin:$HOME/i686-elf-tools/bin:$HOME/.cargo/bin"
 
 [ -f imrunningonwsl ] && export DISPLAY=$(grep nameserver /etc/resolv.conf | awk '{print $2}'):0.0
 
+# putting this here because if it's in bf it doesn't work
+AfterPromptExitCodeShow() {
+    exitcode=$?
+    if [ $exitcode == 0 ]; then
+        echo ":)"
+    else
+        echo ":( $exitcode"
+    fi
+}
+
 # prompt customizatoin
-PROMPT_COMMAND="echo \"exited with code \$?\""
+PROMPT_COMMAND="AfterPromptExitCodeShow"
 PS1="\[\e[0;35m\]\D{} \[\e[1;32m\]\w \[\e[0m\]₸ "
 PS2="... "
 
