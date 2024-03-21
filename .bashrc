@@ -143,7 +143,7 @@ AfterPromptExitCodeShow() {
 
 # prompt customizatoin
 PROMPT_COMMAND="AfterPromptExitCodeShow"
-PS1="\[\e[0;35m\]\D{} \[\e[1;32m\]\w \[\e[0m\]₸ "
+PS1="\[\e[0;35m\]\u \[\e[1;32m\]\w \[\e[0m\]₸ "
 PS2="... "
 
 if [ -f ~/imrunningonwsl ]; then
