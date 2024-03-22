@@ -27,7 +27,6 @@ alias mnt="mount | awk -F ' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | e
 alias grephist='history | grep' # Search in comman history
 alias lq='ls -tl -1' # List contents of dir, sort files by modification time and do a one-column display
 alias lqa='la -tl -1' # Same as lq but also show hidden files (including . and ..)
-alias cntfiles='find . -type f | wc -l' # How many total files a dir has
 alias cppb='rsync -ah --info=progress2' # Copy with a neat little progress par
 alias cdgr='cd `git rev-parse --show-toplevel`' # Go to root of git repository
 alias glog='git log' # Git log shortcut

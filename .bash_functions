@@ -53,3 +53,8 @@ dlmus() {
     ./download
     builtin cd $oldpwd
 }
+
+cntfiles() {
+    echo "Regular files: $(find . -type f | wc -l)"
+    echo "Symlinks: $(find . -type l | wc -l)"
+}
