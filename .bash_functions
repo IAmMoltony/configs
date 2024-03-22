@@ -58,3 +58,11 @@ cntfiles() {
     echo "Regular files: $(find . -type f | wc -l)"
     echo "Symlinks: $(find . -type l | wc -l)"
 }
+
+dffcfgs() {
+    oldpwd="$(pwd)"
+    builtin cd ~/configs
+    ./sync.sh
+    git diff
+    builtin cd $oldpwd
+}

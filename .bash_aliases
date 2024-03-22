@@ -141,6 +141,7 @@ alias saiy='sudo apt install -y'
 alias sary='sudo apt remove -y'
 alias saud='sudo apt update'
 alias saug='sudo apt upgrade'
+alias lsdl='ls ~/Downloads'
 
 # Replace sudo with doas for literally no reason whatsoever
 if command -v "doas" > /dev/null 2>&1; then

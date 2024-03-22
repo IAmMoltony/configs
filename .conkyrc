@@ -53,7 +53,7 @@ conky.config = {
 }
 
 conky.text = [[
-${color grey}Info:$color ${scroll 32 Conky $conky_version - $sysname $nodename $kernel $machine}
+${color grey}$color ${scroll 32 Conky $conky_version - $sysname $nodename $kernel $machine}
 $hr
 ${color grey}Uptime:$color $uptime
 ${color grey}Frequency (in MHz):$color $freq
@@ -64,11 +64,10 @@ ${color grey}CPU Usage:$color $cpu% ${cpubar 4}
 ${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
 $hr
 ${color grey}File systems:
- / $color${fs_used /}/${fs_size /} ${fs_bar 6 /}
-${color grey}Networking:
-Up:$color ${upspeed} ${color grey} - Down:$color ${downspeed}
+ / $color${fs_used /}/${fs_size /} ${fs_bar 6 /}${color grey}
+ /windows $color${fs_used /windows}/${fs_size /windows} ${fs_bar 6 /windows}
 $hr
-${color grey} name               pid     cpu%   mem%
+${color grey} name                pid    cpu%   mem%
 ${color lightgrey} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
 ${color lightgrey} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
 ${color lightgrey} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
