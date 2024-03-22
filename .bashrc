@@ -131,11 +131,10 @@ export PATH="$PATH:$HOME/.local/bin:$HOME/i686-elf-tools/bin:$HOME/.cargo/bin"
 
 [ -f imrunningonwsl ] && export DISPLAY=$(grep nameserver /etc/resolv.conf | awk '{print $2}'):0.0
 
-# putting this here because if it's in bf it doesn't work
 AfterPromptExitCodeShow() {
     exitcode=$?
     if [ $exitcode == 0 ]; then
-        echo -e "\033[0;32m:)\033[0m"
+        ((RANDOM % 100 < 50)) && echo -e "\033[0;32m;)\033[0m" || echo -e "\033[0;32m:)\033[0m"
     else
         echo -e "\033[0;31m:(\033[0m $exitcode"
     fi
