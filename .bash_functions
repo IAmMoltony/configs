@@ -46,3 +46,10 @@ synccfgsm() {
     ./sync-commit.sh "$commitmsg"
     builtin cd $oldpwd
 }
+
+dlmus() {
+    oldpwd="$(pwd)"
+    builtin cd ~/Music
+    ./download
+    builtin cd $oldpwd
+}
