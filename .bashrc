@@ -134,7 +134,7 @@ export PATH="$PATH:$HOME/.local/bin:$HOME/i686-elf-tools/bin:$HOME/.cargo/bin"
 AfterPromptExitCodeShow() {
     exitcode=$?
     if [ $exitcode == 0 ]; then
-        ((RANDOM % 100 < 50)) && echo -e "\033[0;32m;)\033[0m" || echo -e "\033[0;32m:)\033[0m"
+        ((RANDOM % 100 < 15)) && echo -e "\033[0;32m;)\033[0m" || echo -e "\033[0;32m:)\033[0m"
     else
         echo -e "\033[0;31m:(\033[0m $exitcode"
     fi

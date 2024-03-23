@@ -144,6 +144,7 @@ alias saug='sudo apt upgrade'
 alias lsdl='ls ~/Downloads'
 alias pshcfgspaipai='pshcfgs && paipai'
 alias cdpic='cd ~/Pictures'
+alias gbch='git branch'
 
 # Replace sudo with doas for literally no reason whatsoever
 if command -v "doas" > /dev/null 2>&1; then
