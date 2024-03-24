@@ -1,16 +1,3 @@
--- Conky, a system monitor https://github.com/brndnmtthws/conky
---
--- This configuration file is Lua code. You can write code in here, and it will
--- execute when Conky loads. You can use it to generate your own advanced
--- configurations.
---
--- Try this (remove the `--`):
---
---   print("Loading Conky config")
---
--- For more on Lua, see:
--- https://www.lua.org/pil/contents.html
-
 conky.config = {
     alignment = 'bottom_right',
     background = true,
@@ -18,12 +5,12 @@ conky.config = {
     cpu_avg_samples = 2,
     default_color = 'white',
     default_outline_color = 'white',
-    default_shade_color = 'white',
+    default_shade_color = 'black',
     double_buffer = true,
     draw_borders = true,
     draw_graph_borders = true,
     draw_outline = false,
-    draw_shades = false,
+    draw_shades = true,
     extra_newline = false,
     font = 'DejaVu Sans Mono:size=9',
     gap_x = 60,
@@ -53,17 +40,22 @@ conky.config = {
 }
 
 conky.text = [[
-${alignc}${color violet}$nodename
-$hr
-${color grey}Uptime:$color $uptime
+${alignc}${color orange}$user_names${color grey} on ${color violet}$nodename
+${alignc}$color$time
+$color$hr
+${alignc}${color lime}System Stats
+${color grey}Uptime:$color $uptime_short
 ${color grey}RAM Usage:$color $mem/$memmax ${color blue}${membar 4}
 ${color grey}Swap Usage:$color $swap/$swapmax ${color orange}${swapbar 4}
 ${color grey}CPU Usage:$color $cpu% ${color red}${cpubar 4}
+${color grey}Battery:$color ${battery_percent all}% ${color green}${battery_bar 4 all}
 $color$hr
+${alignc}${color skyblue}File Systems
  ${color grey}/ $color${fs_used /}/${fs_size /} ${color green}${fs_bar 6 /}${color grey}
  /windows $color${fs_used /windows}/${fs_size /windows} ${color green}${fs_bar 6 /windows}
 $color$hr
-${color grey}$color$processes ${color grey}processes ${color grey}($color$running_processes ${color grey}running)
+${alignc}${color orange}Processes
+${color grey}$color$processes ${color grey}total, $color$running_processes ${color grey}running
 ${color grey} ${color green}name                ${color orange}pid    ${color lightred}cpu%   ${color cyan}mem
  ${color lightgreen}${top name 1} ${color yellow}${top pid 1} ${color pink}${top cpu 1} ${color lightblue}${top mem 1}
  ${color lightgreen}${top name 2} ${color yellow}${top pid 2} ${color pink}${top cpu 2} ${color lightblue}${top mem 2}
