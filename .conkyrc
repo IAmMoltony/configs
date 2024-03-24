@@ -20,12 +20,12 @@ conky.config = {
     default_outline_color = 'white',
     default_shade_color = 'white',
     double_buffer = true,
-    draw_borders = false,
+    draw_borders = true,
     draw_graph_borders = true,
     draw_outline = false,
     draw_shades = false,
     extra_newline = false,
-    font = 'DejaVu Sans Mono:size=8',
+    font = 'DejaVu Sans Mono:size=9',
     gap_x = 60,
     gap_y = 60,
     minimum_height = 5,
@@ -42,7 +42,7 @@ conky.config = {
     own_window_hints = 'undecorated,sticky,skip_taskbar,skip_pager,below',
     own_window_transparent = false,
     own_window_argb_visual = true,
-    own_window_argb_value = 145,
+    own_window_argb_value = 155,
     show_graph_range = false,
     show_graph_scale = false,
     stippled_borders = 0,
@@ -53,23 +53,20 @@ conky.config = {
 }
 
 conky.text = [[
-${color grey}$color ${scroll 32 Conky $conky_version - $sysname $nodename $kernel $machine}
+${alignc}${color violet}$nodename
 $hr
 ${color grey}Uptime:$color $uptime
-${color grey}Frequency (in MHz):$color $freq
-${color grey}Frequency (in GHz):$color $freq_g
-${color grey}RAM Usage:$color $mem/$memmax - $memperc% ${membar 4}
-${color grey}Swap Usage:$color $swap/$swapmax - $swapperc% ${swapbar 4}
-${color grey}CPU Usage:$color $cpu% ${cpubar 4}
-${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
-$hr
-${color grey}File systems:
- / $color${fs_used /}/${fs_size /} ${fs_bar 6 /}${color grey}
- /windows $color${fs_used /windows}/${fs_size /windows} ${fs_bar 6 /windows}
-$hr
-${color grey} name                pid    cpu%   mem%
-${color lightgrey} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
-${color lightgrey} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
-${color lightgrey} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
-${color lightgrey} ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
+${color grey}RAM Usage:$color $mem/$memmax ${color blue}${membar 4}
+${color grey}Swap Usage:$color $swap/$swapmax ${color orange}${swapbar 4}
+${color grey}CPU Usage:$color $cpu% ${color red}${cpubar 4}
+$color$hr
+ ${color grey}/ $color${fs_used /}/${fs_size /} ${color green}${fs_bar 6 /}${color grey}
+ /windows $color${fs_used /windows}/${fs_size /windows} ${color green}${fs_bar 6 /windows}
+$color$hr
+${color grey}$color$processes ${color grey}processes ${color grey}($color$running_processes ${color grey}running)
+${color grey} ${color green}name                ${color orange}pid    ${color lightred}cpu%   ${color cyan}mem
+ ${color lightgreen}${top name 1} ${color yellow}${top pid 1} ${color pink}${top cpu 1} ${color lightblue}${top mem 1}
+ ${color lightgreen}${top name 2} ${color yellow}${top pid 2} ${color pink}${top cpu 2} ${color lightblue}${top mem 2}
+ ${color lightgreen}${top name 3} ${color yellow}${top pid 3} ${color pink}${top cpu 3} ${color lightblue}${top mem 3}
+ ${color lightgreen}${top name 4} ${color yellow}${top pid 4} ${color pink}${top cpu 4} ${color lightblue}${top mem 4}
 ]]
