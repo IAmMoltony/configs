@@ -12,7 +12,7 @@ conky.config = {
     draw_outline = false,
     draw_shades = true,
     extra_newline = false,
-    font = 'DejaVu Sans Mono:size=9',
+    font = 'Cascadia Code:size=9',
     gap_x = 60,
     gap_y = 60,
     minimum_height = 5,
@@ -40,15 +40,16 @@ conky.config = {
 }
 
 conky.text = [[
-${alignc}${color orange}$user_names${color grey} on ${color violet}$nodename
+${alignc}${color orange}$user_names${color grey} on ${color violet}$distribution $nodename
 ${alignc}$color$time
+${alignc}Conky ${color green}$conky_version
 $color$hr
 ${alignc}${color lime}System Stats
 ${color grey}Uptime:$color $uptime_short
 ${color grey}RAM Usage:$color $mem/$memmax ${color blue}${membar 4}
 ${color grey}Swap Usage:$color $swap/$swapmax ${color orange}${swapbar 4}
 ${color grey}CPU Usage:$color $cpu% ${color red}${cpubar 4}
-${color grey}Battery:$color ${battery_percent all}% ${color green}${battery_bar 4 all}
+${color grey}Battery:$color ${battery_percent all}%
 $color$hr
 ${alignc}${color skyblue}File Systems
  ${color grey}/ $color${fs_used /}/${fs_size /} ${color green}${fs_bar 6 /}${color grey}
@@ -56,9 +57,12 @@ ${alignc}${color skyblue}File Systems
 $color$hr
 ${alignc}${color orange}Processes
 ${color grey}$color$processes ${color grey}total, $color$running_processes ${color grey}running
-${color grey} ${color green}name                ${color orange}pid    ${color lightred}cpu%   ${color cyan}mem
+${color grey} ${color green}name                ${color orange}pid    ${color lightred}cpu   ${color cyan}mem
  ${color lightgreen}${top name 1} ${color yellow}${top pid 1} ${color pink}${top cpu 1} ${color lightblue}${top mem 1}
  ${color lightgreen}${top name 2} ${color yellow}${top pid 2} ${color pink}${top cpu 2} ${color lightblue}${top mem 2}
  ${color lightgreen}${top name 3} ${color yellow}${top pid 3} ${color pink}${top cpu 3} ${color lightblue}${top mem 3}
  ${color lightgreen}${top name 4} ${color yellow}${top pid 4} ${color pink}${top cpu 4} ${color lightblue}${top mem 4}
+$color$hr
+${alignc}${color pink}Weather
+$color${texeci 1800 curl -s wttr.in/Shymkent | sed -n '3,7{s/\d27\[[0-9;]*m//g;s/^..//;s/ *$//;p}'}
 ]]
