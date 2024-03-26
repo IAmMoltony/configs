@@ -130,21 +130,22 @@ alias gaming='cd ~/Games' # Go to folder with GAMING
 alias edtcrc='$EDITOR ~/.conkyrc' # Edit Conky config file (Idk what rc stands for)
 alias syncpaipai='synccfgs && paipai' # Sync configs and say pai pai
 alias spaipai='syncpaipai' # Today's installment of Useless Aliases... Short version of `syncpaipai' !!!
-alias gtfo='exit'
-alias cddoc='cd ~/Documents'
-alias cdmus='cd ~/Music'
-alias scfgsm='synccfgsm'
-alias syncmrbrc='synccfgsm && relbrc'
-alias syncmpaipai='synccfgsm && paipai'
-alias saiy='sudo apt install -y'
-alias sary='sudo apt remove -y'
-alias saud='sudo apt update'
-alias saug='sudo apt upgrade'
-alias lsdl='ls ~/Downloads'
-alias pshcfgspaipai='pshcfgs && paipai'
-alias cdpic='cd ~/Pictures'
-alias gbch='git branch'
-alias gslog='git shortlog'
+alias gtfo='exit' # Get the f out
+alias cddoc='cd ~/Documents' # Go to documents
+alias cdmus='cd ~/Music' # go to music
+alias scfgsm='synccfgsm' # Short versoin alias thing ojgjo2joejfjojii243jrjoo2 2323oin23roin23r
+alias syncmrbrc='synccfgsm && relbrc' # Sync configs with message and rbrc
+alias syncmpaipai='synccfgsm && paipai' # Sync configs with message and paipai
+alias saiy='sudo apt install -y' # Install p
+alias sary='sudo apt remove -y' # Rm p
+alias saud='sudo apt update' # Upd ps
+alias saug='sudo apt upgrade' # Upg ps
+alias lsdl='ls ~/Downloads' # List ownload
+alias pshcfgspaipai='pshcfgs && paipai' # Push cfgs and paipia
+alias cdpic='cd ~/Pictures' # Go to pictures
+alias gbch='git branch' # Git branch
+alias gslog='git shortlog' # Git short log
+alias :e='vim' # Another vim user
 
 # Replace sudo with doas for literally no reason whatsoever
 if command -v "doas" > /dev/null 2>&1; then
