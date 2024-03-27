@@ -183,6 +183,11 @@ esac
 # Mono game shader thing
 export MGFXC_WINE_PATH="$HOME/.local/share/wineprefixes/monogame"
 
+# CD spell
+shopt -s cdspell
+
+eval $(thefuck --alias fixthis)
+
 clear
 
 if command -v "fastfetch" > /dev/null 2>&1; then

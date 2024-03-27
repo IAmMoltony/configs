@@ -30,7 +30,7 @@ cd() {
 }
 
 # Git status of configs
-cfggst() {
+gstcfgs() {
     oldpwd="$(pwd)"
     builtin cd ~/configs
     git status
@@ -76,4 +76,9 @@ dffcfgs() {
     ./sync.sh
     git diff
     builtin cd $oldpwd
+}
+
+# Command not found handle
+command_not_found_handle() {
+    fixthis
 }
