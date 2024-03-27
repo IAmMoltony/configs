@@ -147,7 +147,7 @@ alias gbch='git branch' # Git branch
 alias gslog='git shortlog' # Git short log
 alias :e='vim' # Another vim user
 alias pshpaipai='git push && paipai' # Git push and papiap
-alias freespcw='df -h /windows'
+alias freespcw='df -h /windows' # Check free space on windows partition
 
 # Replace sudo with doas for literally no reason whatsoever
 if command -v "doas" > /dev/null 2>&1; then
@@ -161,3 +161,5 @@ rm-roll() {
         alias rm='echo "The rm command has been disabled for this session.\n* Hint! Run rm-roll to hopefully enable it." && true'
     }
 }
+
+rm-roll

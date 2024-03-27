@@ -1,7 +1,9 @@
+# Create dir and cd into it
 function mdcd() {
     md $1 && cd $1
 }
 
+# Sync configs
 function synccfgs() {
     oldpwd="$(pwd)"
     builtin cd ~/configs
@@ -9,6 +11,7 @@ function synccfgs() {
     builtin cd $oldpwd
 }
 
+# Update configs
 function updcfgs() {
     oldpwd="$(pwd)"
     builtin cd ~/configs
@@ -16,14 +19,17 @@ function updcfgs() {
     builtin cd $oldpwd
 }
 
+# Cat a file with pager (saves 3 keystrokes!)
 catless() {
     cat $@ | less
 }
 
+# Convenience: make `cd' automagically ls
 cd() {
     builtin cd "$@" && ls
 }
 
+# Git status of configs
 cfggst() {
     oldpwd="$(pwd)"
     builtin cd ~/configs
@@ -31,6 +37,7 @@ cfggst() {
     builtin cd $oldpwd
 }
 
+# Push configs (e.g. incase of internet not being there when synccfgsing)
 pshcfgs() {
     oldpwd="$(pwd)"
     builtin cd ~/configs
@@ -38,6 +45,7 @@ pshcfgs() {
     builtin cd $oldpwd
 }
 
+# Sync configs with a message
 synccfgsm() {
     echo -n "Please enter commit message >"
     read commitmsg
@@ -47,6 +55,7 @@ synccfgsm() {
     builtin cd $oldpwd
 }
 
+# Download music (call ~/Music/download)
 dlmus() {
     oldpwd="$(pwd)"
     builtin cd ~/Music
@@ -54,11 +63,13 @@ dlmus() {
     builtin cd $oldpwd
 }
 
+# Count regular files and symlinks in the current folder
 cntfiles() {
     echo "Regular files: $(find . -type f | wc -l)"
     echo "Symlinks: $(find . -type l | wc -l)"
 }
 
+# Git diff for configs
 dffcfgs() {
     oldpwd="$(pwd)"
     builtin cd ~/configs
