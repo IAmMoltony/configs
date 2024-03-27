@@ -147,6 +147,7 @@ alias gbch='git branch' # Git branch
 alias gslog='git shortlog' # Git short log
 alias :e='vim' # Another vim user
 alias pshpaipai='git push && paipai' # Git push and papiap
+alias freespcw='df -h /windows'
 
 # Replace sudo with doas for literally no reason whatsoever
 if command -v "doas" > /dev/null 2>&1; then
