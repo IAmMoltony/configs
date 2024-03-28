@@ -148,6 +148,7 @@ alias gslog='git shortlog' # Git short log
 alias :e='vim' # Another vim user
 alias pshpaipai='git push && paipai' # Git push and papiap
 alias freespcw='df -h /windows' # Check free space on windows partition
+alias wine64='WINEPREFIX=~/.wine64 wine64'
 
 # Replace sudo with doas for literally no reason whatsoever
 if command -v "doas" > /dev/null 2>&1; then

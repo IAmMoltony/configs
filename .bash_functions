@@ -77,8 +77,3 @@ dffcfgs() {
     git diff
     builtin cd $oldpwd
 }
-
-# Command not found handle
-command_not_found_handle() {
-    fixthis
-}
