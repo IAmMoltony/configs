@@ -150,12 +150,6 @@ alias pshpaipai='git push && paipai' # Git push and papiap
 alias freespcw='df -h /windows' # Check free space on windows partition
 alias wine64='WINEPREFIX=~/.wine64 wine64'
 
-# Replace sudo with doas for literally no reason whatsoever
-if command -v "doas" > /dev/null 2>&1; then
-    [ -f "/etc/doas.conf" ] && alias sudo='doas'
-    [ ! -f "/etc/doas.conf" ] && echo "W: \`doas' installed, but \`/etc/doas.conf' not found. Regular \`sudo' will be used."
-fi
-
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
     ((RANDOM % 100 < 50)) && {
