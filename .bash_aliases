@@ -148,7 +148,8 @@ alias gslog='git shortlog' # Git short log
 alias :e='vim' # Another vim user
 alias pshpaipai='git push && paipai' # Git push and papiap
 alias freespcw='df -h /windows' # Check free space on windows partition
-alias wine64='WINEPREFIX=~/.wine64 wine64'
+alias wine64='WINEPREFIX=~/.wine64 wine64' # Convenience: start Wine with the 64-bit prefix
+alias piapia='paipai' # Pai pai when in rush
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
