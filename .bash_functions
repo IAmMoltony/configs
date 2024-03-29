@@ -8,7 +8,7 @@ function synccfgs() {
     oldpwd="$(pwd)"
     builtin cd ~/configs
     ./sync-commit.sh
-    builtin cd $oldpwd
+    builtin cd "$oldpwd"
 }
 
 # Update configs
@@ -16,7 +16,7 @@ function updcfgs() {
     oldpwd="$(pwd)"
     builtin cd ~/configs
     ./update.sh
-    builtin cd $oldpwd
+    builtin cd "$oldpwd"
 }
 
 # Cat a file with pager (saves 3 keystrokes!)
@@ -34,7 +34,7 @@ gstcfgs() {
     oldpwd="$(pwd)"
     builtin cd ~/configs
     git status
-    builtin cd $oldpwd
+    builtin cd "$oldpwd"
 }
 
 # Push configs (e.g. incase of internet not being there when synccfgsing)
@@ -42,7 +42,7 @@ pshcfgs() {
     oldpwd="$(pwd)"
     builtin cd ~/configs
     gpsh
-    builtin cd $oldpwd
+    builtin cd "$oldpwd"
 }
 
 # Sync configs with a message
@@ -52,7 +52,7 @@ synccfgsm() {
     oldpwd="$(pwd)"
     builtin cd ~/configs
     ./sync-commit.sh "$commitmsg"
-    builtin cd $oldpwd
+    builtin cd "$oldpwd"
 }
 
 # Download music (call ~/Music/download)
@@ -60,7 +60,7 @@ dlmus() {
     oldpwd="$(pwd)"
     builtin cd ~/Music
     ./download
-    builtin cd $oldpwd
+    builtin cd "$oldpwd"
 }
 
 # Count regular files and symlinks in the current folder
@@ -75,5 +75,5 @@ dffcfgs() {
     builtin cd ~/configs
     ./sync.sh
     git diff
-    builtin cd $oldpwd
+    builtin cd "$oldpwd"
 }
