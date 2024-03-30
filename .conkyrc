@@ -46,9 +46,9 @@ ${alignc}Conky ${color green}$conky_version
 $color$hr
 ${alignc}${color lime}System Stats
 ${color grey}Uptime:$color $uptime_short
-${color grey}RAM Usage:$color $mem/$memmax ${color blue}${membar 4}
-${color grey}Swap Usage:$color $swap/$swapmax ${color orange}${swapbar 4}
-${color grey}CPU Usage:$color $cpu% ${color red}${cpubar 4}
+${color grey}RAM:$color $mem/$memmax ${color blue}${membar 4}
+${color grey}Swap:$color $swap/$swapmax ${color orange}${swapbar 4}
+${color grey}CPU:$color $cpu% ${color red}${cpubar 4}
 ${color grey}Battery:$color ${battery_percent all}%
 $color$hr
 ${alignc}${color skyblue}File Systems
