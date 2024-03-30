@@ -195,3 +195,5 @@ elif command -v "pfetch" > /dev/null 2>&1; then
 elif command -v "neofetch" > /dev/null 2>&1; then
     neofetch
 fi
+
+# TODO add sudofox/shell-mommy
