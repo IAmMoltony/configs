@@ -188,6 +188,10 @@ shopt -s cdspell
 
 clear
 
+# Run neofetch everytime the shell is started in the following order:
+#  1. fastfetch (because it's fast)
+#  2. pfetch (because it's sleek)
+#  3. neofetch (as fallback)
 if command -v "fastfetch" > /dev/null 2>&1; then
     fastfetch -c /usr/local/share/fastfetch/presets/paleofetch.jsonc
 elif command -v "pfetch" > /dev/null 2>&1; then
