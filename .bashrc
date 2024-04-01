@@ -131,17 +131,7 @@ export PATH="$PATH:$HOME/.local/bin:$HOME/i686-elf-tools/bin:$HOME/.cargo/bin"
 
 [ -f imrunningonwsl ] && export DISPLAY=$(grep nameserver /etc/resolv.conf | awk '{print $2}'):0.0
 
-AfterPromptExitCodeShow() {
-    exitcode=$?
-    if [ $exitcode == 0 ]; then
-        ((RANDOM % 100 < 15)) && echo -e "\033[0;32m;)\033[0m" || echo -e "\033[0;32m:)\033[0m"
-    else
-        echo -e "\033[0;31m:(\033[0m $exitcode"
-    fi
-}
-
 # prompt customizatoin
-PROMPT_COMMAND="AfterPromptExitCodeShow"
 PS1="\[\e[0;35m\]\u \[\e[1;32m\]\w \[\e[0m\]₸ "
 PS2="... "
 
@@ -186,6 +176,11 @@ export MGFXC_WINE_PATH="$HOME/.local/share/wineprefixes/monogame"
 # CD spell
 shopt -s cdspell
 
+# Shell mommy i guess
+. $HOME/configs/shell-mommy/shell-mommy.sh
+export PROMPT_COMMAND="mommy \\$\\(exit \$?\\); $PROMPT_COMMAND"
+export SHELL_MOMMYS_LITTLE="boy"
+
 clear
 
 # Run neofetch everytime the shell is started in the following order:
@@ -199,5 +194,3 @@ elif command -v "pfetch" > /dev/null 2>&1; then
 elif command -v "neofetch" > /dev/null 2>&1; then
     neofetch
 fi
-
-# TODO add sudofox/shell-mommy
