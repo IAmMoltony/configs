@@ -176,11 +176,6 @@ export MGFXC_WINE_PATH="$HOME/.local/share/wineprefixes/monogame"
 # CD spell
 shopt -s cdspell
 
-# Shell mommy i guess
-. $HOME/configs/shell-mommy/shell-mommy.sh
-export PROMPT_COMMAND="mommy \\$\\(exit \$?\\); $PROMPT_COMMAND"
-export SHELL_MOMMYS_LITTLE="boy"
-
 clear
 
 # Run neofetch everytime the shell is started in the following order:
@@ -194,3 +189,9 @@ elif command -v "pfetch" > /dev/null 2>&1; then
 elif command -v "neofetch" > /dev/null 2>&1; then
     neofetch
 fi
+
+# Shell mommy i guess
+. $HOME/configs/shell-mommy/shell-mommy.sh
+export PROMPT_COMMAND="mommy \\$\\(exit \$?\\); $PROMPT_COMMAND"
+export SHELL_MOMMYS_LITTLE="boy"
+

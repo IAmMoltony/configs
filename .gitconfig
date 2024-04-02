@@ -5,12 +5,11 @@
 	helper = store
 [credentials]
 	helper = store
-[gui]
-	recentrepo = /home/moltony/CodeBlocks/Squarity
-	recentrepo = /opt/devkitpro/projects/ds/ds-craft
 [merge]
 	summary = true
 [pull]
 	rebase = false
 [init]
 	defaultBranch = main
+[gui]
+	recentrepo = /home/moltony/desktop-wallpaper

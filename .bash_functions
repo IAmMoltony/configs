@@ -55,6 +55,12 @@ synccfgsm() {
     builtin cd "$oldpwd"
 }
 
+# Sync configs but show diff before
+synccfgsmdff() {
+    dffcfgs
+    synccfgsm
+}
+
 # Download music (call ~/Music/download)
 dlmus() {
     oldpwd="$(pwd)"
@@ -75,5 +81,14 @@ dffcfgs() {
     builtin cd ~/configs
     ./sync.sh
     git diff
+    builtin cd "$oldpwd"
+}
+
+# Git diff for configs (no pager)
+dffcfgsnp() {
+    oldpwd="$(pwd)"
+    builtin cd ~/configs
+    ./sync.sh
+    git --no-pager diff
     builtin cd "$oldpwd"
 }

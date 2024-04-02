@@ -152,6 +152,7 @@ alias wine64='WINEPREFIX=~/.wine64 wine64' # Convenience: start Wine with the 64
 alias piapia='paipai' # Pai pai when in rush
 alias dlmuspaipai='dlmus && paipai' # Download music aand then pai pai
 alias gshwnp='git --no-pager show' # Git show with no pager
+alias gaming-th='gaming && cd ./TouhouShared/drive_c' # touhou
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
