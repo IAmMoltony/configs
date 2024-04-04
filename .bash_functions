@@ -47,8 +47,15 @@ pshcfgs() {
 
 # Sync configs with a message
 synccfgsm() {
-    echo -n "Please enter commit message >"
-    read commitmsg
+    commitmsg="$1"
+    if [ "$commitmsg" == "" ]; then
+        echo -n "Please enter commit message >"
+        read commitmsg
+    fi
+    if [ "$commitmsg" == "" ]; then
+        echo "Please enter a commit message"
+        return 1
+    fi
     oldpwd="$(pwd)"
     builtin cd ~/configs
     ./sync-commit.sh "$commitmsg"

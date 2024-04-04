@@ -145,7 +145,7 @@ alias pshcfgspaipai='pshcfgs && paipai' # Push cfgs and paipia
 alias cdpic='cd ~/Pictures' # Go to pictures
 alias gbch='git branch' # Git branch
 alias gslog='git shortlog' # Git short log
-alias :e='vim' # Another vim user
+alias :e='vim' # Another vim user HOW MANY VIM USERS DO WE HAVE
 alias pshpaipai='git push && paipai' # Git push and papiap
 alias freespcw='df -h /windows' # Check free space on windows partition
 alias wine64='WINEPREFIX=~/.wine64 wine64' # Convenience: start Wine with the 64-bit prefix
@@ -153,12 +153,14 @@ alias piapia='paipai' # Pai pai when in rush
 alias dlmuspaipai='dlmus && paipai' # Download music aand then pai pai
 alias gshwnp='git --no-pager show' # Git show with no pager
 alias gaming-th='gaming && cd ./TouhouShared/drive_c' # touhou
+alias gdffnp='git --no-pager diff' # git diff ith no pager
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
+    alias rm='rm -iv'
     ((RANDOM % 100 < 50)) && {
         alias rm='echo -e "The rm command has been disabled for this session.\n* Hint! Run rm-roll to hopefully enable it." && true'
-    } || alias rm='rm -iv'
+    }
 }
 
 rm-roll
