@@ -9,7 +9,9 @@ Syncing .conkyrc
 Syncing melonDS config
 Success
 Changed files:
-HourlySyncLogs/hsl_
+.gitignore
 HourlySyncLogs/hsl_2024-04-04_16:59:14
+HourlySyncLogs/hsl_2024-04-04_17:00:02
+cronsync.sh
 Sync done.
 Changes found, committing
