@@ -96,8 +96,8 @@ alias cddl='cd ~/Downloads' # cd to downloads (I go there real often)
 alias dirfsp='du --max-depth=1 -h --all | sort -h' # Analyze free space in directory
 alias plsh='pullsh' # Pullsh but shorter
 alias spsy='echo "no that would be stupid"' # This originally was an alias for `sudo pacman -Sy` but i heard that's bad
-alias dnbld='dotnet build -v d' # Build a .NET solution with detailed verbosity
-alias dnrun='dotnet run -v d' # Run a .NET solution with detailed verbosity
+alias dnbld='dotnet build -v n' # Build a .NET solution with normal verbosity
+alias dnrun='dotnet run -v n' # Run a .NET solution with normal verbosity
 alias htop='btop' # btop is objectovely better
 alias srbrc='syncrbrc' # Wait this exists??? omg i forgor tbh
 alias scfgs='synccfgs' # Sync configs but the short version for literally no reason
