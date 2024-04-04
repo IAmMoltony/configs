@@ -78,8 +78,15 @@ dlmus() {
 
 # Count regular files and symlinks in the current folder
 cntfiles() {
-    echo "Regular files: $(find . -type f | wc -l)"
-    echo "Symlinks: $(find . -type l | wc -l)"
+    echo "Block special: $(find . -maxdepth 1 -type b | wc -l)"
+    echo "Character special: $(find . -maxdepth 1 -type c | wc -l)"
+    echo "Directories: $(find . -maxdepth 1 -mindepth 1 -type d | wc -l)"
+    echo "Named pipes: $(find . -maxdepth 1 -type p | wc -l)"
+    echo "Regular files: $(find . -maxdepth 1 -type f | wc -l)"
+    echo "Symbolic links: $(find . -maxdepth 1 -type l | wc -l)"
+    echo "Sockets: $(find . -maxdepth 1 -type s | wc -l)"
+    echo "Total (including directories): $(find . -maxdepth 1 -mindepth 1 -type b,c,d,p,f,l,s | wc -l)"
+    echo "Total (not including directories): $(find . -maxdepth 1 -mindepth 1 -type b,c,p,f,l,s | wc -l)"
 }
 
 # Git diff for configs
