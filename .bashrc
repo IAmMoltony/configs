@@ -190,8 +190,3 @@ elif command -v "neofetch" > /dev/null 2>&1; then
     neofetch
 fi
 
-# Shell mommy i guess
-. $HOME/configs/shell-mommy/shell-mommy.sh
-export PROMPT_COMMAND="mommy \\$\\(exit \$?\\); $PROMPT_COMMAND"
-export SHELL_MOMMYS_LITTLE="boy"
-
