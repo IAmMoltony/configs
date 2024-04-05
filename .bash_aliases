@@ -155,6 +155,8 @@ alias dlmuspaipai='dlmus && paipai' # Download music aand then pai pai
 alias gshwnp='git --no-pager show' # Git show with no pager
 alias gaming-th='gaming-b && cd ./TouhouShared/drive_c' # touhou
 alias gdffnp='git --no-pager diff' # git diff ith no pager
+alias gundolc='git reset --soft HEAD^' # This is when i screw up
+alias gundolchard='git reset --hard HEAD^' # This is when i really screw up
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
