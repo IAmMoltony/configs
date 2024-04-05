@@ -127,6 +127,7 @@ alias byebye='exit' # Bye bey
 alias baibai='exit' # bai bai
 alias :q='exit' # VIM USER DETECTED!!!!!!!!!!!!!!!!!! SEEK SHELTER IMMEDIATELY!!!!!!!!!!!!!!!!!!
 alias gaming='cd ~/Games' # Go to folder with GAMING
+alias gaming-b='builtin cd ~/Games' # gaming (builtin cd edition)
 alias edtcrc='$EDITOR ~/.conkyrc' # Edit Conky config file (Idk what rc stands for)
 alias syncpaipai='synccfgs && paipai' # Sync configs and say pai pai
 alias spaipai='syncpaipai' # Today's installment of Useless Aliases... Short version of `syncpaipai' !!!
@@ -152,7 +153,7 @@ alias wine64='WINEPREFIX=~/.wine64 wine64' # Convenience: start Wine with the 64
 alias piapia='paipai' # Pai pai when in rush
 alias dlmuspaipai='dlmus && paipai' # Download music aand then pai pai
 alias gshwnp='git --no-pager show' # Git show with no pager
-alias gaming-th='gaming && cd ./TouhouShared/drive_c' # touhou
+alias gaming-th='gaming-b && cd ./TouhouShared/drive_c' # touhou
 alias gdffnp='git --no-pager diff' # git diff ith no pager
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
