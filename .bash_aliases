@@ -170,8 +170,8 @@ alias glogolnpr='glogolrnp'
 alias glgolnp='glogolnp'
 alias glgolrnp='glogolrnp'
 alias gogolnpr='glogolrnp'
-alias dnbuildrel='dotnet build -v m -c Release'
-alias dnrunrel='dotnet build -v m -c Release'
+alias dnbuildrel='dotnet build -v n -c Release' # Build with release config
+alias dnrunrel='dotnet build -v n -c Release' # Run with release config
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
