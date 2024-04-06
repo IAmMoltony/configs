@@ -159,6 +159,17 @@ alias gundolc='git reset --soft HEAD^' # This is when i screw up
 alias gundolchard='git reset --hard HEAD^' # This is when i really screw up
 alias thprefix='export WINEPREFIX=/home/moltony/Games/TouhouShared'
 alias glgnp='git --no-pager log' # Git log with no pager
+alias glgnpr='glgnp --reverse' # Git log no pager reverse
+alias glgrnp='glgnpr' # Different spelling of the above alias
+alias glognp='glgnp' # TODO document these fricking aliases
+alias glognpr='glgnpr'
+alias glogrnp='glgnpr'
+alias glogolnp='git --no-pager log --oneline'
+alias glogolrnp='glogolnp --reverse'
+alias glogolnpr='glogolrnp'
+alias glgolnp='glogolnp'
+alias glgolrnp='glogolrnp'
+alias gogolnpr='glogolrnp'
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
