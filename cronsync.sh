@@ -4,6 +4,7 @@ notify-send "Running hourly config sync."
 cd $HOME/configs # Just to be safe
 mkdir -p HourlySyncLogs
 ./sync-commit.sh "Automatic hourly sync: $(date "+%F %T")" > HourlySyncLogs/hsl_$(date "+%F_%T")
+echo "dbg"
 
 if [ "$?" == "0" ];
     notify-send "HCS: all good"
