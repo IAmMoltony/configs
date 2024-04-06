@@ -106,3 +106,15 @@ dffcfgsnp() {
     git --no-pager diff
     builtin cd "$oldpwd"
 }
+
+# Git commit -am then push
+gcampsh() {
+    gcam "$1"
+    git push
+}
+
+# Git commit -m then push
+gcmpsh() {
+    gcm "$1"
+    git push
+}
