@@ -45,3 +45,6 @@ set t_ut=
 
 set backspace=indent,eol,start
 set autoread
+
+" Mouse
+set mouse=a
