@@ -174,6 +174,7 @@ alias dnbuildrel='dotnet build -v n -c Release' # Build with release config
 alias dnrunrel='dotnet run -v n -c Release' # Run with release config
 alias cdhsl='cd ~/configs/HourlySyncLogs' # cd into hourly sync logs
 alias catlessbf='catbf | less' # catbf with pager
+alias gint='git init' # initialzie git repository
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
