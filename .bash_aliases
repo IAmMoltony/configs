@@ -172,6 +172,7 @@ alias glgolrnp='glogolrnp'
 alias gogolnpr='glogolrnp'
 alias dnbuildrel='dotnet build -v n -c Release' # Build with release config
 alias dnrunrel='dotnet run -v n -c Release' # Run with release config
+alias cdhsl='cd ~/configs/HourlySyncLogs'
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
