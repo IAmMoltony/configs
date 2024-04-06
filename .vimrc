@@ -39,6 +39,7 @@ command! NumsOn set number relativenumber
 " Bring some bash aliases to vim!
 command! Edtvrc tabnew ~/.vimrc
 command! Relvrc source ~/.vimrc
+command! Dnrun !dotnet run -v n
 
 " Fix background
 set t_ut=
