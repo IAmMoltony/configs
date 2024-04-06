@@ -40,6 +40,7 @@ command! NumsOn set number relativenumber
 command! Edtvrc tabnew ~/.vimrc
 command! Relvrc source ~/.vimrc
 command! Dnrun !dotnet run -v n
+command! Dnbuild !dotnet build -v n
 
 " Fix background
 set t_ut=
