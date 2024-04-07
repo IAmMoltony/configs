@@ -10,14 +10,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'IAmMoltony/vim-dotnet'
 Plug 'iamcco/markdown-preview.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'ryanoasis/vim-devicons'
-Plug 'wellle/context.vim'
 Plug 'tomasiser/vim-code-dark'
-Plug 'beyondmarc/hlsl.vim'
 Plug 'wakatime/vim-wakatime'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'yggdroot/indentline'
 Plug 'ap/vim-css-color'
 Plug 'mhinz/vim-startify'
 
@@ -46,8 +42,6 @@ command! Edtvrc tabnew ~/.vimrc
 command! Relvrc source ~/.vimrc
 command! Dnrun !dotnet run -v n
 command! Dnbuild !dotnet build -v n
-
-autocmd BufEnter * IndentLinesEnable
 
 " Fix background
 set t_ut=
@@ -80,5 +74,3 @@ set udf
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme='minimalist'
-
-let g:indentLine_color_term = 239

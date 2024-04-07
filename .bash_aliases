@@ -179,6 +179,7 @@ alias vimpi='vim +PlugInstall' # Install vim plugins
 alias vimpu='vim +PlugUpdate' # Update vim plugins
 alias rn-roll='exit' # Misspell and regret
 alias :G='git' # Git
+alias vimpc='vim +PlugClean' # Clean vim plugins
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
