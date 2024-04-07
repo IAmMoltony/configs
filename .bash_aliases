@@ -177,6 +177,7 @@ alias catlessbf='catbf | less' # catbf with pager
 alias gint='git init' # initialzie git repository
 alias vimpi='vim +PlugInstall' # Install vim plugins
 alias vimpu='vim +PlugUpdate' # Update vim plugins
+alias rn-roll='exit' # Misspell and regret
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
