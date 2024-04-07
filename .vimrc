@@ -16,7 +16,11 @@ Plug 'Exafunction/codeium.vim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'beyondmarc/hlsl.vim'
 Plug 'wakatime/vim-wakatime'
-Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'yggdroot/indentline'
+Plug 'ap/vim-css-color'
+Plug 'mhinz/vim-startify'
 
 call plug#end()
 
@@ -43,6 +47,8 @@ command! Edtvrc tabnew ~/.vimrc
 command! Relvrc source ~/.vimrc
 command! Dnrun !dotnet run -v n
 command! Dnbuild !dotnet build -v n
+
+autocmd BufEnter * IndentLinesEnable
 
 " Fix background
 set t_ut=
@@ -72,3 +78,8 @@ set mh
 set more
 set vfile=~/vimvfile
 set udf
+
+let g:airline_powerline_fonts = 1
+let g:airline_theme='minimalist'
+
+let g:indentLine_color_term = 239
