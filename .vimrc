@@ -63,9 +63,7 @@ set cursorcolumn
 set visualbell
 set title
 set confirm
-set spell
 set tbs
-set spl=en,ru
 set icon
 set mousef
 set scf
