@@ -51,3 +51,23 @@ set autoread
 
 " Mouse
 set mouse=a
+
+" A bunch of useless settings
+set lazyredraw
+set hls
+set ruler
+set cursorline
+set cursorcolumn
+set visualbell
+set title
+set confirm
+set spell
+set tbs
+set spl=en,ru
+set icon
+set mousef
+set scf
+set mh
+set more
+set vfile=~/vimvfile
+set udf
