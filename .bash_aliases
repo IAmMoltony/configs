@@ -178,6 +178,7 @@ alias gint='git init' # initialzie git repository
 alias vimpi='vim +PlugInstall' # Install vim plugins
 alias vimpu='vim +PlugUpdate' # Update vim plugins
 alias rn-roll='exit' # Misspell and regret
+alias :G='git' # Git
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
