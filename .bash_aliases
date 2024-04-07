@@ -175,6 +175,8 @@ alias dnrunrel='dotnet run -v n -c Release' # Run with release config
 alias cdhsl='cd ~/configs/HourlySyncLogs' # cd into hourly sync logs
 alias catlessbf='catbf | less' # catbf with pager
 alias gint='git init' # initialzie git repository
+alias vimpi='vim +PlugInstall' # Install vim plugins
+alias vimpu='vim +PlugUpdate' # Update vim plugins
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {

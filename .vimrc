@@ -15,6 +15,7 @@ Plug 'wellle/context.vim'
 Plug 'Exafunction/codeium.vim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'beyondmarc/hlsl.vim'
+Plug 'wakatime/vim-wakatime'
 
 call plug#end()
 
