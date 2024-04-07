@@ -16,6 +16,7 @@ Plug 'Exafunction/codeium.vim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'beyondmarc/hlsl.vim'
 Plug 'wakatime/vim-wakatime'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
