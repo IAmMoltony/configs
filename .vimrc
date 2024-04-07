@@ -16,6 +16,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ap/vim-css-color'
 Plug 'mhinz/vim-startify'
+Plug 'Shougo/vimshell.vim'
+Plug 'Shougo/vimproc', {'do': 'make'}
 
 call plug#end()
 
