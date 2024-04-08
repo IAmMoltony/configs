@@ -7,17 +7,11 @@ set relativenumber
 call plug#begin()
 
 Plug 'tpope/vim-fugitive'
-Plug 'IAmMoltony/vim-dotnet'
 Plug 'iamcco/markdown-preview.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tomasiser/vim-code-dark'
 Plug 'wakatime/vim-wakatime'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'ap/vim-css-color'
-Plug 'mhinz/vim-startify'
-Plug 'Shougo/vimshell.vim'
-Plug 'Shougo/vimproc', {'do': 'make'}
 
 call plug#end()
 
@@ -29,7 +23,6 @@ set expandtab
 syntax on
 set smartindent
 
-command Nerd NERDTree
 let g:mkdp_auto_start = 0
 
 " Color scheme: VSCode Dark
@@ -59,18 +52,12 @@ set lazyredraw
 set hls
 set ruler
 set cursorline
-set cursorcolumn
 set visualbell
 set title
 set confirm
 set tbs
-set icon
 set mousef
 set scf
 set mh
 set more
-set vfile=~/vimvfile
 set udf
-
-let g:airline_powerline_fonts = 1
-let g:airline_theme='minimalist'

@@ -93,7 +93,6 @@ alias archlnx-update='spsyu && ysyu' # Update normal pacman packages + aur
 alias yrnc='yay -R --noconfirm' # Say pai pai to AUR package
 alias v='vim' # vim (I don't use this one xdddd)
 alias cddl='cd ~/Downloads' # cd to downloads (I go there real often)
-alias dirfsp='du --max-depth=1 -h --all | sort -h' # Analyze free space in directory
 alias plsh='pullsh' # Pullsh but shorter
 alias spsy='echo "no that would be stupid"' # This originally was an alias for `sudo pacman -Sy` but i heard that's bad
 alias dnbld='dotnet build -v n' # Build a .NET solution with normal verbosity
@@ -181,6 +180,7 @@ alias rn-roll='exit' # Misspell and regret
 alias :G='git' # Git
 alias vimpc='vim +PlugClean' # Clean vim plugins
 alias pai='gtfo' # istg
+alias dirfsp='ncdu' # ncdu is way better
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
