@@ -176,6 +176,8 @@ export MGFXC_WINE_PATH="$HOME/.local/share/wineprefixes/monogame"
 # CD spell
 shopt -s cdspell
 
+source $HOME/dev/bash-wakatime/bash-wakatime.sh
+
 clear
 
 # Run neofetch everytime the shell is started in the following order:
