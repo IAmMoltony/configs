@@ -180,7 +180,20 @@ alias rn-roll='exit' # Misspell and regret
 alias :G='git' # Git
 alias vimpc='vim +PlugClean' # Clean vim plugins
 alias pai='gtfo' # istg
-alias dirfsp='ncdu' # ncdu is way better
+alias dirfsp='ncdu' # "dirfsp" means "directory free space". this was originally a call to du -h <some options> | sort -h
+alias cdbm='cd ~/Bookmarks' # cd into bookmarks
+alias cdanime='cd ~/Bookmarks/Anime' # cd into anime
+alias cdcart='cd ~/Bookmarks/Cartoons' # cd into cartoons
+alias cddlimg='cd ~/Bookmarks/Downloaded\ images' # cd into downloaded images
+alias cddlgames='cd ~/Bookmarks/Game\ downloads' # cd into game downloads
+alias cdemugames='cd ~/Bookmarks/Games\ \(emulator\)' # cd into emulator games
+alias cdiso='cd ~/Bookmarks/ISOs' # cd into isos
+alias cddev='cd ~/Bookmarks/Programming' # cd into dev stuff
+alias cdshot='cd ~/Bookmarks/Screenshots' # cd into screenshots
+alias cdws='cd ~/Bookmarks/Website' # cd into my website (https://iammoltony.github.io)
+alias cdwin='cd ~/Bookmarks/Windows\ partition' # cd into my windows partition
+alias cdwine='cd ~/Bookmarks/Wine' # cd into default wine prefix
+alias cdwinep='cd ~/Bookmarks/Wine\ prefixes' # cd into wine prefixes folder (~/.local/share/wineprefixes)
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
