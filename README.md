@@ -1,7 +1,7 @@
 
 # configs
 
-Here I keep my files for new Linux installs.
+This repo is for backing up my Linux configurations (and easily installing one of my most favoritest fonts)
 
 ## Cloning
 
