@@ -178,6 +178,8 @@ shopt -s cdspell
 
 source $HOME/dev/bash-wakatime/bash-wakatime.sh
 
+export PATH="$PATH:~/configs/bin"
+
 clear
 
 # Run neofetch everytime the shell is started in the following order:
