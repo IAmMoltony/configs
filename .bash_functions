@@ -129,3 +129,11 @@ newbkmk() {
 
     ln -s "$1" ~/Bookmarks/"$2"
 }
+
+# View most recent HSL
+cmrhsl() {
+    oldpwd="$(pwd)"
+    builtin cd ~/configs/HourlySyncLogs
+    cat "$(ls -Art | tail -n 1)"
+    builtin cd $oldpwd
+}
