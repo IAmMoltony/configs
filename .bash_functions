@@ -118,3 +118,14 @@ gcmpsh() {
     gcm "$1"
     git push
 }
+
+# Create a bookmark
+newbkmk() {
+    # check params
+    if [ "$1" == "" ] || [ "$2" == "" ]; then
+        echo "Usage: newbkmk <Folder> <Bookmark name>"
+        return 1
+    fi
+
+    ln -s "$1" ~/Bookmarks/"$2"
+}

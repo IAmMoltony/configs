@@ -194,6 +194,7 @@ alias cdws='cd ~/Bookmarks/Website' # cd into my website (https://iammoltony.git
 alias cdwin='cd ~/Bookmarks/Windows\ partition' # cd into my windows partition
 alias cdwine='cd ~/Bookmarks/Wine' # cd into default wine prefix
 alias cdwinep='cd ~/Bookmarks/Wine\ prefixes' # cd into wine prefixes folder (~/.local/share/wineprefixes)
+alias cdbook='cd ~/Bookmarks/Books' # cd into books
 alias grn='grep -Irn' # Shortcut for grep -rn
 alias grn2do='grn . -e TODO' # Find TODOs *ds-craft flashbacks*
 
