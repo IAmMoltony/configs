@@ -197,6 +197,7 @@ alias cdwinep='cd ~/Bookmarks/Wine\ prefixes' # cd into wine prefixes folder (~/
 alias cdbook='cd ~/Bookmarks/Books' # cd into books
 alias grn='grep -Irn' # Shortcut for grep -rn
 alias grn2do='grn . -e TODO' # Find TODOs *ds-craft flashbacks*
+alias rmhsl='rm ~/configs/HourlySyncLogs -rf' # Remove hourly config sync logs
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
