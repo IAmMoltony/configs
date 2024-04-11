@@ -3,3 +3,4 @@ HourlySyncLogs
 hsl_*
 _Tmp/
 HSL_IS_DISABLED
+*.un~
