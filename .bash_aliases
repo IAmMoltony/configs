@@ -201,6 +201,7 @@ alias rmhsl='rm ~/configs/HourlySyncLogs -rf' # Remove hourly config sync logs
 alias edtcs='$EDITOR ~/configs/cronsync.sh' # Edit cron sync script
 alias eedtba='exit' # Typo and regret
 alias cdcfg='cd ~/configs' # cd into configs
+alias rmun='find . -name "*.un~" -exec rm -f {} +' # Remove annoying Vim backup files
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
