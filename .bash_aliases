@@ -206,6 +206,10 @@ alias gpshpaipai='gpsh && paipai' # Git push pai pai
 alias catsrcl='cat /etc/apt/sources.list | less' # View the sources.list file
 alias edtsrcl='sudo vim /etc/apt/sources.list' # Edit sources.list
 alias gagcm='git add . && git commit -m' # Git add and commit
+alias rf='rm -rf' # h
+alias cddlg='cddlgames' # just
+alias gshh='git show HEAD' # Show head
+alias gshhnp='git --no-pager show HEAD' # Show head without pager
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
