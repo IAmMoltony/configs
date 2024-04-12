@@ -205,6 +205,7 @@ alias rmun='find . -name "*.un~" -exec rm -f {} +' # Remove annoying Vim backup 
 alias gpshpaipai='gpsh && paipai' # Git push pai pai
 alias catsrcl='cat /etc/apt/sources.list | less' # View the sources.list file
 alias edtsrcl='sudo vim /etc/apt/sources.list' # Edit sources.list
+alias gagcm='git add . && git commit -m' # Git add and commit
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
