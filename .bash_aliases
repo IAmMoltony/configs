@@ -203,6 +203,8 @@ alias eedtba='exit' # Typo and regret
 alias cdcfg='cd ~/configs' # cd into configs
 alias rmun='find . -name "*.un~" -exec rm -f {} +' # Remove annoying Vim backup files
 alias gpshpaipai='gpsh && paipai' # Git push pai pai
+alias catsrcl='cat /etc/apt/sources.list | less' # View the sources.list file
+alias edtsrcl='sudo vim /etc/apt/sources.list' # Edit sources.list
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
