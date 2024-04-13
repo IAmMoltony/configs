@@ -211,6 +211,7 @@ alias cddlg='cddlgames' # just
 alias gshh='git show HEAD' # Show head
 alias gshhnp='git --no-pager show HEAD' # Show head without pager
 alias dnclean='dotnet clean -v n' # dotnet clean
+alias wine64tricks='WINEPREFIX=~/.wine64 winetricks' # Winetricks in 64-bit prefix
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
