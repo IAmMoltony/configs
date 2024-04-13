@@ -11,6 +11,8 @@ fi
 mkdir -p HourlySyncLogs
 ./sync-commit.sh "Automatic hourly sync: $(date "+%F %T")" > HourlySyncLogs/hsl_$(date "+%F_%T") 2>&1
 
+echo "$?"
+
 if [ "$?" == "0" ]; then
     notify-send "Sync: OK"
 elif [ "$?" == "1" ]; then
