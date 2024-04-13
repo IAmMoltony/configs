@@ -213,6 +213,7 @@ alias gshhnp='git --no-pager show HEAD' # Show head without pager
 alias dnclean='dotnet clean -v n' # dotnet clean
 alias wine64tricks='WINEPREFIX=~/.wine64 winetricks' # Winetricks in 64-bit prefix
 alias rm-rol='exit' # I love to mess with myself
+alias cdwine64='cd ~/Bookmarks/Wine (64-bit)' # cd into default 64-bit wine prefix
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
