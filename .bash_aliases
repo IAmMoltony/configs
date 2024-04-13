@@ -210,6 +210,7 @@ alias rf='rm -rf' # h
 alias cddlg='cddlgames' # just
 alias gshh='git show HEAD' # Show head
 alias gshhnp='git --no-pager show HEAD' # Show head without pager
+alias dnclean='dotnet clean -v n' # dotnet clean
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
