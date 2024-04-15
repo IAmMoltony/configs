@@ -11,4 +11,4 @@ fi
 mkdir -p HourlySyncLogs
 ./sync-commit.sh "Automatic hourly sync: $(date "+%F %T")" > HourlySyncLogs/hsl_$(date "+%F_%T") 2>&1
 
-notify-send "HSL finished: code $?"
+notify-send "Sync done."
