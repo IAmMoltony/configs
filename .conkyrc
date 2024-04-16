@@ -1,3 +1,9 @@
+-- notice!!!!!!!!!!!!!!!!!!!!!!!!!
+-- i dont use conky anymore
+-- this isnt maintained
+-- i'll come back when i use conky again
+-- my laptop can't handle it
+
 conky.config = {
     alignment = 'bottom_right',
     background = true,
@@ -63,12 +69,6 @@ ${color grey}$color$processes ${color grey}total, $color$running_processes ${col
  ${color lightgreen}${top name 3} ${color yellow}${top pid 3} ${color pink}${top cpu 3} ${color lightblue}${top mem 3}
  ${color lightgreen}${top name 4} ${color yellow}${top pid 4} ${color pink}${top cpu 4} ${color lightblue}${top mem 4}
  ${color lightgreen}${top name 5} ${color yellow}${top pid 5} ${color pink}${top cpu 5} ${color lightblue}${top mem 5}
-$color$hr
-${alignc}${color purple}Network
-$color${upspeed wlp2s0} ${color orange}up
-${color orange}${upspeedgraph wlp2s0}
-$color${downspeed wlp2s0} ${color lime}down
-${color lime}${downspeedgraph wlp2s0}
 $color$hr
 ${alignc}${color yellow}Music
 ${color}Currently ${color lime}$audacious_status
