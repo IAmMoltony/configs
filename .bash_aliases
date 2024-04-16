@@ -72,7 +72,7 @@ alias ga.='git add .' # Stage local changes in cur. directory (git)
 alias gdd='git add' # Stage local changes (git)
 alias gcm='git commit -m' # Do a commit (git)
 alias reboot='sudo reboot' # Reboot the computer
-alias freespc='df -h /' # Check free space in the root filesystem
+alias freespc='df -h --total -x tmpfs -x efivarfs' # Check free space on the disk
 alias spsc='sudo pacman -Sc --noconfirm' # I don't use arch anymore so can't say for sure
 alias doxy='doxygen' # I'm too lazy to type 3 more characters
 alias quit='exit' # Quit (exit)
@@ -147,7 +147,6 @@ alias gbch='git branch' # Git branch
 alias gslog='git shortlog' # Git short log
 alias :e='vim' # Another vim user HOW MANY VIM USERS DO WE HAVE
 alias pshpaipai='git push && paipai' # Git push and papiap
-alias freespcw='df -h /windows' # Check free space on windows partition
 alias wine64='WINEPREFIX=~/.wine64 wine64' # Convenience: start Wine with the 64-bit prefix
 alias piapia='paipai' # Pai pai when in rush
 alias dlmuspaipai='dlmus && paipai' # Download music aand then pai pai
