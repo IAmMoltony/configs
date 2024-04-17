@@ -213,6 +213,8 @@ alias dnclean='dotnet clean -v n' # dotnet clean
 alias wine64tricks='WINEPREFIX=~/.wine64 winetricks' # Winetricks in 64-bit prefix
 alias rm-rol='exit' # I love to mess with myself
 alias cdwine64='cd ~/Bookmarks/Wine (64-bit)' # cd into default 64-bit wine prefix
+alias thu='thunar' # Shorthand for thunar
+alias thubkmk='thu ~/Bookmarks &' # Start Thunar in the bookmarks folder
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
