@@ -215,6 +215,7 @@ alias rm-rol='exit' # I love to mess with myself
 alias cdwine64='cd ~/Bookmarks/Wine (64-bit)' # cd into default 64-bit wine prefix
 alias thu='thunar' # Shorthand for thunar
 alias thubkmk='thu ~/Bookmarks &' # Start Thunar in the bookmarks folder
+alias cdwp='builtin cd ~/Pictures/wallpaper' # Go to wallpapers folder (Using builtin cd here because i have tons of wallpapers on my laptop)
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
