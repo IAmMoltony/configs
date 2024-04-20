@@ -219,6 +219,7 @@ alias cdwp='builtin cd ~/Pictures/wallpaper' # Go to wallpapers folder (Using bu
 alias updplaylist='audacious & audtool --playlist-clear && audtool --playlist-addurl /home/moltony/Music' # Update playlist in Audacious
 alias edtmssc='$EDITOR ~/.mssc' # Edit MSSC
 alias grgpll='gr. && gpll' # Remove all local changes and pull
+alias edtdr='$EDITOR ~/Documents/DiaReplacement.txt' # Edit DiaReplacement, the file where I store my diary entries when I lose my diary
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
