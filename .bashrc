@@ -195,3 +195,8 @@ elif command -v "neofetch" > /dev/null 2>&1; then
     neofetch
 fi
 
+# Run Machine-Specific Startup Commands (MSSC)
+# This became necessary when I wanted to install nvm on WSL but I don't use nvm on my laptop
+if [ -f "$HOME/.mssc" ]; then
+    source $HOME/.mssc
+fi

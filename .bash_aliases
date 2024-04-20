@@ -217,6 +217,7 @@ alias thu='thunar' # Shorthand for thunar
 alias thubkmk='thu ~/Bookmarks &' # Start Thunar in the bookmarks folder
 alias cdwp='builtin cd ~/Pictures/wallpaper' # Go to wallpapers folder (Using builtin cd here because i have tons of wallpapers on my laptop)
 alias updplaylist='audacious & audtool --playlist-clear && audtool --playlist-addurl /home/moltony/Music' # Update playlist in Audacious
+alias edtmssc='$EDITOR ~/.mssc' # Edit MSSC
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
