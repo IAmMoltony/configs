@@ -193,7 +193,7 @@ alias cdws='cd ~/Bookmarks/Website' # cd into my website (https://iammoltony.git
 alias cdwin='cd ~/Bookmarks/Windows\ partition' # cd into my windows partition
 alias cdwine='cd ~/Bookmarks/Wine' # cd into default wine prefix
 alias cdwinep='cd ~/Bookmarks/Wine\ prefixes' # cd into wine prefixes folder (~/.local/share/wineprefixes)
-alias cdbook='cd ~/Bookmarks/Books' # cd into books
+alias cdbook='cd ~/Bookmarks/Books' # cd into booksl
 alias grn='grep -Irn' # Shortcut for grep -rn
 alias grn2do='grn . -e TODO' # Find TODOs *ds-craft flashbacks*
 alias rmhsl='rm ~/configs/HourlySyncLogs -rf' # Remove hourly config sync logs
@@ -218,6 +218,7 @@ alias thubkmk='thu ~/Bookmarks &' # Start Thunar in the bookmarks folder
 alias cdwp='builtin cd ~/Pictures/wallpaper' # Go to wallpapers folder (Using builtin cd here because i have tons of wallpapers on my laptop)
 alias updplaylist='audacious & audtool --playlist-clear && audtool --playlist-addurl /home/moltony/Music' # Update playlist in Audacious
 alias edtmssc='$EDITOR ~/.mssc' # Edit MSSC
+alias grgpll='gr. && gpll' # Remove all local changes and pull
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
