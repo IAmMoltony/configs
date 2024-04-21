@@ -222,6 +222,7 @@ alias grgpll='gr. && gpll' # Remove all local changes and pull
 alias edtdr='$EDITOR ~/Documents/DiaReplacement.txt' # Edit DiaReplacement, the file where I store my diary entries when I lose my diary
 alias edtsmb='sudo $EDITOR /etc/samba/smb.conf' # Edit Samba configuartion file
 alias gcaaem='git commit -a --allow-empty-message' # Commit with empty message
+alias cdcfgs='cdcfg' # Alt spelling of cdcfg
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
