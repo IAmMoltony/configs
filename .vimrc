@@ -12,7 +12,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tomasiser/vim-code-dark'
 Plug 'wakatime/vim-wakatime'
 Plug 'ap/vim-css-color'
-Plug 'sslivkoff/vim-scroll-barnacle'
 
 call plug#end()
 
