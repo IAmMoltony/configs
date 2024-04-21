@@ -220,6 +220,7 @@ alias updplaylist='audacious & audtool --playlist-clear && audtool --playlist-ad
 alias edtmssc='$EDITOR ~/.mssc' # Edit MSSC
 alias grgpll='gr. && gpll' # Remove all local changes and pull
 alias edtdr='$EDITOR ~/Documents/DiaReplacement.txt' # Edit DiaReplacement, the file where I store my diary entries when I lose my diary
+alias edtsmb='sudo $EDITOR /etc/samba/smb.conf' # Edit Samba configuartion file
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
