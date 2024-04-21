@@ -137,3 +137,11 @@ cmrhsl() {
     cat "$(ls -Art | tail -n 1)"
     builtin cd $oldpwd
 }
+
+# Git log in configs
+glgcfgs() {
+    oldpwd="$(pwd)"
+    builtin cd ~/configs
+    glg
+    builtin cd $oldpwd
+}
