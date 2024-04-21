@@ -54,7 +54,6 @@ set ruler
 set cursorline
 set visualbell
 set title
-set confirm
 set tbs
 set mousef
 set scf
