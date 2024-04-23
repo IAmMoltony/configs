@@ -225,6 +225,7 @@ alias gcaaem='git commit -a --allow-empty-message' # Commit with empty message
 alias cdcfgs='cdcfg' # Alt spelling of cdcfg
 alias restoreresolution='xrandr -s 1366x768' # Restore screen resolution
 alias glf='git ls-files' # List git files
+alias exir='exit' # misspell and not regret cuz you wanted to exit in a rush
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
