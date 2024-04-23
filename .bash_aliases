@@ -227,6 +227,7 @@ alias restoreresolution='xrandr -s 1366x768' # Restore screen resolution
 alias glf='git ls-files' # List git files
 alias exir='exit' # misspell and not regret cuz you wanted to exit in a rush
 alias pia='piapia' # Piapia but lazy
+alias edtcp='edctpath' # Edit custom path
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
