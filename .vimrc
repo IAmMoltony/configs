@@ -59,4 +59,3 @@ set mousef
 set scf
 set mh
 set more
-set udf
