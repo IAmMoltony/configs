@@ -224,6 +224,7 @@ alias edtsmb='sudo $EDITOR /etc/samba/smb.conf' # Edit Samba configuartion file
 alias gcaaem='git commit -a --allow-empty-message' # Commit with empty message
 alias cdcfgs='cdcfg' # Alt spelling of cdcfg
 alias restoreresolution='xrandr -s 1366x768' # Restore screen resolution
+alias glf='git ls-files' # List git files
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
