@@ -228,6 +228,7 @@ alias glf='git ls-files' # List git files
 alias exir='exit' # misspell and not regret cuz you wanted to exit in a rush
 alias pia='piapia' # Piapia but lazy
 alias edtcp='edctpath' # Edit custom path
+alias care='love .' # Start love2d
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
