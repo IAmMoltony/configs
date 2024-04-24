@@ -37,6 +37,7 @@ command! Edtvrc tabnew ~/.vimrc
 command! Relvrc source ~/.vimrc
 command! Dnrun !dotnet run -v n
 command! Dnbuild !dotnet build -v n
+command! Care !love .
 
 " Fix background
 set t_ut=
