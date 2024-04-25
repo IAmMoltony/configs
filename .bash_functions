@@ -71,7 +71,7 @@ synccfgsmdff() {
 # Download music (call ~/Music/download)
 dlmus() {
     oldpwd="$(pwd)"
-    builtin cd ~/Music
+    builtin cd ~/Music/music-lib
     ./download
     builtin cd "$oldpwd"
 }
