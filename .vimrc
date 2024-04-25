@@ -54,7 +54,7 @@ set hls
 set ruler
 set cursorline
 set visualbell
-set title
+set title titlestring=Editing\ %F\ %m%r
 set tbs
 set mousef
 set scf
