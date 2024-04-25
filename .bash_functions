@@ -134,7 +134,9 @@ newbkmk() {
 cmrhsl() {
     oldpwd="$(pwd)"
     builtin cd ~/configs/HourlySyncLogs
-    cat "$(ls -Art | tail -n 1)"
+    mrhsl=$(ls -Art | tail -n 1)
+    echo "Most recent HSL: $mrhsl"
+    cat "$mrhsl"
     builtin cd $oldpwd
 }
 
