@@ -68,14 +68,6 @@ synccfgsmdff() {
     synccfgsm
 }
 
-# Download music (call ~/Music/download)
-dlmus() {
-    oldpwd="$(pwd)"
-    builtin cd ~/Music/music-lib
-    ./download
-    builtin cd "$oldpwd"
-}
-
 # Count all kinds of files in the current folder
 cntfiles() {
     echo -e "\033[1;33mBlock special\033[0m: $(find . -maxdepth 1 -type b | wc -l)"

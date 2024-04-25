@@ -229,6 +229,7 @@ alias exir='exit' # misspell and not regret cuz you wanted to exit in a rush
 alias pia='piapia' # Piapia but lazy
 alias edtcp='edctpath' # Edit custom path
 alias care='love .' # Start love2d
+alias dlmus='~/Music/music-lib/download' # Download music
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
