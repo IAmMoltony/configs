@@ -188,7 +188,15 @@ clear
 #  2. pfetch (because it's sleek)
 #  3. neofetch (as fallback)
 if command -v "fastfetch" > /dev/null 2>&1; then
-    fastfetch -c /usr/local/share/fastfetch/presets/paleofetch.jsonc
+    if [ -f /usr/local/share/fastfetch/presets/paleofetch.jsonc ]; then
+        # Fastfetch preset is in /usr/local/share
+        # This is when it's built from source
+        fastfetch -c /usr/local/share/fastfetch/presets/paleofetch.jsonc
+    else
+        # Fastfetch preset is in /usr/share
+        # This is when it's installed via pkg mgr
+        fastfetch -c /usr/share/fastfetch/presets/paleofetch.jsonc
+    fi
 elif command -v "pfetch" > /dev/null 2>&1; then
     pfetch
 elif command -v "neofetch" > /dev/null 2>&1; then
