@@ -233,6 +233,7 @@ alias dlmus='~/Music/music-lib/download' # Download music
 alias redlmus='~/Music/music-lib/redownload' # Re-download music
 alias rmmus='~/Music/music-lib/delete.py' # Delete music
 alias edtprf='$EDITOR ~/.profile' # Edit profile
+alias edtsl='$EDITOR /etc/apt/sources.list' # Edit apt sources.list file
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
