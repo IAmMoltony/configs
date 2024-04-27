@@ -13,4 +13,4 @@ hslnm=HourlySyncLogs/hsl_$(date "+%F_%T")
 ./sync-commit.sh "Automatic hourly sync: $(date "+%F %T")" > $hslnm 2>&1
 
 notify-send "Sync done, log:"
-notify-send $(cat $hslnm)
+notify-send "$(cat $hslnm)"
