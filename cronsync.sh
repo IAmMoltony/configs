@@ -9,6 +9,8 @@ if [[ -f ./HSL_IS_DISABLED ]]; then
 fi
 
 mkdir -p HourlySyncLogs
-./sync-commit.sh "Automatic hourly sync: $(date "+%F %T")" > HourlySyncLogs/hsl_$(date "+%F_%T") 2>&1
+hslnm=HourlySyncLogs/hsl_$(date "+%F_%T")
+./sync-commit.sh "Automatic hourly sync: $(date "+%F %T")" > $hslnm 2>&1
 
-notify-send "Sync done."
+notify-send "Sync done, log:"
+notify-send $(cat $hslnm)
