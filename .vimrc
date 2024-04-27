@@ -37,6 +37,7 @@ command! Edtvrc tabnew ~/.vimrc
 command! Relvrc source ~/.vimrc
 command! Dnrun !dotnet run -v n
 command! Dnbuild !dotnet build -v n
+command! Care !love .
 
 " Fix background
 set t_ut=
@@ -53,11 +54,9 @@ set hls
 set ruler
 set cursorline
 set visualbell
-set title
-set confirm
+set title titlestring=Editing\ %F\ %m%r
 set tbs
 set mousef
 set scf
 set mh
 set more
-set udf

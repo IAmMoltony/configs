@@ -219,6 +219,19 @@ alias cdwp='builtin cd ~/Pictures/wallpaper' # Go to wallpapers folder (Using bu
 alias updplaylist='audacious & audtool --playlist-clear && audtool --playlist-addurl /home/moltony/Music' # Update playlist in Audacious
 alias edtmssc='$EDITOR ~/.mssc' # Edit MSSC
 alias grgpll='gr. && gpll' # Remove all local changes and pull
+alias edtdr='$EDITOR ~/Documents/DiaReplacement.txt' # Edit DiaReplacement, the file where I store my diary entries when I lose my diary
+alias edtsmb='sudo $EDITOR /etc/samba/smb.conf' # Edit Samba configuartion file
+alias gcaaem='git commit -a --allow-empty-message' # Commit with empty message
+alias cdcfgs='cdcfg' # Alt spelling of cdcfg
+alias restoreresolution='xrandr -s 1366x768' # Restore screen resolution
+alias glf='git ls-files' # List git files
+alias exir='exit' # misspell and not regret cuz you wanted to exit in a rush
+alias pia='piapia' # Piapia but lazy
+alias edtcp='edctpath' # Edit custom path
+alias care='love .' # Start love2d
+alias dlmus='~/Music/music-lib/download' # Download music
+alias redlmus='~/Music/music-lib/redownload' # Re-download music
+alias rmmus='~/Music/music-lib/delete.py' # Delete music
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
