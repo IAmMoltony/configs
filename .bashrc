@@ -10,6 +10,10 @@ esac
 
 BashrcStartTime=$(date +%s.%N)
 
+clear
+
+echo "Initializing shell"
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -104,6 +108,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
+echo "Adding aliases"
+
 if [ -f ~/.bash-configs/.bash_aliases ]; then
     . ~/.bash-configs/.bash_aliases
 fi
@@ -112,9 +118,13 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+echo "Adding functions"
+
 if [ -f ~/.bash-configs/.bash_functions ]; then
     . ~/.bash-configs/.bash_functions
 fi
+
+echo "Enabling programmable completion"
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -129,25 +139,36 @@ fi
 
 # everything below is non-default customizations
 
-export EDITOR=/bin/vim
-export PATH="$PATH:$HOME/.local/bin:$HOME/i686-elf-tools/bin:$HOME/.cargo/bin"
+echo "Setting editor and path"
 
-[ -f imrunningonwsl ] && export DISPLAY=$(grep nameserver /etc/resolv.conf | awk '{print $2}'):0.0
+export EDITOR=/bin/vim
+export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin:~/configs/bin"
+
+[ -f imrunningonwsl ] && {
+    echo "Setting WSL display"
+    export DISPLAY=$(grep nameserver /etc/resolv.conf | awk '{print $2}'):0.0
+}
+
+echo "Customizing prompt"
 
 # prompt customizatoin
 PS1="\[\e[0;35m\]\u \[\e[1;32m\]\w \[\e[0m\]₸ "
 PS2="... "
 
 if [ -f ~/imrunningonwsl ]; then
+    echo "Adding WSL aliases"
     alias mount-ubuntu='wsl.exe -d Ubuntu -u root mount --bind / /mnt/wsl/ubuntu'
 fi
 
 if [ -f ~/.custompath ]; then
+    echo "Setting custom path"
     . ~/.custompath
     export PATH="$PATH:$CUSTOMPATH"
 fi
 
 export HTDOCS=/opt/lampp/htdocs
+
+echo "Setting devkitPro environment"
 
 export DEVKITPRO=/opt/devkitpro
 export DEVKITARM=${DEVKITPRO}/devkitARM
@@ -155,14 +176,22 @@ export DEVKITPPC=${DEVKITPRO}/devkitPPC
 
 # set intel compiler
 if [ -f "$HOME/intel/oneapi/setvars.sh" ]; then
+    echo "Initializing Intel compiler"
     source $HOME/intel/oneapi/setvars.sh
 fi
 
 # ssh but cooler
-[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
+[ "$TERM" = "xterm-kitty" ] && {
+    echo "Setting custom ssh alias"
+    alias ssh="kitty +kitten ssh"
+}
+
+echo "Configuring pfetch"
 
 # do some pfetch configurationing
 export PF_INFO="ascii title os host kernel uptime pkgs memory editor wm de shell palette"
+
+echo "Initializing pnpm"
 
 export PNPM_HOME="/home/moltony/.local/share/pnpm"
 case ":$PATH:" in
@@ -171,25 +200,32 @@ case ":$PATH:" in
 esac
 
 # Car go road
-[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+# TODO is this necessary? .profile already sets this afaik
+[ -f "$HOME/.cargo/env" ] && {
+    echo "Initializing cargo environment"
+    . "$HOME/.cargo/env"
+}
+
+echo "Setting MonoGame effect compiler wine path"
 
 # Mono game shader thing
 export MGFXC_WINE_PATH="$HOME/.local/share/wineprefixes/monogame"
 
+echo "Enabling cdspell"
+
 # CD spell
 shopt -s cdspell
 
+echo "Enabling WakaTime"
+
 source $HOME/dev/bash-wakatime/bash-wakatime.sh
-
-export PATH="$PATH:~/configs/bin"
-
-clear
 
 # Run neofetch everytime the shell is started in the following order:
 #  1. fastfetch (because it's fast)
 #  2. pfetch (because it's sleek)
 #  3. neofetch (as fallback)
 if command -v "fastfetch" > /dev/null 2>&1; then
+    echo "Running fastfetch"
     if [ -f /usr/local/share/fastfetch/presets/paleofetch.jsonc ]; then
         # Fastfetch preset is in /usr/local/share
         # This is when it's built from source
@@ -200,15 +236,25 @@ if command -v "fastfetch" > /dev/null 2>&1; then
         fastfetch -c /usr/share/fastfetch/presets/paleofetch.jsonc
     fi
 elif command -v "pfetch" > /dev/null 2>&1; then
+    echo "Running pfetch"
     pfetch
 elif command -v "neofetch" > /dev/null 2>&1; then
+    echo "Running neofetch"
     neofetch
 fi
 
 # Run Machine-Specific Startup Commands (MSSC)
 # This became necessary when I wanted to install nvm on WSL but I don't use nvm on my laptop
 if [ -f "$HOME/.mssc" ]; then
+    echo "Running Machine-Specific Startup Commands"
     source $HOME/.mssc
 fi
 
 BashrcEndTime=$(date +%s.%N)
+
+if command -v "bc" > /dev/null 2>&1; then
+    BashrcRuntime=$(echo "scale=3; ($BashrcEndTime - $BashrcStartTime) / 1" | bc)
+    echo "Shell initialized in $BashrcRuntime seconds"
+else
+    echo "bc isn't installed, cannot calculate shell init time"
+fi
