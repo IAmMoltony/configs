@@ -14,6 +14,8 @@ clear
 
 echo "Initializing shell"
 
+stty -echo
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -258,3 +260,5 @@ if command -v "bc" > /dev/null 2>&1; then
 else
     echo "bc isn't installed, cannot calculate shell init time"
 fi
+
+stty echo
