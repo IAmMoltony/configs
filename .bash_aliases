@@ -238,6 +238,7 @@ alias qsqsqs='exit' # laZY
 alias edtfs='sudo $EDITOR /etc/fstab' # Edit fstab
 alias sma='sudo mount -a' # Short sudo mount -a
 alias edtru='sudo $EDITOR /etc/update-manager/release-upgrades' # Edit release upgrades file
+alias numalias='alias | wc -l' # Count how many aliases are installed
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
