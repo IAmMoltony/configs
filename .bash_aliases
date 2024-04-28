@@ -240,6 +240,7 @@ alias sma='sudo mount -a' # Short sudo mount -a
 alias edtru='sudo $EDITOR /etc/update-manager/release-upgrades' # Edit release upgrades file
 alias numalias='alias | wc -l' # Count how many aliases are installed
 alias catfs='cat /etc/fstab' # Cat ftstb
+alias qiut='exit' # qiut
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
