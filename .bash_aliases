@@ -235,6 +235,8 @@ alias rmmus='~/Music/music-lib/delete.py' # Delete music
 alias edtprf='$EDITOR ~/.profile' # Edit profile
 alias edtsl='$EDITOR /etc/apt/sources.list' # Edit apt sources.list file
 alias qsqsqs='exit' # laZY
+alias edtfs='sudo $EDITOR /etc/fstab' # Edit fstab
+alias sma='sudo mount -a' # Short sudo mount -a
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
