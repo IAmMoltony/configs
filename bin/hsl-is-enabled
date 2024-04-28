@@ -3,5 +3,5 @@
 if [[ -f ~/configs/HSL_IS_DISABLED ]]; then
     echo "Hourly config sync is currently disabled."
 else
-    echo "Hourli config sync is currently enabled."
+    echo "Hourly config sync is currently enabled."
 fi
