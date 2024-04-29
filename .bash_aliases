@@ -160,10 +160,7 @@ alias glgnp='git --no-pager log' # Git log with no pager
 alias glgnpr='glgnp --reverse' # Git log no pager reverse
 alias glgrnp='glgnpr' # Different spelling of the above alias
 alias glognp='glgnp' # Git log no pager
-alias glognpr='glgnpr' # Git log no pamoltony ~ ₸ amogus="AaAaA"
-moltony ~ ₸ alias $amogus="echo hi"
-moltony ~ ₸ AaAaA
-higer reverse
+alias glognpr='glgnpr' # Git log no pager reverse
 alias glogrnp='glgnpr' # Git log reverse no pager
 alias glogolnp='git --no-pager log --oneline' # Git log no pager oneline
 alias glogolrnp='glogolnp --reverse' # Git log one one line no pager reverse

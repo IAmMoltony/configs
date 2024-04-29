@@ -139,3 +139,8 @@ glgcfgs() {
     glg
     builtin cd $oldpwd
 }
+
+# New exit alias
+mkexitalias() {
+    alias $1='exit'
+}
