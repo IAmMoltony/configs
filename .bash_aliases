@@ -212,6 +212,7 @@ mkexitalias qitu
 mkexitalias utqi
 mkexitalias itqu
 mkexitalias iqtu
+mkexitalias tqiu
 
 mkcdalias cddl ~/Downloads
 mkcdalias cddoc ~/Documents
