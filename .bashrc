@@ -247,6 +247,21 @@ hsl-is-enabled
 
 echo "Hourly sync logs take up $(du -sh ~/configs/HourlySyncLogs | awk '{ print $1 }')."
 
+countfilesindir ~/configs/HourlySyncLogs
+
+if (( $? > 30 )); then
+    countfilesindir ~/configs/HourlySyncLogs
+    echo "There are currently $? hourly sync log files."
+    while true; do
+        read -p "Delete? [y or n] " yn
+        case $yn in
+            [Yy]* ) rm -rf ~/configs/HourlySyncLogs/*; echo "Deleted."; break;;
+            [Nn]* ) echo "Okay, keeping."; break;;
+            * ) echo "Please answer properly!";;
+        esac
+    done
+fi
+
 echo "$(alias | wc -l) aliases are installed."
 
 BashrcEndTime=$(date +%s.%N)

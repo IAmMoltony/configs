@@ -185,3 +185,9 @@ bcdcfg # Don't ask me why it has to be like this.
     todayscommits
     builtin cd "$oldpwd"
 }
+
+countfilesindir() {
+    nf=$(ls -Al $1 | wc -l)
+    nff=$(( $nf - 1 ))
+    return $nff
+}
