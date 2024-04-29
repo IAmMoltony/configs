@@ -184,7 +184,6 @@ mksuecalias sourceslist sl /etc/apt/sources.list
 mksuecalias samba smb /etc/samba/smb.conf
 mksuecalias releaseupgrades ru /etc/update-manager/release-upgrades
 
-mkexitalias quit
 mkexitalias paipai
 mkexitalias bye
 mkexitalias byebye
@@ -199,6 +198,8 @@ mkexitalias rn-roll
 mkexitalias exir
 mkexitalias pia
 mkexitalias qsqsqs
+
+mkexitalias quit
 mkexitalias qiut
 mkexitalias qtui
 mkexitalias quti
@@ -209,6 +210,7 @@ mkexitalias uqti
 mkexitalias qitu
 mkexitalias utqi
 mkexitalias itqu
+mkexitalias iqtu
 
 mkcdalias cddl ~/Downloads
 mkcdalias cddoc ~/Documents
