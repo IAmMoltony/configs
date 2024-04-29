@@ -252,7 +252,7 @@ echo "$(alias | wc -l) aliases are installed."
 BashrcEndTime=$(date +%s.%N)
 
 if command -v "bc" > /dev/null 2>&1; then
-    BashrcRuntime=$(echo "scale=3; ($BashrcEndTime - $BashrcStartTime) / 1" | bc)
+    BashrcRuntime=$(echo "scale=3; ($BashrcEndTime - $BashrcStartTime) / 1" | bc -l | awk '{printf "%.3f\n", $0}')
     echo "Shell initialized in $BashrcRuntime seconds"
 else
     echo "bc isn't installed, cannot calculate shell init time"
