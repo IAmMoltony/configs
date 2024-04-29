@@ -155,7 +155,7 @@ alias gaming-th='gaming-b && cd ./TouhouShared/drive_c' # touhou
 alias gdffnp='git --no-pager diff' # git diff ith no pager
 alias gundolc='git reset --soft HEAD^' # This is when i screw up
 alias gundolchard='git reset --hard HEAD^' # This is when i really screw up
-alias thprefix='export WINEPREFIX=/home/moltony/Games/TouhouShared'
+alias thprefix='export WINEPREFIX=$HOME/Games/TouhouShared'
 alias glgnp='git --no-pager log' # Git log with no pager
 alias glgnpr='glgnp --reverse' # Git log no pager reverse
 alias glgrnp='glgnpr' # Different spelling of the above alias
