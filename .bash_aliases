@@ -241,6 +241,7 @@ alias edtru='sudo $EDITOR /etc/update-manager/release-upgrades' # Edit release u
 alias numalias='alias | wc -l' # Count how many aliases are installed
 alias catfs='cat /etc/fstab' # Cat ftstb
 alias qiut='exit' # qiut
+alias edtkc='$EDITOR $HOME/.config/kitty/kitty.conf' # Edit kitty config
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
