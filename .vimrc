@@ -50,6 +50,7 @@ set lazyredraw
 set hls
 set ruler
 set cursorline
+set cursorcolumn
 set visualbell
 set title titlestring=Editing\ %F\ %m%r
 set tbs
