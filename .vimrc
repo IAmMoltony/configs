@@ -7,11 +7,9 @@ set relativenumber
 call plug#begin()
 
 Plug 'tpope/vim-fugitive'
-Plug 'iamcco/markdown-preview.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tomasiser/vim-code-dark'
 Plug 'wakatime/vim-wakatime'
-Plug 'ap/vim-css-color'
 
 call plug#end()
 

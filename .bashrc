@@ -252,6 +252,8 @@ if [ -f "$HOME/.mssc" ]; then
     source $HOME/.mssc
 fi
 
+hsl-is-enabled
+
 BashrcEndTime=$(date +%s.%N)
 
 if command -v "bc" > /dev/null 2>&1; then
