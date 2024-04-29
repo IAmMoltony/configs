@@ -149,3 +149,18 @@ mkexitalias() {
 mkcdalias() {
     alias $1="cd $2"
 }
+
+# New edt + cat alias
+# Used like:
+#  mkecalias bashrc brc ~/.bashrc
+#  mkecalias long short file
+mkecalias() {
+    long=$1
+    short=$2
+    file=$3
+    alias edit-$long="$EDITOR $file"
+    alias cat-$long="cat $file | less"
+    alias view-$long="cat $file | less"
+    alias edt$short="edit-$long"
+    alias cat$short="cat-$long"
+}
