@@ -147,5 +147,5 @@ mkexitalias() {
 
 # New cd alias
 mkcdalias() {
-    alias $1='cd $2'
+    alias $1="cd $2"
 }
