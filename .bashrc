@@ -201,13 +201,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
-# Car go road
-# TODO is this necessary? .profile already sets this afaik
-[ -f "$HOME/.cargo/env" ] && {
-    echo "Initializing cargo environment"
-    . "$HOME/.cargo/env"
-}
-
 echo "Setting MonoGame effect compiler wine path"
 
 # Mono game shader thing
