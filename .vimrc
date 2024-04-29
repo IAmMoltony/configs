@@ -32,6 +32,9 @@ command! NumsOn set number
 " Bring some bash aliases to vim!
 command! Edtvrc tabnew ~/.vimrc
 command! Relvrc source ~/.vimrc
+command! Edtbrc tabnew ~/.bashrc
+command! Edtba tabnew ~/.bash-configs/.bash_aliases
+command! Edtbf tabnew ~/.bash-configs/.bash_functions
 command! Dnrun !dotnet run -v n
 command! Dnbuild !dotnet build -v n
 command! Care !love .
