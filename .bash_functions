@@ -144,3 +144,8 @@ glgcfgs() {
 mkexitalias() {
     alias $1='exit'
 }
+
+# New cd alias
+mkcdalias() {
+    alias $1='cd $2'
+}
