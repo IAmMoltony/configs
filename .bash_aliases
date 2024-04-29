@@ -77,10 +77,6 @@ alias sl='exit' # we do a bit of trolling
 alias math='bc -l' # Bring up a calculator
 alias weather='curl wttr.in/Shymkent' # View weather (for Shymkent)
 alias l.='ls -d .* --color=auto' # List only hidden files
-alias ..='cd ..' # Go to parent dir
-alias ....='cd ../..' # Go to parent's parent dir
-alias ......='cd ../../..' # Go to parent's parent's parent dir
-alias ........='cd ../../../..' # Go to parent's parent's parent's parent dir
 alias ghs='grephist' # grephist short edition
 alias nano='vim' # YEAHHHH!!!
 alias emacs='vim' # EVEN MORE YEAHAAHAHAHAAHAHAHAHAHAHAHAHAHAHAHAHAHAHAUHSWFJ2WJFWERDJRTMOIBRMLKRTMKPRPMKELMETNJDNJDRNJSNRGNOKFNMR M,S MO2N!!!!!1mu9m1MU(m91
@@ -244,6 +240,11 @@ mkcdalias cdwp ~/Pictures/wallpaper
 mkcdalias cdcam ~/Pictures/camera
 mkcdalias cdcfg ~/configs
 mkcdalias cdcfgs ~/configs
+mkcdalias cd.. ..
+mkcdalias .. ..
+mkcdalias .... ../..
+mkcdalias ...... ../../../
+mkcdalias ........ ../../../..
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
