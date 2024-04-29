@@ -245,6 +245,8 @@ fi
 
 hsl-is-enabled
 
+echo "Hourly sync logs take up $(du -sh ~/configs/HourlySyncLogs | awk '{ print $1 }')."
+
 echo "$(alias | wc -l) aliases are installed."
 
 BashrcEndTime=$(date +%s.%N)
