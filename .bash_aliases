@@ -243,6 +243,7 @@ alias catfs='cat /etc/fstab' # Cat ftstb
 alias qiut='exit' # qiut
 alias edtkc='$EDITOR $HOME/.config/kitty/kitty.conf' # Edit kitty config
 alias kittyfonts='kitty +list-fonts' # list fonts supported by kityy
+alias cdweb='cdws' # I messed this one up so many times I had to make an alias
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
