@@ -8,19 +8,7 @@ alias rmdir='rmdir -v' # Remove a directory (verbose)
 alias md='mkdir' # DOS-inspired shortcut for mkdir
 alias rd='rmdir' # DOS-inspired shortcut for rmdir
 alias cls='echo "Tip: press C-l to clear."' # C-l
-alias edit-bashrc='$EDITOR ~/.bashrc' # Edit BashRC
 alias reload-bashrc='source ~/.bashrc' # Reload BashRC
-alias view-bashrc='cat ~/.bashrc | less' # View the BashRC with pager
-alias cat-bashrc='view-bashrc' # Alt. spelling of view-bashrc
-alias edit-bashaliases='$EDITOR ~/.bash-configs/.bash_aliases' # Edit Bash aliases
-alias view-bashaliases='cat ~/.bash-configs/.bash_aliases | less' # View bash aliases with pager
-alias cat-bashaliases='view-bashaliases' # Alt. spelling of view-bashrc
-alias edit-custompath='$EDITOR ~/.custompath' # Edit custom PATH
-alias view-custompath='cat ~/.custompath | less' # View custom PATH with pager
-alias cat-custompath='view-custompath' # Alt. spelling of view-custompath
-alias edit-bashfuncs='$EDITOR ~/.bash-configs/.bash_functions' # Edit bash functions
-alias view-bashfuncs='cat ~/.bash-configs/.bash_functions | less' # View bash fuctions with pager
-alias cat-bashfuncs='view-bashfuncs' # Alt. spelling of view-bashfuncs
 alias pullsh='git pull && git push' # Pull'n'push
 alias lt='ls -lh --size -1 -S --classify' # ll + sort by size
 alias mnt="mount | awk -F ' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort" # Show mounted disks (no stuff like tmpfs or whatever)
@@ -36,15 +24,7 @@ alias glga='gloga' # gloga w/o o
 alias todayscommits='glog --oneline --since=midnight' # Show all commits starting from midnight
 alias numcommits='glog --oneline | wc -l' # Count total number of commits in the repo
 alias numcommtoday='todayscommits | wc -l' # Count total number of commits that were created today in a repo
-alias relbrc='reload-bashrc' # Short reload-edit-view aliases...
-alias edtbrc='edit-bashrc'
-alias catbrc='view-bashrc'
-alias edtba='edit-bashaliases'
-alias catba='cat-bashaliases'
-alias edtbf='edit-bashfuncs'
-alias catbf='cat-bashfuncs'
-alias edtcpath='edit-custompath'
-alias catcpath='cat-custompath' # ...end of short reload-edit-view aliases
+alias relbrc='reload-bashrc' # Short reload-bashrc alias
 alias spsyu='sudo pacman -Syu --noconfirm --needed' # Update the system (arch linux)
 alias spsnc='sudo pacman -S --noconfirm --needed' # Install a package (arch linux)
 alias sprnc='sudo pacman -R --noconfirm' # Remove a package (arch linux)
@@ -75,13 +55,7 @@ alias reboot='sudo reboot' # Reboot the computer
 alias freespc='df -h --total -x tmpfs -x efivarfs' # Check free space on the disk
 alias spsc='sudo pacman -Sc --noconfirm' # I don't use arch anymore so can't say for sure
 alias doxy='doxygen' # I'm too lazy to type 3 more characters
-alias quit='exit' # Quit (exit)
 alias h='history' # h(istory)
-alias edit-vimrc='$EDITOR ~/.vimrc' # vimrc edit
-alias view-vimrc='catless ~/.vimrc' # vimrc view
-alias cat-vimrc='view-vimrc' # alt spelling vimrc view
-alias edtvrc='edit-vimrc' # short vimrc edit
-alias catvrc='cat-vimrc' # short vimrc view
 alias shutdown='sudo shutdown now' # Shutdown NOW!
 alias syncrbrc='synccfgs && relbrc' # Sync configs, reload bashrc
 alias gcobj='git count-objects' # Count how many objects and how much the repo takes up (git)
@@ -92,7 +66,6 @@ alias ysyu='yay -Syu --noconfirm' # Update AUR packages with yay
 alias archlnx-update='spsyu && ysyu' # Update normal pacman packages + aur
 alias yrnc='yay -R --noconfirm' # Say pai pai to AUR package
 alias v='vim' # vim (I don't use this one xdddd)
-alias cddl='cd ~/Downloads' # cd to downloads (I go there real often)
 alias plsh='pullsh' # Pullsh but shorter
 alias spsy='echo "no that would be stupid"' # This originally was an alias for `sudo pacman -Sy` but i heard that's bad
 alias dnbld='dotnet build -v n' # Build a .NET solution with normal verbosity
@@ -102,7 +75,6 @@ alias srbrc='syncrbrc' # Wait this exists??? omg i forgor tbh
 alias scfgs='synccfgs' # Sync configs but the short version for literally no reason
 alias sl='exit' # we do a bit of trolling
 alias math='bc -l' # Bring up a calculator
-alias catbanl='catba | cat' # View aliases without pager
 alias weather='curl wttr.in/Shymkent' # View weather (for Shymkent)
 alias l.='ls -d .* --color=auto' # List only hidden files
 alias ..='cd ..' # Go to parent dir
@@ -120,19 +92,10 @@ alias ping='ping -c 5' # make ping stop after like 5 times that it pinged
 alias ln='ln -iv' # ln but yo need to confirm and also verboosey
 alias i-am-root='sudo -i' # i am root
 alias wget='wget -c' # Wget continue if stopped for whatever reason
-alias paipai='exit' # Pai pai
-alias bye='exit' # Bye
-alias byebye='exit' # Bye bey
-alias baibai='exit' # bai bai
-alias :q='exit' # VIM USER DETECTED!!!!!!!!!!!!!!!!!! SEEK SHELTER IMMEDIATELY!!!!!!!!!!!!!!!!!!
 alias gaming='cd ~/Games' # Go to folder with GAMING
 alias gaming-b='builtin cd ~/Games' # gaming (builtin cd edition)
-alias edtcrc='$EDITOR ~/.conkyrc' # Edit Conky config file (Idk what rc stands for)
 alias syncpaipai='synccfgs && paipai' # Sync configs and say pai pai
 alias spaipai='syncpaipai' # Today's installment of Useless Aliases... Short version of `syncpaipai' !!!
-alias gtfo='exit' # Get the f out
-alias cddoc='cd ~/Documents' # Go to documents
-alias cdmus='cd ~/Music' # go to music
 alias scfgsm='synccfgsm' # Short versoin alias thing ojgjo2joejfjojii243jrjoo2 2323oin23roin23r
 alias syncmrbrc='synccfgsm && relbrc' # Sync configs with message and rbrc
 alias syncmpaipai='synccfgsm && paipai' # Sync configs with message and paipai
@@ -142,13 +105,11 @@ alias saud='sudo apt update' # Upd ps
 alias saug='sudo apt upgrade' # Upg ps
 alias lsdl='ls ~/Downloads' # List ownload
 alias pshcfgspaipai='pshcfgs && paipai' # Push cfgs and paipia
-alias cdpic='cd ~/Pictures' # Go to pictures
 alias gbch='git branch' # Git branch
 alias gslog='git shortlog' # Git short log
 alias :e='vim' # Another vim user HOW MANY VIM USERS DO WE HAVE
 alias pshpaipai='git push && paipai' # Git push and papiap
 alias wine64='WINEPREFIX=~/.wine64 wine64' # Convenience: start Wine with the 64-bit prefix
-alias piapia='paipai' # Pai pai when in rush
 alias dlmuspaipai='dlmus && paipai' # Download music aand then pai pai
 alias gshwnp='git --no-pager show' # Git show with no pager
 alias gaming-th='gaming-b && cd ./TouhouShared/drive_c' # touhou
@@ -170,7 +131,6 @@ alias glgolrnp='glogolrnp' # Git log one line reverse no pager
 alias glogolnpr='glogolrnp' # Git log one line no pager reverse
 alias dnbuildrel='dotnet build -v n -c Release' # Build with release config
 alias dnrunrel='dotnet run -v n -c Release' # Run with release config
-alias cdhsl='cd ~/configs/HourlySyncLogs' # cd into hourly sync logs
 alias catlessbf='catbf | less' # catbf with pager
 alias gint='git init' # initialzie git repository
 alias vimpi='vim +PlugInstall' # Install vim plugins
@@ -178,87 +138,105 @@ alias vimpu='vim +PlugUpdate' # Update vim plugins
 alias rn-roll='exit' # Misspell and regret
 alias :G='git' # Git
 alias vimpc='vim +PlugClean' # Clean vim plugins
-alias pai='gtfo' # istg
 alias dirfsp='ncdu' # "dirfsp" means "directory free space". this was originally a call to du -h <some options> | sort -h
-alias cdbm='cd ~/Bookmarks' # cd into bookmarks
-alias cdanime='cd ~/Bookmarks/Anime' # cd into anime
-alias cdcart='cd ~/Bookmarks/Cartoons' # cd into cartoons
-alias cddlimg='cd ~/Bookmarks/Downloaded\ images' # cd into downloaded images
-alias cddlgames='cd ~/Bookmarks/Game\ downloads' # cd into game downloads
-alias cdemugames='cd ~/Bookmarks/Games\ \(emulator\)' # cd into emulator games
-alias cdiso='cd ~/Bookmarks/ISOs' # cd into isos
-alias cddev='cd ~/Bookmarks/Programming' # cd into dev stuff
-alias cdshot='cd ~/Bookmarks/Screenshots' # cd into screenshots
-alias cdws='cd ~/Bookmarks/Website' # cd into my website (https://iammoltony.github.io)
-alias cdwin='cd ~/Bookmarks/Windows\ partition' # cd into my windows partition
-alias cdwine='cd ~/Bookmarks/Wine' # cd into default wine prefix
-alias cdwinep='cd ~/Bookmarks/Wine\ prefixes' # cd into wine prefixes folder (~/.local/share/wineprefixes)
-alias cdbook='cd ~/Bookmarks/Books' # cd into booksl
 alias grn='grep -Irn' # Shortcut for grep -rn
 alias grn2do='grn . -e TODO' # Find TODOs *ds-craft flashbacks*
 alias rmhsl='rm ~/configs/HourlySyncLogs -rf' # Remove hourly config sync logs
-alias edtcs='$EDITOR ~/configs/cronsync.sh' # Edit cron sync script
-alias eedtba='exit' # Typo and regret
-alias cdcfg='cd ~/configs' # cd into configs
 alias rmun='find . -name "*.un~" -exec rm -f {} +' # Remove annoying Vim backup files
 alias gpshpaipai='gpsh && paipai' # Git push pai pai
-alias catsrcl='cat /etc/apt/sources.list | less' # View the sources.list file
-alias edtsrcl='sudo vim /etc/apt/sources.list' # Edit sources.list
 alias gagcm='git add . && git commit -m' # Git add and commit
 alias rf='rm -rf' # h
-alias cddlg='cddlgames' # just
 alias gshh='git show HEAD' # Show head
 alias gshhnp='git --no-pager show HEAD' # Show head without pager
 alias dnclean='dotnet clean -v n' # dotnet clean
 alias wine64tricks='WINEPREFIX=~/.wine64 winetricks' # Winetricks in 64-bit prefix
-alias rm-rol='exit' # I love to mess with myself
-alias cdwine64='cd ~/Bookmarks/Wine (64-bit)' # cd into default 64-bit wine prefix
 alias thu='thunar' # Shorthand for thunar
 alias thubkmk='thu ~/Bookmarks &' # Start Thunar in the bookmarks folder
-alias cdwp='builtin cd ~/Pictures/wallpaper' # Go to wallpapers folder (Using builtin cd here because i have tons of wallpapers on my laptop)
-alias updplaylist='audacious & audtool --playlist-clear && audtool --playlist-addurl $HOME/Music' # Update playlist in Audacious
-alias edtmssc='$EDITOR ~/.mssc' # Edit MSSC
 alias grgpll='gr. && gpll' # Remove all local changes and pull
-alias edtdr='$EDITOR ~/Documents/DiaReplacement.txt' # Edit DiaReplacement, the file where I store my diary entries when I lose my diary
-alias edtsmb='sudo $EDITOR /etc/samba/smb.conf' # Edit Samba configuartion file
 alias gcaaem='git commit -a --allow-empty-message' # Commit with empty message
-alias cdcfgs='cdcfg' # Alt spelling of cdcfg
 alias restoreresolution='xrandr -s 1366x768' # Restore screen resolution
 alias glf='git ls-files' # List git files
-alias exir='exit' # misspell and not regret cuz you wanted to exit in a rush
-alias pia='piapia' # Piapia but lazy
-alias edtcp='edtcpath' # Edit custom path
 alias care='love .' # Start love2d
 alias dlmus='~/Music/music-lib/download' # Download music
 alias redlmus='~/Music/music-lib/redownload' # Re-download music
 alias rmmus='~/Music/music-lib/delete.py' # Delete music
-alias edtprf='$EDITOR ~/.profile' # Edit profile
-alias edtsl='$EDITOR /etc/apt/sources.list' # Edit apt sources.list file
-alias qsqsqs='exit' # laZY
-alias edtfs='sudo $EDITOR /etc/fstab' # Edit fstab
 alias sma='sudo mount -a' # Short sudo mount -a
-alias edtru='sudo $EDITOR /etc/update-manager/release-upgrades' # Edit release upgrades file
 alias numalias='alias | wc -l' # Count how many aliases are installed
-alias catfs='cat /etc/fstab' # Cat ftstb
-alias qiut='exit' # qiut
-alias edtkc='$EDITOR $HOME/.config/kitty/kitty.conf' # Edit kitty config
 alias kittyfonts='kitty +list-fonts' # list fonts supported by kityy
-alias cdweb='cdws' # I messed this one up so many times I had to make an alias
-alias qtui='exit' # qtui
-alias quti='exit' # quti
-alias qtiu='exit' # qtiu
-alias tqui='exit' # tqui
-alias uiqt='exit' # uiqt
-alias uqti='exit' # uqti
-alias qitu='exit' # qitu
-alias utqi='exit' # utqi
-alias itqu='exit' # itqu
 
-# TODO make a system that would automatically create:
-#  - cd aliases
-#  - edit aliases
-#  - cat aliases
-#  - quit aliases
+# AUTOMATIC ALIASES!!!
+
+mkecalias bashrc brc ~/.bashrc
+mkecalias bashaliases ba ~/.bash-configs/.bash_aliases
+mkecalias custompath cp ~/.custompath
+mkecalias custompath cpath ~/.custompath
+mkecalias bashfuncs bf ~/.bash-configs/.bash_functions
+mkecalias vimrc vrc ~/.vimrc
+mkecalias conkyrc crc ~/.conkyrc
+mkecalias cronsync cs ~/configs/cronsync.sh
+mkecalias machinespecificstartupcommands mssc ~/.mssc
+mkecalias diareplacement dr ~/Documents/DiaReplacement.txt
+mkecalias profile prf ~/.profile
+mkecalias kittyconf kc ~/.config/kitty/kitty.conf
+
+mksuecalias fstab fs /etc/fstab
+mksuecalias sourceslist srcl /etc/apt/sources.list
+mksuecalias sourceslist sl /etc/apt/sources.list
+mksuecalias samba smb /etc/samba/smb.conf
+mksuecalias releaseupgrades ru /etc/update-manager/release-upgrades
+
+mkexitalias quit
+mkexitalias paipai
+mkexitalias bye
+mkexitalias byebye
+mkexitalias baibai
+mkexitalias :q
+mkexitalias gtfo
+mkexitalias piapia
+mkexitalias pai
+mkexitalias eedtba
+mkexitalias rm-rol
+mkexitalias exir
+mkexitalias pia
+mkexitalias qsqsqs
+mkexitalias qiut
+mkexitalias qtui
+mkexitalias quti
+mkexitalias qtiu
+mkexitalias tqui
+mkexitalias uiqt
+mkexitalias uqti
+mkexitalias qitu
+mkexitalias utqi
+mkexitalias itqu
+
+mkcdalias cddl ~/Downloads
+mkcdalias cddoc ~/Documents
+mkcdalias cdmus ~/Music
+mkcdalias cdpic ~/Pictures
+mkcdalias cdhdl ~/configs/HourlySyncLogs
+mkcdalias cdbm ~/Bookmarks
+mkcdalias cdand '~/Bookmarks/Android\ partition'
+mkcdalias cdanime ~/Bookmarks/Anime
+mkcdalias cdcart ~/Bookmarks/Cartoons
+mkcdalias cddlimg '~/Bookmarks/Downloaded\ images'
+mkcdalias cddlgames '~/Bookmarks/Game\ downloads'
+mkcdalias cddlg '~/Bookmarks/Game\ downloads'
+mkcdalias cdemugames '~/Bookmarks/Games\ \(emulator\)'
+mkcdalias cdiso ~/Bookmarks/ISOs
+mkcdalias cddev ~/Bookmarks/Programming
+mkcdalias cdshot ~/Bookmarks/Screenshots
+mkcdalias cdws ~/Bookmarks/Website
+mkcdalias cdweb ~/Bookmarks/Website
+mkcdalias cdwin '~/Bookmarks/Windows\ partition'
+mkcdalias cdwine ~/Bookmarks/Wine
+mkcdalias cdwine64 '~/Bookmarks/Wine\ \(64-bit\)'
+mkcdalias cdwinep '~/Bookmarks/Wine\ prefixes'
+mkcdalias cdbook ~/Bookmarks/Books
+mkcdalias cdwp ~/Pictures/wallpaper
+mkcdalias cdcam ~/Pictures/camera
+mkcdalias cdcfg ~/configs
+mkcdalias cdcfgs ~/configs
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {

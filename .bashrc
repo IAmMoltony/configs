@@ -105,10 +105,21 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+echo "Setting editor and path"
+
+export EDITOR=/bin/vim
+export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin:~/configs/bin"
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+echo "Adding functions"
+
+if [ -f ~/.bash-configs/.bash_functions ]; then
+    . ~/.bash-configs/.bash_functions
+fi
 
 echo "Adding aliases"
 
@@ -118,12 +129,6 @@ fi
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
-fi
-
-echo "Adding functions"
-
-if [ -f ~/.bash-configs/.bash_functions ]; then
-    . ~/.bash-configs/.bash_functions
 fi
 
 echo "Enabling programmable completion"
@@ -138,13 +143,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-# everything below is non-default customizations
-
-echo "Setting editor and path"
-
-export EDITOR=/bin/vim
-export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin:~/configs/bin"
 
 [ -f imrunningonwsl ] && {
     echo "Setting WSL display"

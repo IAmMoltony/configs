@@ -164,3 +164,15 @@ mkecalias() {
     alias edt$short="edit-$long"
     alias cat$short="cat-$long"
 }
+
+# New edt + cat alias (sudo version)
+mksuecalias() {
+    long=$1
+    short=$2
+    file=$3
+    alias edit-$long="sudo $EDITOR $file"
+    alias cat-$long="cat $file | less"
+    alias view-$long="cat $file | less"
+    alias edt$short="edit-$long"
+    alias cat$short="cat-$long"
+}
