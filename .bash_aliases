@@ -160,7 +160,10 @@ alias glgnp='git --no-pager log' # Git log with no pager
 alias glgnpr='glgnp --reverse' # Git log no pager reverse
 alias glgrnp='glgnpr' # Different spelling of the above alias
 alias glognp='glgnp' # Git log no pager
-alias glognpr='glgnpr' # Git log no pager reverse
+alias glognpr='glgnpr' # Git log no pamoltony ~ ₸ amogus="AaAaA"
+moltony ~ ₸ alias $amogus="echo hi"
+moltony ~ ₸ AaAaA
+higer reverse
 alias glogrnp='glgnpr' # Git log reverse no pager
 alias glogolnp='git --no-pager log --oneline' # Git log no pager oneline
 alias glogolrnp='glogolnp --reverse' # Git log one one line no pager reverse
@@ -244,6 +247,21 @@ alias qiut='exit' # qiut
 alias edtkc='$EDITOR $HOME/.config/kitty/kitty.conf' # Edit kitty config
 alias kittyfonts='kitty +list-fonts' # list fonts supported by kityy
 alias cdweb='cdws' # I messed this one up so many times I had to make an alias
+alias qtui='exit' # qtui
+alias quti='exit' # quti
+alias qtiu='exit' # qtiu
+alias tqui='exit' # tqui
+alias uiqt='exit' # uiqt
+alias uqti='exit' # uqti
+alias qitu='exit' # qitu
+alias utqi='exit' # utqi
+alias itqu='exit' # itqu
+
+# TODO make a system that would automatically create:
+#  - cd aliases
+#  - edit aliases
+#  - cat aliases
+#  - quit aliases
 
 # Trolling!! HAHA LOL LMAO KEK XD UwU
 rm-roll() {
