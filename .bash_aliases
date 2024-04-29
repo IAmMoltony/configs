@@ -135,7 +135,6 @@ alias catlessbf='catbf | less' # catbf with pager
 alias gint='git init' # initialzie git repository
 alias vimpi='vim +PlugInstall' # Install vim plugins
 alias vimpu='vim +PlugUpdate' # Update vim plugins
-alias rn-roll='exit' # Misspell and regret
 alias :G='git' # Git
 alias vimpc='vim +PlugClean' # Clean vim plugins
 alias dirfsp='ncdu' # "dirfsp" means "directory free space". this was originally a call to du -h <some options> | sort -h
@@ -196,6 +195,7 @@ mkexitalias piapia
 mkexitalias pai
 mkexitalias eedtba
 mkexitalias rm-rol
+mkexitalias rn-roll
 mkexitalias exir
 mkexitalias pia
 mkexitalias qsqsqs
