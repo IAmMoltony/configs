@@ -148,6 +148,7 @@ mkexitalias() {
 # New cd alias
 mkcdalias() {
     alias $1="cd $2"
+    alias b$1="cd $2"
 }
 
 # New edt + cat alias
@@ -175,4 +176,12 @@ mksuecalias() {
     alias view-$long="cat $file | less"
     alias edt$short="edit-$long"
     alias cat$short="cat-$long"
+}
+
+# Today's commits in configs
+cfg2dc() {
+    oldpwd="$(pwd)"
+bcdcfg # Don't ask me why it has to be like this.
+    todayscommits
+    builtin cd "$oldpwd"
 }
