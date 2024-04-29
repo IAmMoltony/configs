@@ -162,6 +162,9 @@ alias rmmus='~/Music/music-lib/delete.py' # Delete music
 alias sma='sudo mount -a' # Short sudo mount -a
 alias numalias='alias | wc -l' # Count how many aliases are installed
 alias kittyfonts='kitty +list-fonts' # list fonts supported by kityy
+alias hsle='hsl-enable' # enable hsl
+alias hsld='hsl-disable' # disable hsl
+alias hdlie='hdl-is-enabled' # check if hsl is enabled
 
 # AUTOMATIC ALIASES!!!
 
@@ -198,6 +201,8 @@ mkexitalias rn-roll
 mkexitalias exir
 mkexitalias pia
 mkexitalias qsqsqs
+
+# section of random quit misspellings
 
 mkexitalias quit
 mkexitalias qiut
