@@ -10,6 +10,16 @@ esac
 
 BashrcStartTime=$(date +%s.%N)
 
+BashrcNumErrors=0
+
+# BashRC error handler
+brcerrorhdlr() {
+    echo " ! Shell init error on line: $1"
+    ((BashrcNumErrors++))
+}
+
+trap "brcerrorhdlr $LINENO" ERR
+
 clear
 
 echo "Initializing shell"
@@ -249,9 +259,10 @@ BashrcEndTime=$(date +%s.%N)
 
 if command -v "bc" > /dev/null 2>&1; then
     BashrcRuntime=$(echo "scale=3; ($BashrcEndTime - $BashrcStartTime) / 1" | bc -l | awk '{printf "%.3f\n", $0}')
-    echo "Shell initialized in $BashrcRuntime seconds"
+    echo "Shell initialized in $BashrcRuntime seconds with $BashrcNumErrors errors."
 else
-    echo "bc isn't installed, cannot calculate shell init time"
+    echo "Shell initialized with $BashrcNumErrors errors."
 fi
 
 stty echo
+trap - ERR

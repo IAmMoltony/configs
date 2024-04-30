@@ -224,8 +224,3 @@ bdaycheck() {
     fi
 }
 
-# BashRC error handler
-brcerrorhdlr() {
-    echo "Shell initialization error!"
-    echo "Please see the log above and fix the error."
-}
