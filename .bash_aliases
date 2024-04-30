@@ -241,6 +241,8 @@ mkcdalias cdwp ~/Pictures/wallpaper
 mkcdalias cdcam ~/Pictures/camera
 mkcdalias cdcfg ~/configs
 mkcdalias cdcfgs ~/configs
+mkcdalias cdcfgbin ~/configs/bin
+mkcdalias cdcfgsbin ~/configs/bin
 mkcdalias cd.. ..
 mkcdalias .. ..
 mkcdalias .... ../..
