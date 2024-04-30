@@ -214,7 +214,7 @@ checkhsl() {
 # Birthday checker
 bdaycheck() {
     source ~/.bday
-    currentDate=$(date +"%b %d")
+    currentDate=$(LC_ALL=C date +"%b %d")
     if [ "$currentDate" == "$BDAY_EARLY" ]; then
         echo "Happy early birthday, $USER!"
     elif [ "$currentDate" == "$BDAY_EXACT" ]; then
@@ -222,4 +222,10 @@ bdaycheck() {
     elif [ "$currentDate" == "$BDAY_LATE" ]; then
         echo "Happy late birthday, $USER!"
     fi
+}
+
+# BashRC error handler
+brcerrorhdlr() {
+    echo "Shell initialization error!"
+    echo "Please see the log above and fix the error."
 }

@@ -219,15 +219,7 @@ source $HOME/dev/bash-wakatime/bash-wakatime.sh
 #  3. neofetch (as fallback)
 if command -v "fastfetch" > /dev/null 2>&1; then
     echo "Running fastfetch"
-    if [ -f /usr/local/share/fastfetch/presets/paleofetch.jsonc ]; then
-        # Fastfetch preset is in /usr/local/share
-        # This is when it's built from source
-        fastfetch -c /usr/local/share/fastfetch/presets/paleofetch.jsonc
-    else
-        # Fastfetch preset is in /usr/share
-        # This is when it's installed via pkg mgr
-        fastfetch -c /usr/share/fastfetch/presets/paleofetch.jsonc
-    fi
+    fastfetch -c "$HOME/configs/fastfetch-cfg.jsonc"
 elif command -v "pfetch" > /dev/null 2>&1; then
     echo "Running pfetch"
     pfetch
@@ -243,7 +235,7 @@ if [ -f "$HOME/.mssc" ]; then
     source $HOME/.mssc
 fi
 
-hsl-is-enabled
+hcs-is-enabled
 
 echo "Hourly sync logs take up $(du -sh ~/configs/HourlySyncLogs | awk '{ print $1 }')."
 
