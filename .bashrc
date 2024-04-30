@@ -251,6 +251,8 @@ checkhsl
 
 echo "$(alias | wc -l) aliases are installed."
 
+bdaycheck
+
 BashrcEndTime=$(date +%s.%N)
 
 if command -v "bc" > /dev/null 2>&1; then

@@ -193,7 +193,8 @@ countfilesindir() {
     return $nff
 }
 
-function checkhsl() {
+# Check hourly sync logs
+checkhsl() {
     countfilesindir ~/configs/HourlySyncLogs
 
     if (( $? > 30 )); then
@@ -207,5 +208,18 @@ function checkhsl() {
                 * ) echo "Please answer properly!";;
             esac
         done
+    fi
+}
+
+# Birthday checker
+bdaycheck() {
+    source ~/.bday
+    currentDate=$(date +"%b %d")
+    if [ "$currentDate" == "$BDAY_EARLY" ]; then
+        echo "Happy early birthday, $USER!"
+    elif [ "$currentDate" == "$BDAY_EXACT" ]; then
+        echo "Happy birthday, $USER!"
+    elif [ "$currentDate" == "$BDAY_LATE" ]; then
+        echo "Happy late birthday, $USER!"
     fi
 }
