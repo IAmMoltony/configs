@@ -186,8 +186,26 @@ bcdcfg # Don't ask me why it has to be like this.
     builtin cd "$oldpwd"
 }
 
+# count files in dir
 countfilesindir() {
     nf=$(ls -Al $1 | wc -l)
     nff=$(( $nf - 1 ))
     return $nff
+}
+
+function checkhsl() {
+    countfilesindir ~/configs/HourlySyncLogs
+
+    if (( $? > 30 )); then
+        countfilesindir ~/configs/HourlySyncLogs
+        echo "There are currently $? hourly sync log files."
+        while true; do
+            read -p "Delete? [y or n] " yn
+            case $yn in
+                [Yy]* ) rm -rf ~/configs/HourlySyncLogs/*; echo "Deleted."; break;;
+                [Nn]* ) echo "Okay, keeping."; break;;
+                * ) echo "Please answer properly!";;
+            esac
+        done
+    fi
 }
