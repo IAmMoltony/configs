@@ -15,6 +15,7 @@ cpcfg .bash-configs/.bash_aliases
 cpcfg .bash-configs/.bash_functions
 cpcfg .config/kitty/kitty.conf
 cpcfg .conkyrc
+cpcfg .bday
 
 echo "Syncing melonDS config"
 cp $HOME/.config/melonDS/melonDS.ini .

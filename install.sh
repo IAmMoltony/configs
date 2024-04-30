@@ -19,9 +19,6 @@ mkdir -p $HOME/.bash-configs
 echo "Creating Kitty config dir"
 mkdir -p $HOME/.config/kitty
 
-echo "Creating qutebrowser config dir"
-mkdir -p $HOME/.config/qutebrowser
-
 # dot files
 
 cpcfg .bashrc
@@ -29,6 +26,7 @@ cpcfg .gitconfig
 cpcfg .profile
 cpcfg .vimrc
 cpcfg .conkyrc
+cpcfg .bday
 cpcfgd .bash_aliases .bash-configs
 cpcfgd .bash_functions .bash-configs
 cpcfgd kitty.conf .config/kitty

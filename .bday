@@ -1,0 +1,10 @@
+# The birthday config file
+# Enter the early, exact and late birthday in format "MMM DD"
+# e.g.:
+#  Apr 10
+#  Jan 02
+#  May 09
+
+BDAY_EARLY="May 01"
+BDAY_EXACT="May 02"
+BDAY_LATE="May 03"

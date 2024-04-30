@@ -176,6 +176,7 @@ mkecalias machinespecificstartupcommands mssc ~/.mssc
 mkecalias diareplacement dr ~/Documents/DiaReplacement.txt
 mkecalias profile prf ~/.profile
 mkecalias kittyconf kc ~/.config/kitty/kitty.conf
+mkecalias birthday bd ~/.bday
 
 mksuecalias fstab fs /etc/fstab
 mksuecalias sourceslist srcl /etc/apt/sources.list
