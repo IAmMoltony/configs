@@ -73,7 +73,6 @@ alias dnrun='dotnet run -v n' # Run a .NET solution with normal verbosity
 alias htop='btop' # btop is objectovely better
 alias srbrc='syncrbrc' # Wait this exists??? omg i forgor tbh
 alias scfgs='synccfgs' # Sync configs but the short version for literally no reason
-alias sl='exit' # we do a bit of trolling
 alias math='bc -l' # Bring up a calculator
 alias weather='curl wttr.in/Shymkent' # View weather (for Shymkent)
 alias l.='ls -d .* --color=auto' # List only hidden files
@@ -202,6 +201,7 @@ mkexitalias rn-roll
 mkexitalias exir
 mkexitalias pia
 mkexitalias qsqsqs
+mkexitalias sl
 
 # section of random quit misspellings
 
