@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-touch ~/configs/HSL_IS_DISABLED
+touch ~/configs/HCS_IS_DISABLED
 echo "Hourly config sync has been disabled"

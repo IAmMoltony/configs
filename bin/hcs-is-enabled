@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [[ -f ~/configs/HSL_IS_DISABLED ]]; then
+if [[ -f ~/configs/HCS_IS_DISABLED ]]; then
     echo "Hourly config sync is currently disabled."
 else
     echo "Hourly config sync is currently enabled."
