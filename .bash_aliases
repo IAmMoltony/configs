@@ -270,6 +270,7 @@ rm-roll() {
     ((RANDOM % 100 < 50)) && {
         alias rm='echo -e "The rm command has been disabled for this session.\n* Hint! Run rm-roll to hopefully enable it." && true'
     }
+    true
 }
 
 rm-roll
