@@ -18,7 +18,7 @@ brcerrorhdlr() {
     ((BashrcNumErrors++))
 }
 
-trap "brcerrorhdlr $LINENO" ERR
+trap 'brcerrorhdlr $LINENO' ERR
 
 clear
 
