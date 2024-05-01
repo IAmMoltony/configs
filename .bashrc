@@ -243,7 +243,7 @@ if [ -f "$HOME/.mssc" ]; then
     source $HOME/.mssc
 fi
 
-hcs-is-enabled
+hcs-is-enabled --color
 
 echo "Hourly sync logs take up $(du -sh ~/configs/HourlySyncLogs | awk '{ print $1 }')."
 
