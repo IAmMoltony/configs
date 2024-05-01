@@ -245,11 +245,11 @@ fi
 
 hcs-is-enabled --color
 
-echo "Hourly sync logs take up $(du -sh ~/configs/HourlySyncLogs | awk '{ print $1 }')."
+echo -e "Hourly sync logs take up \033[1;33m$(du -sh ~/configs/HourlySyncLogs | awk '{ print $1 }').\033[0m"
 
 checkhsl
 
-echo "$(alias | wc -l) aliases are installed."
+echo -e "\033[0;36m$(alias | wc -l)\033[0m aliases are installed."
 
 bdaycheck
 

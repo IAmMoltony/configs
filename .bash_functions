@@ -216,11 +216,11 @@ bdaycheck() {
     source ~/.bday
     currentDate=$(LC_ALL=C date +"%b %d")
     if [ "$currentDate" == "$BDAY_EARLY" ]; then
-        echo "Happy early birthday, $USER!"
+        echo -e "Happy early birthday, \033[0;32m$USER!\033[0m"
     elif [ "$currentDate" == "$BDAY_EXACT" ]; then
-        echo "Happy birthday, $USER!"
+        echo -e "Happy birthday, \033[0;32m$USER!\033[0m"
     elif [ "$currentDate" == "$BDAY_LATE" ]; then
-        echo "Happy late birthday, $USER!"
+        echo -e "Happy late birthday, \033[0;32m$USER!\033[0m"
     fi
 }
 
