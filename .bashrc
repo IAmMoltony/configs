@@ -222,12 +222,12 @@ echo "Enabling WakaTime"
 source $HOME/dev/bash-wakatime/bash-wakatime.sh
 
 # Run neofetch everytime the shell is started in the following order:
-#  1. fastfetch (because it's fast)
+#  1. fastfetch (because it's fast) (and also cuz i have a custom config)
 #  2. pfetch (because it's sleek)
 #  3. neofetch (as fallback)
 if command -v "fastfetch" > /dev/null 2>&1; then
     echo "Running fastfetch"
-    fastfetch -c "$HOME/configs/fastfetch-cfg.jsonc"
+    ffwcfg
 elif command -v "pfetch" > /dev/null 2>&1; then
     echo "Running pfetch"
     pfetch

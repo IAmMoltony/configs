@@ -172,6 +172,7 @@ alias hslie='echo "Did you mean: hcsie"'
 alias hcse='hcs-enable' # Enable HCS
 alias hcsd='hcs-disable' # Disable HCS
 alias hcsie='hcs-is-enabled' # Check if HCS is enabled
+alias ffwcfg='fastfetch -c $HOME/configs/fastfetch-cfg.jsonc' # Run fastfetch with custom config
 
 # AUTOMATIC ALIASES!!!
 
