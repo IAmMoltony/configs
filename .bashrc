@@ -160,7 +160,7 @@ fi
 echo "Customizing prompt"
 
 # prompt customizatoin
-PS1="\[\e[0;35m\]\u \[\e[1;32m\]\w \[\e[0m\]₸ "
+PS1='\[\e[0;35m\]\u \[\e[1;32m\]\w \[\e[0m\]$(randomcurrency) '
 PS2="... "
 
 if [ -f ~/imrunningonwsl ]; then
