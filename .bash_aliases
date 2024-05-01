@@ -1,5 +1,14 @@
 # Moltony's Bash Aliases
 
+BashAliasesNumErrors=0
+
+baerrorhdlr() {
+    echo " ! Alias Init error in line $1"
+    ((BashAliasesNumErrors++))
+}
+
+trap 'baerrorhdlr $LINENO' ERR
+
 alias rm='rm -iv' # Remove a file (verbose + confirm)
 alias cp='cp -v' # Copy a file (verbose)
 alias mv='mv -v' # Move a file (verbose)

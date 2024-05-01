@@ -137,9 +137,7 @@ if [ -f ~/.bash-configs/.bash_aliases ]; then
     . ~/.bash-configs/.bash_aliases
 fi
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+trap 'brcerrorhdlr $LINENO' ERR
 
 echo "Enabling programmable completion"
 
