@@ -1,7 +1,21 @@
 #!/usr/bin/env bash
 
+coloroutput=0
+
+if [ "$1" == "--color" ]; then
+    coloroutput=1
+fi
+
 if [[ -f ~/configs/HCS_IS_DISABLED ]]; then
-    echo "Hourly config sync is currently disabled."
+    if (( coloroutput == 0 )); then
+        echo "Hourly config sync is currently disabled."
+    else
+        echo -e "Hourly config sync is currently \033[0;31mdisabled.\033[0m"
+    fi
 else
-    echo "Hourly config sync is currently enabled."
+    if (( coloroutput == 0 )); then
+        echo "Hourly config sync is currently enabled."
+    else
+        echo -e "Hourly config sync is currently \033[0;32menabled.\033[0m"
+    fi
 fi
