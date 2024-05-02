@@ -103,10 +103,6 @@
             "format": "|==========================|"
         },
         {
-            "type": "weather",
-            "key": "weather\t\t"
-        },
-        {
             "type": "datetime",
             "key": "time\t\t"
         },
