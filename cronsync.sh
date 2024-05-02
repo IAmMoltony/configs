@@ -3,7 +3,7 @@
 notify-send "Running hourly config sync."
 cd $HOME/configs # Just to be safe
 
-if [[ -f ./HSL_IS_DISABLED ]]; then
+if [[ -f ./HCS_IS_DISABLED ]]; then
     notify-send "Sync is disabled, halting"
     exit
 fi
