@@ -272,7 +272,7 @@ cleanupchecker9000() {
                 while true; do
                     read -p "Cleanup? [y or n] " yn
                     case $yn in
-                        [Yy]* ) ~/configs/cleanupping; echo "Cleanup done."; break;;
+                        [Yy]* ) echo "0" > "$HOME/.restartssincecleanup"; ~/configs/cleanupping; echo "Cleanup done."; break;;
                         [Nn]* ) echo "Okay then."; break;;
                         * ) echo "Please answer properly!";;
                     esac
