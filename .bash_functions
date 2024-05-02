@@ -251,3 +251,33 @@ randomcurrency() {
     index=$(($RANDOM % $size))
     echo ${c[$index]}
 }
+
+# CLEANUP CHECKER 9000!!!
+cleanupchecker9000() {
+    if [ ! -f "$HOME/.restartssincecleanup" ]; then
+        echo "Restarts since cleanup file not found, creating"
+        echo "0" > "$HOME/.restartssincecleanup"
+    else
+        restartssincecleanup=$(cat "$HOME/.restartssincecleanup")
+        numberregex='^[0-9]+$'
+        if ! [[ $restartssincecleanup =~ $numberregex ]]; then
+            echo "Restarts since cleanup file is broken, recreating"
+            echo "0" > "$HOME/.restartssincecleanup"
+        else
+            ((restartssincecleanup++))
+            echo "$restartssincecleanup" > "$HOME/.restartssincecleanup"
+
+            if (( restartssincecleanup > 20 )); then
+                echo "You have gone twenty shell restarts without cleanup."
+                while true; do
+                    read -p "Cleanup? [y or n] " yn
+                    case $yn in
+                        [Yy]* ) ~/configs/cleanupping; echo "Cleanup done."; break;;
+                        [Nn]* ) echo "Okay then."; break;;
+                        * ) echo "Please answer properly!";;
+                    esac
+                done
+            fi
+        fi
+    fi
+}

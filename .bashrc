@@ -244,12 +244,13 @@ if [ -f "$HOME/.mssc" ]; then
 fi
 
 hcs-is-enabled --color
+cleanupchecker9000
 
 echo -e "Hourly sync logs take up \033[1;33m$(du -sh ~/configs/HourlySyncLogs | awk '{ print $1 }').\033[0m"
 
 checkhsl
 
-echo -e "\033[0;36m$(alias | wc -l)\033[0m aliases are installed."
+echo -e "\033[0;36m$(alias | wc -l)\033[0m aliases and \033[0;36m$(declare -f | grep -E '^[^_].* \(\)' | wc -l)\033[0m functions are installed."
 
 bdaycheck
 
