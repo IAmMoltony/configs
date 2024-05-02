@@ -232,6 +232,7 @@ mkexitalias tqiu
 mkexitalias tuqi
 mkexitalias uitq
 mkexitalias tiuq
+mkexitalias iuqt
 
 mkcdalias cddl ~/Downloads
 mkcdalias cddoc ~/Documents
