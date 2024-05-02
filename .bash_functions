@@ -101,13 +101,13 @@ dffcfgsnp() {
 
 # Git commit -am then push
 gcampsh() {
-    gcam "$1"
+    git commit -am "$1"
     git push
 }
 
 # Git commit -m then push
 gcmpsh() {
-    gcm "$1"
+    git commit -m "$1"
     git push
 }
 
