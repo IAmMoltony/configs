@@ -111,6 +111,13 @@ gcmpsh() {
     git push
 }
 
+# Git add git commit -m the push
+gagcmpsh() {
+    git add .
+    git commit -m "$1"
+    git push
+}
+
 # Create a bookmark
 newbkmk() {
     # check params
