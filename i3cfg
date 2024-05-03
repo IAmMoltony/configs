@@ -191,5 +191,10 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
+# gap
+gaps inner 2
+gaps outer 2
+smart_gaps on
+
 # middle click to close
 bindsym --release --border button2 kill
