@@ -179,4 +179,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# enable xfce panel
 exec xfce4-panel --disable-wm-check
+
+for_window [all] title_window_icon yes
