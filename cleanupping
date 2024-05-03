@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
+sudo bleachbit --clean --preset
 bleachbit --clean --preset
