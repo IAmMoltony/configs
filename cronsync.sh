@@ -21,7 +21,7 @@ if [[ -f ./HCS_IS_DISABLED ]]; then
         notify-send "Sync is disabled, halting"
         exit
     else
-        notify-send "Even though sync is disabled, the --force option was passed, so proceeding anyway."
+        notify-send "FORCING SYNC"
     fi
 fi
 
