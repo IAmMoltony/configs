@@ -34,6 +34,6 @@ hslnm=HourlySyncLogs/hsl_$(date "+%F_%T")
 notify-send "Sync done, log:"
 notify-send "$(cat $hslnm)"
 
-if ! grep $hslnm -q "No changes, exiting"; then
+if ! cat $hslnm | grep -q "No changes, exiting"; then
     notify-send "Changes found, sending email"
 fi
