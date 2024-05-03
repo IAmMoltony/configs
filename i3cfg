@@ -190,3 +190,6 @@ bindsym $mod+Shift+minus move scratchpad
 
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
+
+# middle click to close
+bindsym --release --border button2 kill
