@@ -3,9 +3,26 @@
 notify-send "Running hourly config sync."
 cd $HOME/configs # Just to be safe
 
+FORCE_SYNC=0
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -f|--force)
+            FORCE_SYNC=1
+            shift
+            ;;
+        *)
+            shift
+            ;;
+    esac
+done
+
 if [[ -f ./HCS_IS_DISABLED ]]; then
-    notify-send "Sync is disabled, halting"
-    exit
+    if [ "$FORCE_SYNC" == "0" ]; then
+        notify-send "Sync is disabled, halting"
+        exit
+    else
+        notify-send "Even though sync is disabled, the --force option was passed, so proceeding anyway."
+    fi
 fi
 
 mkdir -p HourlySyncLogs
