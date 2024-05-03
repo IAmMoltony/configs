@@ -5,6 +5,11 @@ cpcfg() {
     cp $HOME/$1 .
 }
 
+cpcfgf() {
+    echo "Syncing $1 as $2"
+    cp $HOME/$1 ./$2
+}
+
 mkdir .config/kitty -p
 
 cpcfg .bashrc
@@ -16,9 +21,8 @@ cpcfg .bash-configs/.bash_functions
 cpcfg .config/kitty/kitty.conf
 cpcfg .conkyrc
 cpcfg .bday
-
-echo "Syncing melonDS config"
-cp $HOME/.config/melonDS/melonDS.ini .
+cpcfg .config/melonDS/melonDS.ini
+cpcfgf .config/i3/config i3cfg
 
 echo "Success"
 
