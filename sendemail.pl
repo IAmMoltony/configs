@@ -7,6 +7,7 @@ use strict;
 use warnings;
 
 use JSON;
+use Net::SMTP;
 
 if (@ARGV < 1) {
     die "Usage: ./sendemail.pl <Hourly sync log file>"
@@ -24,6 +25,34 @@ my ($second, $minute, $hour, $monthday, $month, $year) = localtime();
 $year += 1900;
 $month += 1;
 my $datetime = sprintf("%d-%02d-%02d %02d:%02d:%02d", $year, $month, $monthday, $hour, $minute, $second);
+
+# get the username
+my $user_username = $ENV{"USER"} || $ENV{"LOGNAME"} || "whatever your name is";
+
+# read hsl
+my $hsl_text = do {
+    open(my $hsl_fh, "<", $hsl)
+        or die("Can't open hourly sync log file: $!");
+    local $/;
+    <$hsl_fh>
+};
+
+# email subject
+my $subject = "Hourly sync log at $datetime";
+
+# create email text
+my $email_text = <<"EMAILTEXTDONERIGHTNOW";
+Dear $user_username, a hourly sync log has happened at $datetime.
+
+$hsl_text
+
+======================
+
+Sincerely,
+    sendemail.pl
+EMAILTEXTDONERIGHTNOW
+
+print "Sending email now!"
 
 # read creds
 my $creds_text = do {
@@ -50,30 +79,31 @@ my $smtp = $creds->{"smtp"};
 my $username = $creds->{"username"};
 my $password = $creds->{"password"};
 
-# email topic
-my $topic = "Hourly sync log at $datetime";
+# assume the port is 25
+# TODO put this into the json file
+my $smtp_port = 25;
 
-# get the username
-my $user_username = $ENV{"USER"} || $ENV{"LOGNAME"} || "whatever your name is";
+# connec to the server
+my $connec = Net::SMTP->new($smtp, Port => $smtp_port, Debug => 1);
+die "Failed to connect to $smtp: $!" unless $connec
 
-# read hsl
-my $hsl_text = do {
-    open(my $hsl_fh, "<", $hsl)
-        or die("Can't open hourly sync log file: $!");
-    local $/;
-    <$hsl_fh>
-};
+# authenticaion
+$connec->auth($username, $password) or die "Email auth failed: $!";
 
-# create email text
-my $email_text = <<"EMAILTEXTDONERIGHTNOW";
-Dear $user_username, a hourly sync log has happened at $datetime.
+# set the from and to
+$connec->mail($from_who);
+$connec->to($to_who);
 
-$hsl_text
+# start the email
+$connec->datasend("From: $from_who\n");
+$connec->datasend("To: $to_who\n");
+$connec->datasend("Subject: $subject");
 
-======================
+# add the email text (body)
+$connec->datasend("\n$email_text\n");
 
-Sincerely,
-    sendemail.pl
-EMAILTEXTDONERIGHTNOW
+# stop the email
+$connec->dataend();
 
-print "Sending email now!"
+# bye bye
+$connec->quit;

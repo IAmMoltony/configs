@@ -5,3 +5,4 @@ _Tmp/
 HCS_IS_DISABLED
 *.un~
 credentials.json
+Session.vim
