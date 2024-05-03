@@ -7,17 +7,20 @@ use strict;
 use warnings;
 
 use JSON;
-use Net::SMTP;
+use Email::Sender::Simple qw(sendmail);
+use Email::Sender::Transport::SMTPS ();
+use Email::Simple ();
+use Email::Simple::Creator ();
 
 if (@ARGV < 1) {
-    die "Usage: ./sendemail.pl <Hourly sync log file>"
+    die "Usage: ./sendemail.pl <Hourly sync log file>";
 }
 
 # argument parsing
 my $hsl = $ARGV[0];
 
 unless (-e $hsl) {
-    die "Specified hourly sync log file does not exist"
+    die "Specified hourly sync log file does not exist";
 }
 
 # get date time
@@ -52,7 +55,7 @@ Sincerely,
     sendemail.pl
 EMAILTEXTDONERIGHTNOW
 
-print "Sending email now!"
+print "Sending email now!\n";
 
 # read creds
 my $creds_text = do {
@@ -79,31 +82,29 @@ my $smtp = $creds->{"smtp"};
 my $username = $creds->{"username"};
 my $password = $creds->{"password"};
 
-# assume the port is 25
-# TODO put this into the json file
+# smtp port
+# TODO put this in creds json file
 my $smtp_port = 25;
 
-# connec to the server
-my $connec = Net::SMTP->new($smtp, Port => $smtp_port, Debug => 1);
-die "Failed to connect to $smtp: $!" unless $connec
+# send the email
+# i tried Net::SMTP (didnt work), MIME::Lite (didnt work) and Email::Sender
+my $transport = Email::Sender::Transport::SMTPS->new({
+    host => $smtp,
+    port => $smtp_port,
+    ssl => "starttls",
+    sasl_username => $username,
+    sasl_password => $password    
+});
 
-# authenticaion
-$connec->auth($username, $password) or die "Email auth failed: $!";
+my $email = Email::Simple->create(
+    header => [
+        To => $to_who,
+        From => $from_who,
+        Subject => $subject
+    ],
+    body => $email_text
+);
 
-# set the from and to
-$connec->mail($from_who);
-$connec->to($to_who);
+sendmail($email, { transport => $transport });
 
-# start the email
-$connec->datasend("From: $from_who\n");
-$connec->datasend("To: $to_who\n");
-$connec->datasend("Subject: $subject");
-
-# add the email text (body)
-$connec->datasend("\n$email_text\n");
-
-# stop the email
-$connec->dataend();
-
-# bye bye
-$connec->quit;
+print "Email sending is now done thank you"
