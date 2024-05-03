@@ -4,6 +4,8 @@ notify-send "Running hourly config sync."
 cd $HOME/configs # Just to be safe
 
 FORCE_SYNC=0
+
+# Argument parsinging
 while [[ $# -gt 0 ]]; do
     case $1 in
         -f|--force)
@@ -31,3 +33,7 @@ hslnm=HourlySyncLogs/hsl_$(date "+%F_%T")
 
 notify-send "Sync done, log:"
 notify-send "$(cat $hslnm)"
+
+if ! grep $hslnm -q "No changes, exiting"; then
+    notify-send "Changes found, sending email"
+fi

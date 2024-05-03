@@ -22,6 +22,6 @@ if [[ $(git status --porcelain) ]]; then
     }
     exit 0
 else
-    echo "No changes, exiting"
+    echo "No changes, exiting" # dont change this line or else cron sync will break
     exit 2
 fi
