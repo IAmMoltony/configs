@@ -272,12 +272,27 @@ cleanupchecker9000() {
                 while true; do
                     read -p "Cleanup? [y or n] " yn
                     case $yn in
-                        [Yy]* ) echo "0" > "$HOME/.restartssincecleanup"; ~/configs/cleanupping; echo "Cleanup done."; break;;
+                        [Yy]* ) echo "0" > "$HOME/.restartssincecleanup"; docleanupping(); echo "Cleanup done."; break;;
                         [Nn]* ) echo "Okay then."; break;;
                         * ) echo "Please answer properly!";;
                     esac
                 done
             fi
         fi
+    fi
+}
+
+# Do the actual cleanupping
+docleanupping() {
+    ~/configs/cleanupping
+    if command -v "apt" > /dev/null 2>&1; then
+        while true; do
+            read -p "You seem to be on a Debian-based system. Run sudo apt update? [y or n] " yn
+            case $yn in
+                [Yy]* ) echo "Running!"; sudo apt update; echo "Done."; break;;
+                [Nn]* ) echo "Okay then."; break;;
+                * ) echo "Please answer properly!";;
+            esac
+        done
     fi
 }
