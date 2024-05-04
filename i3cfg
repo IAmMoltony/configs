@@ -198,3 +198,8 @@ smart_gaps on
 
 # middle click to close
 bindsym --release --border button2 kill
+
+# screen shwoop
+bindsym Print exec xfce4-screenshooter
+bindsym $mod+Print exec xfce4-screenshooter -f
+bindsym $mod+Shift+Print xfce4-screenshooter -w
