@@ -267,8 +267,8 @@ cleanupchecker9000() {
             ((restartssincecleanup++))
             echo "$restartssincecleanup" > "$HOME/.restartssincecleanup"
 
-            if (( restartssincecleanup > 20 )); then
-                echo "You have gone twenty shell restarts without cleanup."
+            if (( restartssincecleanup > 100 )); then
+                echo "You have gone a hundred shell restarts without cleanup."
                 while true; do
                     read -p "Cleanup? [y or n] " yn
                     case $yn in
