@@ -1,4 +1,7 @@
+# vim:foldmethod=marker
 # Moltony's Bash Aliases
+
+# Error handling {{{
 
 BashAliasesNumErrors=0
 
@@ -8,6 +11,10 @@ baerrorhdlr() {
 }
 
 trap 'baerrorhdlr $LINENO' ERR
+
+# }}}
+
+# Manual aliases {{{
 
 alias rm='rm -iv' # Remove a file (verbose + confirm)
 alias cp='cp -v' # Copy a file (verbose)
@@ -180,7 +187,9 @@ alias xlogout='sudo pkill -u $USER' # Log out
 alias aptrepos='grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*' # List apt repos
 alias dfs='dirfsp' # less typing less hedayhce
 
-# AUTOMATIC ALIASES!!!
+# }}}
+
+# Automatic aliases: edit-cat aliases {{{
 
 mkecalias bashrc brc ~/.bashrc
 mkecalias bashaliases ba ~/.bash-configs/.bash_aliases
@@ -198,11 +207,19 @@ mkecalias birthday bd ~/.bday
 mkecalias fastfetchcfg ffc ~/configs/fastfetch-cfg.jsonc
 mkecalias i3config i3 ~/.config/i3/config
 
+# }}}
+
+# Automatic aliases: super-user edit-cat aliases {{{
+
 mksuecalias fstab fs /etc/fstab
 mksuecalias sourceslist srcl /etc/apt/sources.list
 mksuecalias sourceslist sl /etc/apt/sources.list
 mksuecalias samba smb /etc/samba/smb.conf
 mksuecalias releaseupgrades ru /etc/update-manager/release-upgrades
+
+# }}}
+
+# Automatic aliases: exit aliases {{{
 
 mkexitalias paipai
 mkexitalias bye
@@ -220,7 +237,9 @@ mkexitalias pia
 mkexitalias qsqsqs
 mkexitalias sl
 
-# section of random quit misspellings
+# }}}
+
+# Automatic aliases: `quit' misspellings {{{
 
 mkexitalias quit
 mkexitalias qiut
@@ -241,6 +260,10 @@ mkexitalias tiuq
 mkexitalias iuqt
 mkexitalias tiqu
 mkexitalias tuiq
+
+# }}}
+
+# Automatic aliases: cd aliases {{{
 
 mkcdalias cddl ~/Downloads
 mkcdalias cddoc ~/Documents
@@ -277,7 +300,10 @@ mkcdalias .... ../..
 mkcdalias ...... ../../../
 mkcdalias ........ ../../../..
 
-# Trolling!! HAHA LOL LMAO KEK XD UwU
+# }}}
+
+# Trolling!! HAHA LOL LMAO KEK XD UwU {{{
+
 rm-roll() {
     alias rm='rm -iv'
     ((RANDOM % 100 < 50)) && {
@@ -287,3 +313,5 @@ rm-roll() {
 }
 
 rm-roll
+
+# }}}
