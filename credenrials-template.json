@@ -1,5 +1,5 @@
 {
-    "from-who": "sourceemail@example.com",
+    "from-who": "Hourly Config Sync",
     "to-who": "targetemail@example.com",
     "smtp": "imap server e.g. if ur using gmail its smtp.gmail.com",
     "username": "you@example.com",
