@@ -16,7 +16,7 @@ BashrcNumErrors=0
 # Error handling {{{
 
 brcerrorhdlr() {
-    echo " ! Shell init error on line: $1"
+    echo " ! Shell Init error on line $1"
     ((BashrcNumErrors++))
 }
 
@@ -286,6 +286,10 @@ if command -v "bc" > /dev/null 2>&1; then
 else
     echo "Shell initialized with $BashrcNumErrors errors."
 fi
+
+# TODO time BA and BF
+echo "Aliases initialized with $BashAliasesNumErrors errors."
+echo "Functions initialized with $BashFunctionsNumErrors errors."
 
 stty echo
 trap - ERR

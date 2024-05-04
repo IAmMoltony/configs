@@ -6,7 +6,7 @@
 BashAliasesNumErrors=0
 
 baerrorhdlr() {
-    echo " ! Alias Init error in line $1"
+    echo " ! Alias Init error on line $1"
     ((BashAliasesNumErrors++))
 }
 

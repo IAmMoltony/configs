@@ -1,3 +1,19 @@
+# vim:foldmethod=marker
+# Moltony's Bash Functions
+
+# Error handling {{{
+
+BashFunctionsNumErrors=0
+
+bferrorhdlr() {
+    echo " ! Functions Init error on line $1"
+    ((BashFunctionsNumErrors++))
+}
+
+trap 'bferrorhdlr $LINENO' ERR
+
+# }}}
+
 # Create dir and cd into it
 function mdcd() {
     mkdir "$1" && cd "$1"
