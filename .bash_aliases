@@ -180,8 +180,6 @@ alias xlogout='sudo pkill -u $USER' # Log out
 alias aptrepos='grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*' # List apt repos
 alias dfs='dirfsp' # less typing less hedayhce
 
-# -!ALIASend
-
 # AUTOMATIC ALIASES!!!
 
 mkecalias bashrc brc ~/.bashrc
