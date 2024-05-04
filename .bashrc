@@ -1,3 +1,4 @@
+# vim:foldmethod=marker
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -12,7 +13,8 @@ BashrcStartTime=$(date +%s.%N)
 
 BashrcNumErrors=0
 
-# BashRC error handler
+# Error handling {{{
+
 brcerrorhdlr() {
     echo " ! Shell init error on line: $1"
     ((BashrcNumErrors++))
@@ -20,7 +22,11 @@ brcerrorhdlr() {
 
 trap 'brcerrorhdlr $LINENO' ERR
 
+# }}}
+
 clear
+
+# Basic init {{{
 
 echo "Initializing shell"
 
@@ -41,55 +47,8 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
-
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
-esac
-
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-# (that's what she said)
-force_color_prompt=yes
-
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
-fi
-
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -103,8 +62,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+# TODO put these in BA
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -115,15 +73,18 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+# }}}
+
+# Editor and path {{{
+
 echo "Setting editor and path"
 
 export EDITOR=/bin/vim
 export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin:~/configs/bin"
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+# }}}
+
+# Aliases and functions {{{
 
 echo "Adding functions"
 
@@ -137,7 +98,13 @@ if [ -f ~/.bash-configs/.bash_aliases ]; then
     . ~/.bash-configs/.bash_aliases
 fi
 
+# BA and BF have their own error handler, this changes it
+# to the BashRC one
 trap 'brcerrorhdlr $LINENO' ERR
+
+# }}}
+
+# Programmable completion {{{
 
 echo "Enabling programmable completion"
 
@@ -152,10 +119,24 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# }}}
+
+# WSL {{{
+
 [ -f imrunningonwsl ] && {
     echo "Setting WSL display"
     export DISPLAY=$(grep nameserver /etc/resolv.conf | awk '{print $2}'):0.0
+
+    # TODO put this in ba
+    if [ -f ~/imrunningonwsl ]; then
+        echo "Adding WSL aliases"
+        alias mount-ubuntu='wsl.exe -d Ubuntu -u root mount --bind / /mnt/wsl/ubuntu'
+    fi
 }
+
+# }}}
+
+# Prompt customization {{{
 
 echo "Customizing prompt"
 
@@ -163,10 +144,9 @@ echo "Customizing prompt"
 PS1='\[\e[0;35m\]\u \[\e[1;32m\]\w \[\e[0m\]$(randomcurrency) '
 PS2="... "
 
-if [ -f ~/imrunningonwsl ]; then
-    echo "Adding WSL aliases"
-    alias mount-ubuntu='wsl.exe -d Ubuntu -u root mount --bind / /mnt/wsl/ubuntu'
-fi
+# }}}
+
+# Custom path {{{
 
 if [ -f ~/.custompath ]; then
     echo "Setting custom path"
@@ -174,7 +154,11 @@ if [ -f ~/.custompath ]; then
     export PATH="$PATH:$CUSTOMPATH"
 fi
 
+# }}}
+
 export HTDOCS=/opt/lampp/htdocs
+
+# devkitPro {{{
 
 echo "Setting devkitPro environment"
 
@@ -182,30 +166,46 @@ export DEVKITPRO=/opt/devkitpro
 export DEVKITARM=${DEVKITPRO}/devkitARM
 export DEVKITPPC=${DEVKITPRO}/devkitPPC
 
-# set intel compiler
+# }}}
+
+# Intel compiler {{{
+
 if [ -f "$HOME/intel/oneapi/setvars.sh" ]; then
     echo "Initializing Intel compiler"
     source $HOME/intel/oneapi/setvars.sh
 fi
 
+# }}}
+
 # ssh but cooler
+# TODO put in ba
 [ "$TERM" = "xterm-kitty" ] && {
     echo "Setting custom ssh alias"
     alias ssh="kitty +kitten ssh"
 }
+
+# pfetch configuration {{{
 
 echo "Configuring pfetch"
 
 # do some pfetch configurationing
 export PF_INFO="ascii title os host kernel uptime pkgs memory editor wm de shell palette"
 
+# }}}
+
+# pnpm {{{
+
 echo "Initializing pnpm"
 
-export PNPM_HOME="/home/moltony/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+
+# }}}
+
+# Perl {{{
 
 echo "Initializing Perl environment"
 
@@ -215,19 +215,25 @@ PERL_LOCAL_LIB_ROOT="/home/moltony/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB
 PERL_MB_OPT="--install_base \"/home/moltony/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/moltony/perl5"; export PERL_MM_OPT;
 
-echo "Setting MonoGame effect compiler wine path"
+# }}}
 
-# Mono game shader thing
-export MGFXC_WINE_PATH="$HOME/.local/share/wineprefixes/monogame"
+# TODO turn the below section into "Shell options"
+# with all shopts
 
 echo "Enabling cdspell"
 
 # CD spell
 shopt -s cdspell
 
+# WakaTime {{{
+
 echo "Enabling WakaTime"
 
 source $HOME/dev/bash-wakatime/bash-wakatime.sh
+
+# }}}
+
+# *fetch {{{
 
 # Run neofetch everytime the shell is started in the following order:
 #  1. fastfetch (because it's fast) (and also cuz i have a custom config)
@@ -244,12 +250,20 @@ elif command -v "neofetch" > /dev/null 2>&1; then
     neofetch
 fi
 
+# }}}
+
+# MSSC {{{
+
 # Run Machine-Specific Startup Commands (MSSC)
 # This became necessary when I wanted to install nvm on WSL but I don't use nvm on my laptop
 if [ -f "$HOME/.mssc" ]; then
     echo "Running Machine-Specific Startup Commands"
     source $HOME/.mssc
 fi
+
+# }}}
+
+# Post-init stuff {{{
 
 hcs-is-enabled --color
 cleanupchecker9000
@@ -261,6 +275,8 @@ checkhsl
 echo -e "\033[0;36m$(alias | wc -l)\033[0m aliases and \033[0;36m$(declare -f | grep -E '^[^_].* \(\)' | wc -l)\033[0m functions are installed."
 
 bdaycheck
+
+# }}}
 
 BashrcEndTime=$(date +%s.%N)
 
