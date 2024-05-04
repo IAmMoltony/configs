@@ -24,6 +24,12 @@ trap 'brcerrorhdlr $LINENO' ERR
 
 # }}}
 
+# Ctrl-C prevention {{{
+
+trap 'echo "Nuh-uh!"' SIGINT
+
+# }}}
+
 clear
 
 # Basic init {{{
@@ -252,4 +258,5 @@ echo "Functions initialized with $BashFunctionsNumErrors errors."
 
 stty echo
 trap - ERR
+trap SIGINT
 
