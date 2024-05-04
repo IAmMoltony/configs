@@ -201,6 +201,11 @@ mksuecalias() {
     alias cat$short="cat-$long"
 }
 
+# New --color=auto alias (color auto sounds like colorado)
+mkcolorado() {
+    alias $1="$1 --color=auto"
+}
+
 # Today's commits in configs
 cfg2dc() {
     oldpwd="$(pwd)"

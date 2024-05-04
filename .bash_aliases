@@ -186,8 +186,14 @@ alias paixorg='sudo pkill -9 Xorg' # kill xorg with ease
 alias xlogout='sudo pkill -u $USER' # Log out
 alias aptrepos='grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*' # List apt repos
 alias dfs='dirfsp' # less typing less hedayhce
+alias ll='ls -alF' # ls with the list thing
+alias la='ls -A' # ls but show hidden
+alias l='ls -CF' # show the like executables with the little asterisk and when the directory the little slash ykwim
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # }}}
+
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh" # Cool kitty ssh alias (kitty exclusive)
 
 # Automatic aliases: edit-cat aliases {{{
 
@@ -299,6 +305,25 @@ mkcdalias .. ..
 mkcdalias .... ../..
 mkcdalias ...... ../../../
 mkcdalias ........ ../../../..
+
+# }}}
+
+# Automatic aliases: --color=auto aliases {{{
+
+mkcolorado ls
+mkcolorado dir
+mkcolorado vdir
+mkcolorado grep
+mkcolorado fgrep
+mkcolorado egrep
+
+# }}
+
+# WSL aliases {{{
+
+if [ -f ~/imrunningonwsl ]; then
+    alias mount-ubuntu='wsl.exe -d Ubuntu -u root mount --bind / /mnt/wsl/ubuntu' # Mount Ubuntu files
+fi
 
 # }}}
 
