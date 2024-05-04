@@ -15,12 +15,12 @@ trap 'bferrorhdlr $LINENO' ERR
 # }}}
 
 # Create dir and cd into it
-function mdcd() {
+mdcd() {
     mkdir "$1" && cd "$1"
 }
 
 # Sync configs
-function synccfgs() {
+synccfgs() {
     oldpwd="$(pwd)"
     builtin cd ~/configs
     ./sync-commit.sh
@@ -28,7 +28,7 @@ function synccfgs() {
 }
 
 # Update configs
-function updcfgs() {
+updcfgs() {
     oldpwd="$(pwd)"
     builtin cd ~/configs
     ./update.sh
@@ -42,7 +42,7 @@ catless() {
 
 # Convenience: make `cd' automagically ls
 cd() {
-    builtin cd "$@" && ls
+    builtin cd "$@" && ls --color=auto
 }
 
 # Git status of configs

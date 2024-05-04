@@ -275,6 +275,7 @@ mkcdalias cddl ~/Downloads
 mkcdalias cddoc ~/Documents
 mkcdalias cdmus ~/Music
 mkcdalias cdpic ~/Pictures
+mkcdalias cdvid ~/Videos
 mkcdalias cdhdl ~/configs/HourlySyncLogs
 mkcdalias cdbm ~/Bookmarks
 mkcdalias cdand '~/Bookmarks/Android\ partition'

@@ -241,8 +241,6 @@ echo -e "\033[0;36m$(alias | wc -l)\033[0m aliases and \033[0;36m$(declare -f | 
 
 bdaycheck
 
-# }}}
-
 BashrcEndTime=$(date +%s.%N)
 
 if command -v "bc" > /dev/null 2>&1; then
@@ -259,4 +257,6 @@ echo "Functions initialized with $BashFunctionsNumErrors errors."
 stty echo
 trap - ERR
 trap SIGINT
+
+# }}}
 
