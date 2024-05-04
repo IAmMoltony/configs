@@ -177,6 +177,9 @@ alias rbrc='relbrc' # Less typing
 alias paixorg='sudo pkill -9 Xorg' # kill xorg with ease
 alias xlogout='sudo pkill -u $USER' # Log out
 alias aptrepos='grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*' # List apt repos
+alias dfs='dirfsp' # less typing less hedayhce
+
+# -!ALIASend
 
 # AUTOMATIC ALIASES!!!
 
