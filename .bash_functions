@@ -329,3 +329,17 @@ paravozik() {
 lsfuncs() {
     echo "$(declare -f | grep -E '^[^_].* \(\)')"
 }
+
+# a delightful, an exquisite, a beautiful, etc.
+adelightful() {
+    # d stands for delight
+    d[0]="a delightful"
+    d[1]="a beautiful"
+    d[2]="an exquisite"
+    d[3]="a lovely"
+    d[4]="a pleasant"
+    d[5]="a delicious" # why not
+    size=${#d[@]}
+    i=$(($RANDOM % $size))
+    echo ${d[$i]}
+}
