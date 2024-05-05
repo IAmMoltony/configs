@@ -324,3 +324,8 @@ paravozik() {
         \sl
     done
 }
+
+# List functions
+lsfuncs() {
+    echo "$(declare -f | grep -E '^[^_].* \(\)')"
+}

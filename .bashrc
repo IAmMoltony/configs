@@ -237,7 +237,7 @@ echo -e "Hourly sync logs take up \033[1;33m$(du -sh ~/configs/HourlySyncLogs | 
 
 checkhsl
 
-echo -e "\033[0;36m$(alias | wc -l)\033[0m aliases and \033[0;36m$(declare -f | grep -E '^[^_].* \(\)' | wc -l)\033[0m functions are installed."
+echo -e "\033[0;36m$(alias | wc -l)\033[0m aliases and \033[0;36m$(lsfuncs | wc -l)\033[0m functions are installed."
 
 bdaycheck
 
