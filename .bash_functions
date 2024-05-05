@@ -343,3 +343,8 @@ adelightful() {
     i=$(($RANDOM % $size))
     echo ${d[$i]}
 }
+
+# Cat a config in the repo
+catcfgcfg() {
+    cat ~/configs/$1
+}
