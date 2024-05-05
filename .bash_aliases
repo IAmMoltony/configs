@@ -268,6 +268,7 @@ mkexitalias tiuq
 mkexitalias iuqt
 mkexitalias tiqu
 mkexitalias tuiq
+mkexitalias utiq
 
 # }}}
 
