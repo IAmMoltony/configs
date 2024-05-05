@@ -27,6 +27,9 @@ mkdir -p $HOME/.config/kitty
 echo "Creating i3 config dir"
 mkdir -p $HOME/.config/i3
 
+echo "Creating compton config dir"
+mkdir -p $HOME/.config/compton
+
 # dot files
 
 cpcfg .bashrc
@@ -38,6 +41,7 @@ cpcfg .bday
 cpcfgd .bash_aliases .bash-configs
 cpcfgd .bash_functions .bash-configs
 cpcfgd kitty.conf .config/kitty
+cpcfgd compton.conf .config/compton
 cpcfgdf i3cfg .config/i3/config
 
 echo "Copying melonDS config"

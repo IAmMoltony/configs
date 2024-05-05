@@ -208,4 +208,4 @@ bindsym $mod+Shift+Print xfce4-screenshooter -w
 bindsym $mod+Shift+P exec xfce4-panel --disable-wm-check
 
 # start compton
-exec compton
+exec --no-startup-id compton --config ~/.config/compton/compton.cong -b

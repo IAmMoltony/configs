@@ -212,6 +212,7 @@ mkecalias kittyconf kc ~/.config/kitty/kitty.conf
 mkecalias birthday bd ~/.bday
 mkecalias fastfetchcfg ffc ~/configs/fastfetch-cfg.jsonc
 mkecalias i3config i3 ~/.config/i3/config
+mkecalias comptoncfg ct ~/.config/compton/compton.conf
 
 # }}}
 
