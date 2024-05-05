@@ -317,3 +317,10 @@ docleanupping() {
         done
     fi
 }
+
+# i like trains
+paravozik() {
+    while true; do
+        \sl
+    done
+}
