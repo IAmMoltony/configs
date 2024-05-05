@@ -223,6 +223,7 @@ mksuecalias sourceslist srcl /etc/apt/sources.list
 mksuecalias sourceslist sl /etc/apt/sources.list
 mksuecalias samba smb /etc/samba/smb.conf
 mksuecalias releaseupgrades ru /etc/update-manager/release-upgrades
+mksuecalias refind rfd /boot/efi/efi/refind/refind.conf
 
 # }}}
 
