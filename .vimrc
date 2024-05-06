@@ -36,6 +36,7 @@ command! Edtbrc tabnew ~/.bashrc
 command! Edtba tabnew ~/.bash-configs/.bash_aliases
 command! Edtbf tabnew ~/.bash-configs/.bash_functions
 command! Edtkc tabnew ~/.config/kitty/kitty.conf
+command! Edti3 tabnew ~/.config/i3/config
 command! Dnrun !dotnet run -v n
 command! Dnbuild !dotnet build -v n
 command! Care !love .

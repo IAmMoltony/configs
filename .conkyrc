@@ -1,11 +1,8 @@
--- notice!!!!!!!!!!!!!!!!!!!!!!!!!
--- i dont use conky anymore
--- this isnt maintained
--- i'll come back when i use conky again
--- my laptop can't handle it
+-- moltony's conky config
+-- decided to use it as a time/date display
 
 conky.config = {
-    alignment = 'bottom_right',
+    alignment = 'top_left',
     background = true,
     border_width = 1,
     cpu_avg_samples = 2,
@@ -13,12 +10,12 @@ conky.config = {
     default_outline_color = 'white',
     default_shade_color = 'black',
     double_buffer = true,
-    draw_borders = true,
+    draw_borders = false,
     draw_graph_borders = true,
     draw_outline = false,
-    draw_shades = true,
+    draw_shades = false,
     extra_newline = false,
-    font = 'Cascadia Code:size=9',
+    font = 'Noto Sans:size=72',
     gap_x = 60,
     gap_y = 60,
     minimum_height = 5,
@@ -31,7 +28,7 @@ conky.config = {
     out_to_x = true,
     own_window = true,
     own_window_class = 'Conky',
-    own_window_type = 'normal',
+    own_window_type = 'override',
     own_window_hints = 'undecorated,sticky,skip_taskbar,skip_pager,below',
     own_window_transparent = false,
     own_window_argb_visual = true,
@@ -46,32 +43,6 @@ conky.config = {
 }
 
 conky.text = [[
-${alignc}${color orange}$user_names${color grey} on ${color violet}$distribution $nodename
-${alignc}$color$time
-${alignc}Conky ${color green}$conky_version
-${alignc}${color}built on ${color green}$conky_build_date$color
-$color$hr
-${alignc}${color lime}System Stats
-${color grey}Uptime:$color $uptime
-${color grey}RAM:$color $mem/$memmax ${color blue}${membar 4}
-${color grey}Swap:$color $swap/$swapmax ${color orange}${swapbar 4}
-${color grey}CPU:$color $cpu% ${color red}${cpubar 4}
-${color grey}Battery:$color ${battery_percent all}%
-$color$hr
-${alignc}${color skyblue}File Systems
- ${color grey}/ $color${fs_used /}/${fs_size /} ${color green}${fs_bar 5 /}${color grey}
- /windows $color${fs_used /windows}/${fs_size /windows} ${color green}${fs_bar 5 /windows}
-$color$hr
-${alignc}${color orange}Processes
-${color grey}$color$processes ${color grey}total, $color$running_processes ${color grey}running
- ${color lightgreen}${top name 1} ${color yellow}${top pid 1} ${color pink}${top cpu 1} ${color lightblue}${top mem 1}
- ${color lightgreen}${top name 2} ${color yellow}${top pid 2} ${color pink}${top cpu 2} ${color lightblue}${top mem 2}
- ${color lightgreen}${top name 3} ${color yellow}${top pid 3} ${color pink}${top cpu 3} ${color lightblue}${top mem 3}
- ${color lightgreen}${top name 4} ${color yellow}${top pid 4} ${color pink}${top cpu 4} ${color lightblue}${top mem 4}
- ${color lightgreen}${top name 5} ${color yellow}${top pid 5} ${color pink}${top cpu 5} ${color lightblue}${top mem 5}
-$color$hr
-${alignc}${color yellow}Music
-${color}Currently ${color lime}$audacious_status
-${color}Song: ${color yellow}$audacious_playlist_position/$audacious_playlist_length ${color lime}${scroll 40 ${audacious_title 1000}}
-$color$audacious_position / $audacious_length ${color blue}${audacious_bar 4}
+${time %H:%M}${voffset -90}
+${offset 10}${font Noto Sans:size=12}${time %a %F}
 ]]
