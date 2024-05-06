@@ -202,7 +202,7 @@ bindsym --release --border button2 kill
 # screen shwoop
 bindsym Print exec xfce4-screenshooter
 bindsym $mod+Print exec xfce4-screenshooter -f
-bindsym $mod+Shift+Print xfce4-screenshooter -w
+bindsym $mod+Shift+Print exec xfce4-screenshooter -w
 
 # start up panel
 bindsym $mod+Shift+P exec xfce4-panel --disable-wm-check
