@@ -304,6 +304,8 @@ mkcdalias cdcfg ~/configs
 mkcdalias cdcfgs ~/configs
 mkcdalias cdcfgbin ~/configs/bin
 mkcdalias cdcfgsbin ~/configs/bin
+mkcdalias cdsysd /etc/systemd/
+mkcdalias mksysdsys /etc/systemd/system
 mkcdalias cd.. ..
 mkcdalias .. ..
 mkcdalias .... ../..
