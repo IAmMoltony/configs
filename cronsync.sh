@@ -38,4 +38,6 @@ if ! cat $hslnm | grep -q "No changes, exiting"; then
     notify-send "Changes found, sending email"
     sendemailoutput=$(./sendemail.pl $hslnm 2>&1)
     notify-send "$sendemailoutput"
+    mkdir -p EmailLogs
+    echo "$sendemailoutput" > EmailLogs/el_$(date "%F_%T")
 fi
