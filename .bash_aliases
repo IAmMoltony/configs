@@ -153,7 +153,7 @@ alias vimpc='vim +PlugClean' # Clean vim plugins
 alias dirfspraw='du --max-depth=1 -h --all' # Analyze free space in directory (no sort)
 alias dirfsp='dirfspraw | sort -h' # Analyze free space in directory
 alias grn='grep -Irn' # Shortcut for grep -rn
-alias grn2do='grn . -e TODO' # Find TODOs *ds-craft flashbacks*
+alias grn2do='grn . -e TODO' # Find TODOs *ds-craft flashbacks* TODO function so we can use and dir
 alias rmhsl='rm ~/configs/HourlySyncLogs -rf' # Remove hourly config sync logs
 alias rmun='find . -name "*.un~" -exec rm -f {} +' # Remove annoying Vim backup files
 alias gpshpaipai='gpsh && paipai' # Git push pai pai

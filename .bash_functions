@@ -370,3 +370,8 @@ enablebchint() {
     fi
     \rm -f "$HOME/.idontwanttoinstallbc" && echo -e "Okay, you will be annoyed again.\nRun disablebchint to disable the message."
 }
+
+# List TODOs in cfgs w/o .git
+todocfgs() {
+    grep --exclude-dir=.git -rnw ~/configs -e 'TODO'
+}
