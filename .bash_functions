@@ -223,6 +223,10 @@ countfilesindir() {
 
 # Check hourly sync logs
 checkhsl() {
+    if [ ! -e "$HOME/configs/HourlySyncLogs" ]; then
+        echo "HSL directory not found or is not a directory, skipping HSL check."
+        return
+    fi
     countfilesindir ~/configs/HourlySyncLogs
 
     if (( $? > 30 )); then
@@ -347,4 +351,22 @@ adelightful() {
 # Cat a config in the repo
 catcfgcfg() {
     cat ~/configs/$1
+}
+
+# Disable post-init message telling you to install bc if it's not installed
+disablebchint() {
+    if [ -f "$HOME/.idontwanttoinstallbc" ]; then
+        echo "The message is already disabled."
+        return
+    fi
+    touch "$HOME/.idontwanttoinstallbc" && echo -e "Okay, you will not be annoyed again.\nRun enablebchint to enable the message."
+}
+
+# Enable bc hint if that's your thing
+enablebchint() {
+    if [ ! -f "$HOME/.idontwanttoinstallbc" ]; then
+        echo "The message is already enabled."
+        return
+    fi
+    \rm -f "$HOME/.idontwanttoinstallbc" && echo -e "Okay, you will be annoyed again.\nRun disablebchint to disable the message."
 }

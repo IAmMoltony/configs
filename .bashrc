@@ -192,9 +192,12 @@ shopt -s checkwinsize # Check the window size (idk what this does)
 
 # WakaTime {{{
 
-echo "Enabling WakaTime"
+wakatimesh="$HOME/dev/bash-wakatime/bash-wakatime.sh"
 
-source $HOME/dev/bash-wakatime/bash-wakatime.sh
+if [ -f "$wakatimesh" ]; then
+    echo "Enabling WakaTime"
+    source $wakatimesh
+fi
 
 # }}}
 
@@ -238,7 +241,9 @@ echo -e "It is currently \033[0;36m$(LC_ALL=C date +"%H:%M %p")\033[0m on $(adel
 hcs-is-enabled --color
 cleanupchecker9000
 
-echo -e "Hourly sync logs take up \033[1;33m$(du -sh ~/configs/HourlySyncLogs | awk '{ print $1 }').\033[0m"
+if [ -d "$HOME/configs/HourlySyncLogs" ]; then
+    echo -e "Hourly sync logs take up \033[1;33m$(du -sh ~/configs/HourlySyncLogs | awk '{ print $1 }').\033[0m"
+fi
 
 checkhsl
 
@@ -258,6 +263,13 @@ fi
 # TODO time BA and BF
 echo "Aliases initialized with $BashAliasesNumErrors errors."
 echo "Functions initialized with $BashFunctionsNumErrors errors."
+
+# If bc isn't installed then tell
+if ! command -v "bc" > /dev/null 2>&1 && [ ! -f "$HOME/.idontwanttoinstallbc" ]; then
+    echo -e "Shell init timing is \033[0;31munavailable\033[0m."
+    echo "To enable shell init timing, please install bc on your system."
+    echo "To disable this message, run disablebchint."
+fi
 
 stty echo
 trap - ERR
