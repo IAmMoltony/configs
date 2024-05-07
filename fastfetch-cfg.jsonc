@@ -88,7 +88,7 @@
         },
         {
             "type": "custom",
-            "format": "|=======|   net    |=======|"
+            "format": "|=======|  network |=======|"
         },
         {
             "type": "wifi",
@@ -97,6 +97,10 @@
         {
             "type": "localip",
             "key": "ip\t\t"
+        },
+        {
+            "type": "bluetooth",
+            "key": "bt\t\t"
         },
         {
             "type": "custom",
@@ -109,10 +113,6 @@
         {
             "type": "version",
             "key": "ver\t\t"
-        },
-        {
-            "type": "bluetooth",
-            "key": "bt\t\t"
         }
     ]
 }
