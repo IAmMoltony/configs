@@ -283,6 +283,8 @@ mkcdalias cdpic ~/Pictures
 mkcdalias cdvid ~/Videos
 mkcdalias cdhdl ~/configs/HourlySyncLogs
 mkcdalias cdbm ~/Bookmarks
+mkcdalias cdbkmk ~/Bookmarks
+mkcdalias cdbk ~/Bookmarks
 mkcdalias cdand '~/Bookmarks/Android\ partition'
 mkcdalias cdanime ~/Bookmarks/Anime
 mkcdalias cdcart ~/Bookmarks/Cartoons
