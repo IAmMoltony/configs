@@ -1,6 +1,8 @@
 # vim:foldmethod=marker
 # Moltony's Bash Aliases
 
+# TODO create a section for git aliases
+
 # Error handling {{{
 
 BashAliasesNumErrors=0
@@ -192,6 +194,7 @@ alias l='ls -CF' # show the like executables with the little asterisk and when t
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias updrbrc='updcfgs && rbrc' # Update configs and then reload bashrc
 alias prettyjson='python -m json.tool' # Prettify json with a single, easy-to-remember command(tm)!
+alias gshwh='gshh' # In case i forgor
 
 # }}}
 
