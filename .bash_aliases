@@ -201,6 +201,7 @@ alias gshh='git show HEAD' # Show head
 alias gshhnp='git --no-pager show HEAD' # Show head without pager
 alias gcaaem='git commit -a --allow-empty-message' # Commit with empty message
 alias glf='git ls-files' # List git files
+alias i-forgor-submodules='git submodule update --init --recursive' # I FORGOR SUBMODULES!!!
 
 # }}}
 
