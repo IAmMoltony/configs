@@ -191,6 +191,7 @@ alias la='ls -A' # ls but show hidden
 alias l='ls -CF' # show the like executables with the little asterisk and when the directory the little slash ykwim
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias updrbrc='updcfgs && rbrc' # Update configs and then reload bashrc
+alias prettyjson='python -m json.tool' # Prettify json with a single, easy-to-remember command(tm)!
 
 # }}}
 
