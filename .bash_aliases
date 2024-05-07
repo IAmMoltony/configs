@@ -325,7 +325,7 @@ mkcolorado grep
 mkcolorado fgrep
 mkcolorado egrep
 
-# }}
+# }}}
 
 # WSL aliases {{{
 
@@ -339,7 +339,7 @@ fi
 
 rm-roll() {
     alias rm='rm -iv'
-    ((RANDOM % 100 < 50)) && {
+    ((RANDOM % 100 < 40)) && {
         alias rm='echo -e "The rm command has been disabled for this session.\n* Hint! Run rm-roll to hopefully enable it." && true'
     }
     true
