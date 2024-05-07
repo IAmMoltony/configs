@@ -191,11 +191,6 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
-# gap
-#gaps inner 2
-#gaps outer 2
-#smart_gaps on
-
 # middle click to close
 bindsym --release --border button2 kill
 
@@ -208,7 +203,7 @@ bindsym $mod+Shift+Print exec xfce4-screenshooter -w
 bindsym $mod+Shift+P exec xfce4-panel --disable-wm-check
 
 # start compton
-exec --no-startup-id compton --config ~/.config/compton/compton.conf -b
+exec --no-startup-id compton
 
 # start conky
-exec --no-startup-id conky
+exec conky
