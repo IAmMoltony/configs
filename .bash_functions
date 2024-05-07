@@ -209,7 +209,7 @@ mkcolorado() {
 # Today's commits in configs
 cfg2dc() {
     oldpwd="$(pwd)"
-bcdcfg # Don't ask me why it has to be like this.
+    builtin cd ~/configs
     todayscommits
     builtin cd "$oldpwd"
 }
@@ -343,6 +343,7 @@ adelightful() {
     d[3]="a lovely"
     d[4]="a pleasant"
     d[5]="a delicious" # why not
+    d[6]="a heavenly"
     size=${#d[@]}
     i=$(($RANDOM % $size))
     echo ${d[$i]}
@@ -368,6 +369,7 @@ enablebchint() {
         echo "The message is already enabled."
         return
     fi
+    # Non-alias rm is used here because there's a chance that rm trolling is enabled and also I don't want the message.
     \rm -f "$HOME/.idontwanttoinstallbc" && echo -e "Okay, you will be annoyed again.\nRun disablebchint to disable the message."
 }
 
