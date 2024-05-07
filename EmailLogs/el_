@@ -1,0 +1,10 @@
+no sender
+
+Trace begun at /usr/local/share/perl/5.34.0/Email/Sender/Simple.pm line 117
+Email::Sender::Simple::send_email('Email::Sender::Simple', 'Email::Abstract=ARRAY(0x6324ead2d368)', 'HASH(0x6324eaffd950)') called at /usr/local/share/perl/5.34.0/Email/Sender/Role/CommonSending.pm line 45
+Email::Sender::Role::CommonSending::try {...}  at /usr/share/perl5/Try/Tiny.pm line 102
+eval {...} at /usr/share/perl5/Try/Tiny.pm line 93
+Try::Tiny::try('CODE(0x6324ea5a9658)', 'Try::Tiny::Catch=REF(0x6324eafa7290)') called at /usr/local/share/perl/5.34.0/Email/Sender/Role/CommonSending.pm line 58
+Email::Sender::Role::CommonSending::send('Email::Sender::Simple', 'Email::Simple=HASH(0x6324eb0339d8)', 'HASH(0x6324eb033db0)') called at /usr/local/share/perl/5.34.0/Sub/Exporter/Util.pm line 57
+Sub::Exporter::Util::__ANON__('Email::Simple=HASH(0x6324eb0339d8)', 'HASH(0x6324eb033db0)') called at sendemail.pl line 108
+Sending email now!
