@@ -200,7 +200,9 @@ alias gshwh='gshh' # In case i forgor
 
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh" # Cool kitty ssh alias (kitty exclusive)
 
-# Automatic aliases: edit-cat aliases {{{
+# Automatic aliases {{{
+
+# Edit-cat aliases {{{
 
 mkecalias bashrc brc ~/.bashrc
 mkecalias bashaliases ba ~/.bash-configs/.bash_aliases
@@ -221,7 +223,7 @@ mkecalias comptoncfg ct ~/.config/compton/compton.conf
 
 # }}}
 
-# Automatic aliases: super-user edit-cat aliases {{{
+# Super-user edit-cat aliases {{{
 
 mksuecalias fstab fs /etc/fstab
 mksuecalias sourceslist srcl /etc/apt/sources.list
@@ -232,7 +234,7 @@ mksuecalias refind rfd /boot/efi/efi/refind/refind.conf
 
 # }}}
 
-# Automatic aliases: exit aliases {{{
+# Exit aliases {{{
 
 mkexitalias paipai
 mkexitalias bye
@@ -252,7 +254,7 @@ mkexitalias sl
 
 # }}}
 
-# Automatic aliases: `quit' misspellings {{{
+# `quit' misspellings {{{
 
 mkexitalias quit
 mkexitalias qiut
@@ -277,7 +279,7 @@ mkexitalias utiq
 
 # }}}
 
-# Automatic aliases: cd aliases {{{
+# cd aliases {{{
 
 mkcdalias cddl ~/Downloads
 mkcdalias cddoc ~/Documents
@@ -321,7 +323,7 @@ mkcdalias ........ ../../../..
 
 # }}}
 
-# Automatic aliases: --color=auto aliases {{{
+# --color=auto (colorado) aliases {{{
 
 mkcolorado ls
 mkcolorado dir
@@ -329,6 +331,8 @@ mkcolorado vdir
 mkcolorado grep
 mkcolorado fgrep
 mkcolorado egrep
+
+# }}}
 
 # }}}
 
