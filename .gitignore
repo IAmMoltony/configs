@@ -1,6 +1,7 @@
 *.swp
 HourlySyncLogs
 hsl_*
+el_*
 _Tmp/
 HCS_IS_DISABLED
 *.un~
