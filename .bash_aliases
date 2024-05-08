@@ -224,6 +224,7 @@ mkecalias diareplacement dr ~/Documents/DiaReplacement.txt
 mkecalias profile prf ~/.profile
 mkecalias kittyconf kc ~/.config/kitty/kitty.conf
 mkecalias birthday bd ~/.bday
+mkecalias birthday bday ~/.bday
 mkecalias fastfetchcfg ffc ~/configs/fastfetch-cfg.jsonc
 mkecalias i3config i3 ~/.config/i3/config
 mkecalias comptoncfg ct ~/.config/compton/compton.conf
