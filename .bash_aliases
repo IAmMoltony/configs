@@ -139,6 +139,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias updrbrc='updcfgs && rbrc' # Update configs and then reload bashrc
 alias prettyjson='python -m json.tool' # Prettify json with a single, easy-to-remember command(tm)!
 alias gshwh='gshh' # In case i forgor
+alias areconf='autoreconf --verbose --install --force' # Autorceonf
 
 # }}}
 
