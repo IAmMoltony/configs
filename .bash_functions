@@ -439,6 +439,8 @@ mathtest() {
             break
         fi
     done
+
+    trap SIGINT
 }
 
 # Math test C-c handler
