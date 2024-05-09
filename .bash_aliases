@@ -366,8 +366,6 @@ rm-roll() {
     true
 }
 
-rm-roll
-
 # }}}
 
 # User aliases (Aliases specific to one user, not synced to the github repo) {{{

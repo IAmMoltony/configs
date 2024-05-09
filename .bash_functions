@@ -172,7 +172,7 @@ mkexitalias() {
 # New cd alias
 mkcdalias() {
     alias $1="cd $2"
-    alias b$1="cd $2"
+    alias b$1="builtin cd $2"
 }
 
 # New edt + cat alias
