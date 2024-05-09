@@ -258,6 +258,10 @@ echo -e "\033[0;36m$(alias | wc -l)\033[0m aliases and \033[0;36m$(lsfuncs | wc 
 bdaycheck
 maythe4
 
+if $(( $(fdspercent) >= 80)); then
+    echo -e "\033[0;31mWARNING YOU ARE RUNNING DANGEROUSLY LOW ON SPACE!!!!!!!!!!!!!\033[0m"
+fi
+
 BashrcEndTime=$(date +%s.%N)
 
 if command -v "bc" > /dev/null 2>&1; then

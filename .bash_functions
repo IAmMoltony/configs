@@ -447,3 +447,8 @@ mathtest() {
 mathtestnuhuh() {
     echo "You MUST do the math test!!"
 }
+
+# filled disk space percent
+fdspercent() {
+    echo "$(df -h / | tail -n 1 | awk '{print $5}' | sed 's/%//')"
+}
