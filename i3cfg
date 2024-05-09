@@ -213,3 +213,6 @@ exec conky
 
 # start polkit
 exec --no-startup-id lxpolkit
+
+# task manager
+bindsym $mod+Shift+Escape xfce4-taskmanager
