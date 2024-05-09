@@ -115,6 +115,7 @@ alias restoreresolution='xrandr -s 1366x768' # Restore screen resolution
 alias care='love .' # Start love2d
 alias dlmus='~/Music/music-lib/download' # Download music
 alias redlmus='~/Music/music-lib/redownload' # Re-download music
+alias szmus='~/Music/music-lib/diskspace' # Check how much space music takes up
 alias rmmus='~/Music/music-lib/delete.py' # Delete music
 alias sma='sudo mount -a' # Short sudo mount -a
 alias numalias='alias | wc -l' # Count how many aliases are installed

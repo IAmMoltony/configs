@@ -202,6 +202,9 @@ bindsym $mod+Shift+Print exec xfce4-screenshooter -w
 # start up panel
 bindsym $mod+Shift+P exec xfce4-panel --disable-wm-check
 
+# meta+q to startup up qbt (i use it quite a bit)
+bindsym $mod+Q exec qbittorrent
+
 # start compton
 exec --no-startup-id compton
 
