@@ -3,9 +3,8 @@
 set -e
 
 DLCC_Wget() {
-    wget https://github.com/microsoft/cascadia-code/releases/download/v2111.01/CascadiaCode-2111.01.zip
 
-    if [ "$?" != "0" ]; then
+    if ! wget https://github.com/microsoft/cascadia-code/releases/download/v2111.01/CascadiaCode-2111.01.zip; then
         # non-zero error code means bad
         echo "Failed to download cascadia code!!!! try again next time and make sure your internet workd!!!!"
         exit 1
@@ -13,9 +12,7 @@ DLCC_Wget() {
 }
 
 DLCC_Curl() {
-    curl -O https://github.com/microsoft/cascadia-code/releases/download/v2111.01/CascadiaCode-2111.01.zip
-
-    if [ "$?" != "0" ]; then
+    if ! curl -O https://github.com/microsoft/cascadia-code/releases/download/v2111.01/CascadiaCode-2111.01.zip; then
         # non-zero error code means bad
         echo "failed to download cascadia code!!!!!! Try again next time and make sure that your wifi is plugged in"
         exit 1
