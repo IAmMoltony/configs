@@ -250,6 +250,7 @@ checkhsl
 echo -e "\033[0;36m$(alias | wc -l)\033[0m aliases and \033[0;36m$(lsfuncs | wc -l)\033[0m functions are installed."
 
 bdaycheck
+maythe4
 
 BashrcEndTime=$(date +%s.%N)
 

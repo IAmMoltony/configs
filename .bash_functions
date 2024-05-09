@@ -377,3 +377,10 @@ enablebchint() {
 todocfgs() {
     grep --exclude-dir=.git -rnw ~/configs -e 'TODO'
 }
+
+# May the fourth be with you
+maythe4() {
+    if [ "$(LC_ALL= date +"%b %d")" == "May 04" ]; then
+        echo "May the fourth be with you!"
+    fi
+}
