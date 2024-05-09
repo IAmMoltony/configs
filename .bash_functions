@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # vim:foldmethod=marker
 # Moltony's Bash Functions
 
@@ -383,4 +384,64 @@ maythe4() {
     if [ "$(LC_ALL= date +"%b %d")" == "May 04" ]; then
         echo "May the fourth be with you!"
     fi
+}
+
+# Inconveniences
+inconveniences() {
+    rm-roll
+    yeah=$(($RANDOM % 100))
+    if (( $yeah <= 3 )); then
+        mathtest
+    fi
+}
+
+# Random insult
+# I don't feel like swearing honestly
+random_insult() {
+    in[0]="big doofus"
+    in[1]="disappointment"
+    in[2]="failure"
+    in[3]="garbage truck"
+    in[4]="stupid"
+    in[5]="cabbagehead"
+    in[6]="silly goose"
+    in[7]="clown"
+    in[8]="potato brain"
+    in[9]="cirno"
+    in[10]="fricking lunatic"
+    numins=${#in[@]}
+    bruh=$(($RANDOM % $numins))
+    echo ${in[$bruh]}
+}
+
+# Math test~!
+mathtest() {
+    trap 'mathtestnuhuh' SIGINT
+    a=$(($RANDOM % 10))
+    b=$(($RANDOM % 10))
+    op[0]="+"
+    op[1]="-"
+    numops=${#op[@]}
+    operator=${op[$(($RANDOM % $numops))]}
+    realanswerwhichisdefinitelycorrect=$(($a $operator $b))
+    while true; do
+        read -p "$a $operator $b = " usersanswerwhichisprobablyincorrect
+        re='^-?[0-9]+$'
+        if ! [[ $usersanswerwhichisprobablyincorrect =~ $re ]]; then
+            echo "Wtf?"
+            continue
+        fi
+
+        if [ "$usersanswerwhichisprobablyincorrect" != "$realanswerwhichisdefinitelycorrect" ]; then
+            echo "That ain't correct mate! Try again you $(random_insult)!"
+        else
+            echo "Correct! Continue with whatever the hell you were doing."
+            break
+        fi
+    done
+}
+
+# Math test C-c handler
+mathtestnuhuh() {
+    echo "You MUST do the math test!!"
 }
