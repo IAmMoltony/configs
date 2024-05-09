@@ -207,3 +207,6 @@ exec --no-startup-id compton
 
 # start conky
 exec conky
+
+# start polkit
+exec --no-startup-id lxpolkit
