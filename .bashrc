@@ -262,6 +262,18 @@ if $(( $(fdspercent) >= 80)); then
     echo -e "\033[0;31mWARNING YOU ARE RUNNING DANGEROUSLY LOW ON SPACE!!!!!!!!!!!!!\033[0m"
 fi
 
+if (( $(( $(ll ~/Downloads/*.torrent | wc -l) - 1 )) != 0 )); then
+    echo "There are torrent files in the Downloads folder."
+    while true; do
+        read -p "Is it okay to delete them? [y or n] " yn
+        case $yn in
+            [Yy]* ) rm -f ~/Downloads/*.torrent; break;;
+            [Nn]* ) echo "Okay then."; break;;
+            * ) echo "Please answer properly!";;
+        esac
+    done
+fi
+
 BashrcEndTime=$(date +%s.%N)
 
 if command -v "bc" > /dev/null 2>&1; then
