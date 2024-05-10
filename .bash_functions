@@ -452,3 +452,19 @@ mathtestnuhuh() {
 fdspercent() {
     echo "$(df -h / | tail -n 1 | awk '{print $5}' | sed 's/%//')"
 }
+
+# User functions (Functions specific to the user, not synced to the github repo) {{{
+
+ubferrorhdlr() {
+    echo " ! User Function Init error on line $1"
+    ((BashFunctionsNumErrors++))
+}
+
+trap 'ubferrorhdlr $LINENO' ERR
+
+# TODO turn the if -f then source into a function
+if [ -f "$HOME/.bash-configs/.userfunctions" ]; then
+    source "$HOME/.bash-configs/.userfunctions"
+fi
+
+# }}}

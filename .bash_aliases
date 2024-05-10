@@ -231,6 +231,7 @@ mkecalias fastfetchcfg ffc ~/configs/fastfetch-cfg.jsonc
 mkecalias i3config i3 ~/.config/i3/config
 mkecalias comptoncfg ct ~/.config/compton/compton.conf
 mkecalias userbashaliases uba ~/.bash-configs/.useraliases
+mkecalias userbashfuncs ubf ~/.bash-configs/.userfunctions
 
 # }}}
 
@@ -368,7 +369,7 @@ rm-roll() {
 
 # }}}
 
-# User aliases (Aliases specific to one user, not synced to the github repo) {{{
+# User aliases (Aliases specific to the user, not synced to the github repo) {{{
 
 ubaerrorhdlr() {
     echo " ! User Alias Init error on line $1"
@@ -380,7 +381,5 @@ trap 'ubaerrorhdlr $LINENO' ERR
 if [ -f "$HOME/.bash-configs/.useraliases" ]; then
     source "$HOME/.bash-configs/.useraliases"
 fi
-
-trap 'baerrorhdlr $LINENO' ERR
 
 # }}}
