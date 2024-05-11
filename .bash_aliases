@@ -140,6 +140,7 @@ alias updrbrc='updcfgs && rbrc' # Update configs and then reload bashrc
 alias prettyjson='python -m json.tool' # Prettify json with a single, easy-to-remember command(tm)!
 alias gshwh='gshh' # In case i forgor
 alias areconf='autoreconf --verbose --install --force' # Autorceonf
+alias chx='chmod +x' # Too tired of chmod +x so i shorten it
 
 # }}}
 
