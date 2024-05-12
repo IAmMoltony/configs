@@ -291,6 +291,7 @@ mkexitalias tuiq
 mkexitalias utiq
 mkexitalias iqut
 mkexitalias uqit
+mkexitalias ituq
 
 # }}}
 
