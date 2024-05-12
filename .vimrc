@@ -40,6 +40,7 @@ command! Edti3 tabnew ~/.config/i3/config
 command! Dnrun !dotnet run -v n
 command! Dnbuild !dotnet build -v n
 command! Care !love .
+command! Black !black %
 
 " Fix background
 set t_ut=
