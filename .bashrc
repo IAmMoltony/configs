@@ -56,7 +56,7 @@ HISTFILESIZE=2000
 echo "Setting editor and path"
 
 export EDITOR=/bin/vim
-export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin:~/configs/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/configs/bin"
 
 # }}}
 

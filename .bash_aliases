@@ -363,8 +363,8 @@ fi
 
 rm-roll() {
     alias rm='rm -iv'
-    ((RANDOM % 100 < 40)) && {
-        alias rm='echo -e "The rm command has been disabled for this session.\n* Hint! Run rm-roll to hopefully enable it." && true'
+    ((RANDOM % 100 < 20)) && {
+        alias rm='echo -e "Sorry I dozed off a bit, try again" && true'
     }
     true
 }

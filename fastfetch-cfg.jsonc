@@ -54,13 +54,7 @@
         },
         {
             "type": "disk",
-            "key": "disk (/)\t\t",
-            "folders": "/"
-        },
-        {
-            "type": "disk",
-            "key": "disk (/android)\t",
-            "folders": "/android"
+            "key": "disk (/)\t\t"
         },
         {
             "type": "cpu",
