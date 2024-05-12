@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
 
+if ! command -v bleachbit > /dev/null 2>&1; then
+    echo "BleachBit is not installed. Cleanupping is not possible."
+    exit 1
+fi
+
 sudo bleachbit --clean --preset
 bleachbit --clean --preset
