@@ -87,15 +87,20 @@ synccfgsmdff() {
 
 # Count all kinds of files in the current folder
 cntfiles() {
-    echo -e "\033[1;33mBlock special\033[0m: $(find . -maxdepth 1 -type b | wc -l)"
-    echo -e "\033[1;32mCharacter special\033[0m: $(find . -maxdepth 1 -type c | wc -l)"
-    echo -e "\033[1;34mDirectories\033[0m: $(find . -maxdepth 1 -mindepth 1 -type d | wc -l)"
+    dir="."
+    if [ "$1" != "" ]; then
+        dir="$1"
+    fi
+
+    echo -e "\033[1;33mBlock special\033[0m: $(find $dir -maxdepth 1 -type b | wc -l)"
+    echo -e "\033[1;32mCharacter special\033[0m: $(find $dir -maxdepth 1 -type c | wc -l)"
+    echo -e "\033[1;34mDirectories\033[0m: $(find $dir -maxdepth 1 -mindepth 1 -type d | wc -l)"
     echo -e "\033[1;35mNamed pipes\033[0m: $(find . -maxdepth 1 -type p | wc -l)"
-    echo -e "Regular files: $(find . -maxdepth 1 -type f | wc -l)"
-    echo -e "\033[1;36mSymbolic links\033[0m: $(find . -maxdepth 1 -type l | wc -l)"
-    echo -e "\033[1;31mSockets\033[0m: $(find . -maxdepth 1 -type s | wc -l)"
-    echo -e "Total (including directories): $(find . -maxdepth 1 -mindepth 1 -type b,c,d,p,f,l,s | wc -l)"
-    echo -e "Total (not including directories): $(find . -maxdepth 1 -mindepth 1 -type b,c,p,f,l,s | wc -l)"
+    echo -e "Regular files: $(find $dir -maxdepth 1 -type f | wc -l)"
+    echo -e "\033[1;36mSymbolic links\033[0m: $(find $dir -maxdepth 1 -type l | wc -l)"
+    echo -e "\033[1;31mSockets\033[0m: $(find $dir -maxdepth 1 -type s | wc -l)"
+    echo -e "Total (including directories): $(find $dir -maxdepth 1 -mindepth 1 -type b,c,d,p,f,l,s | wc -l)"
+    echo -e "Total (not including directories): $(find $dir -maxdepth 1 -mindepth 1 -type b,c,p,f,l,s | wc -l)"
 }
 
 # Git diff for configs
@@ -453,6 +458,13 @@ fdspercent() {
     echo "$(df -h / | tail -n 1 | awk '{print $5}' | sed 's/%//')"
 }
 
+# cirno
+cirnoday() {
+    if [ "$(date +"%d %m")" == "09 09" ]; then
+        echo "Happy Cirno day! (9)"
+    fi
+}
+
 # User functions (Functions specific to the user, not synced to the github repo) {{{
 
 ubferrorhdlr() {
@@ -469,9 +481,3 @@ fi
 
 # }}}
 
-# cirno
-cirnoday() {
-    if [ "$(date +"%d %m")" == "09 09" ]; then
-        echo "Happy Cirno day! (9)"
-    fi
-}
