@@ -465,6 +465,23 @@ cirnoday() {
     fi
 }
 
+# formating
+formating() {
+    file="$1"
+    if [ "$file" == "" ]; then
+        echo "please giv file"
+        return 1
+    fi
+
+    if [ ! -f "$file" ]; then
+        echo "what file ?? ?"
+        return 2
+    fi
+
+    black "$1"
+    git commit -am "Format $file"
+}
+
 # User functions (Functions specific to the user, not synced to the github repo) {{{
 
 ubferrorhdlr() {
