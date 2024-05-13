@@ -468,3 +468,10 @@ if [ -f "$HOME/.bash-configs/.userfunctions" ]; then
 fi
 
 # }}}
+
+# cirno
+cirnoday() {
+    if [ "$(date +"%d %m")" == "09 09" ]; then
+        echo "Happy Cirno day! (9)"
+    fi
+}
