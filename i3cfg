@@ -155,7 +155,7 @@ bindsym $mod+Ctrl+6 move container to workspace number $ws6; workspace number $w
 bindsym $mod+Ctrl+7 move container to workspace number $ws7; workspace number $ws7
 bindsym $mod+Ctrl+8 move container to workspace number $ws8; workspace number $ws8
 bindsym $mod+Ctrl+9 move container to workspace number $ws9; workspace number $ws9
-bindsym $mod+Ctrl+10 move container to workspace number $ws10; workspace number $ws10
+bindsym $mod+Ctrl+0 move container to workspace number $ws10; workspace number $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -228,3 +228,9 @@ exec --no-startup-id lxpolkit
 
 # task manager
 bindsym $mod+Shift+Escape exec xfce4-taskmanager
+
+# vim (I USE GVIM NOW!!! (im tired of using the console ALL the time))
+bindsym $mod+Ctrl+V exec gvim
+
+# make nonoSharp float (makes it easier to test)
+for_window [class="nonoSharp"] floating enable

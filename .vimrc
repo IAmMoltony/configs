@@ -52,7 +52,6 @@ set autoread
 set mouse=a
 
 " A bunch of useless settings
-set lazyredraw
 set hls
 set ruler
 set cursorline
