@@ -142,6 +142,8 @@ alias gshwh='gshh' # In case i forgor
 alias areconf='autoreconf --verbose --install --force' # Autorceonf
 alias chx='chmod +x' # Too tired of chmod +x so i shorten it
 alias dnfmt='dotnet format' # .NET formatting
+alias ssdr='sudo systemctl daemon-reload' # Reload systemctl daemon
+alias ssdrsma='ssdr && sma' # Reload systemctl daemon and mount fstab
 
 # }}}
 
