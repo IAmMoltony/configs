@@ -174,11 +174,16 @@ mkexitalias() {
     alias $1='exit'
 }
 
-# New cd alias
-mkcdalias() {
-    alias $1="cd $3"
-    alias b$1="builtin cd $3"
-    alias $2="ls $3"
+# Create new aliases for basic interaction with a directory
+# Argument 1: cd alias name (cdDIR) for cd'ing into the directory
+# Argument 2: ls alias name (lsDIR) for listing the contents of the directory
+# Argument 3: sz alias name (szDIR) for checking the size of the directory
+# Argument 4: the path to the directory
+mkdiralias() {
+    alias $1="cd $4"
+    alias b$1="builtin cd $4"
+    alias $2="ls $4"
+    alias $3="du $4 --max-depth=1 --all -h | sort -h"
 }
 
 # New edt + cat alias
