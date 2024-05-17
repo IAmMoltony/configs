@@ -45,4 +45,5 @@ conky.config = {
 conky.text = [[
 ${time %H:%M}${voffset -90}
 ${alignc}${font Noto Sans:size=12}${time %a %F}
+${alignc}Uptime: ${uptime}
 ]]
