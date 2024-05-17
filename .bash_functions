@@ -483,6 +483,14 @@ formating() {
     git commit -am "Format $file" # conveinent innit
 }
 
+# Number of today's commits in configs
+nctcfgs() {
+    oldpwd="$(pwd)"
+    builtin cd ~/configs
+    numcommtoday
+    builtin cd "$oldpwd"
+}
+
 # User functions (Functions specific to the user, not synced to the github repo) {{{
 
 ubferrorhdlr() {

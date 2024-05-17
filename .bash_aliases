@@ -145,6 +145,7 @@ alias dnfmt='dotnet format' # .NET formatting
 alias ssdr='sudo systemctl daemon-reload' # Reload systemctl daemon
 alias ssdrsma='ssdr && sma' # Reload systemctl daemon and mount fstab
 alias banger='sudo aplay /dev/mem' # PLAY THIS ABSOLUTE BANGER!!!
+alias nctcfg='nctcfgs' # Num commits today in configs (bruh edition)
 
 # }}}
 
