@@ -441,12 +441,17 @@ mathtest() {
         re='^-?[0-9]+$'
         if ! [[ $usersanswerwhichisprobablyincorrect =~ $re ]]; then
             echo "Wtf?"
+            (( losercounter++ ))
+            if (( losercounter >= 5 )); then
+                echo "You just failed the math test. You should be ashamed."
+                break
+            fi
             continue
         fi
 
         if [ "$usersanswerwhichisprobablyincorrect" != "$realanswerwhichisdefinitelycorrect" ]; then
             (( losercounter++ ))
-            if (( $losercounter >= 5 )); then
+            if (( losercounter >= 5 )); then
                 echo "You just failed the math test. You should be ashamed."
                 break
             fi
