@@ -333,6 +333,10 @@ mkcdalias cdcfgbin ~/configs/bin
 mkcdalias cdcfgsbin ~/configs/bin
 mkcdalias cdsysd /etc/systemd/
 mkcdalias cdsysdsys /etc/systemd/system
+mkcdalias cdmc ~/.minecraft
+mkcdalias cdmcw ~/.minecraft/saves
+mkcdalias cdmcrp ~/.minecraft/resourcepacks
+mkcdalias cdmcv ~/.minecraft/versions
 mkcdalias cd.. ..
 mkcdalias .. ..
 mkcdalias .... ../..
