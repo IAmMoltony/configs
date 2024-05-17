@@ -176,8 +176,9 @@ mkexitalias() {
 
 # New cd alias
 mkcdalias() {
-    alias $1="cd $2"
-    alias b$1="builtin cd $2"
+    alias $1="cd $3"
+    alias b$1="builtin cd $3"
+    alias $2="ls $3"
 }
 
 # New edt + cat alias
@@ -438,7 +439,7 @@ mathtest() {
         fi
 
         if [ "$usersanswerwhichisprobablyincorrect" != "$realanswerwhichisdefinitelycorrect" ]; then
-            echo "That ain't correct mate! Try again you $(random_insult)!"
+            echo "That ain't correct mate! Try again you $(random_insult)!" # australia moment
         else
             echo "Correct! Continue with whatever the hell you were doing."
             break
@@ -460,7 +461,7 @@ fdspercent() {
 
 # cirno
 cirnoday() {
-    if [ "$(date +"%d %m")" == "09 09" ]; then
+    if [ "$(LC_ALL= date +"%d %m")" == "09 09" ]; then
         echo "Happy Cirno day! (9)"
     fi
 }
@@ -479,7 +480,7 @@ formating() {
     fi
 
     black "$1"
-    git commit -am "Format $file"
+    git commit -am "Format $file" # conveinent innit
 }
 
 # User functions (Functions specific to the user, not synced to the github repo) {{{

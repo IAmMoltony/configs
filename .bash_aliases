@@ -85,7 +85,6 @@ alias saiy='sudo apt install -y' # Install p
 alias sary='sudo apt remove -y' # Rm p
 alias saud='sudo apt update' # Upd ps
 alias saug='sudo apt upgrade' # Upg ps
-alias lsdl='ls ~/Downloads' # List ownload
 alias pshcfgspaipai='pshcfgs && paipai' # Push cfgs and paipia
 alias :e='vim' # Another vim user HOW MANY VIM USERS DO WE HAVE
 alias wine64='WINEPREFIX=~/.wine64 wine64' # Convenience: start Wine with the 64-bit prefix
@@ -300,49 +299,54 @@ mkexitalias uqit
 
 # cd aliases {{{
 
-mkcdalias cddl ~/Downloads
-mkcdalias cddoc ~/Documents
-mkcdalias cdmus ~/Music
-mkcdalias cdpic ~/Pictures
-mkcdalias cdvid ~/Videos
-mkcdalias cdhdl ~/configs/HourlySyncLogs
-mkcdalias cdbm ~/Bookmarks
-mkcdalias cdbkmk ~/Bookmarks
-mkcdalias cdbk ~/Bookmarks
-mkcdalias cdand '~/Bookmarks/Android\ partition'
-mkcdalias cdanime ~/Bookmarks/Anime
-mkcdalias cdcart ~/Bookmarks/Cartoons
-mkcdalias cddlimg '~/Bookmarks/Downloaded\ images'
-mkcdalias cddlgames '~/Bookmarks/Game\ downloads'
-mkcdalias cddlg '~/Bookmarks/Game\ downloads'
-mkcdalias cdemugames '~/Bookmarks/Games\ \(emulator\)'
-mkcdalias cdiso ~/Bookmarks/ISOs
-mkcdalias cddev ~/Bookmarks/Programming
-mkcdalias cdshot ~/Bookmarks/Screenshots
-mkcdalias cdws ~/Bookmarks/Website
-mkcdalias cdweb ~/Bookmarks/Website
-mkcdalias cdwin '~/Bookmarks/Windows\ partition'
-mkcdalias cdwine ~/Bookmarks/Wine
-mkcdalias cdwine64 '~/Bookmarks/Wine\ \(64-bit\)'
-mkcdalias cdwinep '~/Bookmarks/Wine\ prefixes'
-mkcdalias cdbook ~/Bookmarks/Books
-mkcdalias cdwp ~/Pictures/wallpaper
-mkcdalias cdcam ~/Pictures/camera
-mkcdalias cdcfg ~/configs
-mkcdalias cdcfgs ~/configs
-mkcdalias cdcfgbin ~/configs/bin
-mkcdalias cdcfgsbin ~/configs/bin
-mkcdalias cdsysd /etc/systemd/
-mkcdalias cdsysdsys /etc/systemd/system
-mkcdalias cdmc ~/.minecraft
-mkcdalias cdmcw ~/.minecraft/saves
-mkcdalias cdmcrp ~/.minecraft/resourcepacks
-mkcdalias cdmcv ~/.minecraft/versions
-mkcdalias cd.. ..
-mkcdalias .. ..
-mkcdalias .... ../..
-mkcdalias ...... ../../../
-mkcdalias ........ ../../../..
+mkcdalias cddl lsdl ~/Downloads
+mkcdalias cddoc lsdoc ~/Documents
+mkcdalias cdmus lsmus ~/Music
+mkcdalias cdpic lspic ~/Pictures
+mkcdalias cdvid lsvid ~/Videos
+mkcdalias cdhsl lshsl ~/configs/HourlySyncLogs
+mkcdalias cdbm lsbm ~/Bookmarks
+mkcdalias cdbkmk lsbkmk ~/Bookmarks
+mkcdalias cdbk lsbk ~/Bookmarks
+mkcdalias cdand lsand '~/Bookmarks/Android\ partition' # L sand
+mkcdalias cdanime lsanime ~/Bookmarks/Anime
+mkcdalias cdcart lscart ~/Bookmarks/Cartoons
+mkcdalias cddlimg lsdlimg '~/Bookmarks/Downloaded\ images'
+mkcdalias cddlgames lsdlgames '~/Bookmarks/Game\ downloads'
+mkcdalias cddlg lsdlg '~/Bookmarks/Game\ downloads'
+mkcdalias cdemugames lsemugames '~/Bookmarks/Games\ \(emulator\)'
+mkcdalias cdiso lsiso ~/Bookmarks/ISOs
+mkcdalias cddev lsdev ~/Bookmarks/Programming
+mkcdalias cdshot lsshot ~/Bookmarks/Screenshots
+mkcdalias cdws lsws ~/Bookmarks/Website
+mkcdalias cdweb lsweb ~/Bookmarks/Website
+mkcdalias cdwin lswin '~/Bookmarks/Windows\ partition'
+mkcdalias cdwine lswine ~/Bookmarks/Wine
+mkcdalias cdwine64 lswine64 '~/Bookmarks/Wine\ \(64-bit\)'
+mkcdalias cdwinep lswinep '~/Bookmarks/Wine\ prefixes'
+mkcdalias cdbook lsbook ~/Bookmarks/Books
+mkcdalias cdwp lswp ~/Pictures/wallpaper
+mkcdalias cdcam lscam ~/Pictures/camera
+mkcdalias cdcfg lscfg ~/configs
+mkcdalias cdcfgs lscfgs ~/configs
+mkcdalias cdcfgbin lscfgbin ~/configs/bin
+mkcdalias cdcfgsbin lscfgsbin ~/configs/bin
+mkcdalias cdsysd lssysd /etc/systemd/
+mkcdalias cdsysdsys lssysdsys /etc/systemd/system
+mkcdalias cdmc lsmc ~/.minecraft
+mkcdalias cdmcw lsmcw ~/.minecraft/saves
+mkcdalias cdmcrp lsmcrp ~/.minecraft/resourcepacks
+mkcdalias cdmcv lsmcv ~/.minecraft/versions
+
+# parent directory {{{
+
+mkcdalias cd.. ls.. ..
+mkcdalias .. l.. ..
+mkcdalias .... l.... ../..
+mkcdalias ...... l...... ../../../
+mkcdalias ........ l........ ../../../..
+
+# }}}
 
 # }}}
 
