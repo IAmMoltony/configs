@@ -435,6 +435,7 @@ mathtest() {
     numops=${#op[@]}
     operator=${op[$(($RANDOM % $numops))]}
     realanswerwhichisdefinitelycorrect=$(($a $operator $b))
+    losercounter=0
     while true; do
         read -p "$a $operator $b = " usersanswerwhichisprobablyincorrect
         re='^-?[0-9]+$'
@@ -444,6 +445,11 @@ mathtest() {
         fi
 
         if [ "$usersanswerwhichisprobablyincorrect" != "$realanswerwhichisdefinitelycorrect" ]; then
+            (( losercounter++ ))
+            if (( $losercounter >= 5 )); then
+                echo "You just failed the math test. You should be ashamed."
+                break
+            fi
             echo "That ain't correct mate! Try again you $(random_insult)!" # australia moment
         else
             echo "Correct! Continue with whatever the hell you were doing."
