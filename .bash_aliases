@@ -302,44 +302,44 @@ mkexitalias uqit
 
 # cd aliases {{{
 
-mkcdalias cddl lsdl ~/Downloads
-mkcdalias cddoc lsdoc ~/Documents
-mkcdalias cdmus lsmus ~/Music
-mkcdalias cdpic lspic ~/Pictures
-mkcdalias cdvid lsvid ~/Videos
-mkcdalias cdhsl lshsl ~/configs/HourlySyncLogs
-mkcdalias cdbm lsbm ~/Bookmarks
-mkcdalias cdbkmk lsbkmk ~/Bookmarks
-mkcdalias cdbk lsbk ~/Bookmarks
-mkcdalias cdand lsand '~/Bookmarks/Android\ partition' # L sand
-mkcdalias cdanime lsanime ~/Bookmarks/Anime
-mkcdalias cdcart lscart ~/Bookmarks/Cartoons
-mkcdalias cddlimg lsdlimg '~/Bookmarks/Downloaded\ images'
-mkcdalias cddlgames lsdlgames '~/Bookmarks/Game\ downloads'
-mkcdalias cddlg lsdlg '~/Bookmarks/Game\ downloads'
-mkcdalias cdemugames lsemugames '~/Bookmarks/Games\ \(emulator\)'
-mkcdalias cdiso lsiso ~/Bookmarks/ISOs
-mkcdalias cddev lsdev ~/Bookmarks/Programming
-mkcdalias cdshot lsshot ~/Bookmarks/Screenshots
-mkcdalias cdws lsws ~/Bookmarks/Website
-mkcdalias cdweb lsweb ~/Bookmarks/Website
-mkcdalias cdwin lswin '~/Bookmarks/Windows\ partition'
-mkcdalias cdwine lswine ~/Bookmarks/Wine
-mkcdalias cdwine64 lswine64 '~/Bookmarks/Wine\ \(64-bit\)'
-mkcdalias cdwinep lswinep '~/Bookmarks/Wine\ prefixes'
-mkcdalias cdbook lsbook ~/Bookmarks/Books
-mkcdalias cdwp lswp ~/Pictures/wallpaper
-mkcdalias cdcam lscam ~/Pictures/camera
-mkcdalias cdcfg lscfg ~/configs
-mkcdalias cdcfgs lscfgs ~/configs
-mkcdalias cdcfgbin lscfgbin ~/configs/bin
-mkcdalias cdcfgsbin lscfgsbin ~/configs/bin
-mkcdalias cdsysd lssysd /etc/systemd/
-mkcdalias cdsysdsys lssysdsys /etc/systemd/system
-mkcdalias cdmc lsmc ~/.minecraft
-mkcdalias cdmcw lsmcw ~/.minecraft/saves
-mkcdalias cdmcrp lsmcrp ~/.minecraft/resourcepacks
-mkcdalias cdmcv lsmcv ~/.minecraft/versions
+mkdiralias cddl lsdl szdl ~/Downloads
+mkdiralias cddoc lsdoc szdoc ~/Documents
+mkdiralias cdmus lsmus szmus ~/Music
+mkdiralias cdpic lspic szpic ~/Pictures
+mkdiralias cdvid lsvid szvid ~/Videos
+mkdiralias cdhsl lshsl szhsl ~/configs/HourlySyncLogs
+mkdiralias cdbm lsbm szbm ~/Bookmarks
+mkdiralias cdbkmk lsbkmk szbkmk ~/Bookmarks
+mkdiralias cdbk lsbk szbk ~/Bookmarks
+mkdiralias cdand lsand szand '~/Bookmarks/Android\ partition' # L sand
+mkdiralias cdanime lsanime szanime ~/Bookmarks/Anime
+mkdiralias cdcart lscart szcart ~/Bookmarks/Cartoons
+mkdiralias cddlimg lsdlimg szdlimg '~/Bookmarks/Downloaded\ images'
+mkdiralias cddlgames lsdlgames szdlgames '~/Bookmarks/Game\ downloads'
+mkdiralias cddlg lsdlg szdlg '~/Bookmarks/Game\ downloads'
+mkdiralias cdemugames lsemugames szemugames '~/Bookmarks/Games\ \(emulator\)'
+mkdiralias cdiso lsiso sziso ~/Bookmarks/ISOs
+mkdiralias cddev lsdev szdev ~/Bookmarks/Programming
+mkdiralias cdshot lsshot szshot ~/Bookmarks/Screenshots
+mkdiralias cdws lsws szws ~/Bookmarks/Website
+mkdiralias cdweb lsweb szweb ~/Bookmarks/Website
+mkdiralias cdwin lswin szwin '~/Bookmarks/Windows\ partition'
+mkdiralias cdwine lswine szwine ~/Bookmarks/Wine
+mkdiralias cdwine64 lswine64 szwine64 '~/Bookmarks/Wine\ \(64-bit\)'
+mkdiralias cdwinep lswinep szwinep '~/Bookmarks/Wine\ prefixes'
+mkdiralias cdbook lsbook szbook ~/Bookmarks/Books
+mkdiralias cdwp lswp szwp ~/Pictures/wallpaper
+mkdiralias cdcam lscam szcam ~/Pictures/camera
+mkdiralias cdcfg lscfg szcfg ~/configs
+mkdiralias cdcfgs lscfgs szcfgs ~/configs
+mkdiralias cdcfgbin lscfgbin szcfgbin ~/configs/bin
+mkdiralias cdcfgsbin lscfgsbin szcfgsbin ~/configs/bin
+mkdiralias cdsysd lssysd szsysd /etc/systemd/
+mkdiralias cdsysdsys lssysdsys szsysdsys /etc/systemd/system
+mkdiralias cdmc lsmc szmc ~/.minecraft
+mkdiralias cdmcw lsmcw szmcw ~/.minecraft/saves
+mkdiralias cdmcrp lsmcrp szmcrp ~/.minecraft/resourcepacks
+mkdiralias cdmcv lsmcv szmcv ~/.minecraft/versions
 
 # parent directory {{{
 
