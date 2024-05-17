@@ -343,11 +343,11 @@ mkdiralias cdmcv lsmcv szmcv ~/.minecraft/versions
 
 # parent directory {{{
 
-mkcdalias cd.. ls.. ..
-mkcdalias .. l.. ..
-mkcdalias .... l.... ../..
-mkcdalias ...... l...... ../../../
-mkcdalias ........ l........ ../../../..
+mkdiralias cd.. ls.. sz.. ..
+mkdiralias .. l.. s.. ..
+mkdiralias .... l.... s.... ../..
+mkdiralias ...... l...... s...... ../../../
+mkdiralias ........ l........ s........ ../../../..
 
 # }}}
 
