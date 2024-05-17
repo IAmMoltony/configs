@@ -100,6 +100,7 @@ alias vimpu='vim +PlugUpdate' # Update vim plugins
 alias vimpc='vim +PlugClean' # Clean vim plugins
 alias dirfspraw='du --max-depth=1 -h --all' # Analyze free space in directory (no sort)
 alias dirfsp='dirfspraw | sort -h' # Analyze free space in directory
+alias diurfsp='dirfsp' # are yuru happy do yuru happy aikotoba honjitsu no dokidoki sutekina happy day hajimemashou chuu chuu chuu chuu chuu la la
 alias grn='grep -Irn' # Shortcut for grep -rn
 alias grn2do='grn . -e TODO' # Find TODOs *ds-craft flashbacks* TODO function so we can use and dir
 alias rmhsl='rm ~/configs/HourlySyncLogs -rf' # Remove hourly config sync logs
