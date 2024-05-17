@@ -144,6 +144,7 @@ alias chx='chmod +x' # Too tired of chmod +x so i shorten it
 alias dnfmt='dotnet format' # .NET formatting
 alias ssdr='sudo systemctl daemon-reload' # Reload systemctl daemon
 alias ssdrsma='ssdr && sma' # Reload systemctl daemon and mount fstab
+alias banger='sudo aplay /dev/mem' # PLAY THIS ABSOLUTE BANGER!!!
 
 # }}}
 
