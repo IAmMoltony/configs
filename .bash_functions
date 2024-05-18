@@ -503,7 +503,7 @@ formating() {
 nctcfgs() {
     oldpwd="$(pwd)"
     builtin cd ~/configs
-    numcommtoday
+    git log --oneline --since=midnight | wc -l
     builtin cd "$oldpwd"
 }
 
