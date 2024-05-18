@@ -269,6 +269,8 @@ if [ -d "$HOME/configs/HourlySyncLogs" ]; then
     echo -e "Hourly sync logs take up \033[1;33m$(du -sh ~/configs/HourlySyncLogs | awk '{ print $1 }').\033[0m"
 fi
 
+echo -e "This computer has been up for \033[0;36m$(uptime -p | cut -c 4-)\033[0m."
+
 checkhsl
 
 echo -e "\033[0;36m$(alias | wc -l)\033[0m aliases and \033[0;36m$(lsfuncs | wc -l)\033[0m functions are installed."

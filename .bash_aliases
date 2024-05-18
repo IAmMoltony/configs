@@ -146,6 +146,7 @@ alias ssdrsma='ssdr && sma' # Reload systemctl daemon and mount fstab
 alias banger='sudo aplay /dev/mem' # PLAY THIS ABSOLUTE BANGER!!!
 alias nctcfg='nctcfgs' # Num commits today in configs (bruh edition)
 alias dfsp='dirfsp' # Dirfsp shorthand
+alias rmrsc='rm -f ~/.restartssincecleanup' # Remov e the restarts since cleanup file
 
 # }}}
 
