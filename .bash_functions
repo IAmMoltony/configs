@@ -521,6 +521,11 @@ anyfilevid() {
     ffmpeg -f rawvideo -pixel_format rgb32 -video_size 32x32 -framerate 10.766666 -i $1 -f u8 -ar 44100 -ac 1 -i $1 -sws_flags neighbor -s 240x240 $1.mp4
 }
 
+# Find TODOs in configs
+cfg2do() {
+    grn2do ~/configs
+}
+
 # User functions (Functions specific to the user, not synced to the github repo) {{{
 
 ubferrorhdlr() {
