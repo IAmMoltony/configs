@@ -507,6 +507,15 @@ nctcfgs() {
     builtin cd "$oldpwd"
 }
 
+# grep todos
+grn2do() {
+    dir="."
+    if [ "$1" != "" ]; then
+        dir="$1"
+    fi
+    grep -rn $dir -e TODO
+}
+
 # User functions (Functions specific to the user, not synced to the github repo) {{{
 
 ubferrorhdlr() {
