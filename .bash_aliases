@@ -239,6 +239,7 @@ mkecalias i3config i3 ~/.config/i3/config
 mkecalias comptoncfg ct ~/.config/compton/compton.conf
 mkecalias userbashaliases uba ~/.bash-configs/.useraliases
 mkecalias userbashfuncs ubf ~/.bash-configs/.userfunctions
+mkecalias requirements pyreq ./requirements.txt
 
 # }}}
 
