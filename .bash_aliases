@@ -303,7 +303,7 @@ mkexitalias uqit
 
 # }}}
 
-# cd aliases {{{
+# Directory aliases {{{
 
 mkdiralias cddl lsdl szdl ~/Downloads
 mkdiralias cddoc lsdoc szdoc ~/Documents
@@ -343,6 +343,7 @@ mkdiralias cdmc lsmc szmc ~/.minecraft
 mkdiralias cdmcw lsmcw szmcw ~/.minecraft/saves
 mkdiralias cdmcrp lsmcrp szmcrp ~/.minecraft/resourcepacks
 mkdiralias cdmcv lsmcv szmcv ~/.minecraft/versions
+mkdiralias cdmcmod lsmcmod szmcmod ~/.minecraft/mods
 
 # parent directory {{{
 
