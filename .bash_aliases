@@ -132,10 +132,6 @@ alias gshwh='gshh' # In case i forgor
 alias areconf='autoreconf --verbose --install --force' # Autorceonf
 alias chx='chmod +x' # Too tired of chmod +x so i shorten it
 alias dnfmt='dotnet format' # .NET formatting
-alias ssdr='sudo systemctl daemon-reload' # Reload systemctl daemon
-alias ssdrsma='ssdr && sma' # Reload systemctl daemon and mount fstab
-alias ssst='sudo systemctl status' # View status of a service
-alias sssr='sudo systemctl start' # Start a service
 alias banger='sudo aplay /dev/mem' # PLAY THIS ABSOLUTE BANGER!!!
 alias nctcfg='nctcfgs' # Num commits today in configs (bruh edition)
 alias dfsp='dirfsp' # Dirfsp shorthand
@@ -218,6 +214,15 @@ alias spsc='sudo pacman -Sc --noconfirm' # I don't use arch anymore so can't say
 alias spsu='sudo pacman -Su --noconfirm' # Update but not download package lists (arch linuh)
 alias archlnx-update='spsyu && ysyu' # Update normal pacman packages + aur
 alias spsy='echo "no that would be stupid"' # This originally was an alias for `sudo pacman -Sy` but i heard that's bad
+
+# }}}
+
+# SystemDeez Nuts aliases (systemd) {{{
+
+alias ssdr='sudo systemctl daemon-reload' # Reload systemctl daemon
+alias ssdrsma='ssdr && sma' # Reload systemctl daemon and mount fstab
+alias ssst='sudo systemctl status' # View status of a service
+alias sssr='sudo systemctl start' # Start a service
 
 # }}}
 
