@@ -32,7 +32,7 @@ alias lq='ls -tl -1' # List contents of dir, sort files by modification time and
 alias lqa='la -tl -1' # Same as lq but also show hidden files (including . and ..)
 alias cppb='rsync -ah --info=progress2' # Copy with a neat little progress par
 alias relbrc='reload-bashrc' # Short reload-bashrc alias
-alias hd='hexdump -C' # Hexdump but pretty (this isn't in arch linux the last time i checked)
+alias hd='hexdump -C' # Hexdump but pretty (the hd binary is not in every distro)
 alias mkaur='makepkg -si --noconfirm' # Make an AUR package
 alias mk='make' # make but short (i forgor about this one since `make` is short enough anyway)
 alias reboot='sudo reboot' # Reboot the computer
@@ -354,6 +354,7 @@ mkdiralias cdmcw lsmcw szmcw ~/.minecraft/saves
 mkdiralias cdmcrp lsmcrp szmcrp ~/.minecraft/resourcepacks
 mkdiralias cdmcv lsmcv szmcv ~/.minecraft/versions
 mkdiralias cdmcmod lsmcmod szmcmod ~/.minecraft/mods
+mkdiralias cdmccr lsmccr szmccr ~/.minecraft/crash-reports
 
 # parent directory {{{
 
