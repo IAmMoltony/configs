@@ -308,6 +308,10 @@ fi
 echo "Aliases initialized with $BashAliasesNumErrors errors."
 echo "Functions initialized with $BashFunctionsNumErrors errors."
 
+# TODO show VnStat info on startup
+# e.g.:
+#  This system has uploaded 1.8T, downloaded 54E.
+
 # If bc isn't installed then tell
 if ! command -v "bc" > /dev/null 2>&1 && [ ! -f "$HOME/.idontwanttoinstallbc" ]; then
     echo -e "Shell init timing is \033[0;31munavailable\033[0m."
@@ -319,7 +323,7 @@ stty echo
 trap - ERR
 trap SIGINT
 
-rm-roll # Do this at the end so the torrent-deleter actually works
+rm-roll # Do this at the end so the torrent-deleter actually works all the time
 
 # }}}
 

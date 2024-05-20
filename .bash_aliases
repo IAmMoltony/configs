@@ -32,28 +32,19 @@ alias lq='ls -tl -1' # List contents of dir, sort files by modification time and
 alias lqa='la -tl -1' # Same as lq but also show hidden files (including . and ..)
 alias cppb='rsync -ah --info=progress2' # Copy with a neat little progress par
 alias relbrc='reload-bashrc' # Short reload-bashrc alias
-alias spsyu='sudo pacman -Syu --noconfirm --needed' # Update the system (arch linux)
-alias spsnc='sudo pacman -S --noconfirm --needed' # Install a package (arch linux)
-alias sprnc='sudo pacman -R --noconfirm' # Remove a package (arch linux)
-alias spss='sudo pacman -Ss' # Search package (arch linux)
-alias sprnsnc='sudo pacman -Rns --noconfirm' # Something about removing pacman package idk (arch linux)
 alias hd='hexdump -C' # Hexdump but pretty (this isn't in arch linux the last time i checked)
 alias mkaur='makepkg -si --noconfirm' # Make an AUR package
 alias mk='make' # make but short (i forgor about this one since `make` is short enough anyway)
 alias reboot='sudo reboot' # Reboot the computer
 alias freespc='df -h --total -x tmpfs -x efivarfs' # Check free space on the disk
-alias spsc='sudo pacman -Sc --noconfirm' # I don't use arch anymore so can't say for sure
 alias doxy='doxygen' # I'm too lazy to type 3 more characters
 alias h='history' # h(istory)
 alias shutdown='sudo shutdown now' # Shutdown NOW!
 alias syncrbrc='synccfgs && relbrc' # Sync configs, reload bashrc
-alias spsu='sudo pacman -Su --noconfirm' # Update but not download package lists (arch linuh)
 alias ysnc='yay -S --noconfirm' # Install AUR package with yay
 alias ysyu='yay -Syu --noconfirm' # Update AUR packages with yay
-alias archlnx-update='spsyu && ysyu' # Update normal pacman packages + aur
 alias yrnc='yay -R --noconfirm' # Say pai pai to AUR package
 alias v='vim' # vim (I don't use this one xdddd)
-alias spsy='echo "no that would be stupid"' # This originally was an alias for `sudo pacman -Sy` but i heard that's bad
 alias dnbld='dotnet build -v n' # Build a .NET solution with normal verbosity
 alias dnbuild='dnbld' # dnbld but less short
 alias dnrun='dotnet run -v n' # Run a .NET solution with normal verbosity
@@ -213,6 +204,20 @@ alias gshhnp='git --no-pager show HEAD' # Show head without pager
 alias gcaaem='git commit -a --allow-empty-message' # Commit with empty message
 alias glf='git ls-files' # List git files
 alias i-forgor-submodules='git submodule update --init --recursive' # I FORGOR SUBMODULES!!!
+
+# }}}
+
+# Pacman aliases (Arch Linux) {{{
+
+alias spsyu='sudo pacman -Syu --noconfirm --needed' # Update the system (arch linux)
+alias spsnc='sudo pacman -S --noconfirm --needed' # Install a package (arch linux)
+alias sprnc='sudo pacman -R --noconfirm' # Remove a package (arch linux)
+alias spss='sudo pacman -Ss' # Search package (arch linux)
+alias sprnsnc='sudo pacman -Rns --noconfirm' # Something about removing pacman package idk (arch linux)
+alias spsc='sudo pacman -Sc --noconfirm' # I don't use arch anymore so can't say for sure
+alias spsu='sudo pacman -Su --noconfirm' # Update but not download package lists (arch linuh)
+alias archlnx-update='spsyu && ysyu' # Update normal pacman packages + aur
+alias spsy='echo "no that would be stupid"' # This originally was an alias for `sudo pacman -Sy` but i heard that's bad
 
 # }}}
 
