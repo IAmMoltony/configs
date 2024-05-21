@@ -315,10 +315,17 @@ mkexitalias uqit
 
 # Directory aliases {{{
 
+# TODO create something like this:
+#  mkcdiralias dl ~/Downloads
+# creates cddl, lsdl and szdl without the need to specify all three alias names
+
 mkdiralias cddl lsdl szdl ~/Downloads
 mkdiralias cddoc lsdoc szdoc ~/Documents
 mkdiralias cdmus lsmus szmus ~/Music
 mkdiralias cdmuslib lsmuslib szmuslib ~/Music/music-lib
+mkdiralias cdml lsml szml ~/Music/music-lib
+mkdiralias cdmuslibmus lsmuslibmus szmuslibmus ~/Music/music-lib/music
+mkdiralias cdmlm lsmlm szmlm ~/Music/music-lib/music
 mkdiralias cdpic lspic szpic ~/Pictures
 mkdiralias cdvid lsvid szvid ~/Videos
 mkdiralias cdhsl lshsl szhsl ~/configs/HourlySyncLogs
