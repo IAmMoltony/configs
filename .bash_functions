@@ -17,28 +17,28 @@ trap 'bferrorhdlr $LINENO' ERR
 
 # Create dir and cd into it
 mdcd() {
-    mkdir "$1" && cd "$1"
+    mkdir "$1" && cd "$1" || return
 }
 
 # Sync configs
 synccfgs() {
     oldpwd="$(pwd)"
-    builtin cd ~/configs
+    builtin cd ~/configs || return
     ./sync-commit.sh
-    builtin cd "$oldpwd"
+    builtin cd "$oldpwd" || return
 }
 
 # Update configs
 updcfgs() {
     oldpwd="$(pwd)"
-    builtin cd ~/configs
+    builtin cd ~/configs || return
     ./update.sh
-    builtin cd "$oldpwd"
+    builtin cd "$oldpwd" || return
 }
 
 # Cat a file with pager (saves 3 keystrokes!)
 catless() {
-    cat $@ | less
+    cat "$@" | less
 }
 
 # Convenience: make `cd' automagically ls
@@ -49,17 +49,17 @@ cd() {
 # Git status of configs
 gstcfgs() {
     oldpwd="$(pwd)"
-    builtin cd ~/configs
+    builtin cd ~/configs || return
     git status
-    builtin cd "$oldpwd"
+    builtin cd "$oldpwd" || return
 }
 
 # Push configs (e.g. incase of internet not being there when synccfgsing)
 pshcfgs() {
     oldpwd="$(pwd)"
-    builtin cd ~/configs
+    builtin cd ~/configs || return
     gpsh
-    builtin cd "$oldpwd"
+    builtin cd "$oldpwd" || return
 }
 
 # Sync configs with a message
@@ -67,22 +67,22 @@ synccfgsm() {
     commitmsg="$1"
     if [ "$commitmsg" == "" ]; then
         echo -n "Please enter commit message >"
-        read commitmsg
+        read -r commitmsg
     fi
     if [ "$commitmsg" == "" ]; then
         echo "Please enter a commit message"
         return 1
     fi
     oldpwd="$(pwd)"
-    builtin cd ~/configs
+    builtin cd ~/configs || return
     ./sync-commit.sh "$commitmsg"
-    builtin cd "$oldpwd"
+    builtin cd "$oldpwd" || return
 }
 
 # Sync configs but show diff before
 synccfgsmdff() {
     dffcfgs
-    synccfgsm
+    synccfgsm "$@"
 }
 
 # Count all kinds of files in the current folder
@@ -92,33 +92,33 @@ cntfiles() {
         dir="$1"
     fi
 
-    echo -e "\033[1;33mBlock special\033[0m: $(find $dir -maxdepth 1 -type b | wc -l)"
-    echo -e "\033[1;32mCharacter special\033[0m: $(find $dir -maxdepth 1 -type c | wc -l)"
-    echo -e "\033[1;34mDirectories\033[0m: $(find $dir -maxdepth 1 -mindepth 1 -type d | wc -l)"
-    echo -e "\033[1;35mNamed pipes\033[0m: $(find . -maxdepth 1 -type p | wc -l)"
-    echo -e "Regular files: $(find $dir -maxdepth 1 -type f | wc -l)"
-    echo -e "\033[1;36mSymbolic links\033[0m: $(find $dir -maxdepth 1 -type l | wc -l)"
-    echo -e "\033[1;31mSockets\033[0m: $(find $dir -maxdepth 1 -type s | wc -l)"
-    echo -e "Total (including directories): $(find $dir -maxdepth 1 -mindepth 1 -type b,c,d,p,f,l,s | wc -l)"
-    echo -e "Total (not including directories): $(find $dir -maxdepth 1 -mindepth 1 -type b,c,p,f,l,s | wc -l)"
+    echo -e "\033[1;33mBlock special\033[0m: $(find "$dir" -maxdepth 1 -type b | wc -l)"
+    echo -e "\033[1;32mCharacter special\033[0m: $(find "$dir" -maxdepth 1 -type c | wc -l)"
+    echo -e "\033[1;34mDirectories\033[0m: $(find "$dir" -maxdepth 1 -mindepth 1 -type d | wc -l)"
+    echo -e "\033[1;35mNamed pipes\033[0m: $(find "$dir" -maxdepth 1 -type p | wc -l)"
+    echo -e "Regular files: $(find "$dir" -maxdepth 1 -type f | wc -l)"
+    echo -e "\033[1;36mSymbolic links\033[0m: $(find "$dir" -maxdepth 1 -type l | wc -l)"
+    echo -e "\033[1;31mSockets\033[0m: $(find "$dir" -maxdepth 1 -type s | wc -l)"
+    echo -e "Total (including directories): $(find "$dir" -maxdepth 1 -mindepth 1 -type b,c,d,p,f,l,s | wc -l)"
+    echo -e "Total (not including directories): $(find "$dir" -maxdepth 1 -mindepth 1 -type b,c,p,f,l,s | wc -l)"
 }
 
 # Git diff for configs
 dffcfgs() {
     oldpwd="$(pwd)"
-    builtin cd ~/configs
+    builtin cd ~/configs || return
     ./sync.sh
     git diff
-    builtin cd "$oldpwd"
+    builtin cd "$oldpwd" || return
 }
 
 # Git diff for configs (no pager)
 dffcfgsnp() {
     oldpwd="$(pwd)"
-    builtin cd ~/configs
+    builtin cd ~/configs || return
     ./sync.sh
     git --no-pager diff
-    builtin cd "$oldpwd"
+    builtin cd "$oldpwd" || return
 }
 
 # Git commit -am then push
@@ -154,24 +154,24 @@ newbkmk() {
 # View most recent HSL
 cmrhsl() {
     oldpwd="$(pwd)"
-    builtin cd ~/configs/HourlySyncLogs
+    builtin cd ~/configs/HourlySyncLogs || return
     mrhsl=$(ls -Art | tail -n 1)
     echo "Most recent HSL: $mrhsl"
     cat "$mrhsl"
-    builtin cd $oldpwd
+    builtin cd $oldpwd || return
 }
 
 # Git log in configs
 glgcfgs() {
     oldpwd="$(pwd)"
-    builtin cd ~/configs
+    builtin cd ~/configs || return
     glg
-    builtin cd $oldpwd
+    builtin cd "$oldpwd" || return
 }
 
 # New exit alias
 mkexitalias() {
-    alias $1='exit'
+    alias "$1"='exit'
 }
 
 # Create new aliases for basic interaction with a directory
@@ -180,15 +180,15 @@ mkexitalias() {
 # Argument 3: sz alias name (szDIR) for checking the size of the directory
 # Argument 4: the path to the directory
 mkdiralias() {
-    alias $1="cd $4"
-    alias b$1="builtin cd $4"
-    alias $2="ls $4"
-    alias $3="du $4 --max-depth=1 --all -h | sort -h"
+    alias "$1"="cd $4"
+    alias "b$1"="builtin cd $4"
+    alias "$2"="ls $4"
+    alias "$3"="du $4 --max-depth=1 --all -h | sort -h"
 }
 
 # mkdiralias but with common name patterns
 mkcdiralias() {
-    mkdiralias cd$1 ls$1 sz$1 $2
+    mkdiralias cd"$1" ls"$1" sz"$1" "$2"
 }
 
 # New edt + cat alias
@@ -199,11 +199,11 @@ mkecalias() {
     long=$1
     short=$2
     file=$3
-    alias edit-$long="$EDITOR $file"
-    alias cat-$long="cat $file | less"
-    alias view-$long="cat $file | less"
-    alias edt$short="edit-$long"
-    alias cat$short="cat-$long"
+    alias edit-"$long"="$EDITOR $file"
+    alias cat-"$long"="cat $file | less"
+    alias view-"$long"="cat $file | less"
+    alias edt"$short"="edit-$long"
+    alias cat"$short"="cat-$long"
 }
 
 # New edt + cat alias (sudo version)
@@ -211,30 +211,30 @@ mksuecalias() {
     long=$1
     short=$2
     file=$3
-    alias edit-$long="sudo $EDITOR $file"
-    alias cat-$long="cat $file | less"
-    alias view-$long="cat $file | less"
-    alias edt$short="edit-$long"
-    alias cat$short="cat-$long"
+    alias edit-"$long"="sudo $EDITOR $file"
+    alias cat-"$long"="cat $file | less"
+    alias view-"$long"="cat $file | less"
+    alias edt"$short"="edit-$long"
+    alias cat"$short"="cat-$long"
 }
 
 # New --color=auto alias (color auto sounds like colorado)
 mkcolorado() {
-    alias $1="$1 --color=auto"
+    alias "$1"="$1 --color=auto"
 }
 
 # Today's commits in configs
 cfg2dc() {
     oldpwd="$(pwd)"
-    builtin cd ~/configs
+    builtin cd ~/configs || return
     todayscommits
-    builtin cd "$oldpwd"
+    builtin cd "$oldpwd" || return
 }
 
 # count files in dir
 countfilesindir() {
-    nf=$(ls -Al $1 | wc -l)
-    nff=$(( $nf - 1 ))
+    nf=$(ls -Al "$1" | wc -l)
+    nff=$(( nf - 1 ))
     return $nff
 }
 
@@ -250,7 +250,7 @@ checkhsl() {
         countfilesindir ~/configs/HourlySyncLogs
         echo "There are currently $? hourly sync log files."
         while true; do
-            read -p "Delete? [y or n] " yn
+            read -p -r "Delete? [y or n] " yn
             case $yn in
                 [Yy]* ) rm -rf ~/configs/HourlySyncLogs/*; echo "Deleted."; break;;
                 [Nn]* ) echo "Okay, keeping."; break;;
@@ -290,7 +290,7 @@ randomcurrency() {
     c[11]="₩"
     c[12]="¥"
     size=${#c[@]}
-    index=$(($RANDOM % $size))
+    index=$(( RANDOM % size ))
     echo ${c[$index]}
 }
 
@@ -312,7 +312,7 @@ cleanupchecker9000() {
             if (( restartssincecleanup > 100 )); then
                 echo "You have gone a hundred shell restarts without cleanup."
                 while true; do
-                    read -p "Cleanup? [y or n] " yn
+                    read -p -r "Cleanup? [y or n] " yn
                     case $yn in
                         [Yy]* ) echo "0" > "$HOME/.restartssincecleanup"; docleanupping; echo "Cleanup done."; break;;
                         [Nn]* ) echo "Okay then."; break;;
@@ -329,7 +329,7 @@ docleanupping() {
     ~/configs/cleanupping
     if command -v "apt" > /dev/null 2>&1; then
         while true; do
-            read -p "You seem to be on a Debian-based system. Run sudo apt update? [y or n] " yn
+            read -p -r "You seem to be on a Debian-based system. Run sudo apt update? [y or n] " yn
             case $yn in
                 [Yy]* ) echo "Running!"; sudo apt update; echo "Done."; break;;
                 [Nn]* ) echo "Okay then."; break;;
@@ -348,7 +348,7 @@ paravozik() {
 
 # List functions
 lsfuncs() {
-    echo "$(declare -f | grep -E '^[^_].* \(\)')"
+    declare -f | grep -E '^[^_].* \(\)'
 }
 
 # a delightful, an exquisite, a beautiful, etc.
@@ -362,13 +362,13 @@ adelightful() {
     d[5]="a delicious" # why not
     d[6]="a heavenly"
     size=${#d[@]}
-    i=$(($RANDOM % $size))
-    echo ${d[$i]}
+    i=$(( RANDOM % size ))
+    echo "${d[$i]}"
 }
 
 # Cat a config in the repo
 catcfgcfg() {
-    cat ~/configs/$1
+    cat ~/configs/"$1"
 }
 
 # Disable post-init message telling you to install bc if it's not installed
@@ -397,7 +397,7 @@ todocfgs() {
 
 # May the fourth be with you
 maythe4() {
-    if [ "$(LC_ALL= date +"%b %d")" == "May 04" ]; then
+    if [ "$(LC_ALL='' date +"%b %d")" == "May 04" ]; then
         echo "May the fourth be with you!"
     fi
 }
@@ -405,8 +405,8 @@ maythe4() {
 # Inconveniences
 inconveniences() {
     rm-roll
-    yeah=$(($RANDOM % 100))
-    if (( $yeah <= 3 )); then
+    yeah=$(( RANDOM % 100 ))
+    if (( yeah <= 3 )); then
         mathtest
     fi
 }
@@ -426,23 +426,23 @@ random_insult() {
     in[9]="cirno"
     in[10]="fricking lunatic"
     numins=${#in[@]}
-    bruh=$(($RANDOM % $numins))
-    echo ${in[$bruh]}
+    bruh=$(( RANDOM % numins ))
+    echo "${in[$bruh]}"
 }
 
 # Math test~!
 mathtest() {
     trap 'mathtestnuhuh' SIGINT
-    a=$(($RANDOM % 10))
+    a=$(( RANDOM % 10 ))
     b=$(($RANDOM % 10))
     op[0]="+"
     op[1]="-"
     numops=${#op[@]}
-    operator=${op[$(($RANDOM % $numops))]}
-    realanswerwhichisdefinitelycorrect=$(($a $operator $b))
+    operator=${op[$(( RANDOM % numops ))]}
+    realanswerwhichisdefinitelycorrect=$(( $a $operator $b ))
     losercounter=0
     while true; do
-        read -p "$a $operator $b = " usersanswerwhichisprobablyincorrect
+        read -p -r "$a $operator $b = " usersanswerwhichisprobablyincorrect
         re='^-?[0-9]+$'
         if ! [[ $usersanswerwhichisprobablyincorrect =~ $re ]]; then
             echo "Wtf?"
@@ -477,12 +477,12 @@ mathtestnuhuh() {
 
 # filled disk space percent
 fdspercent() {
-    echo "$(df -h / | tail -n 1 | awk '{print $5}' | sed 's/%//')"
+    df -h / | tail -n 1 | awk '{print $5}' | sed 's/%//'
 }
 
 # cirno
 cirnoday() {
-    if [ "$(LC_ALL= date +"%d %m")" == "09 09" ]; then
+    if [ "$(LC_ALL='' date +"%d %m")" == "09 09" ]; then
         echo "Happy Cirno day! (9)"
     fi
 }
