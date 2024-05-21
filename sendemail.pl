@@ -12,6 +12,8 @@ use Email::Sender::Transport::SMTPS ();
 use Email::Simple ();
 use Email::Simple::Creator ();
 
+echo "WARNING: this script is deprecated af";
+
 if (@ARGV < 1) {
     die "Usage: ./sendemail.pl <Hourly sync log file>";
 }
