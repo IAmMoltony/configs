@@ -44,6 +44,7 @@ command! Dnfmt !dotnet format
 command! Care !love .
 command! Black !black %
 command! Pylint !pylint %
+command! Shck !shellcheck %
 
 " Fix background
 set t_ut=
