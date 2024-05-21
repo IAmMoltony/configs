@@ -507,9 +507,9 @@ formating() {
 # Number of today's commits in configs
 nctcfgs() {
     oldpwd="$(pwd)"
-    builtin cd ~/configs
+    builtin cd ~/configs || return
     git log --oneline --since=midnight | wc -l
-    builtin cd "$oldpwd"
+    builtin cd "$oldpwd" || return
 }
 
 # grep todos
@@ -518,12 +518,12 @@ grn2do() {
     if [ "$1" != "" ]; then
         dir="$1"
     fi
-    grep -rn $dir -e TODO
+    grep -rn "$dir" -e TODO
 }
 
 # Convert any file to a video
 anyfilevid() {
-    ffmpeg -f rawvideo -pixel_format rgb32 -video_size 32x32 -framerate 10.766666 -i $1 -f u8 -ar 44100 -ac 1 -i $1 -sws_flags neighbor -s 240x240 $1.mp4
+    ffmpeg -f rawvideo -pixel_format rgb32 -video_size 32x32 -framerate 10.766666 -i "$1" -f u8 -ar 44100 -ac 1 -i "$1" -sws_flags neighbor -s 240x240 "$1".mp4
 }
 
 # Find TODOs in configs
@@ -534,11 +534,11 @@ cfg2do() {
 # GhostScript or Git Status?
 gs() {
     echo "DID YOU MEAN GHOSTSCRIPT (1) OR GIT STATUS (2)"
-    read -p "???>" bruh
+    read -p -r "???>" bruh
     if [ "$bruh" == "1" ]; then
-        /usr/bin/gs $@
+        /usr/bin/gs "$@"
     elif [ "$bruh" == "2" ]; then
-        git status $@
+        git status "$@"
     else
         echo "ok man"
     fi
