@@ -526,6 +526,19 @@ cfg2do() {
     grn2do ~/configs
 }
 
+# GhostScript or Git Status?
+gs() {
+    echo "DID YOU MEAN GHOSTSCRIPT (1) OR GIT STATUS (2)"
+    read -p "???>" bruh
+    if [ "$bruh" == "1" ]; then
+        /usr/bin/gs $@
+    elif [ "$bruh" == "2" ]; then
+        git status $@
+    else
+        echo "ok man"
+    fi
+}
+
 # User functions (Functions specific to the user, not synced to the github repo) {{{
 
 ubferrorhdlr() {
