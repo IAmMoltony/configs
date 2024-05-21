@@ -318,6 +318,7 @@ mkexitalias uqit
 mkdiralias cddl lsdl szdl ~/Downloads
 mkdiralias cddoc lsdoc szdoc ~/Documents
 mkdiralias cdmus lsmus szmus ~/Music
+mkdiralias cdmuslib lsmuslib szmuslib ~/Music/music-lib
 mkdiralias cdpic lspic szpic ~/Pictures
 mkdiralias cdvid lsvid szvid ~/Videos
 mkdiralias cdhsl lshsl szhsl ~/configs/HourlySyncLogs
