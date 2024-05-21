@@ -136,10 +136,9 @@ alias banger='sudo aplay /dev/mem' # PLAY THIS ABSOLUTE BANGER!!!
 alias nctcfg='nctcfgs' # Num commits today in configs (bruh edition)
 alias dfsp='dirfsp' # Dirfsp shorthand
 alias rmrsc='rm -f ~/.restartssincecleanup' # Remov e the restarts since cleanup file
-alias chkbf='shellcheck ~/.bash-configs/.bash_functions' # Shellcheck bash functions
-alias chkba='shellcheck ~/.bash-configs/.bash_aliases' # Shellcheck bash aliases
-alias chkbrc='shellcheck ~/.bashrc' # Shellcheck bashrc
-alias less='less -R' # Make less interpret color codes
+alias chkbf='shellcheck --color=always ~/.bash-configs/.bash_functions | less' # Shellcheck bash functions
+alias chkba='shellcheck --color=always ~/.bash-configs/.bash_aliases | less' # Shellcheck bash aliases
+alias chkbrc='shellcheck --color=always ~/.bashrc | less' # Shellcheck bashrc
 
 # }}}
 
