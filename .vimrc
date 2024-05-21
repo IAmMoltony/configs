@@ -43,6 +43,7 @@ command! Dnbuild !dotnet build -v n
 command! Dnfmt !dotnet format
 command! Care !love .
 command! Black !black %
+command! Pylint !pylint %
 
 " Fix background
 set t_ut=
