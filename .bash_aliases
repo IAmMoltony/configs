@@ -315,54 +315,51 @@ mkexitalias uqit
 
 # Directory aliases {{{
 
-# TODO create something like this:
-#  mkcdiralias dl ~/Downloads
-# creates cddl, lsdl and szdl without the need to specify all three alias names
 
-mkdiralias cddl lsdl szdl ~/Downloads
-mkdiralias cddoc lsdoc szdoc ~/Documents
-mkdiralias cdmus lsmus szmus ~/Music
-mkdiralias cdmuslib lsmuslib szmuslib ~/Music/music-lib
-mkdiralias cdml lsml szml ~/Music/music-lib
-mkdiralias cdmuslibmus lsmuslibmus szmuslibmus ~/Music/music-lib/music
-mkdiralias cdmlm lsmlm szmlm ~/Music/music-lib/music
-mkdiralias cdpic lspic szpic ~/Pictures
-mkdiralias cdvid lsvid szvid ~/Videos
-mkdiralias cdhsl lshsl szhsl ~/configs/HourlySyncLogs
-mkdiralias cdbm lsbm szbm ~/Bookmarks
-mkdiralias cdbkmk lsbkmk szbkmk ~/Bookmarks
-mkdiralias cdbk lsbk szbk ~/Bookmarks
-mkdiralias cdand lsand szand '~/Bookmarks/Android\ partition' # L sand
-mkdiralias cdanime lsanime szanime ~/Bookmarks/Anime
-mkdiralias cdcart lscart szcart ~/Bookmarks/Cartoons
-mkdiralias cddlimg lsdlimg szdlimg '~/Bookmarks/Downloaded\ images'
-mkdiralias cddlgames lsdlgames szdlgames '~/Bookmarks/Game\ downloads'
-mkdiralias cddlg lsdlg szdlg '~/Bookmarks/Game\ downloads'
-mkdiralias cdemugames lsemugames szemugames '~/Bookmarks/Games\ \(emulator\)'
-mkdiralias cdiso lsiso sziso ~/Bookmarks/ISOs
-mkdiralias cddev lsdev szdev ~/Bookmarks/Programming
-mkdiralias cdshot lsshot szshot ~/Bookmarks/Screenshots
-mkdiralias cdws lsws szws ~/Bookmarks/Website
-mkdiralias cdweb lsweb szweb ~/Bookmarks/Website
-mkdiralias cdwin lswin szwin '~/Bookmarks/Windows\ partition'
-mkdiralias cdwine lswine szwine ~/Bookmarks/Wine
-mkdiralias cdwine64 lswine64 szwine64 '~/Bookmarks/Wine\ \(64-bit\)'
-mkdiralias cdwinep lswinep szwinep '~/Bookmarks/Wine\ prefixes'
-mkdiralias cdbook lsbook szbook ~/Bookmarks/Books
-mkdiralias cdwp lswp szwp ~/Pictures/wallpaper
-mkdiralias cdcam lscam szcam ~/Pictures/camera
-mkdiralias cdcfg lscfg szcfg ~/configs
-mkdiralias cdcfgs lscfgs szcfgs ~/configs
-mkdiralias cdcfgbin lscfgbin szcfgbin ~/configs/bin
-mkdiralias cdcfgsbin lscfgsbin szcfgsbin ~/configs/bin
-mkdiralias cdsysd lssysd szsysd /etc/systemd/
-mkdiralias cdsysdsys lssysdsys szsysdsys /etc/systemd/system
-mkdiralias cdmc lsmc szmc ~/.minecraft
-mkdiralias cdmcw lsmcw szmcw ~/.minecraft/saves
-mkdiralias cdmcrp lsmcrp szmcrp ~/.minecraft/resourcepacks
-mkdiralias cdmcv lsmcv szmcv ~/.minecraft/versions
-mkdiralias cdmcmod lsmcmod szmcmod ~/.minecraft/mods
-mkdiralias cdmccr lsmccr szmccr ~/.minecraft/crash-reports
+mkcdiralias dl ~/Downloads
+mkcdiralias doc ~/Documents
+mkcdiralias mus ~/Music
+mkcdiralias muslib ~/Music/music-lib
+mkcdiralias ml ~/Music/music-lib
+mkcdiralias muslibmus ~/Music/music-lib/music
+mkcdiralias mlm ~/Music/music-lib/music
+mkcdiralias pic ~/Pictures
+mkcdiralias vid ~/Videos
+mkcdiralias hsl ~/configs/HourlySyncLogs
+mkcdiralias bm ~/Bookmarks
+mkcdiralias bkmk ~/Bookmarks
+mkcdiralias bk ~/Bookmarks
+mkcdiralias and '~/Bookmarks/Android\ partition' # L sand
+mkcdiralias anime ~/Bookmarks/Anime
+mkcdiralias cart ~/Bookmarks/Cartoons
+mkcdiralias dlimg '~/Bookmarks/Downloaded\ images'
+mkcdiralias dlgames '~/Bookmarks/Game\ downloads'
+mkcdiralias dlg '~/Bookmarks/Game\ downloads'
+mkcdiralias emugames '~/Bookmarks/Games\ \(emulator\)'
+mkcdiralias iso ~/Bookmarks/ISOs
+mkcdiralias dev ~/Bookmarks/Programming
+mkcdiralias shot ~/Bookmarks/Screenshots
+mkcdiralias ws ~/Bookmarks/Website
+mkcdiralias web ~/Bookmarks/Website
+mkcdiralias win '~/Bookmarks/Windows\ partition'
+mkcdiralias wine ~/Bookmarks/Wine
+mkcdiralias wine64 '~/Bookmarks/Wine\ \(64-bit\)'
+mkcdiralias winep '~/Bookmarks/Wine\ prefixes'
+mkcdiralias book ~/Bookmarks/Books
+mkcdiralias wp ~/Pictures/wallpaper
+mkcdiralias cam ~/Pictures/camera
+mkcdiralias cfg ~/configs
+mkcdiralias cfgs ~/configs
+mkcdiralias cfgbin ~/configs/bin
+mkcdiralias cfgsbin ~/configs/bin
+mkcdiralias sysd /etc/systemd/
+mkcdiralias sysdsys /etc/systemd/system
+mkcdiralias mc ~/.minecraft
+mkcdiralias mcw ~/.minecraft/saves
+mkcdiralias mcrp ~/.minecraft/resourcepacks
+mkcdiralias mcv ~/.minecraft/versions
+mkcdiralias mcmod ~/.minecraft/mods
+mkcdiralias mccr ~/.minecraft/crash-reports
 
 # parent directory {{{
 

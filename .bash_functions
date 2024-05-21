@@ -186,6 +186,11 @@ mkdiralias() {
     alias $3="du $4 --max-depth=1 --all -h | sort -h"
 }
 
+# mkdiralias but with common name patterns
+mkcdiralias() {
+    mkdiralias cd$1 ls$1 sz$1 $2
+}
+
 # New edt + cat alias
 # Used like:
 #  mkecalias bashrc brc ~/.bashrc
