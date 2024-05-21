@@ -1,4 +1,5 @@
 # vim:foldmethod=marker
+# shellcheck shell=bash
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -101,7 +102,8 @@ fi
 
 [ -f imrunningonwsl ] && {
     echo "Setting WSL display"
-    export DISPLAY=$(grep nameserver /etc/resolv.conf | awk '{print $2}'):0.0
+    WslDisplay=$(grep nameserver /etc/resolv.conf | awk '{print $2}')
+    export DISPLAY="${WslDisplay}:0.0"
 }
 
 # }}}
@@ -142,7 +144,7 @@ export DEVKITPPC=${DEVKITPRO}/devkitPPC
 
 if [ -f "$HOME/intel/oneapi/setvars.sh" ]; then
     echo "Initializing Intel compiler"
-    source $HOME/intel/oneapi/setvars.sh
+    source "$HOME"/intel/oneapi/setvars.sh
 fi
 
 # }}}
@@ -196,7 +198,7 @@ wakatimesh="$HOME/dev/bash-wakatime/bash-wakatime.sh"
 
 if [ -f "$wakatimesh" ]; then
     echo "Enabling WakaTime"
-    source $wakatimesh
+    source "$wakatimesh"
 fi
 
 # }}}
@@ -226,7 +228,7 @@ fi
 # This became necessary when I wanted to install nvm on WSL but I don't use nvm on my laptop
 if [ -f "$HOME/.mssc" ]; then
     echo "Running Machine-Specific Startup Commands"
-    source $HOME/.mssc
+    source "$HOME"/.mssc
 fi
 
 # }}}
@@ -244,7 +246,7 @@ if ! command -v python3 > /dev/null 2>&1; then
     echo "!!!! ATTENTION !!!!"
     echo "YOU DO NOT HAVE PYTHON 3 INSTALLED !!!!!!!"
     echo "INSTALL NOW OR YOU WILL REGRET IT!!!!!!!!!!!!!"
-    read -p "press enter"
+    read -p -e "press enter"
     clear
 fi
 
@@ -286,7 +288,7 @@ fi
 if ll ~/Downloads/*.torrent > /dev/null 2>&1; then
     echo "There are torrent files in the Downloads folder."
     while true; do
-        read -p "Is it okay to delete them? [y or n] " yn
+        read -p -r "Is it okay to delete them? [y or n] " yn
         case $yn in
             [Yy]* ) echo "Alright, deleting!"; rm -f ~/Downloads/*.torrent; break;;
             [Nn]* ) echo "Okay then."; break;;

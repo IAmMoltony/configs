@@ -442,7 +442,7 @@ mathtest() {
     realanswerwhichisdefinitelycorrect=$(( $a $operator $b ))
     losercounter=0
     while true; do
-        read -p -r "$a $operator $b = " usersanswerwhichisprobablyincorrect
+        read -p "$a $operator $b = " usersanswerwhichisprobablyincorrect
         re='^-?[0-9]+$'
         if ! [[ $usersanswerwhichisprobablyincorrect =~ $re ]]; then
             echo "Wtf?"
