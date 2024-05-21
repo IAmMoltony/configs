@@ -38,7 +38,6 @@ if ! cat $hslnm | grep -q "No changes, exiting"; then
     notify-send "Changes found, sending email"
     sendemailoutput=$(./sendemail.py $hslnm 2>&1)
     sendemailcode="$?"
-    notify-send "$sendemailoutput"
     mkdir -p EmailLogs
     echo "$sendemailoutput" > EmailLogs/el_$(date +"%F_%T")
     if [ "$sendemailcode" != "0" ]; then
