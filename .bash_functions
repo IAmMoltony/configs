@@ -550,7 +550,9 @@ wtfis() {
         echo "wtf is WHAT? what do you want to check?"
     fi
 
-    alias "$1" 2>/dev/null || declare -f "$1"
+    if ! alias "$1" 2>/dev/null || declare -f "$1" 2>/dev/null; then
+        echo "I don't know!"
+    fi
 }
 
 # User functions (Functions specific to the user, not synced to the github repo) {{{
