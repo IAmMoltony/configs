@@ -8,6 +8,7 @@ import json
 import getpass
 import datetime
 import argparse
+import subprocess
 
 __version__ = "1.0"
 
@@ -20,9 +21,13 @@ def fix_wd():
     dname = os.path.dirname(abspath)
     os.chdir(dname)
 
+def get_head_diff():
+    show = subprocess.run(["git", "show", "HEAD"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    return show.stdout
+
 def send(hsl_text, config):
     sendemaillogger.log("Sending email now!")
-    email_text = f"Dear {getpass.getuser()}, your configurations have been synchronized at {datetime.datetime.now().strftime('%F %T')}.\n\n{hsl_text}\n\nSincerely, sendemail.py version {__version__}."
+    email_text = f"Dear {getpass.getuser()}, your configurations have been synchronized at {datetime.datetime.now().strftime('%F %T')}.\n\n{hsl_text}\n\nDiff:\n\n{get_head_diff()}\n\nSincerely, sendemail.py version {__version__}."
     message = MIMEText(email_text)
     message["Subject"] = f"Hourly config sync at {datetime.datetime.now().strftime('%F %T')}"
     message["From"] = config["from-who"]
