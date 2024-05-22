@@ -139,6 +139,7 @@ alias rmrsc='rm -f ~/.restartssincecleanup' # Remov e the restarts since cleanup
 alias chkbf='shellcheck --color=always ~/.bash-configs/.bash_functions | less' # Shellcheck bash functions
 alias chkba='shellcheck --color=always ~/.bash-configs/.bash_aliases | less' # Shellcheck bash aliases
 alias chkbrc='shellcheck --color=always ~/.bashrc | less' # Shellcheck bashrc
+alias grncfg='grep -rn $HOME/configs' # gren -rn in configs dir
 
 # }}}
 
