@@ -67,7 +67,7 @@ synccfgsm() {
     commitmsg="$1"
     if [ "$commitmsg" == "" ]; then
         echo -n "Please enter commit message >"
-        read -r commitmsg
+        read commitmsg
     fi
     if [ "$commitmsg" == "" ]; then
         echo "Please enter a commit message"
@@ -250,7 +250,7 @@ checkhsl() {
         countfilesindir ~/configs/HourlySyncLogs
         echo "There are currently $? hourly sync log files."
         while true; do
-            read -p -r "Delete? [y or n] " yn
+            read -p "Delete? [y or n] " yn
             case $yn in
                 [Yy]* ) rm -rf ~/configs/HourlySyncLogs/*; echo "Deleted."; break;;
                 [Nn]* ) echo "Okay, keeping."; break;;
@@ -312,7 +312,7 @@ cleanupchecker9000() {
             if (( restartssincecleanup > 100 )); then
                 echo "You have gone a hundred shell restarts without cleanup."
                 while true; do
-                    read -p -r "Cleanup? [y or n] " yn
+                    read -p "Cleanup? [y or n] " yn
                     case $yn in
                         [Yy]* ) echo "0" > "$HOME/.restartssincecleanup"; docleanupping; echo "Cleanup done."; break;;
                         [Nn]* ) echo "Okay then."; break;;
@@ -329,7 +329,7 @@ docleanupping() {
     ~/configs/cleanupping
     if command -v "apt" > /dev/null 2>&1; then
         while true; do
-            read -p -r "You seem to be on a Debian-based system. Run sudo apt update? [y or n] " yn
+            read -p "You seem to be on a Debian-based system. Run sudo apt update? [y or n] " yn
             case $yn in
                 [Yy]* ) echo "Running!"; sudo apt update; echo "Done."; break;;
                 [Nn]* ) echo "Okay then."; break;;
@@ -534,7 +534,7 @@ cfg2do() {
 # GhostScript or Git Status?
 gs() {
     echo "DID YOU MEAN GHOSTSCRIPT (1) OR GIT STATUS (2)"
-    read -p -r "???>" bruh
+    read -p "???>" bruh
     if [ "$bruh" == "1" ]; then
         /usr/bin/gs "$@"
     elif [ "$bruh" == "2" ]; then

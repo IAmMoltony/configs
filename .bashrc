@@ -288,7 +288,7 @@ fi
 if ll ~/Downloads/*.torrent > /dev/null 2>&1; then
     echo "There are torrent files in the Downloads folder."
     while true; do
-        read -p -r "Is it okay to delete them? [y or n] " yn
+        read -p "Is it okay to delete them? [y or n] " yn
         case $yn in
             [Yy]* ) echo "Alright, deleting!"; rm -f ~/Downloads/*.torrent; break;;
             [Nn]* ) echo "Okay then."; break;;
