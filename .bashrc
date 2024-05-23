@@ -286,7 +286,8 @@ if (( $(fdspercent) >= 80)); then
 fi
 
 if ll ~/Downloads/*.torrent > /dev/null 2>&1; then
-    echo "There are torrent files in the Downloads folder."
+    echo "There are torrent files in the Downloads folder:"
+    find ~/Downloads -name '*.torrent'
     while true; do
         read -p "Is it okay to delete them? [y or n] " yn
         case $yn in
