@@ -41,6 +41,7 @@ cpcfgd .bash_functions .bash-configs
 cpcfgd kitty.conf .config/kitty
 cpcfgd compton.conf .config/compton
 cpcfgd melonDS.ini .config/melonDS
+cpcfgd bleachbit.ini .config/bleachbit
 cpcfgdf i3cfg .config/i3/config
 cpcfgdf qutebrowser.py .config/qutebrowser/config.py
 
