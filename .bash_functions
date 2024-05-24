@@ -180,15 +180,16 @@ mkexitalias() {
 # Argument 3: sz alias name (szDIR) for checking the size of the directory
 # Argument 4: the path to the directory
 mkdiralias() {
-    alias "$1"="cd $4"
-    alias "b$1"="builtin cd $4"
-    alias "$2"="ls $4"
-    alias "$3"="du $4 --max-depth=1 --all -h | sort -h"
+    alias "$1"="cd $5"
+    alias "b$1"="builtin cd $5"
+    alias "$2"="ls $5"
+    alias "$3"="du $5 --max-depth=1 --all -h | sort -h"
+    alias "$4"="find $5 -maxdepth 1 | wc -l"
 }
 
 # mkdiralias but with common name patterns
 mkcdiralias() {
-    mkdiralias cd"$1" ls"$1" sz"$1" "$2"
+    mkdiralias cd"$1" ls"$1" sz"$1" cnt"$1" "$2"
 }
 
 # New edt + cat alias

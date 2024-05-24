@@ -367,11 +367,11 @@ mkcdiralias mccr ~/.minecraft/crash-reports
 
 # parent directory {{{
 
-mkdiralias cd.. ls.. sz.. ..
-mkdiralias .. l.. s.. ..
-mkdiralias .... l.... s.... ../..
-mkdiralias ...... l...... s...... ../../../
-mkdiralias ........ l........ s........ ../../../..
+mkdiralias cd.. ls.. sz.. cnt.. ..
+mkdiralias .. l.. s.. c.. ..
+mkdiralias .... l.... s.... c.... ../..
+mkdiralias ...... l...... s...... c...... ../../../
+mkdiralias ........ l........ s........ c........ ../../../..
 
 # }}}
 
