@@ -9,6 +9,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tomasiser/vim-code-dark'
 Plug 'wakatime/vim-wakatime'
+Plug 'vim-scripts/DoxygenToolkit.vim'
 
 call plug#end()
 
