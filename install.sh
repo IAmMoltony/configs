@@ -30,8 +30,6 @@ mkdir -p $HOME/.config/i3
 echo "Creating compton config dir"
 mkdir -p $HOME/.config/compton
 
-# dot files
-
 cpcfg .bashrc
 cpcfg .gitconfig
 cpcfg .profile
@@ -42,9 +40,8 @@ cpcfgd .bash_aliases .bash-configs
 cpcfgd .bash_functions .bash-configs
 cpcfgd kitty.conf .config/kitty
 cpcfgd compton.conf .config/compton
+cpcfgd melonDS.ini .config/melonDS
 cpcfgdf i3cfg .config/i3/config
-
-echo "Copying melonDS config"
-cp melonDS.ini $HOME/.config/melonDS/melonDS.ini
+cpcfgdf qutebrowser.py .config/qutebrowser/config.py
 
 echo "Success"

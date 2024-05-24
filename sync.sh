@@ -23,6 +23,7 @@ cpcfg .conkyrc
 cpcfg .bday
 cpcfg .config/melonDS/melonDS.ini
 cpcfg .config/compton/compton.conf
+cpcfgf .config/qutebrowser/config.py qutebrowser.py
 cpcfgf .config/i3/config i3cfg
 
 echo "Success"
