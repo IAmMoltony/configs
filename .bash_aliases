@@ -364,6 +364,7 @@ mkcdiralias mcrp ~/.minecraft/resourcepacks
 mkcdiralias mcv ~/.minecraft/versions
 mkcdiralias mcmod ~/.minecraft/mods
 mkcdiralias mccr ~/.minecraft/crash-reports
+mkcdiralias sf ~/savefiles
 
 # parent directory {{{
 
