@@ -158,6 +158,7 @@ alias numcommits='glog --oneline | wc -l' # Count total number of commits in the
 alias numcommtoday='todayscommits | wc -l' # Count total number of commits that were created today in a repo
 alias gcam='git commit -am' # do commit
 alias gpsh='git push' # Push local changes to remote in git
+alias gpsht='git push --tags' # Push local tags to remote in git
 alias gpll='git pull' # Pull remote changes to local repo in git
 alias gst='git status' # Status of the repo (git)
 alias gftch='git fetch' # Fetch (git)
