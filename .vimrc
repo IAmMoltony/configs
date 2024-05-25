@@ -53,6 +53,7 @@ command! Care !love .
 command! Black !black %
 command! Pylint !pylint %
 command! Shck !shellcheck %
+command! Chx !chmod +x %
 
 " Fix background
 set t_ut=
