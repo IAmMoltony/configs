@@ -388,6 +388,12 @@ mkcolorado egrep
 
 # }}}
 
+# XTerm fixes {{{
+
+mkxtfalias mdless
+
+# }}}
+
 # }}}
 
 # WSL aliases {{{

@@ -224,6 +224,11 @@ mkcolorado() {
     alias "$1"="$1 --color=auto"
 }
 
+# New TERM=xterm-265color alias (some programs don't support xterm-kitty)
+mkxtfalias() {
+    alias "$1"="TERM=xterm-256color $1"
+}
+
 # Today's commits in configs
 cfg2dc() {
     oldpwd="$(pwd)"
