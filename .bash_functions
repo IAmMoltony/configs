@@ -447,6 +447,7 @@ mathtest() {
     operator=${op[$(( RANDOM % numops ))]}
     realanswerwhichisdefinitelycorrect=$(( $a $operator $b ))
     losercounter=0
+    wrongcounter=0
     while true; do
         read -p "$a $operator $b = " usersanswerwhichisprobablyincorrect
         re='^-?[0-9]+$'
@@ -455,6 +456,7 @@ mathtest() {
             (( losercounter++ ))
             if (( losercounter >= 5 )); then
                 echo "You just failed the math test. You should be ashamed."
+                ~/configs/mathtestctl.py addfail -n 1
                 break
             fi
             continue
@@ -464,11 +466,15 @@ mathtest() {
             (( losercounter++ ))
             if (( losercounter >= 5 )); then
                 echo "You just failed the math test. You should be ashamed."
+                ~/configs/mathtestctl.py addfail -n 1
                 break
             fi
             echo "That ain't correct mate! Try again you $(random_insult)!" # australia moment
+            (( wrongcounter++ ))
         else
             echo "Correct! Continue with whatever the hell you were doing."
+            ~/configs/mathtestctl.py addwrong -n $wrongcounter
+            ~/configs/mathtestctl.py addright -n 1
             break
         fi
     done

@@ -7,3 +7,4 @@ HCS_IS_DISABLED
 *.un~
 credentials.json
 Session.vim
+mts.json
