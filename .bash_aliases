@@ -339,6 +339,7 @@ mkcdiralias and '~/Bookmarks/Android\ partition' # L sand
 mkcdiralias anime ~/Bookmarks/Anime
 mkcdiralias cart ~/Bookmarks/Cartoons
 mkcdiralias dlimg '~/Bookmarks/Downloaded\ images'
+mkcdiralias dli '~/Bookmarks/Downloaded\ images'
 mkcdiralias dlgames '~/Bookmarks/Game\ downloads'
 mkcdiralias dlg '~/Bookmarks/Game\ downloads'
 mkcdiralias emugames '~/Bookmarks/Games\ \(emulator\)'
