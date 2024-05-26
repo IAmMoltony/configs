@@ -140,6 +140,7 @@ alias chkbf='shellcheck --color=always ~/.bash-configs/.bash_functions | less' #
 alias chkba='shellcheck --color=always ~/.bash-configs/.bash_aliases | less' # Shellcheck bash aliases
 alias chkbrc='shellcheck --color=always ~/.bashrc | less' # Shellcheck bashrc
 alias grncfg='grep -rn $HOME/configs' # gren -rn in configs dir
+alias lsd='ls -d */' # Ls only dirs
 
 # }}}
 
@@ -205,6 +206,8 @@ alias gshhnp='git --no-pager show HEAD' # Show head without pager
 alias gcaaem='git commit -a --allow-empty-message' # Commit with empty message
 alias glf='git ls-files' # List git files
 alias i-forgor-submodules='git submodule update --init --recursive' # I FORGOR SUBMODULES!!!
+alias glogrv='git log --reverse' # I cannot believe I'm only now adding this
+alias glgrv='glogrv' # Like, could you believe it? I've had these aliases for over half a year, and still have not thought of a simple reverse-log alias?..
 
 # }}}
 
