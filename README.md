@@ -22,4 +22,6 @@ See `CronSync.md`.
 
 ## Warning
 
-All configs and scripts for installing/updating/syncing assume that this repo is in `~/configs`.
+All configs and scripts for installing/updating/syncing assume that this repo is in your home directory, so make sure
+you clone it there or symlink it.
+
