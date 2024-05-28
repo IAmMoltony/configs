@@ -524,6 +524,14 @@ nctcfgs() {
     builtin cd "$oldpwd" || return
 }
 
+# Number of today's commits in savefiles
+nctsf() {
+    oldpwd="$(pwd)"
+    builtin cd ~/savefiles || return
+    git log --oneline --since=midnight | wc -l
+    builtin cd "$oldpwd" || return
+}
+
 # grep todos
 grn2do() {
     dir="."
