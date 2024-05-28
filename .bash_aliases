@@ -141,6 +141,7 @@ alias chkba='shellcheck --color=always ~/.bash-configs/.bash_aliases | less' # S
 alias chkbrc='shellcheck --color=always ~/.bashrc | less' # Shellcheck bashrc
 alias grncfg='grep -rn $HOME/configs' # gren -rn in configs dir
 alias lsd='ls -d */' # Ls only dirs
+alias mtctl='~/configs/mathtestctl.py' # Math test control
 
 # }}}
 
