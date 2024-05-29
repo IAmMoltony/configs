@@ -235,5 +235,8 @@ bindsym $mod+Ctrl+V exec gvim
 # make nonoSharp float (makes it easier to test)
 for_window [class="nonoSharp"] floating enable
 
+# make xfce task manager float (makes it easier to kill pesky processes)
+for_window [class="xfce4-taskmanager"] floating enable
+
 # Touhouhouhou
 bindsym $mod+Shift+T exec --no-startup-id ~/configs/bin/typeth/typeth
