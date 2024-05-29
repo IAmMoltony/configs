@@ -183,8 +183,8 @@ mkdiralias() {
     alias "$1"="cd $5"
     alias "b$1"="builtin cd $5"
     alias "$2"="ls $5"
-    alias "$3"="du $5 --max-depth=1 --all -h | sort -h"
-    alias "$4"="find $5 -maxdepth 1 | wc -l"
+    alias "$3"="du $(readlink "$5" -m) --max-depth=1 --all -h | sort -h"
+    alias "$4"="find $(readlink "$5" -m) -maxdepth 1 | wc -l"
 }
 
 # mkdiralias but with common name patterns
