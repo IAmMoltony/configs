@@ -264,6 +264,7 @@ mkecalias userbashaliases uba ~/.bash-configs/.useraliases
 mkecalias userbashfuncs ubf ~/.bash-configs/.userfunctions
 mkecalias requirements pyreq ./requirements.txt
 mkecalias nonosharpsettings nsset ~/.local/share/nonoSharp/settings.json
+mkecalias savefilesreadme sfrdm ~/savefiles/README.md
 
 # }}}
 
