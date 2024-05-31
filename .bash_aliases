@@ -134,6 +134,7 @@ alias chx='chmod +x' # Too tired of chmod +x so i shorten it
 alias dnfmt='dotnet format' # .NET formatting
 alias banger='sudo aplay /dev/mem' # PLAY THIS ABSOLUTE BANGER!!!
 alias nctcfg='nctcfgs' # Num commits today in configs (bruh edition)
+alias ncycfg='ncycfgs' # Num commits yesterday in configs (bruh edition)
 alias dfsp='dirfsp' # Dirfsp shorthand
 alias rmrsc='rm -f ~/.restartssincecleanup' # Remov e the restarts since cleanup file
 alias chkbf='shellcheck --color=always ~/.bash-configs/.bash_functions | less' # Shellcheck bash functions

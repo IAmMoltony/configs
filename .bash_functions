@@ -525,11 +525,27 @@ nctcfgs() {
     builtin cd "$oldpwd" || return
 }
 
+# Number of yesterday's commits in configs
+ncycfgs() {
+    oldpwd="$(pwd)"
+    builtin cd ~/configs || return
+    git log --oneline --since=yesterday.midnight --until=midnight | wc -l
+    builtin cd "$oldpwd" || return
+}
+
 # Number of today's commits in savefiles
 nctsf() {
     oldpwd="$(pwd)"
     builtin cd ~/savefiles || return
     git log --oneline --since=midnight | wc -l
+    builtin cd "$oldpwd" || return
+}
+
+# Number of yesterday's commits in savefiles
+ncysf() {
+    oldpwd="$(pwd)"
+    builtin cd ~/savefiles || return
+    git log --oneline --since=yesterday.midnight --until=midnight | wc -l
     builtin cd "$oldpwd" || return
 }
 
