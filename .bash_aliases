@@ -158,6 +158,8 @@ alias glga='gloga' # gloga w/o o
 alias todayscommits='glog --oneline --since=midnight' # Show all commits starting from midnight
 alias numcommits='glog --oneline | wc -l' # Count total number of commits in the repo
 alias numcommtoday='todayscommits | wc -l' # Count total number of commits that were created today in a repo
+alias yesterdayscommits='glog --oneline --since=yesterday.midnight --until=midnight' # List all commits from yesterday
+alias numcommyest='yesterdayscommits | wc -l' # Count total number of commits that were created yesterday in a repo
 alias gcam='git commit -am' # do commit
 alias gpsh='git push' # Push local changes to remote in git
 alias gpsht='git push --tags' # Push local tags to remote in git
