@@ -382,12 +382,12 @@ mkcdiralias dwp ~/desktop-wallpaper
 
 # parent directory {{{
 
-mkdiralias cd.. ls.. sz.. cnt.. ..
-mkdiralias .. l.. s.. c.. ..
-mkdiralias .... l.... s.... c.... ../..
-mkdiralias ...... l...... s...... c...... ../../../
-mkdiralias ........ l........ s........ c........ ../../../..
-mkdiralias .......... l.......... s.......... c.......... ../../../../..
+mkdiralias cd.. ls.. sz.. cnt.. cntf.. ..
+mkdiralias .. l.. s.. c.. cf.. ..
+mkdiralias .... l.... s.... c.... cf.... ../..
+mkdiralias ...... l...... s...... c...... cf...... ../../../
+mkdiralias ........ l........ s........ c........ cf........ ../../../..
+mkdiralias .......... l.......... s.......... c.......... cf.......... ../../../../..
 
 # }}}
 
