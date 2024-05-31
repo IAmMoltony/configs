@@ -142,6 +142,7 @@ alias chkbrc='shellcheck --color=always ~/.bashrc | less' # Shellcheck bashrc
 alias grncfg='grep -rn $HOME/configs' # gren -rn in configs dir
 alias lsd='ls -d */' # Ls only dirs
 alias mtctl='~/configs/mathtestctl.py' # Math test control
+alias dwpms='~/desktop-wallpaper/make-symlinks.sh' # Make desktop wallpaper symlinks
 
 # }}}
 
