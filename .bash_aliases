@@ -377,6 +377,7 @@ mkcdiralias mcv ~/.minecraft/versions
 mkcdiralias mcmod ~/.minecraft/mods
 mkcdiralias mccr ~/.minecraft/crash-reports
 mkcdiralias sf ~/savefiles
+mkcdiralias dwp ~/desktop-wallpaper
 
 # parent directory {{{
 
