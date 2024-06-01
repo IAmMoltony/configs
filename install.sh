@@ -30,6 +30,9 @@ mkdir -p $HOME/.config/i3
 echo "Creating compton config dir"
 mkdir -p $HOME/.config/compton
 
+echo "Creating BleachBit config dir"
+mkdir -p $HOME/.config/bleachbit
+
 cpcfg .bashrc
 cpcfg .gitconfig
 cpcfg .profile
