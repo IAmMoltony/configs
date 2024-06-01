@@ -291,7 +291,7 @@ fi
 
 if ll ~/Downloads/*.torrent > /dev/null 2>&1; then
     echo "There are torrent files in the Downloads folder:"
-    find ~/Downloads -name '*.torrent'
+    find ~/Downloads -maxdepth 1 -name '*.torrent'
     while true; do
         read -p "Is it okay to delete them? [y or n] " yn
         case $yn in
@@ -330,7 +330,7 @@ stty echo
 trap - ERR
 trap SIGINT
 
-rm-roll # Do this at the end so the torrent-deleter actually works all the time
+rm-roll # this is done at the end in order to make sure that rm works always in init
 
 # }}}
 
