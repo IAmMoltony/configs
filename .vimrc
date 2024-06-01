@@ -48,6 +48,7 @@ command! Edtpyreq tabnew ./requirements.txt
 command! Epyreq e ./requirements.txt
 command! Dnrun !dotnet run -v n
 command! Dnbuild !dotnet build -v n
+command! Dnbld !dotnet build -v n
 command! Dnfmt !dotnet format
 command! Care !love .
 command! Black !black %

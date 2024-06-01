@@ -144,6 +144,7 @@ alias grncfg='grep -rn $HOME/configs' # gren -rn in configs dir
 alias lsd='ls -d */' # Ls only dirs
 alias mtctl='~/configs/mathtestctl.py' # Math test control
 alias dwpms='~/desktop-wallpaper/make-symlinks.sh' # Make desktop wallpaper symlinks
+alias please-change-my-wallpaper-right-now-ok='sudo systemctl start changewallpaper.service' # change wallpaper right now ok
 
 # }}}
 
@@ -332,6 +333,7 @@ mkexitalias iutq
 
 # Directory aliases {{{
 
+# Common directory aliases {{{
 
 mkcdiralias dl ~/Downloads
 mkcdiralias doc ~/Documents
@@ -366,6 +368,7 @@ mkcdiralias winep '~/Bookmarks/Wine\ prefixes'
 mkcdiralias book ~/Bookmarks/Books
 mkcdiralias wp ~/Bookmarks/Wallpaper
 mkcdiralias wpw '~/Bookmarks/Wallpaper\ \(working\ dir\)'
+mkcdiralias dos '~/Bookmarks/DOS\ files'
 mkcdiralias cam ~/Pictures/camera
 mkcdiralias cfg ~/configs
 mkcdiralias cfgs ~/configs
@@ -381,6 +384,8 @@ mkcdiralias mcmod ~/.minecraft/mods
 mkcdiralias mccr ~/.minecraft/crash-reports
 mkcdiralias sf ~/savefiles
 mkcdiralias dwp ~/desktop-wallpaper
+
+# }}}
 
 # parent directory {{{
 
