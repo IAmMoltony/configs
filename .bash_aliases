@@ -269,6 +269,7 @@ mkecalias requirements pyreq ./requirements.txt
 mkecalias nonosharpsettings nsset ~/.local/share/nonoSharp/settings.json
 mkecalias savefilesreadme sfrdm ~/savefiles/README.md
 mkecalias desktopwpreadme dwprdm ~/desktop-wallpaper/README.md
+mkecalias notes nt ~/.local/share/notes/Notes/Notes
 
 # }}}
 
