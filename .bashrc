@@ -264,7 +264,7 @@ else
     echo -e "It is currently \033[0;36m$(LC_ALL=C date +"%H:%M %p")\033[0m on $(adelightful) \033[0;36m$dotw\033[0m."
 fi
 
-if (( $(date +"%H") < 6 )); then
+if (( $(date +"%k") < 6 )); then
     echo "Why are you up so late?"
 fi
 
