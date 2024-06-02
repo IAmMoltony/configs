@@ -582,7 +582,7 @@ wtfis() {
         echo "wtf is WHAT? what do you want to check?"
     fi
 
-    if ! alias "$1" 2>/dev/null || declare -f "$1" 2>/dev/null; then
+    if ! alias "$1" 2>/dev/null && ! declare -f "$1" 2>/dev/null; then
         echo "I don't know!"
     fi
 }
