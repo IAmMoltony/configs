@@ -58,7 +58,15 @@ gstcfgs() {
 pshcfgs() {
     oldpwd="$(pwd)"
     builtin cd ~/configs || return
-    gpsh
+    git push
+    builtin cd "$oldpwd" || return
+}
+
+# Push savefiles
+pshsf() {
+    oldpwd="$(pwd)"
+    builtin cd ~/savefiles || return
+    git push
     builtin cd "$oldpwd" || return
 }
 
