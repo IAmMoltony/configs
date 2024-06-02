@@ -165,7 +165,7 @@ cmrhsl() {
 glgcfgs() {
     oldpwd="$(pwd)"
     builtin cd ~/configs || return
-    glg
+    git log
     builtin cd "$oldpwd" || return
 }
 
