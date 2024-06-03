@@ -667,6 +667,8 @@ bashrc-postinit() {
 
     echo -e "This computer has been up for \033[0;36m$(uptime -p | cut -c 4-)\033[0m."
 
+    echo -e "Network usage today: \033[0;33m$(vnstat --oneline | awk -F';' '{print $6}')\033[0m."
+
     checkhsl
 
     echo -e "\033[0;36m$(alias | wc -l)\033[0m aliases and \033[0;36m$(lsfuncs | wc -l)\033[0m functions are installed."
@@ -705,10 +707,6 @@ bashrc-postinit() {
     echo "Aliases initialized with $BashAliasesNumErrors errors."
     echo "Functions initialized with $BashFunctionsNumErrors errors."
 
-    # TODO show VnStat info on startup
-    # e.g.:
-    #  This system has uploaded 1.8T, downloaded 54E.
-
     # If bc isn't installed then tell
     if ! command -v "bc" > /dev/null 2>&1 && [ ! -f "$HOME/.idontwanttoinstallbc" ]; then
         echo -e "Shell init timing is \033[0;31munavailable\033[0m."
@@ -721,8 +719,6 @@ bashrc-postinit() {
     trap SIGINT
 
     rm-roll # this is done at the end in order to make sure that rm works always in init
-
-
 }
 
 # User functions (Functions specific to the user, not synced to the github repo) {{{
