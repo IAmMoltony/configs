@@ -2,10 +2,12 @@
 
 import argparse
 import os
+import sys
 import json
 from dataclasses import dataclass
 
-__version__ = "1.0"
+__version__ = "1.0.1"
+
 
 @dataclass
 class MathTestStats:
@@ -23,27 +25,37 @@ class MathTestStats:
 
     def save(self):
         stats_dict = {"w": self.num_wrong, "r": self.num_right, "f": self.num_fail}
-        with open("./mts.json", "w") as mts_json:
+        with open("./mts.json", "w", encoding="utf8") as mts_json:
             json.dump(stats_dict, mts_json)
+
 
 def set_wd():
     script_path = os.path.abspath(__file__)
     script_dir = os.path.dirname(script_path)
     os.chdir(script_dir)
 
+
 def load_current_stats():
     if not os.path.exists("./mts.json"):
         return MathTestStats(0, 0, 0)
-    else:
-        with open("./mts.json", "r") as mts_json:
-            mts = json.load(mts_json)
-            return MathTestStats(int(mts["w"]), int(mts["r"]), int(mts["f"]))
+    with open("./mts.json", "r", encoding="utf8") as mts_json:
+        mts = json.load(mts_json)
+        return MathTestStats(int(mts["w"]), int(mts["r"]), int(mts["f"]))
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("action", type=str, choices=["addwrong", "addright", "addfail", "view", "reset"])
+    parser.add_argument(
+        "action", type=str, choices=["addwrong", "addright", "addfail", "view", "reset"]
+    )
     parser.add_argument("--number", "-n", type=int)
-    parser.add_argument("--version", "-V", action="version", version=f"%(prog)s {__version__}", help="display version and exit")
+    parser.add_argument(
+        "--version",
+        "-V",
+        action="version",
+        version=f"%(prog)s {__version__}",
+        help="display version and exit",
+    )
     args = parser.parse_args()
 
     set_wd()
@@ -70,4 +82,3 @@ if __name__ == "__main__":
         current_stats.num_fail += args.number
 
     current_stats.save()
-
