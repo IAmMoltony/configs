@@ -8,6 +8,7 @@ Random scripts and configs in one repo
 ```bash
 git clone https://github.com/IAmMoltony/configs ~/configs # clone the repository
 cd ~/configs # go into the repo dir
+git submodule update --init --recursive # submodules
 ./install-cascadia-code.sh # install cascadia code (OPTIONAL, don't run if you don't need the font)
 ./install.sh # install configurations
 pip install -r sendemail-requirements.txt # install requirements for sendemail module (OPTIONAL, only if you're using HCS)
