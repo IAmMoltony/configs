@@ -147,7 +147,7 @@ alias mtctl='~/configs/mathtestctl.py' # Math test control
 alias dwpms='~/desktop-wallpaper/make-symlinks.sh' # Make desktop wallpaper symlinks
 alias please-change-my-wallpaper-right-now-ok='sudo systemctl start changewallpaper.service' # change wallpaper right now ok
 alias pshcfgssf='pshcfgs && pshsf' # push configs and savefiles
-alias avgsizefiles="find './' -maxdepth 1 -ls | awk '{sum += \$7; n++;} END {print sum/n;}' | numfmt --to=iec-i" # get the average size of files rn
+alias avgsizefiles="find './' -maxdepth 1 -ls | awk '{sum += \$7; n++;} END {printf \"%.0f\", sum/n;}' | numfmt --to=iec-i && echo && true" # get the average size of files rn
 
 # }}}
 
