@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 notify-send "Running hourly config sync."
-cd $HOME/configs # Just to be safe
+cd "$HOME"/configs || exit 1 # Just to be safe
 
 FORCE_SYNC=0
 
@@ -29,17 +29,17 @@ fi
 
 mkdir -p HourlySyncLogs
 hslnm=HourlySyncLogs/hsl_$(date "+%F_%T")
-./sync-commit.sh "Automatic hourly sync: $(date "+%F %T")" > $hslnm 2>&1
+./sync-commit.sh "Automatic hourly sync: $(date "+%F %T")" > "$hslnm" 2>&1
 
 notify-send "Sync done, log:"
-notify-send "$(cat $hslnm)"
+notify-send "$(cat "$hslnm")"
 
-if ! cat $hslnm | grep -q "No changes, exiting"; then
+if ! cat "$hslnm" | grep -q "No changes, exiting"; then
     notify-send "Changes found, sending email"
     sendemailoutput=$(./sendemail.py $hslnm 2>&1)
     sendemailcode="$?"
     mkdir -p EmailLogs
-    echo "$sendemailoutput" > EmailLogs/el_$(date +"%F_%T")
+    echo "$sendemailoutput" > EmailLogs/el_"$(date +"%F_%T")"
     if [ "$sendemailcode" != "0" ]; then
         notify-send "Sendemail FAILED, see log pls"
     fi
