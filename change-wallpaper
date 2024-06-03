@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "changing wallpaper"
+DISPLAY=:0 XAUTHORITY=/home/moltony/.Xauthority /usr/bin/feh --bg-fill --randomize "/home/moltony/Pictures/wallpaper/$(ls /home/moltony/Pictures/wallpaper/ | shuf -n 1)"
