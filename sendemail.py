@@ -10,7 +10,7 @@ import datetime
 import argparse
 import subprocess
 
-__version__ = "1.0"
+__version__ = "1.0.1"
 
 def read_config():
     with open("./credentials.json", "r") as config_file:
@@ -22,7 +22,7 @@ def fix_wd():
     os.chdir(dname)
 
 def get_head_diff():
-    show = subprocess.run(["git", "show", "HEAD"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    show = subprocess.run(["/usr/bin/git", "show", "HEAD"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     return show.stdout
 
 def send(hsl_text, config):
