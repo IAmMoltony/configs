@@ -1,4 +1,3 @@
-
 # configs
 
 Random scripts and configs in one repo
@@ -30,4 +29,3 @@ of the file. Copy it into `/etc` and change depending on your setup.
 
 All configs and scripts for installing/updating/syncing assume that this repo is in your home directory, so make sure
 you clone it there or symlink it.
-
