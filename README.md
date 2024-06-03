@@ -1,7 +1,7 @@
 
 # configs
 
-This repo is for backing up my Linux configurations (and easily installing one of my most favoritest fonts)
+Random scripts and configs in one repo
 
 ## Installation
 
