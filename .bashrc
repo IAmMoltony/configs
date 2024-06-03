@@ -256,5 +256,8 @@ fi
 
 bashrc-postinit
 
+trap - ERR
+trap SIGINT
+
 # }}}
 

@@ -715,8 +715,6 @@ bashrc-postinit() {
     fi
 
     stty echo
-    trap - ERR
-    trap SIGINT
 
     rm-roll # this is done at the end in order to make sure that rm works always in init
 }
