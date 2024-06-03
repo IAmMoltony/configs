@@ -34,7 +34,7 @@ hslnm=HourlySyncLogs/hsl_$(date "+%F_%T")
 notify-send "Sync done, log:"
 notify-send "$(cat "$hslnm")"
 
-if ! cat "$hslnm" | grep -q "No changes, exiting"; then
+if ! grep -q "No changes, exiting" "$hslnm"; then
     notify-send "Changes found, sending email"
     sendemailoutput=$(./sendemail.py $hslnm 2>&1)
     sendemailcode="$?"
