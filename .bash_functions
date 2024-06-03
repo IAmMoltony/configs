@@ -640,6 +640,91 @@ vercfgs() {
     builtin cd "$oldpwd" || return
 }
 
+# Bashrc post-init functions
+bashrc-postinit() {
+    echo -e "\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0m"
+
+    echo -e "Hi \033[0;32m$USER\033[0m!"
+    dotw="$(LC_ALL=C date +"%A")"
+    if [ "$dotw" == "Friday" ]; then
+        echo "ITS FRIDAY!!!!!!!!!"
+    else
+        echo -e "It is currently \033[0;36m$(LC_ALL=C date +"%H:%M %p")\033[0m on $(adelightful) \033[0;36m$dotw\033[0m."
+    fi
+
+    echo -e "Running configs version \033[0;32m$(vercfgs)\033[0m."
+
+    if (( $(date +"%k") < 6 )); then
+        echo "Why are you up so late?"
+    fi
+
+    hcs-is-enabled --color
+    cleanupchecker9000
+
+    if [ -d "$HOME/configs/HourlySyncLogs" ]; then
+        echo -e "Hourly sync logs take up \033[1;33m$(du -sh ~/configs/HourlySyncLogs | awk '{ print $1 }').\033[0m"
+    fi
+
+    echo -e "This computer has been up for \033[0;36m$(uptime -p | cut -c 4-)\033[0m."
+
+    checkhsl
+
+    echo -e "\033[0;36m$(alias | wc -l)\033[0m aliases and \033[0;36m$(lsfuncs | wc -l)\033[0m functions are installed."
+
+    bdaycheck
+    maythe4
+    cirnoday
+
+    if (( $(fdspercent) >= 80)); then
+        echo -e "\033[0;31mWARNING YOU ARE RUNNING DANGEROUSLY LOW ON SPACE!!!!!!!!!!!!!\033[0m"
+    fi
+
+    if ll ~/Downloads/*.torrent > /dev/null 2>&1; then
+        echo "There are torrent files in the Downloads folder:"
+        find ~/Downloads -maxdepth 1 -name '*.torrent'
+        while true; do
+            read -p "Is it okay to delete them? [y or n] " yn
+            case $yn in
+                [Yy]* ) echo "Alright, deleting!"; rm -f ~/Downloads/*.torrent; break;;
+                [Nn]* ) echo "Okay then."; break;;
+                * ) echo "Please answer properly!";;
+            esac
+        done
+    fi
+
+    BashrcEndTime=$(date +%s.%N)
+
+    if command -v "bc" > /dev/null 2>&1; then
+        BashrcRuntime=$(echo "scale=3; ($BashrcEndTime - $BashrcStartTime) / 1" | bc -l | awk '{printf "%.3f\n", $0}')
+        echo "Shell initialized in $BashrcRuntime seconds with $BashrcNumErrors errors."
+    else
+        echo "Shell initialized with $BashrcNumErrors errors."
+    fi
+
+    # TODO time BA and BF
+    echo "Aliases initialized with $BashAliasesNumErrors errors."
+    echo "Functions initialized with $BashFunctionsNumErrors errors."
+
+    # TODO show VnStat info on startup
+    # e.g.:
+    #  This system has uploaded 1.8T, downloaded 54E.
+
+    # If bc isn't installed then tell
+    if ! command -v "bc" > /dev/null 2>&1 && [ ! -f "$HOME/.idontwanttoinstallbc" ]; then
+        echo -e "Shell init timing is \033[0;31munavailable\033[0m."
+        echo "To enable shell init timing, please install bc on your system."
+        echo "To disable this message, run disablebchint."
+    fi
+
+    stty echo
+    trap - ERR
+    trap SIGINT
+
+    rm-roll # this is done at the end in order to make sure that rm works always in init
+
+
+}
+
 # User functions (Functions specific to the user, not synced to the github repo) {{{
 
 ubferrorhdlr() {
