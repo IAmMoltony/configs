@@ -597,7 +597,9 @@ wtfis() {
 
 # count number of todays commits in: savefiles and configs
 nctcfgssf() {
-    echo "$(( $(nctcfgs) + $(nctsf) ))"
+    echo "Configs: $(nctcfgs)"
+    echo "Savefiles: $(nctsf)"
+    echo "Total: $(( $(nctcfgs) + $(nctsf) ))"
 }
 
 # User functions (Functions specific to the user, not synced to the github repo) {{{
