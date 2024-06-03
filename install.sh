@@ -33,6 +33,9 @@ mkdir -p $HOME/.config/compton
 echo "Creating BleachBit config dir"
 mkdir -p $HOME/.config/bleachbit
 
+echo "Creating Openbox config dir"
+mkdir -p $HOME/.config/openbox
+
 cpcfg .bashrc
 cpcfg .gitconfig
 cpcfg .profile
@@ -47,5 +50,7 @@ cpcfgd melonDS.ini .config/melonDS
 cpcfgd bleachbit.ini .config/bleachbit
 cpcfgdf i3cfg .config/i3/config
 cpcfgdf qutebrowser.py .config/qutebrowser/config.py
+cpcfgdf obrc.xml .config/openbox/rc.xml
+cpcfgdf obautostart.sh .config/openbox/autostart.sh
 
 echo "Success"

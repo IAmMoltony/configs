@@ -26,6 +26,8 @@ cpcfg .config/compton/compton.conf
 cpcfg .config/bleachbit/bleachbit.ini
 cpcfgf .config/qutebrowser/config.py qutebrowser.py
 cpcfgf .config/i3/config i3cfg
+cpcfgf .config/openbox/rc.xml obrc.xml
+cpcfgf .config/openbox/autostart.sh obautostart.sh
 
 echo "Success"
 
