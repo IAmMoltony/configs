@@ -246,6 +246,21 @@ cfg2dc() {
     builtin cd "$oldpwd" || return
 }
 
+# Today's commits in savefiles
+sf2dc() {
+    oldpwd="$(pwd)"
+    builtin cd ~/savefiles || return
+    todayscommits
+    builtin cd "$oldpwd" || return
+}
+
+# Today's commits in commits and savefiles
+cfgsf2dc() {
+    echo "Configs: $(cfg2dc)"
+    echo "Savefiles: $(sf2dc)"
+    echo "Total: $(( $(cfg2dc) + $(sf2dc) ))"
+}
+
 # count files in dir
 countfilesindir() {
     nf=$(ls -Al "$1" | wc -l)
