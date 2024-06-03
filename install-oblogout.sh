@@ -4,7 +4,6 @@ selfdestruct() {
     echo "THE INSTALLER HAS ENCOUNTERED A FATAL FAILURE"
     echo "please READ the error message"
     echo "self destructing..."
-    rm -rf $HOME/oblogout-py3
     exit 1
 }
 
@@ -26,7 +25,9 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         echo "attention rightn ow: oblogout has already been cloned"
     fi
 
-    echo "STEP 2: instaling"
+    echo "STEP 2: installing dependnencies"
+
+    echo "STEP 3: instaling"
     cd $HOME/oblogout-py3
     ./setup.py install || selfdestruct
 
