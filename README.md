@@ -20,6 +20,11 @@ HCS (Hourly Config Sync, also referred to as Cron Sync) is a convenient system f
 
 See `CronSync.md`.
 
+### Wallpaper changer
+
+Wallpaper changer requires a file called `/etc/moltony-wallpaper-changer.conf` to be created. The repository provides an example
+of the file.
+
 ## Warning
 
 All configs and scripts for installing/updating/syncing assume that this repo is in your home directory, so make sure

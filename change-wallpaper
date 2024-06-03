@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
 
+if [ ! -f "/etc/moltony-wallpaper-changer.conf" ]; then
+    echo "No config file found please consult the configs docs" 1>&2
+    exit 1
+fi
+
+source /etc/moltony-wallpaper-changer.conf
+
 echo "changing wallpaper"
-DISPLAY=:0 XAUTHORITY=/home/moltony/.Xauthority /usr/bin/feh --bg-fill --randomize "/home/moltony/Pictures/wallpaper/$(ls /home/moltony/Pictures/wallpaper/ | shuf -n 1)"
+DISPLAY=$Mwc_Display XAUTHORITY=$Mwc_Xauthority /usr/bin/feh --bg-fill --randomize "$Mwc_Wpfolder/$(ls $Mwc_Wpfolder | shuf -n 1)"
