@@ -8,4 +8,4 @@ fi
 source /etc/moltony-wallpaper-changer.conf
 
 echo "changing wallpaper"
-DISPLAY=$Mwc_Display XAUTHORITY=$Mwc_Xauthority /usr/bin/feh --bg-fill --randomize "$Mwc_Wpfolder/$(ls $Mwc_Wpfolder | shuf -n 1)"
+DISPLAY=$Mwc_Display XAUTHORITY=$Mwc_Xauthority /usr/bin/feh --bg-fill --randomize "$Mwc_Wpfolder/"
