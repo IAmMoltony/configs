@@ -636,7 +636,7 @@ nctcfgssf() {
 vercfgs() {
     oldpwd="$(pwd)"
     builtin cd ~/configs || return
-    echo "$(git rev-parse --short HEAD)"
+    echo "$(git rev-parse --short HEAD) ($(git show --no-patch --format=%ci HEAD))"
     builtin cd "$oldpwd" || return
 }
 
