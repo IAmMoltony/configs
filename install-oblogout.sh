@@ -8,7 +8,7 @@ selfdestruct() {
 }
 
 echo "o hi welcom to OBLOGOUT INSTALLER"
-echo "this is version 1 point 1 point 1 of the installer (not the program)"
+echo "this is version 1 point 2 of the installer (not the program)"
 echo "instal oblogout??? (y or n)"
 read -p "???? " -n 1 -r
 echo
@@ -28,6 +28,10 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo "STEP 2: instaling (you may nejed to enter your password)"
     cd $HOME/oblogout-py3
     sudo ./setup.py install || selfdestruct
+
+    echo "STEP 3: installling themes (so that the buttons show up properly i dont know why it doesnt do it by default)"
+    cd $HOME/oblogout-py3
+    cp ./data/themes/* $HOME/.themes -r
 
     echo "INSTALLATIN HAS SUCCESSFULED!"
     echo "you can now use roblogout !!!"
