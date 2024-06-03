@@ -2,13 +2,13 @@
 
 selfdestruct() {
     echo "THE INSTALLER HAS ENCOUNTERED A FATAL FAILURE"
-    echo "please READ the error message"
+    echo "please READ the error message and fix it urself"
     echo "self destructing..."
     exit 1
 }
 
 echo "o hi welcom to OBLOGOUT INSTALLER"
-echo "this is version 1 point 1 of the installer (not the program)"
+echo "this is version 1 point 1 point 1 of the installer (not the program)"
 echo "instal oblogout??? (y or n)"
 read -p "???? " -n 1 -r
 echo
@@ -25,11 +25,9 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         echo "attention rightn ow: oblogout has already been cloned"
     fi
 
-    echo "STEP 2: installing dependnencies"
-
-    echo "STEP 3: instaling"
+    echo "STEP 2: instaling (you may nejed to enter your password)"
     cd $HOME/oblogout-py3
-    ./setup.py install || selfdestruct
+    sudo ./setup.py install || selfdestruct
 
     echo "INSTALLATIN HAS SUCCESSFULED!"
     echo "you can now use roblogout !!!"
