@@ -242,7 +242,11 @@ mkxtfalias() {
 cfg2dc() {
     oldpwd="$(pwd)"
     builtin cd ~/configs || return
-    todayscommits
+    if [ "$1" == "np" ]; then
+        git --no-pager log --oneline --since=midnight
+    else
+        git log --oneline --since=midnight
+    fi
     builtin cd "$oldpwd" || return
 }
 
@@ -250,15 +254,20 @@ cfg2dc() {
 sf2dc() {
     oldpwd="$(pwd)"
     builtin cd ~/savefiles || return
-    todayscommits
+    if [ "$1" == "np" ]; then
+        git --no-pager log --oneline --since=midnight
+    else
+        git log --oneline --since=midnight
+    fi
     builtin cd "$oldpwd" || return
 }
 
 # Today's commits in commits and savefiles
 cfgsf2dc() {
-    echo "Configs: $(cfg2dc)"
-    echo "Savefiles: $(sf2dc)"
-    echo "Total: $(( $(cfg2dc) + $(sf2dc) ))"
+    echo " Configs:"
+    cfg2dc np
+    echo " Savefiles:"
+    sf2dc np
 }
 
 # count files in dir
