@@ -24,7 +24,7 @@ See `CronSync.md`.
 ### Wallpaper changer
 
 Wallpaper changer requires a file called `/etc/moltony-wallpaper-changer.conf` to be created. The repository provides an example
-of the file.
+of the file. Copy it into `/etc` and change depending on your setup.
 
 ## Warning
 
