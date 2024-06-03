@@ -632,6 +632,14 @@ nctcfgssf() {
     echo "Total: $(( $(nctcfgs) + $(nctsf) ))"
 }
 
+# Get configs version (commit hash)
+vercfgs() {
+    oldpwd="$(pwd)"
+    builtin cd ~/configs || return
+    echo "$(git rev-parse --short HEAD)"
+    builtin cd "$oldpwd" || return
+}
+
 # User functions (Functions specific to the user, not synced to the github repo) {{{
 
 ubferrorhdlr() {
