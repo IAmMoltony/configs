@@ -666,7 +666,6 @@ bashrc-postinit() {
     fi
 
     echo -e "This computer has been up for \033[0;36m$(uptime -p | cut -c 4-)\033[0m."
-
     echo -e "Network usage today: \033[0;33m$(vnstat --oneline | awk -F';' '{print $6}')\033[0m."
 
     checkhsl
