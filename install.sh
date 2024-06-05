@@ -2,39 +2,39 @@
 
 cpcfg() {
     echo "Installing $1"
-    cp $1 $HOME/$1
+    cp "$1" "$HOME"/"$1"
 }
 
 cpcfgd() {
     echo "Installing $1"
-    cp $1 $HOME/$2/$1
+    cp "$1" "$HOME"/"$2"/"$1"
 }
 
 cpcfgdf() {
     echo "Installing $1"
-    cp $1 $HOME/$2
+    cp "$1" "$HOME"/"$2"
 }
 
 echo "Creating melonDS config dir"
-mkdir -p $HOME/.config/melonDS
+mkdir -p "$HOME"/.config/melonDS
 
 echo "Creating Bash config dir"
-mkdir -p $HOME/.bash-configs
+mkdir -p "$HOME"/.bash-configs
 
 echo "Creating Kitty config dir"
-mkdir -p $HOME/.config/kitty
+mkdir -p "$HOME"/.config/kitty
 
 echo "Creating i3 config dir"
-mkdir -p $HOME/.config/i3
+mkdir -p "$HOME"/.config/i3
 
 echo "Creating compton config dir"
-mkdir -p $HOME/.config/compton
+mkdir -p "$HOME"/.config/compton
 
 echo "Creating BleachBit config dir"
-mkdir -p $HOME/.config/bleachbit
+mkdir -p "$HOME"/.config/bleachbit
 
 echo "Creating Openbox config dir"
-mkdir -p $HOME/.config/openbox
+mkdir -p "$HOME"/.config/openbox
 
 cpcfg .bashrc
 cpcfg .gitconfig
