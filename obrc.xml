@@ -154,7 +154,7 @@
      cases. -->
   <margins>
     <top>1</top>
-    <bottom>0</bottom>
+    <bottom>24</bottom>
     <left>0</left>
     <right>0</right>
   </margins>
@@ -264,7 +264,7 @@
     <!-- Take a screenshot of the current window with scrot when Alt+Print are pressed -->
     <keybind key="A-Print">
       <action name="Execute">
-          <command>scrot -s -e 'mv $f ~/Bookmarks/Screenshots'</command>
+        <command>scrot -s -e 'mv $f ~/Bookmarks/Screenshots'</command>
       </action>
     </keybind>
     <!-- Keybindings for window switching -->
