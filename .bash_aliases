@@ -48,6 +48,7 @@ alias v='vim' # vim (I don't use this one xdddd)
 alias dnbld='dotnet build -v n' # Build a .NET solution with normal verbosity
 alias dnbuild='dnbld' # dnbld but less short
 alias dnrun='dotnet run -v n' # Run a .NET solution with normal verbosity
+alias dnrunnb='dnrun --no-build' # Run a .NET solution but no build
 alias htop='btop' # btop is objectovely better
 alias srbrc='syncrbrc' # Wait this exists??? omg i forgor tbh
 alias scfgs='synccfgs' # Sync configs but the short version for literally no reason
