@@ -2,12 +2,12 @@
 
 cpcfg() {
     echo "Syncing $1"
-    cp $HOME/$1 .
+    cp "$HOME"/"$1" .
 }
 
 cpcfgf() {
     echo "Syncing $1 as $2"
-    cp $HOME/$1 ./$2
+    cp "$HOME"/"$1" ./"$2"
 }
 
 mkdir .config/kitty -p

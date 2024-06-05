@@ -36,7 +36,7 @@ notify-send "$(cat "$hslnm")"
 
 if ! grep -q "No changes, exiting" "$hslnm"; then
     notify-send "Changes found, sending email"
-    sendemailoutput=$(./sendemail.py $hslnm 2>&1)
+    sendemailoutput=$(./sendemail.py "$hslnm" 2>&1)
     sendemailcode="$?"
     mkdir -p EmailLogs
     echo "$sendemailoutput" > EmailLogs/el_"$(date +"%F_%T")"
