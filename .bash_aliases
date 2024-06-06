@@ -364,6 +364,7 @@ mkcdiralias dlimg '~/Bookmarks/Downloaded\ images'
 mkcdiralias dli '~/Bookmarks/Downloaded\ images'
 mkcdiralias dlgames '~/Bookmarks/Game\ downloads'
 mkcdiralias dlg '~/Bookmarks/Game\ downloads'
+mkcdiralias dlfonts '~/Bookmarks/Downloaded\ fonts'
 mkcdiralias emugames '~/Bookmarks/Games\ \(emulator\)'
 mkcdiralias iso ~/Bookmarks/ISOs
 mkcdiralias dev ~/Bookmarks/Programming
