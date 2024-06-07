@@ -41,6 +41,14 @@ updcfgs() {
     builtin cd "$oldpwd" || return
 }
 
+# Run git pull in configs
+pllcfgs() {
+    oldpwd="$(pwd)"
+    builtin cd ~/configs || return
+    git pull
+    builtin cd "$oldpwd" || return
+}
+
 # Cat a file with pager (saves 3 keystrokes!)
 catless() {
     cat "$@" | less
