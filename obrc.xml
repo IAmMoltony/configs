@@ -153,8 +153,8 @@
      Many programs reserve space automatically, but you can use this in other
      cases. -->
   <margins>
-    <top>1</top>
-    <bottom>24</bottom>
+    <top>24</top>
+    <bottom>1</bottom>
     <left>0</left>
     <right>0</right>
   </margins>
