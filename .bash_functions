@@ -652,6 +652,15 @@ vercfgs() {
     builtin cd "$oldpwd" || return
 }
 
+# Show a message on today's network usage if VnStat iis available
+vnstatmsg() {
+    if command -v "vnstat" > /dev/null 2>&1; then
+        echo -e "Network usage today: \033[0;33m$(vnstat --oneline | awk -F';' '{print $6}')\033[0m."
+    else
+        echo "VnStat is not installed, cannot show today's network usage"
+    fi
+}
+
 # Bashrc post-init functions
 bashrc-postinit() {
     echo -e "\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0m"
@@ -678,7 +687,8 @@ bashrc-postinit() {
     fi
 
     echo -e "This computer has been up for \033[0;36m$(uptime -p | cut -c 4-)\033[0m."
-    echo -e "Network usage today: \033[0;33m$(vnstat --oneline | awk -F';' '{print $6}')\033[0m."
+
+    vnstatmsg
 
     checkhsl
 
