@@ -637,6 +637,13 @@ nctcfgssf() {
     echo "Total: $(( $(nctcfgs) + $(nctsf) ))"
 }
 
+# why do i have to make docs
+ncycfgssf() {
+    echo "Configs: $(ncycfgs)"
+    echo "Savefiles: $(ncysf)"
+    echo "Total: $(( $(ncycfgs) + $(ncysf) ))"
+}
+
 # Get configs version (commit hash)
 vercfgs() {
     oldpwd="$(pwd)"
