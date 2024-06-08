@@ -278,6 +278,7 @@ mkecalias readme rdm ./README.md
 mkecalias openboxrc obrc ~/.config/openbox/rc.xml
 mkecalias openboxautostart obas ~/.config/openbox/autostart.sh
 mkecalias configsreadme cfgsrdm ~/configs/README.md
+mkecalias gitignore gi ./.gitignore
 
 # }}}
 
