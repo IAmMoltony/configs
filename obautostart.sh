@@ -4,6 +4,7 @@ xset s off -dpms &
 xcompmgr &
 nm-applet &
 qbittorrent &
+rhythmbox &
 conky &
 lxpolkit &
 ~/configs/change-wallpaper &
