@@ -631,6 +631,7 @@ gs() {
 wtfis() {
     if [ "$1" == "" ]; then
         echo "wtf is WHAT? what do you want to check?"
+        return
     fi
 
     if ! alias "$1" 2>/dev/null && ! declare -f "$1" 2>/dev/null; then
