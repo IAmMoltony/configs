@@ -80,6 +80,7 @@ alias saug='sudo apt upgrade' # Upg ps
 alias pshcfgspaipai='pshcfgs && paipai' # Push cfgs and paipia
 alias :e='vim' # Another vim user HOW MANY VIM USERS DO WE HAVE
 alias wine64='WINEPREFIX=~/.wine64 wine64' # Convenience: start Wine with the 64-bit prefix
+alias wine64cfg='WINEPREFIX=~/.wine64 winecfg' # Convenience 2: configure Wine with the 64-bit prefiix
 alias dlmuspaipai='dlmus && paipai' # Download music aand then pai pai
 alias gaming-th='gaming-b && cd ./TouhouShared/drive_c' # touhou
 alias thprefix='export WINEPREFIX=$HOME/Games/TouhouShared'
