@@ -308,7 +308,7 @@ checkhsl() {
         countfilesindir ~/configs/HourlySyncLogs
         echo "There are currently $? hourly sync log files."
         while true; do
-            read -p "Delete? [y or n] " yn
+            read -n 1 -p "Delete? [y or n] " yn
             case $yn in
                 [Yy]* ) rm -rf ~/configs/HourlySyncLogs/*; echo "Deleted."; break;;
                 [Nn]* ) echo "Okay, keeping."; break;;
@@ -370,7 +370,7 @@ cleanupchecker9000() {
             if (( restartssincecleanup > 100 )); then
                 echo "You have gone a hundred shell restarts without cleanup."
                 while true; do
-                    read -p "Cleanup? [y or n] " yn
+                    read -n 1 -p "Cleanup? [y or n] " yn
                     case $yn in
                         [Yy]* ) echo "0" > "$HOME/.restartssincecleanup"; docleanupping; echo "Cleanup done."; break;;
                         [Nn]* ) echo "Okay then."; break;;
@@ -387,7 +387,7 @@ docleanupping() {
     ~/configs/cleanupping
     if command -v "apt" > /dev/null 2>&1; then
         while true; do
-            read -p "You seem to be on a Debian-based system. Run sudo apt update? [y or n] " yn
+            read -n 1 -p "You seem to be on a Debian-based system. Run sudo apt update? [y or n] " yn
             case $yn in
                 [Yy]* ) echo "Running!"; sudo apt update; echo "Done."; break;;
                 [Nn]* ) echo "Okay then."; break;;
@@ -705,7 +705,7 @@ bashrc-postinit() {
         echo "There are torrent files in the Downloads folder:"
         find ~/Downloads -maxdepth 1 -name '*.torrent'
         while true; do
-            read -p "Is it okay to delete them? [y or n] " yn
+            read -n 1 -p "Is it okay to delete them? [y or n] " yn
             case $yn in
                 [Yy]* ) echo "Alright, deleting!"; rm -f ~/Downloads/*.torrent; break;;
                 [Nn]* ) echo "Okay then."; break;;
