@@ -382,6 +382,11 @@ cleanupchecker9000() {
     fi
 }
 
+# Reset restarts since cleanup file
+rrsc() {
+    rm -f ~/.restartssincecleanup
+}
+
 # Do the actual cleanupping
 docleanupping() {
     ~/configs/cleanupping
