@@ -431,6 +431,7 @@ mkcolorado egrep
 # XTerm fixes {{{
 
 mkxtfalias mdless
+mkxtfalias vim
 
 # }}}
 
