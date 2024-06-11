@@ -662,7 +662,7 @@ ncycfgssf() {
 vercfgs() {
     oldpwd="$(pwd)"
     builtin cd ~/configs || return
-    echo "$(git rev-parse --short HEAD) (released $(LANG=en git show --no-patch --format="%ar" HEAD))"
+    echo "$(git rev-parse --short HEAD) \"$(git log --format=%B -n 1 HEAD)\" (released $(LANG=en git show --no-patch --format="%ar" HEAD))"
     builtin cd "$oldpwd" || return
 }
 
