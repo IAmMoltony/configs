@@ -150,6 +150,8 @@ alias dwpms='~/desktop-wallpaper/make-symlinks.sh' # Make desktop wallpaper syml
 alias please-change-my-wallpaper-right-now-ok='sudo systemctl start changewallpaper.service' # change wallpaper right now ok
 alias pshcfgssf='pshcfgs && pshsf' # push configs and savefiles
 alias avgsizefiles="find './' -maxdepth 1 -ls | awk '{sum += \$7; n++;} END {printf \"%.0f\", sum/n;}' | numfmt --to=iec-i && echo && true" # get the average size of files rn
+alias sfabe='~/savefiles/autobackup.sh ENABLE' # Enable savefiles autobackup
+alias sfabd='~/savefiles/autobackup.sh DISABLE' # Disable savefiles autobackup
 
 # }}}
 
