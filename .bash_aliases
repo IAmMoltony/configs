@@ -267,7 +267,6 @@ mkecalias vimrc vrc ~/.vimrc
 mkecalias conkyrc crc ~/.conkyrc
 mkecalias cronsync cs ~/configs/cronsync.sh
 mkecalias machinespecificstartupcommands mssc ~/.mssc
-mkecalias diareplacement dr ~/Documents/DiaReplacement.txt
 mkecalias profile prf ~/.profile
 mkecalias kittyconf kc ~/.config/kitty/kitty.conf
 mkecalias birthday bd ~/.bday
