@@ -25,6 +25,7 @@ alias md='mkdir' # DOS-inspired shortcut for mkdir
 alias rd='rmdir' # DOS-inspired shortcut for rmdir
 alias cls='echo "Tip: press C-l to clear."' # C-l
 alias reload-bashrc='source ~/.bashrc' # Reload BashRC
+alias reload-bashaliases='source ~/.bash-configs/.bash_aliases && trap - ERR' # Reload Bash aliases
 alias lt='ls -lh --size -1 -S --classify' # ll + sort by size
 alias mnt="mount | awk -F ' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort" # Show mounted disks (no stuff like tmpfs or whatever)
 alias grephist='history | grep' # Search in comman history
@@ -32,6 +33,7 @@ alias lq='ls -tl -1' # List contents of dir, sort files by modification time and
 alias lqa='la -tl -1' # Same as lq but also show hidden files (including . and ..)
 alias cppb='rsync -ah --info=progress2' # Copy with a neat little progress par
 alias relbrc='reload-bashrc' # Short reload-bashrc alias
+alias relba='reload-bashaliases' # Short reload-bashaliases alias
 alias hd='hexdump -C' # Hexdump but pretty (the hd binary is not in every distro)
 alias mkaur='makepkg -si --noconfirm' # Make an AUR package
 alias mk='make' # make but short (i forgor about this one since `make` is short enough anyway)
@@ -72,6 +74,7 @@ alias syncpaipai='synccfgs && paipai' # Sync configs and say pai pai
 alias spaipai='syncpaipai' # Today's installment of Useless Aliases... Short version of `syncpaipai' !!!
 alias scfgsm='synccfgsm' # Short versoin alias thing ojgjo2joejfjojii243jrjoo2 2323oin23roin23r
 alias syncmrbrc='synccfgsm && relbrc' # Sync configs with message and rbrc TODO turn this into a function
+alias syncmrba='synccfgsm && relba' # Sync configs with message and rba
 alias syncmpaipai='synccfgsm && paipai' # Sync configs with message and paipai
 alias saiy='sudo apt install -y' # Install p
 alias sary='sudo apt remove -y' # Rm p
@@ -120,6 +123,7 @@ alias hcsd='hcs-disable' # Disable HCS
 alias hcsie='hcs-is-enabled' # Check if HCS is enabled
 alias ffwcfg='fastfetch -c $HOME/configs/fastfetch-cfg.jsonc' # Run fastfetch with custom config
 alias rbrc='relbrc' # Less typing
+alias rba='relba' # Even less typing
 alias paixorg='sudo pkill -9 Xorg' # kill xorg with ease
 alias xlogout='sudo pkill -u $USER' # Log out
 alias aptrepos='grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*' # List apt repos
@@ -152,6 +156,7 @@ alias pshcfgssf='pshcfgs && pshsf' # push configs and savefiles
 alias avgsizefiles="find './' -maxdepth 1 -ls | awk '{sum += \$7; n++;} END {printf \"%.0f\", sum/n;}' | numfmt --to=iec-i && echo && true" # get the average size of files rn
 alias sfabe='~/savefiles/autobackup.sh ENABLE' # Enable savefiles autobackup
 alias sfabd='~/savefiles/autobackup.sh DISABLE' # Disable savefiles autobackup
+alias dnme='dotnet mgcb-editor' # MGCB editor
 
 # }}}
 
