@@ -36,6 +36,9 @@ mkdir -p "$HOME"/.config/bleachbit
 echo "Creating Openbox config dir"
 mkdir -p "$HOME"/.config/openbox
 
+echo "Creating qutebrowser config dir"
+mkdir -p "$HOME"/.config/qutebrowser
+
 cpcfg .bashrc
 cpcfg .gitconfig
 cpcfg .profile
