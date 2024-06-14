@@ -333,7 +333,7 @@
     <!-- Launch terminal when the win plus tea -->
     <keybind key="W-t">
       <action name="Execute">
-        <command>exo-open --launch TerminalEmulator</command>
+        <command>x-terminal-emulator</command>
       </action>
     </keybind>
     <!-- and we cant forget one of the uselessest tools ever -->
