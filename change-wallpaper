@@ -5,6 +5,11 @@ if [ ! -f "/etc/moltony-wallpaper-changer.conf" ]; then
     exit 1
 fi
 
+if ! command -v "feh" > /dev/null 2>&1; then
+    echo "Please install feh"
+    exit 2
+fi
+
 source /etc/moltony-wallpaper-changer.conf
 
 echo "changing wallpaper"
