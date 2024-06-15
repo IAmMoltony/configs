@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
 xset s off -dpms &
+dunst &
 xcompmgr &
 nm-applet &
 qbittorrent &
