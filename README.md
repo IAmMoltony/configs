@@ -23,7 +23,12 @@ See `CronSync.md`.
 ### Wallpaper changer
 
 Wallpaper changer requires a file called `/etc/moltony-wallpaper-changer.conf` to be created. The repository provides an example
-of the file. Copy it into `/etc` and change depending on your setup.
+of the file. Copy it into `/etc` and change to your liking.
+
+#### ok but why do i have to copy it to `/etc`???
+
+So at some point I set up the wallpaper changer as a systemd timer, which do not set the `HOME` variable, so I had to use a fixed
+path that does not depend on the user for configuration. Too late (lazy) to change it now.
 
 ## Warning
 
