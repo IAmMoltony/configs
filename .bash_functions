@@ -670,6 +670,16 @@ vercfgs() {
     builtin cd "$oldpwd" || return
 }
 
+# Source if exists
+srcie() {
+    if [ -f "$1" ]; then
+        if [ "$2" != "" ]; then
+            echo "$2"
+        fi
+        source "$1"
+    fi
+}
+
 # Bashrc post-init functions
 bashrc-postinit() {
     echo -e "\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0m"
@@ -757,10 +767,7 @@ ubferrorhdlr() {
 
 trap 'ubferrorhdlr $LINENO' ERR
 
-# TODO turn the if -f then source into a function
-if [ -f "$HOME/.bash-configs/.userfunctions" ]; then
-    source "$HOME/.bash-configs/.userfunctions"
-fi
+srcie "$HOME/.bash-configs/.userfunctions"
 
 # }}}
 
