@@ -471,6 +471,8 @@ ubaerrorhdlr() {
 
 trap 'ubaerrorhdlr $LINENO' ERR
 
-srcie "$HOME/.useraliases"
+if [ -f "$HOME/.bash-configs/.useraliases" ]; then
+    source "$HOME/.bash-configs/.useraliases"
+fi
 
 # }}}

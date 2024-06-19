@@ -142,7 +142,10 @@ export DEVKITPPC=${DEVKITPRO}/devkitPPC
 
 # Intel compiler {{{
 
-srcie "$HOME/intel/oneapi/setvars.sh" "Initializing Intel compiler"
+if [ -f "$HOME/intel/oneapi/setvars.sh" ]; then
+    echo "Initializing Intel compiler"
+    source "$HOME"/intel/oneapi/setvars.sh
+fi
 
 # }}}
 
@@ -192,7 +195,11 @@ shopt -s checkwinsize # Check the window size (idk what this does)
 # WakaTime {{{
 
 wakatimesh="$HOME/dev/bash-wakatime/bash-wakatime.sh"
-srcie "$wakatimesh" "Enabling WakaTime"
+
+if [ -f "$wakatimesh" ]; then
+    echo "Enabling WakaTime"
+    source "$wakatimesh"
+fi
 
 # }}}
 
@@ -219,7 +226,10 @@ fi
 
 # Run Machine-Specific Startup Commands (MSSC)
 # This became necessary when I wanted to install nvm on WSL but I don't use nvm on my laptop
-srcie "$HOME/.mssc" "Running Machine-Specific Startup Commands"
+if [ -f "$HOME/.mssc" ]; then
+    echo "Running Machine-Specific Startup Commands"
+    source "$HOME"/.mssc
+fi
 
 # }}}
 
