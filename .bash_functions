@@ -227,9 +227,11 @@ mkecalias() {
     alias view-"$long"="cat $file | less"
     alias catnp-"$long"="cat $file"
     alias viewnp-"$long"="cat $file"
+    alias stat-"$long"="stat $file"
     alias edt"$short"="edit-$long"
     alias cat"$short"="cat-$long"
     alias catnp"$short"="catnp-$long"
+    alias st"$short"="stat-$long"
 }
 
 # New edt + cat alias (sudo version)
@@ -242,9 +244,11 @@ mksuecalias() {
     alias view-"$long"="cat $file | less"
     alias catnp-"$long"="cat $file"
     alias viewnp-"$long"="cat $file"
+    alias stat-"$long"="stat $file"
     alias edt"$short"="edit-$long"
     alias cat"$short"="cat-$long"
     alias catnp"$short"="catnp-$long"
+    alias st"$short"="stat-$long"
 }
 
 # New --color=auto alias (color auto sounds like colorado)
