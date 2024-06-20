@@ -158,7 +158,7 @@ alias avgsizefiles="find './' -maxdepth 1 -ls | awk '{sum += \$7; n++;} END {pri
 alias sfabe='~/savefiles/autobackup.sh ENABLE' # Enable savefiles autobackup
 alias sfabd='~/savefiles/autobackup.sh DISABLE' # Disable savefiles autobackup
 alias dnme='dotnet mgcb-editor' # MGCB editor
-alias pls-make-my-touchpad-work='sudo apt install -y xserver-xorg-input-synaptics' # i have this touchpad that works in linux but the scrolling doesnt work and this fixes it
+alias echowinep='echo $WINEPREFIX' # Print the wineprefix to make sure im in the right one
 
 # }}}
 
