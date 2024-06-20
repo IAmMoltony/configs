@@ -86,6 +86,7 @@ alias wine64='WINEPREFIX=~/.wine64 wine64' # Convenience: start Wine with the 64
 alias wine64cfg='WINEPREFIX=~/.wine64 winecfg' # Convenience 2: configure Wine with the 64-bit prefiix
 alias dlmuspaipai='dlmus && paipai' # Download music aand then pai pai
 alias gaming-th='gaming-b && cd ./TouhouShared/drive_c' # touhou
+alias gaming-thu='gaming-b && cd ./TouhouShared/drive_c/Touhou-Utilities' # Touhou utilities like thscorefileconveretr
 alias thprefix='export WINEPREFIX=$HOME/Games/TouhouShared'
 alias dnbuildrel='dotnet build -v n -c Release' # Build with release config
 alias dnbldrel='dnbuildrel' # Yeah
