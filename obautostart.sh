@@ -40,3 +40,6 @@ xfce4-panel --disable-wm-check &
 
 # Bluetooth for my headphones
 blueman-applet &
+
+# Switch to 2nd desktop
+wmctrl -s 1
