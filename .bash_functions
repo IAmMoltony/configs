@@ -712,7 +712,7 @@ bashrc-postinit() {
 
     if ll ~/Downloads/*.torrent > /dev/null 2>&1; then
         echo "There are torrent files in the Downloads folder:"
-        find ~/Downloads -maxdepth 1 -name '*.torrent'
+        find $(readlink -m ~/Downloads) -maxdepth 1 -name '*.torrent'
         while true; do
             read -n 1 -p "Is it okay to delete them? [y or n] " yn
             case $yn in
