@@ -364,7 +364,7 @@ mkcdiralias ml ~/Music/music-lib
 mkcdiralias muslibmus ~/Music/music-lib/music
 mkcdiralias mlm ~/Music/music-lib/music
 mkcdiralias pic ~/Pictures
-mkcdiralias vid ~/Videos
+mkcdiralias vid ~/Videos大切な人
 mkcdiralias hsl ~/configs/HourlySyncLogs
 mkcdiralias bm ~/Bookmarks
 mkcdiralias bkmk ~/Bookmarks
@@ -407,6 +407,7 @@ mkcdiralias mccr ~/.minecraft/crash-reports
 mkcdiralias mcshot ~/.minecraft/screenshots
 mkcdiralias sf ~/savefiles
 mkcdiralias dwp ~/desktop-wallpaper
+mkcdiralias car ~/Bookmarks/Cute anime art
 
 # }}}
 
