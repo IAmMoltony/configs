@@ -182,12 +182,22 @@ cmrhsl() {
     builtin cd $oldpwd || return
 }
 
-# Git log in configs
-glgcfgs() {
+# Generic dir git log
+glgdir() {
     oldpwd="$(pwd)"
-    builtin cd ~/configs || return
+    builtin cd "$1" || return
     git log
     builtin cd "$oldpwd" || return
+}
+
+# Git log in configs
+glgcfgs() {
+    glgdir ~/configs
+}
+
+# Git log in savefiles
+glgsf() {
+    glgdir ~/savefiles
 }
 
 # New exit alias
