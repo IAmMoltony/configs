@@ -671,6 +671,22 @@ vercfgs() {
     builtin cd "$oldpwd" || return
 }
 
+# Check for torrents in the downloads dir
+torrentchecker() {
+    if ll ~/Downloads/*.torrent > /dev/null 2>&1; then
+        echo "There are torrent files in the Downloads folder:"
+        find $(readlink -m ~/Downloads) -maxdepth 1 -name '*.torrent'
+        while true; do
+            read -n 1 -p "Is it okay to delete them? [y or n] " yn
+            case $yn in
+                [Yy]* ) echo "Alright, deleting!"; rm -f ~/Downloads/*.torrent; break;;
+                [Nn]* ) echo "Okay then."; break;;
+                * ) echo "Please answer properly!";;
+            esac
+        done
+    fi
+}
+
 # Bashrc post-init functions
 bashrc-postinit() {
     echo -e "\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0m"
@@ -706,22 +722,10 @@ bashrc-postinit() {
     bdaycheck
     maythe4
     cirnoday
+    torrentchecker
 
     if (( $(fdspercent) >= 80)); then
         echo -e "\033[0;31mWARNING YOU ARE RUNNING DANGEROUSLY LOW ON SPACE!!!!!!!!!!!!!\033[0m"
-    fi
-
-    if ll ~/Downloads/*.torrent > /dev/null 2>&1; then
-        echo "There are torrent files in the Downloads folder:"
-        find $(readlink -m ~/Downloads) -maxdepth 1 -name '*.torrent'
-        while true; do
-            read -n 1 -p "Is it okay to delete them? [y or n] " yn
-            case $yn in
-                [Yy]* ) echo "Alright, deleting!"; rm -f ~/Downloads/*.torrent; break;;
-                [Nn]* ) echo "Okay then."; break;;
-                * ) echo "Please answer properly!";;
-            esac
-        done
     fi
 
     BashrcEndTime=$(date +%s.%N)
