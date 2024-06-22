@@ -731,7 +731,7 @@ bashrc-postinit() {
     BashrcEndTime=$(date +%s.%N)
 
     if command -v "bc" > /dev/null 2>&1; then
-        BashrcRuntime=$(echo "scale=3; ($BashrcEndTime - $BashrcStartTime) / 1" | bc -l | awk '{printf "%.3f\n", $0}')
+        BashrcRuntime=$(echo "scale=3; ($BashrcEndTime - $BashrcStartTime) / 1" | bc -l)
         echo "Shell initialized in $BashrcRuntime seconds with $BashrcNumErrors errors."
     else
         echo "Shell initialized with $BashrcNumErrors errors."
