@@ -11,3 +11,6 @@ lxpolkit &
 ~/configs/change-wallpaper &
 xfce4-panel --disable-wm-check &
 blueman-applet &
+onboard &
+
+notify-send "Init done!!"
