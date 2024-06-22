@@ -159,6 +159,7 @@ alias sfabe='~/savefiles/autobackup.sh ENABLE' # Enable savefiles autobackup
 alias sfabd='~/savefiles/autobackup.sh DISABLE' # Disable savefiles autobackup
 alias dnme='dotnet mgcb-editor' # MGCB editor
 alias echowinep='echo $WINEPREFIX' # Print the wineprefix to make sure im in the right one
+alias aliias='alias' # Alies
 
 # }}}
 
@@ -369,28 +370,28 @@ mkcdiralias hsl ~/configs/HourlySyncLogs
 mkcdiralias bm ~/Bookmarks
 mkcdiralias bkmk ~/Bookmarks
 mkcdiralias bk ~/Bookmarks
-mkcdiralias and '~/Bookmarks/Android\ partition' # L sand
+mkcdiralias and ~/Bookmarks/Android\ partition # L sand
 mkcdiralias anime ~/Bookmarks/Anime
 mkcdiralias cart ~/Bookmarks/Cartoons
-mkcdiralias dlimg '~/Bookmarks/Downloaded\ images'
-mkcdiralias dli '~/Bookmarks/Downloaded\ images'
-mkcdiralias dlgames '~/Bookmarks/Game\ downloads'
-mkcdiralias dlg '~/Bookmarks/Game\ downloads'
-mkcdiralias dlfonts '~/Bookmarks/Downloaded\ fonts'
-mkcdiralias emugames '~/Bookmarks/Games\ \(emulator\)'
+mkcdiralias dlimg ~/Bookmarks/Downloaded\ images
+mkcdiralias dli ~/Bookmarks/Downloaded\ images
+mkcdiralias dlgames ~/Bookmarks/Game\ downloads
+mkcdiralias dlg ~/Bookmarks/Game\ downloads
+mkcdiralias dlfonts ~/Bookmarks/Downloaded\ fonts
+mkcdiralias emugames ~/Bookmarks/Games\ \(emulator\)
 mkcdiralias iso ~/Bookmarks/ISOs
 mkcdiralias dev ~/Bookmarks/Programming
 mkcdiralias shot ~/Bookmarks/Screenshots
 mkcdiralias ws ~/Bookmarks/Website
 mkcdiralias web ~/Bookmarks/Website
-mkcdiralias win '~/Bookmarks/Windows\ partition'
+mkcdiralias win ~/Bookmarks/Windows\ partition
 mkcdiralias wine ~/Bookmarks/Wine
-mkcdiralias wine64 '~/Bookmarks/Wine\ \(64-bit\)'
-mkcdiralias winep '~/Bookmarks/Wine\ prefixes'
+mkcdiralias wine64 ~/Bookmarks/Wine\ \(64-bit\)
+mkcdiralias winep ~/Bookmarks/Wine\ prefixes
 mkcdiralias book ~/Bookmarks/Books
 mkcdiralias wp ~/Bookmarks/Wallpaper
-mkcdiralias wpw '~/Bookmarks/Wallpaper\ \(working\ dir\)'
-mkcdiralias dos '~/Bookmarks/DOS\ files'
+mkcdiralias wpw ~/Bookmarks/Wallpaper\ \(working\ dir\)
+mkcdiralias dos ~/Bookmarks/DOS\ files
 mkcdiralias cam ~/Pictures/camera
 mkcdiralias cfg ~/configs
 mkcdiralias cfgs ~/configs
@@ -413,12 +414,13 @@ mkcdiralias car ~/Bookmarks/Cute anime art
 
 # parent directory {{{
 
-mkdiralias cd.. ls.. sz.. cnt.. cntf.. ..
-mkdiralias .. l.. s.. c.. cf.. ..
-mkdiralias .... l.... s.... c.... cf.... ../..
-mkdiralias ...... l...... s...... c...... cf...... ../../../
-mkdiralias ........ l........ s........ c........ cf........ ../../../..
-mkdiralias .......... l.......... s.......... c.......... cf.......... ../../../../..
+# TODO can't i just make this a common dir alias
+mkdiralias cd.. ls.. sz.. cnt.. cntf.. cdr.. ..
+mkdiralias .. l.. s.. c.. cf.. cr.. ..
+mkdiralias .... l.... s.... c.... cf.... cr.... ../..
+mkdiralias ...... l...... s...... c...... cf...... cr...... ../../../
+mkdiralias ........ l........ s........ c........ cf........ cr........ ../../../..
+mkdiralias .......... l.......... s.......... c.......... cf.......... cr.......... ../../../../..
 
 # }}}
 
@@ -438,7 +440,7 @@ mkcolorado egrep
 # XTerm fixes {{{
 
 mkxtfalias mdless
-mkxtfalias vim
+mkxtfalias vim # Don't think this really fixes my issue :| bruh
 
 # }}}
 
