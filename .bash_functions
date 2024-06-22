@@ -687,6 +687,51 @@ torrentchecker() {
     fi
 }
 
+# It's ok that I'm low on space
+oklowspc() {
+    touch "$HOME/.oklowspc"
+    echo "Disabled low space message, run notoklowspc to enable"
+}
+
+# It's NOT ok that I'm low on space
+notoklowspc() {
+    rm -f "$HOME/.oklowspc"
+    echo "Enabled low space message, run oklowspc to disable"
+}
+
+# Get low space threshold
+lowspcthr() {
+    if [ ! -f "$HOME/.lowspcthr" ]; then
+        echo "80"
+        return
+    fi
+
+    filecontent=$(cat "$HOME/.lowspcthr")
+    numberregex='^[0-9]+$'
+    if ! [[ $filecontent =~ $numberregex ]]; then
+        echo "80"
+    fi
+    echo $filecontent
+}
+
+# Set low spacethresgold
+setlowspcthr() {
+    echo -n "Set low space threshold (0 - 100):"
+    read lstr
+    if ! [[ "$lstr" =~ ^[0-9]+$ ]]; then
+        echo "What the hel"
+        return
+    fi
+    echo "ok"
+    echo "$lstr" > "$HOME/.lowspcthr"
+}
+
+# Remove low space threshold
+rmlowspcthr() {
+    echo "Deleting low space threshold file now"
+    rm -f "$HOME/.lowspcthr"
+}
+
 # Bashrc post-init functions
 bashrc-postinit() {
     echo -e "\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0m"
@@ -724,8 +769,9 @@ bashrc-postinit() {
     cirnoday
     torrentchecker
 
-    if (( $(fdspercent) >= 80)); then
+    if (( $(fdspercent) >= $(lowspcthr))) && [ ! -f "$HOME/.oklowspc" ]; then
         echo -e "\033[0;31mWARNING YOU ARE RUNNING DANGEROUSLY LOW ON SPACE!!!!!!!!!!!!!\033[0m"
+        echo -e "Run \033[0;36moklowspc\033[0m to disable the above message. Run \033[0;36msetlowspcthr\033[0m to change low space threshold."
     fi
 
     BashrcEndTime=$(date +%s.%N)
