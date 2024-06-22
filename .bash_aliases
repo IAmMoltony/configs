@@ -414,8 +414,7 @@ mkcdiralias car ~/Bookmarks/Cute anime art
 
 # parent directory {{{
 
-# TODO can't i just make this a common dir alias
-mkdiralias cd.. ls.. sz.. cnt.. cntf.. cdr.. ..
+mkcdiralias .. ..
 mkdiralias .. l.. s.. c.. cf.. cr.. ..
 mkdiralias .... l.... s.... c.... cf.... cr.... ../..
 mkdiralias ...... l...... s...... c...... cf...... cr...... ../../../
