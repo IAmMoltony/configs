@@ -10,7 +10,7 @@ cd ~/configs # go into the repo dir
 git submodule update --init --recursive # submodules
 ./install-cascadia-code.sh # install cascadia code (OPTIONAL, don't run if you don't need the font)
 ./install.sh # install configurations
-pip install -r sendemail-requirements.txt # install requirements for sendemail module (OPTIONAL, only if you're using HCS)
+pip install -r sendemail-requirements.txt # install requirements for sendemail module (*OPTIONAL*, only if you're using HCS)
 source ~/.bashrc # reload bashrc
 ```
 
@@ -22,6 +22,8 @@ See `CronSync.md`.
 
 ### Wallpaper changer
 
+The wallpaper changer script changes the wallpaper using `feh`, designed for use in an environment with no DE.
+
 Wallpaper changer requires a file called `/etc/moltony-wallpaper-changer.conf` to be created. The repository provides an example
 of the file. Copy it into `/etc` and change to your liking.
 
@@ -29,6 +31,14 @@ of the file. Copy it into `/etc` and change to your liking.
 
 So at some point I set up the wallpaper changer as a systemd timer, which do not set the `HOME` variable, so I had to use a fixed
 path that does not depend on the user for configuration. Too late (lazy) to change it now.
+
+### thprac launch script
+
+This is a script for launching thprac, technically applicable for launching any pattern wine app.
+
+TODO make generic
+
+Same config as wallpaper changer.
 
 ## Warning
 
