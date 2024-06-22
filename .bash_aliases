@@ -408,7 +408,8 @@ mkcdiralias mccr ~/.minecraft/crash-reports
 mkcdiralias mcshot ~/.minecraft/screenshots
 mkcdiralias sf ~/savefiles
 mkcdiralias dwp ~/desktop-wallpaper
-mkcdiralias car ~/Bookmarks/Cute anime art
+mkcdiralias car ~/Bookmarks/Cute\ anime\ art
+mkcdiralias dlgth ~/Bookmarks/Game\ downloads\ \(Touhou\)
 
 # }}}
 
