@@ -829,7 +829,6 @@ ubferrorhdlr() {
 
 trap 'ubferrorhdlr $LINENO' ERR
 
-# TODO turn the if -f then source into a function
 if [ -f "$HOME/.bash-configs/.userfunctions" ]; then
     source "$HOME/.bash-configs/.userfunctions"
 fi
