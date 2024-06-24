@@ -160,6 +160,7 @@ alias sfabd='~/savefiles/autobackup.sh DISABLE' # Disable savefiles autobackup
 alias dnme='dotnet mgcb-editor' # MGCB editor
 alias echowinep='echo $WINEPREFIX' # Print the wineprefix to make sure im in the right one
 alias aliias='alias' # Alies
+alias debian-upgrade='sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y' # Update debian
 
 # }}}
 

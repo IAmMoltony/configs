@@ -10,6 +10,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tomasiser/vim-code-dark'
 Plug 'wakatime/vim-wakatime'
 Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'preservim/nerdtree'
+Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
@@ -77,3 +79,7 @@ set mousef
 set scf
 set mh
 set more
+
+# Nerd tree
+
+nnoremap <C-n> :NERDTreeToggle<CR>
