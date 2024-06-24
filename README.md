@@ -32,14 +32,6 @@ of the file. Copy it into `/etc` and change to your liking.
 So at some point I set up the wallpaper changer as a systemd timer, which do not set the `HOME` variable, so I had to use a fixed
 path that does not depend on the user for configuration. Too late (lazy) to change it now.
 
-### thprac launch script
-
-This is a script for launching thprac, technically applicable for launching any pattern wine app.
-
-TODO make generic
-
-Same config as wallpaper changer.
-
 ## Warning
 
 All configs and scripts for installing/updating/syncing assume that this repo is in your home directory, so make sure
