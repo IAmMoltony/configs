@@ -766,7 +766,9 @@ bashrc-postinit() {
     fi
 
     hcs-is-enabled --color
-    cleanupchecker9000
+    if [ "$PIPENV_ACTIVE" != "1" ]; then
+        cleanupchecker9000
+    fi
 
     if [ -d "$HOME/configs/HourlySyncLogs" ]; then
         echo -e "Hourly sync logs take up \033[1;33m$(du -sh ~/configs/HourlySyncLogs | awk '{ print $1 }').\033[0m"
@@ -781,14 +783,23 @@ bashrc-postinit() {
         echo "$(nctcfgs) commits in configs."
     fi
 
-    checkhsl
+    if [ "$PIPENV_ACTIVE" == "1" ]; then
+        echo "Running using pipenv."
+    fi
+
+    if [ "$PIPENV_ACTIVE" != "1" ]; then
+        checkhsl
+    fi
 
     echo -e "\033[0;36m$(alias | wc -l)\033[0m aliases and \033[0;36m$(lsfuncs | wc -l)\033[0m functions are installed."
 
     bdaycheck
     maythe4
     cirnoday
-    torrentchecker
+
+    if [ "$PIPENV_ACTIVE" != "1" ]; then
+        torrentchecker
+    fi
 
     if (( $(fdspercent) >= $(lowspcthr))) && [ ! -f "$HOME/.oklowspc" ]; then
         echo -e "\033[0;31mWARNING YOU ARE RUNNING DANGEROUSLY LOW ON SPACE!!!!!!!!!!!!!\033[0m"
