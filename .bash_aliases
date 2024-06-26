@@ -1,6 +1,9 @@
 # vim:foldmethod=marker
 # Moltony's Bash Aliases
 
+# TODO grouping: Manual aliases
+# TODO grouping: Conditional aliases (kitty and WSL)
+
 # Error handling {{{
 
 BashAliasesNumErrors=0
@@ -291,6 +294,7 @@ mkecalias openboxautostart obas ~/.config/openbox/autostart.sh
 mkecalias configsreadme cfgsrdm ~/configs/README.md
 mkecalias gitignore gi ./.gitignore
 mkecalias savefilesuser sfu ~/savefiles/user.json
+mkecalias animewatchlist animwl ~/Bookmarks/Anime/watchlist.txt
 
 # }}}
 
