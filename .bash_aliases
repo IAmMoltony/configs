@@ -415,8 +415,8 @@ mkcdiralias sf ~/savefiles
 mkcdiralias dwp ~/desktop-wallpaper
 mkcdiralias car ~/Bookmarks/Cute\ anime\ art
 mkcdiralias dlgth ~/Bookmarks/Game\ downloads\ \(Touhou\)
-mkcdiralias cdanim ~/Bookmarks/Anime
-mkcdiralias cdani ~/Bookmarks/Anime
+mkcdiralias anim ~/Bookmarks/Anime
+mkcdiralias ani ~/Bookmarks/Anime
 
 # }}}
 
