@@ -20,7 +20,6 @@ cpcfg .bash-configs/.bash_aliases
 cpcfg .bash-configs/.bash_functions
 cpcfg .config/kitty/kitty.conf
 cpcfg .conkyrc
-cpcfg .bday
 cpcfg .config/melonDS/melonDS.ini
 cpcfg .config/compton/compton.conf
 cpcfg .config/bleachbit/bleachbit.ini
