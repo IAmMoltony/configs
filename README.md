@@ -16,7 +16,7 @@ source ~/.bashrc # reload bashrc
 
 ### HCS
 
-HCS (Hourly Config Sync, also referred to as Cron Sync) is a convenient system for automatically backing up configs every hour.
+HCS (Hourly Config Sync, also referred to as Cron Sync) is a convenient system for automatically backing up configs.
 
 See `CronSync.md`.
 
