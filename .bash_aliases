@@ -370,7 +370,7 @@ mkcdiralias ml ~/Music/music-lib
 mkcdiralias muslibmus ~/Music/music-lib/music
 mkcdiralias mlm ~/Music/music-lib/music
 mkcdiralias pic ~/Pictures
-mkcdiralias vid ~/Videos大切な人
+mkcdiralias vid ~/Videos
 mkcdiralias hsl ~/configs/HourlySyncLogs
 mkcdiralias bm ~/Bookmarks
 mkcdiralias bkmk ~/Bookmarks
