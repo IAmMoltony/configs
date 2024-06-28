@@ -33,9 +33,13 @@ trap 'echo "Nuh-uh!"' SIGINT
 
 clear
 
+initmsg() {
+    echo -ne "\033[0;36m$1 "
+}
+
 # Basic init {{{
 
-echo "Initializing shell"
+initmsg "sh"
 
 stty -echo
 
@@ -54,22 +58,25 @@ HISTFILESIZE=2000
 
 # Editor and path {{{
 
-echo "Setting editor and path"
+initmsg "editor"
 
 export EDITOR=/bin/vim
+
+initmsg "path"
+
 export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/configs/bin"
 
 # }}}
 
 # Aliases and functions {{{
 
-echo "Adding functions"
+initmsg "fun"
 
 if [ -f ~/.bash-configs/.bash_functions ]; then
     . ~/.bash-configs/.bash_functions
 fi
 
-echo "Adding aliases"
+initmsg "alias"
 
 if [ -f ~/.bash-configs/.bash_aliases ]; then
     . ~/.bash-configs/.bash_aliases
@@ -83,11 +90,12 @@ trap 'brcerrorhdlr $LINENO' ERR
 
 # Programmable completion {{{
 
-echo "Enabling programmable completion"
+initmsg "comp"
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
+# ^^^^ not guaranteed as this brc is meant to be portable across distros
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
@@ -101,7 +109,7 @@ fi
 # WSL {{{
 
 [ -f imrunningonwsl ] && {
-    echo "Setting WSL display"
+    initmsg "wsl"
     WslDisplay=$(grep nameserver /etc/resolv.conf | awk '{print $2}')
     export DISPLAY="${WslDisplay}:0.0"
 }
@@ -110,7 +118,7 @@ fi
 
 # Prompt customization {{{
 
-echo "Customizing prompt"
+initmsg "ps1"
 
 # prompt customizatoin
 PS1='$(git rev-parse --is-inside-work-tree > /dev/null 2>&1 && ps1gitinfo )\[\e[0;35m\]\u \[\e[1;32m\]\w \[\e[0m\]$(randomcurrency) '
@@ -121,7 +129,7 @@ PS2="ok and? "
 # Custom path {{{
 
 if [ -f ~/.custompath ]; then
-    echo "Setting custom path"
+    initmsg "cp"
     . ~/.custompath
     export PATH="$PATH:$CUSTOMPATH"
 fi
@@ -132,7 +140,7 @@ export HTDOCS=/opt/lampp/htdocs
 
 # devkitPro {{{
 
-echo "Setting devkitPro environment"
+initmsg "dkp"
 
 export DEVKITPRO=/opt/devkitpro
 export DEVKITARM=${DEVKITPRO}/devkitARM
@@ -143,7 +151,7 @@ export DEVKITPPC=${DEVKITPRO}/devkitPPC
 # Intel compiler {{{
 
 if [ -f "$HOME/intel/oneapi/setvars.sh" ]; then
-    echo "Initializing Intel compiler"
+    initmsg "intel"
     source "$HOME"/intel/oneapi/setvars.sh
 fi
 
@@ -151,7 +159,7 @@ fi
 
 # pfetch configuration {{{
 
-echo "Configuring pfetch"
+initmsg "pfetch"
 
 # do some pfetch configurationing
 export PF_INFO="ascii title os host kernel uptime pkgs memory editor wm de shell palette"
@@ -160,7 +168,7 @@ export PF_INFO="ascii title os host kernel uptime pkgs memory editor wm de shell
 
 # pnpm {{{
 
-echo "Initializing pnpm"
+initmsg "pnpm"
 
 export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
@@ -172,19 +180,19 @@ esac
 
 # Perl {{{
 
-echo "Initializing Perl environment"
+initmsg "perl"
 
-PATH="/home/moltony/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/moltony/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/moltony/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/moltony/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/moltony/perl5"; export PERL_MM_OPT;
+PATH="$HOME/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 
 # }}}
 
 # Shell options {{{
 
-echo "Enabling shell options"
+initmsg "shopt"
 
 shopt -s cdspell # Spell-checker for the `cd' command
 shopt -s histappend # Append to history file instead of overwriting it
@@ -197,8 +205,42 @@ shopt -s checkwinsize # Check the window size (idk what this does)
 wakatimesh="$HOME/dev/bash-wakatime/bash-wakatime.sh"
 
 if [ -f "$wakatimesh" ]; then
-    echo "Enabling WakaTime"
+    initmsg "wt"
     source "$wakatimesh"
+fi
+
+# }}}
+
+# MSSC {{{
+
+# Run Machine-Specific Startup Commands (MSSC)
+# This became necessary when I wanted to install nvm on WSL but I don't use nvm on my laptop
+if [ -f "$HOME/.mssc" ]; then
+    initmsg "mssc"
+    source "$HOME"/.mssc
+fi
+
+# }}}
+
+# Inconveniences {{{
+
+initmsg "inc"
+
+PROMPT_COMMAND="inconveniences; $PROMPT_COMMAND"
+
+# }}}
+
+# Check if python is installed {{{
+
+initmsg "pychk"
+
+if ! command -v python3 > /dev/null 2>&1; then
+    clear
+    echo "!!!! ATTENTION !!!!"
+    echo "YOU DO NOT HAVE PYTHON 3 INSTALLED !!!!!!!"
+    echo "INSTALL NOW OR YOU WILL REGRET IT!!!!!!!!!!!!!"
+    read -p -e "press enter"
+    clear
 fi
 
 # }}}
@@ -209,45 +251,19 @@ fi
 #  1. fastfetch (because it's fast) (and also cuz i have a custom config)
 #  2. pfetch (because it's sleek)
 #  3. neofetch (as fallback)
+# TODO remove copy pasting by adding fetch programs to a list
 if command -v "fastfetch" > /dev/null 2>&1; then
-    echo "Running fastfetch"
+    initmsg "fetch"
+    echo
     ffwcfg
 elif command -v "pfetch" > /dev/null 2>&1; then
-    echo "Running pfetch"
+    initmsg "fetch"
+    echo
     pfetch
 elif command -v "neofetch" > /dev/null 2>&1; then
-    echo "Running neofetch"
+    initmsg "fetch"
+    echo
     neofetch
-fi
-
-# }}}
-
-# MSSC {{{
-
-# Run Machine-Specific Startup Commands (MSSC)
-# This became necessary when I wanted to install nvm on WSL but I don't use nvm on my laptop
-if [ -f "$HOME/.mssc" ]; then
-    echo "Running Machine-Specific Startup Commands"
-    source "$HOME"/.mssc
-fi
-
-# }}}
-
-# Inconveniences {{{
-
-PROMPT_COMMAND="inconveniences; $PROMPT_COMMAND"
-
-# }}}
-
-# Check if python is installed {{{
-
-if ! command -v python3 > /dev/null 2>&1; then
-    clear
-    echo "!!!! ATTENTION !!!!"
-    echo "YOU DO NOT HAVE PYTHON 3 INSTALLED !!!!!!!"
-    echo "INSTALL NOW OR YOU WILL REGRET IT!!!!!!!!!!!!!"
-    read -p -e "press enter"
-    clear
 fi
 
 # }}}
