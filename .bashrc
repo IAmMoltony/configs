@@ -252,6 +252,19 @@ fi
 #  2. pfetch (because it's sleek)
 #  3. neofetch (as fallback)
 # TODO remove copy pasting by adding fetch programs to a list
+
+# TODO vvvvv move to bf
+fastfetchnag() {
+    echo "Hey, have you tried using fastfetch? It's fast, customizable and maintained!"
+    echo "Check it out: https://github.com/fastfetch-cli/fastfetch"
+    echo "Once you install it, it'll take priority over any other fetch utility."
+    echo "Oh, did I mention that this message cannot be turned off?"
+    echo "Well... unless you dig into configs and remove this message."
+    echo "But you wouldn't do that, would you, sweetheart~?"
+    echo "I mean, I can't blame you if you do, people have preferences, but..."
+    echo "fastfetch is just better. Please use that, would you?"
+}
+
 if command -v "fastfetch" > /dev/null 2>&1; then
     initmsg "fetch"
     echo
@@ -260,10 +273,12 @@ elif command -v "pfetch" > /dev/null 2>&1; then
     initmsg "fetch"
     echo
     pfetch
+    fastfetchnag
 elif command -v "neofetch" > /dev/null 2>&1; then
     initmsg "fetch"
     echo
     neofetch
+    fastfetchnag
 fi
 
 # }}}
