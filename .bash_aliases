@@ -71,8 +71,8 @@ alias ping='ping -c 5' # make ping stop after like 5 times that it pinged
 alias ln='ln -iv' # ln but yo need to confirm and also verboosey
 alias i-am-root='sudo -i' # i am root
 alias wget='wget -c' # Wget continue if stopped for whatever reason
-alias gaming='cd ~/Games' # Go to folder with GAMING
-alias gaming-b='builtin cd ~/Games' # gaming (builtin cd edition)
+alias gaming='cdgam' # Go to folder with GAMING
+alias gaming-b='bcdgam' # gaming (builtin cd edition)
 alias syncpaipai='synccfgs && paipai' # Sync configs and say pai pai
 alias spaipai='syncpaipai' # Today's installment of Useless Aliases... Short version of `syncpaipai' !!!
 alias scfgsm='synccfgsm' # Short versoin alias thing ojgjo2joejfjojii243jrjoo2 2323oin23roin23r
@@ -88,8 +88,8 @@ alias :e='vim' # Another vim user HOW MANY VIM USERS DO WE HAVE
 alias wine64='WINEPREFIX=~/.wine64 wine64' # Convenience: start Wine with the 64-bit prefix
 alias wine64cfg='WINEPREFIX=~/.wine64 winecfg' # Convenience 2: configure Wine with the 64-bit prefiix
 alias dlmuspaipai='dlmus && paipai' # Download music aand then pai pai
-alias gaming-th='gaming-b && cd ./TouhouShared/drive_c' # touhou
-alias gaming-thu='gaming-b && cd ./TouhouShared/drive_c/Touhou-Utilities' # Touhou utilities like thscorefileconveretr
+alias gaming-th='cdth' # touhou
+alias gaming-thu='cdthu' # Touhou utilities like thscorefileconveretr
 alias thprefix='export WINEPREFIX=$HOME/Games/TouhouShared'
 alias dnbuildrel='dotnet build -v n -c Release' # Build with release config
 alias dnbldrel='dnbuildrel' # Yeah
@@ -417,6 +417,9 @@ mkcdiralias car ~/Bookmarks/Cute\ anime\ art
 mkcdiralias dlgth ~/Bookmarks/Game\ downloads\ \(Touhou\)
 mkcdiralias anim ~/Bookmarks/Anime
 mkcdiralias ani ~/Bookmarks/Anime
+mkcdiralias gam ~/Games
+mkcdiralias th ~/Games/TouhouShared/drive_c
+mkcdiralias thu ~/Games/TouhouShared/drive_c/Touhou-Utilities
 
 # }}}
 
