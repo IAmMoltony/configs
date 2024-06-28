@@ -29,6 +29,7 @@ alias rd='rmdir' # DOS-inspired shortcut for rmdir
 alias cls='echo "Tip: press C-l to clear."' # C-l
 alias reload-bashrc='source ~/.bashrc' # Reload BashRC
 alias reload-bashaliases='source ~/.bash-configs/.bash_aliases && trap - ERR' # Reload Bash aliases
+alias reload-bashfuncs='source ~/.bash-configs/.bash_functions && trap - ERR' # Reload Bash functions
 alias lt='ls -lh --size -1 -S --classify' # ll + sort by size
 alias mnt="mount | awk -F ' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort" # Show mounted disks (no stuff like tmpfs or whatever)
 alias grephist='history | grep' # Search in comman history
@@ -37,6 +38,7 @@ alias lqa='la -tl -1' # Same as lq but also show hidden files (including . and .
 alias cppb='rsync -ah --info=progress2' # Copy with a neat little progress par
 alias relbrc='reload-bashrc' # Short reload-bashrc alias
 alias relba='reload-bashaliases' # Short reload-bashaliases alias
+alias relbf='reload-bashfuncs' # Short reload-bashfuncs alias
 alias hd='hexdump -C' # Hexdump but pretty (the hd binary is not in every distro)
 alias mkaur='makepkg -si --noconfirm' # Make an AUR package
 alias mk='make' # make but short (i forgor about this one since `make` is short enough anyway)
@@ -359,6 +361,8 @@ mkexitalias ituq
 # }}}
 
 # Directory aliases {{{
+
+mkthaliases
 
 # Common directory aliases {{{
 
