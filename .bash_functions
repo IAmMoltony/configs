@@ -749,7 +749,9 @@ pipbsp() {
 
 # PS1 Git
 ps1gitinfo() {
-    echo -e "[\033[38:5:202mgit\033[0m lc=\033[38:5:33m$(git log -1 --format=\"%h\")\033[0m] "
+    branchname="$(git symbolic-ref HEAD 2>/dev/null)" || branchname="head chopped off"
+    realbranchname="${branchname##refs/heads/}"
+    echo -e "[\033[38:5:202mgit\033[0m b=\033[38:5:48m$realbranchname\033[0m] "
 }
 
 # Bashrc post-init functions
