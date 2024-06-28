@@ -756,6 +756,14 @@ ps1gitinfo() {
 
 # Print what Rhythmbox song is playing rn
 rbsongrn() {
+    if ! command -v rhythmbox-client >/dev/null 2>&1; then
+        return
+    fi
+
+    if ! rhythmbox-client --check-running; then
+        return
+    fi
+
     songrn_raw="$(rhythmbox-client --print-playing-format="%tt")"
     songrn=${songrn_raw%.*}
     echo -e "Currently playing: \033[0;36m$songrn\033[0m" # I really like cyan
