@@ -362,8 +362,6 @@ mkexitalias ituq
 
 # Directory aliases {{{
 
-mkthaliases
-
 # Common directory aliases {{{
 
 mkcdiralias dl ~/Downloads
