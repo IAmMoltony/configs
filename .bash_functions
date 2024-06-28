@@ -754,6 +754,13 @@ ps1gitinfo() {
     echo -e "[\033[38:5:202mgit\033[0m b=\033[38:5:48m$realbranchname\033[0m] "
 }
 
+# Print what Rhythmbox song is playing rn
+rbsongrn() {
+    songrn_raw="$(rhythmbox-client --print-playing-format="%tt")"
+    songrn=${songrn_raw%.*}
+    echo -e "Currently playing: \033[0;36m$songrn\033[0m" # I really like cyan
+}
+
 # Bashrc post-init functions
 bashrc-postinit() {
     echo -e "\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0m"
@@ -808,6 +815,8 @@ bashrc-postinit() {
         torrentchecker
     fi
 
+    rbsongrn
+
     if (( $(fdspercent) >= $(lowspcthr))) && [ ! -f "$HOME/.oklowspc" ]; then
         echo -e "\033[0;31mWARNING YOU ARE RUNNING DANGEROUSLY LOW ON SPACE!!!!!!!!!!!!!\033[0m"
         echo -e "Run \033[0;36moklowspc\033[0m to disable the above message. Run \033[0;36msetlowspcthr\033[0m to change low space threshold."
@@ -837,6 +846,8 @@ bashrc-postinit() {
 
     rm-roll # this is done at the end in order to make sure that rm works always in init
 }
+
+# TODO group alias-making functions in one group
 
 # User functions (Functions specific to the user, not synced to the github repo) {{{
 
