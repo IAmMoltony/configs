@@ -773,6 +773,18 @@ rbsongrn() {
     echo -e "Currently playing: \033[0;36m$songrn\033[0m" # I really like cyan
 }
 
+# Nag the user for not using fastfetch
+fastfetchnag() {
+    echo "Hey, have you tried using fastfetch? It's fast, customizable and maintained!"
+    echo "Check it out: https://github.com/fastfetch-cli/fastfetch"
+    echo "Once you install it, it'll take priority over any other fetch utility."
+    echo "Oh, did I mention that this message cannot be turned off?"
+    echo "Well... unless you dig into configs and remove this message."
+    echo "But you wouldn't do that, would you, sweetheart~?"
+    echo "I mean, I can't blame you if you do, people have preferences, but..."
+    echo "fastfetch is just better. Please use that, would you?"
+}
+
 # Bashrc post-init functions
 bashrc-postinit() {
     echo -e "\n\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0m"
