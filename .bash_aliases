@@ -1,9 +1,6 @@
 # vim:foldmethod=marker
 # Moltony's Bash Aliases
 
-# TODO grouping: Manual aliases
-# TODO grouping: Conditional aliases (kitty and WSL)
-
 # Error handling {{{
 
 BashAliasesNumErrors=0
@@ -16,6 +13,8 @@ baerrorhdlr() {
 trap 'baerrorhdlr $LINENO' ERR
 
 # }}}
+
+# Manual aliases {{{
 
 # Basic aliases {{{
 
@@ -261,7 +260,21 @@ alias sssr='sudo systemctl start' # Start a service
 
 # }}}
 
+# Conditional aliases {{{
+
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh" # Cool kitty ssh alias (kitty exclusive)
+
+# WSL aliases {{{
+
+if [ -f ~/imrunningonwsl ]; then
+    alias mount-ubuntu='wsl.exe -d Ubuntu -u root mount --bind / /mnt/wsl/ubuntu' # Mount Ubuntu files
+fi
+
+# }}}
+
+# }}}
+
+# }}}
 
 # Automatic aliases {{{
 
@@ -455,14 +468,6 @@ mkxtfalias mdless
 mkxtfalias vim # Don't think this really fixes my issue :| bruh
 
 # }}}
-
-# }}}
-
-# WSL aliases {{{
-
-if [ -f ~/imrunningonwsl ]; then
-    alias mount-ubuntu='wsl.exe -d Ubuntu -u root mount --bind / /mnt/wsl/ubuntu' # Mount Ubuntu files
-fi
 
 # }}}
 
