@@ -693,7 +693,7 @@ torrentchecker() {
         while true; do
             read -n 1 -p "Is it okay to delete them? [y or n] " yn
             case $yn in
-                [Yy]* ) echo "Alright, deleting!"; rm -f ~/Downloads/*.torrent; break;;
+                [Yy]* ) echo "Alright, deleting!"; builtin rm -f ~/Downloads/*.torrent; break;;
                 [Nn]* ) echo "Okay then."; break;;
                 * ) echo "Please answer properly!";;
             esac
