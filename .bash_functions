@@ -200,6 +200,8 @@ glgsf() {
     glgdir ~/savefiles
 }
 
+# Alias-making functions {{{
+
 # New exit alias
 mkexitalias() {
     alias "$1"='exit'
@@ -271,6 +273,8 @@ mkcolorado() {
 mkxtfalias() {
     alias "$1"="TERM=xterm-256color $1"
 }
+
+# }}}
 
 # Today's commits in configs
 cfg2dc() {
@@ -571,7 +575,7 @@ fdspercent() {
 # cirno
 cirnoday() {
     if [ "$(LC_ALL='' date +"%d %m")" == "09 09" ]; then
-        echo "Happy Cirno day! (9)"
+        echo "Happy Cirno day! (9)" # The reason I don't use the ⑨ character is because it looks like shit in many monospc fonts
     fi
 }
 
@@ -677,7 +681,7 @@ ncycfgssf() {
     echo "Total: $(( $(ncycfgs) + $(ncysf) ))"
 }
 
-# Get configs version (commit hash)
+# Get configs version (commit hash and message)
 vercfgs() {
     oldpwd="$(pwd)"
     builtin cd ~/configs || return
@@ -870,8 +874,6 @@ bashrc-postinit() {
 
     rm-roll # this is done at the end in order to make sure that rm works always in init
 }
-
-# TODO group alias-making functions in one group
 
 # User functions (Functions specific to the user, not synced to the github repo) {{{
 
