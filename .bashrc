@@ -56,15 +56,13 @@ HISTFILESIZE=2000
 
 # }}}
 
-# Editor and path {{{
+# Environment {{{
 
-initmsg "editor"
+initmsg "env"
 
 export EDITOR=/bin/vim
-
-initmsg "path"
-
 export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/configs/bin"
+export DOTNET_CLI_TELEMETRY_OPTOUT="true" # don't want no microsoft spying on me
 
 # }}}
 
