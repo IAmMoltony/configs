@@ -335,6 +335,10 @@ checkhsl() {
 
 # Birthday checker
 bdaycheck() {
+    if [ ! -f "$HOME/.bday" ]; then
+        return
+    fi
+
     source ~/.bday
     currentDate=$(LC_ALL=C date +"%b %d")
     if [ "$currentDate" == "$BDAY_EARLY" ]; then
