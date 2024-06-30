@@ -12,6 +12,5 @@ lxpolkit &
 xfce4-panel --disable-wm-check &
 blueman-applet &
 onboard &
-xscreensaver -no-splash &
 
 notify-send "Init done!!"
