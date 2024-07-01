@@ -129,6 +129,7 @@ alias hcsie='hcs-is-enabled' # Check if HCS is enabled
 alias ffwcfg='fastfetch -c $HOME/configs/fastfetch-cfg.jsonc' # Run fastfetch with custom config
 alias rbrc='relbrc' # Less typing
 alias rba='relba' # Even less typing
+alias rbf='relbf' # Least typing
 alias paixorg='sudo pkill -9 Xorg' # kill xorg with ease
 alias xlogout='sudo pkill -u $USER' # Log out
 alias aptrepos='grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*' # List apt repos
