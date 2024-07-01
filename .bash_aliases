@@ -114,6 +114,7 @@ alias grgpll='gr. && gpll' # Remove all local changes and pull
 alias restoreresolution='xrandr -s 1366x768' # Restore screen resolution
 alias care='love .' # Start love2d
 alias dlmus='~/Music/music-lib/download' # Download music
+alias dlmusv='dlmus --verbose' # Download music (verbose edition)
 alias redlmus='~/Music/music-lib/redownload' # Re-download music
 alias szmus='~/Music/music-lib/diskspace' # Check how much space music takes up
 alias rmmus='~/Music/music-lib/delete.py' # Delete music
