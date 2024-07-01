@@ -36,6 +36,7 @@ command! NumsOn set number
 command! Edtvrc tabnew ~/.vimrc
 command! Evrc e ~/.vimrc
 command! Relvrc source ~/.vimrc
+command! Rvrc source ~/.vimrc
 command! Edtbrc tabnew ~/.bashrc
 command! Ebrc e ~/.bashrc
 command! Edtba tabnew ~/.bash-configs/.bash_aliases
@@ -57,6 +58,12 @@ command! Black !black %
 command! Pylint !pylint %
 command! Shck !shellcheck %
 command! Chx !chmod +x %
+
+command! W w
+command! Q q
+command! WQ wq
+command! QA qa
+command! WQA wqa
 
 " Fix background
 set t_ut=
