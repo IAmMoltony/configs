@@ -264,6 +264,11 @@ alias sssr='sudo systemctl start' # Start a service
 
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh" # Cool kitty ssh alias (kitty exclusive)
 
+# if ~/.pipbsp is there, default pip to pipbsp
+if [ -f "$HOME/.pipbsp" ]; then
+    alias pip='pipbsp'
+fi
+
 # WSL aliases {{{
 
 if [ -f ~/imrunningonwsl ]; then
