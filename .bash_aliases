@@ -318,6 +318,7 @@ mkecalias openboxautostart obas ~/.config/openbox/autostart.sh
 mkecalias configsreadme cfgsrdm ~/configs/README.md
 mkecalias gitignore gi ./.gitignore
 mkecalias savefilesuser sfu ~/savefiles/user.json
+mkecalias mpvcfg mpv ~/.config/mpv/mpv.conf
 
 # }}}
 
