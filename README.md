@@ -1,12 +1,15 @@
-# configs
-
-<p class="center">
+<p align="center">
     <img src="./banner.png">
 </p>
 
 [wrench icon](https://www.flaticon.com/free-icons/wrench)
 
+Hi, this is *configs*, a repository hosting my configurations for programs (such as `.bashrc`) and
+some scripts as well.
+
 ## Installation
+
+Copy-paste these commands to install all configs:
 
 ```bash
 git clone https://github.com/IAmMoltony/configs ~/configs # clone the repository
