@@ -167,6 +167,8 @@ alias dnme='dotnet mgcb-editor' # MGCB editor
 alias echowinep='echo $WINEPREFIX' # Print the wineprefix to make sure im in the right one
 alias aliias='alias' # Alies
 alias debian-upgrade='sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y' # Update debian
+alias smd='sudo mkdir' # Create dir as superuser
+alias svim='sudo vim' # Vim as superuser
 
 # }}}
 
