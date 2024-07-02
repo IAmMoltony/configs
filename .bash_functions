@@ -478,7 +478,7 @@ enablebchint() {
 
 # List TODOs in cfgs w/o .git
 todocfgs() {
-    grep --exclude-dir=.git -rnw ~/configs -e 'TODO'
+    grep --color --exclude-dir=.git -rnw ~/configs -e 'TODO'
 }
 
 # May the fourth be with you
