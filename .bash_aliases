@@ -406,6 +406,12 @@ mkcdiralias dlimg ~/Bookmarks/Downloaded\ images
 mkcdiralias dli ~/Bookmarks/Downloaded\ images
 mkcdiralias dlgames ~/Bookmarks/Game\ downloads
 mkcdiralias dlg ~/Bookmarks/Game\ downloads
+mkcdiralias dlgameswin ~/Bookmarks/Game\ downloads\ \(Windows\)
+mkcdiralias dlgw ~/Bookmarks/Game\ downloads\ \(Windows\)
+mkcdiralias dlgameslnx ~/Bookmarks/Game\ downloads\ \(Linux\)
+mkcdiralias dlgl ~/Bookmarks/Game\ downloads\ \(Linux\)
+mkcdiralias dlgamesth ~/Bookmarks/Game\ downloads\ \(Touhou\)
+mkcdiralias dlgt ~/Bookmarks/Game\ downloads\ \(Touhou\)
 mkcdiralias dlfonts ~/Bookmarks/Downloaded\ fonts
 mkcdiralias emugames ~/Bookmarks/Games\ \(emulator\)
 mkcdiralias iso ~/Bookmarks/ISOs
