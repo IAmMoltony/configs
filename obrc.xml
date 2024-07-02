@@ -261,10 +261,10 @@
         <menu>client-menu</menu>
       </action>
     </keybind>
-    <!-- Take a screenshot of the current window with scrot when Alt+Print are pressed -->
+    <!-- Take a screenshot of a window with scrot when Alt+Print are pressed -->
     <keybind key="A-Print">
       <action name="Execute">
-        <command>scrot -s -e 'mv $f ~/Bookmarks/Screenshots'</command>
+          <command>~/configs/print.sh alt</command>
       </action>
     </keybind>
     <!-- Keybindings for window switching -->
@@ -321,7 +321,7 @@
     <!-- Launch scrot when Print is pressed -->
     <keybind key="Print">
       <action name="Execute">
-        <command>scrot -e 'mv $f ~/Bookmarks/Screenshots/'</command>
+          <command>~/configs/print.sh</command>
       </action>
     </keybind>
     <!-- Launch rofi when the win plus dee -->
