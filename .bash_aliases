@@ -107,6 +107,7 @@ alias rmhsl='rm ~/configs/HourlySyncLogs -rf' # Remove hourly config sync logs
 alias rmun='find . -name "*.un~" -exec rm -f {} +' # Remove annoying Vim backup files
 alias rf='rm -rf' # h
 alias dnclean='dotnet clean -v n' # dotnet clean
+alias dncln='dotnet clean -v n' # There is no reason for this to exist
 alias wine64tricks='WINEPREFIX=~/.wine64 winetricks' # Winetricks in 64-bit prefix
 alias thu='thunar' # Shorthand for thunar
 alias thubkmk='thu ~/Bookmarks &' # Start Thunar in the bookmarks folder
