@@ -170,6 +170,9 @@ alias aliias='alias' # Alies
 alias debian-upgrade='sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y' # Update debian
 alias smd='sudo mkdir' # Create dir as superuser
 alias svim='sudo vim' # Vim as superuser
+alias mntsdb='sudo mount /dev/sdb /mnt' # Mount sdb
+alias mntsdb1='sudo mount /dev/sdb1 /mnt' # Mount sdb1
+alias mntsdb2='sudo mount /dev/sdb2 /mnt' # Mount sdb2 (TODO more sdbs and also sdc sdd)
 
 # }}}
 
