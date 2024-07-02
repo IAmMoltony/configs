@@ -85,7 +85,15 @@ pshsf() {
 
 # Sync configs with a message
 synccfgsm() {
+    set -o history -o histexpand
+
     commitmsg="$1"
+
+    if [[ $commitmsg == *"!!"* ]]; then
+        echo "found the double exalcmation mark rn wtf are you doing"
+        exit
+    fi
+
     if [ "$commitmsg" == "" ]; then
         echo -n "Please enter commit message >"
         read commitmsg
