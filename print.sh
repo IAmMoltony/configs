@@ -17,7 +17,7 @@ fi
 if [ "$1" == "alt" ]; then
     scrot -s -e "mv \$f $screenshot_dir"
 else
-    scrot -s -e "mv \$f $screenshot_dir"
+    scrot -e "mv \$f $screenshot_dir"
 fi
 
 
