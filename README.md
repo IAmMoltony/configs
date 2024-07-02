@@ -1,6 +1,10 @@
 # configs
 
-Random scripts and configs in one repo
+<p class="center">
+    <img src="./banner.png">
+</p>
+
+[wrench icon](https://www.flaticon.com/free-icons/wrench)
 
 ## Installation
 
