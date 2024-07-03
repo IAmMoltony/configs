@@ -472,11 +472,11 @@ mkcdiralias thu ~/Games/TouhouShared/drive_c/Touhou-Utilities
 # parent directory {{{
 
 mkcdiralias .. ..
-mkdiralias .. l.. s.. c.. cf.. cr.. ..
-mkdiralias .... l.... s.... c.... cf.... cr.... ../..
-mkdiralias ...... l...... s...... c...... cf...... cr...... ../../../
-mkdiralias ........ l........ s........ c........ cf........ cr........ ../../../..
-mkdiralias .......... l.......... s.......... c.......... cf.......... cr.......... ../../../../..
+mkdiralias .. l.. s.. c.. cf.. cr.. a.. ..
+mkdiralias .... l.... s.... c.... cf.... cr.... a.... ../..
+mkdiralias ...... l...... s...... c...... cf...... cr...... a...... ../../../
+mkdiralias ........ l........ s........ c........ cf........ cr........ a........ ../../../..
+mkdiralias .......... l.......... s.......... c.......... cf.......... cr.......... a.......... ../../../../..
 
 # }}}
 
