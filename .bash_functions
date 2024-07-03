@@ -15,6 +15,8 @@ trap 'bferrorhdlr $LINENO' ERR
 
 # }}}
 
+NumAutoBashAliases=0
+
 # Create dir and cd into it
 mdcd() {
     mkdir "$1" && cd "$1" || return
@@ -205,6 +207,7 @@ glgsf() {
 
 # New exit alias
 mkexitalias() {
+    ((NumAutoBashAliases++))
     alias "$1"='exit'
 }
 
@@ -218,6 +221,7 @@ mkexitalias() {
 # Argument 7: la alias name (laDIR) for listing the contents of the directory with hidden files
 # Argument 8: the directory
 mkdiralias() {
+    ((NumAutoBashAliases += 7))
     alias "$1"="cd \"$8\""
     alias "b$1"="builtin cd \"$8\""
     alias "$2"="ls \"$8\""
@@ -238,6 +242,7 @@ mkcdiralias() {
 #  mkecalias bashrc brc ~/.bashrc
 #  mkecalias long short file
 mkecalias() {
+    ((NumAutoBashAliases += 10))
     long=$1
     short=$2
     file=$3
@@ -255,6 +260,7 @@ mkecalias() {
 
 # New edt + cat alias (sudo version)
 mksuecalias() {
+    ((NumAutoBashAliases += 10))
     long=$1
     short=$2
     file=$3
@@ -272,11 +278,13 @@ mksuecalias() {
 
 # New --color=auto alias (color auto sounds like colorado)
 mkcolorado() {
+    ((NumAutoBashAliases++))
     alias "$1"="$1 --color=auto"
 }
 
 # New TERM=xterm-265color alias (some programs don't support xterm-kitty)
 mkxtfalias() {
+    ((NumAutoBashAliases++))
     alias "$1"="TERM=xterm-256color $1"
 }
 
@@ -520,6 +528,19 @@ random_insult() {
     numins=${#in[@]}
     bruh=$(( RANDOM % numins ))
     echo "${in[$bruh]}"
+}
+
+# T or G?
+t_or_g() {
+    tg[0]="t"
+    tg[1]="t"
+    tg[2]="t"
+    tg[3]="t"
+    tg[4]="t"
+    tg[5]="g"
+    numtgs=${#tg[@]}
+    egg=$(( RANDOM % numtgs ))
+    echo "${tg[$egg]}"
 }
 
 # Math test~!
@@ -839,7 +860,7 @@ bashrc-postinit() {
         checkhsl
     fi
 
-    echo -e "\033[0;36m$(alias | wc -l)\033[0m aliases and \033[0;36m$(lsfuncs | wc -l)\033[0m functions are installed."
+    echo -e "\033[0;36m$(alias | wc -l)\033[0m aliases (\033[0;33m$NumAutoBashAliases\033[0m of which are automa$(t_or_g)ic) and \033[0;36m$(lsfuncs | wc -l)\033[0m functions are installed."
 
     bdaycheck
     maythe4
