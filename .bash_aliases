@@ -157,6 +157,15 @@ alias rmrsc='rm -f ~/.restartssincecleanup' # Remov e the restarts since cleanup
 alias chkbf='shellcheck --color=always ~/.bash-configs/.bash_functions | less' # Shellcheck bash functions
 alias chkba='shellcheck --color=always ~/.bash-configs/.bash_aliases | less' # Shellcheck bash aliases
 alias chkbrc='shellcheck --color=always ~/.bashrc | less' # Shellcheck bashrc
+alias chkbfnc='shellcheck ~/.bash-configs/.bash_functions | less' # Shellcheck bash functions (no color)
+alias chkbanc='shellcheck ~/.bash-configs/.bash_aliases | less' # Shellcheck bash aliases (no color)
+alias chkbrcnc='shellcheck ~/.bashrc | less' # Shellcheck bashrc (no color)
+alias chkbfnp='shellcheck --color=always ~/.bash-configs/.bash_functions' # Shellcheck bash functions (no pager)
+alias chkbanp='shellcheck --color=always ~/.bash-configs/.bash_aliases' # Shellcheck bash aliases (no pager)
+alias chkbrcnp='shellcheck --color=always ~/.bashrc' # Shellcheck bashrc (no pager)
+alias chkbfnpc='shellcheck ~/.bash-configs/.bash_functions' # Shellcheck bash functions (no pager, no color)
+alias chkbanpc='shellcheck ~/.bash-configs/.bash_aliases' # Shellcheck bash aliases (no pager, no color)
+alias chkbrcnpc='shellcheck ~/.bashrc' # Shellcheck bashrc (no pager, no color)
 alias grncfg='grep -rn $HOME/configs' # gren -rn in configs dir
 alias lsd='ls -d */' # Ls only dirs
 alias mtctl='~/configs/mathtestctl.py' # Math test control
