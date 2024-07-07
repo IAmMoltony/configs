@@ -245,7 +245,7 @@ fi
 
 # *fetch {{{
 
-# Run neofetch everytime the shell is started in the following order:
+# Run somethingfetch everytime the shell is started in the following order:
 #  1. fastfetch (because it's fast) (and also cuz i have a custom config)
 #  2. pfetch (because it's sleek)
 #  3. neofetch (as fallback)
