@@ -21,6 +21,8 @@ pip install -r sendemail-requirements.txt # install requirements for sendemail m
 source ~/.bashrc # reload bashrc
 ```
 
+## Scripts
+
 ### HCS
 
 HCS (Hourly Config Sync, also referred to as Cron Sync) is a convenient system for automatically backing up configs.
