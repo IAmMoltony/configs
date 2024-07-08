@@ -247,12 +247,14 @@ mkecalias() {
     short=$2
     file=$3
     alias edit-"$long"="$EDITOR $file"
+    alias gedit-"$long"="$GEDITOR $file"
     alias cat-"$long"="cat $file | less"
     alias view-"$long"="cat $file | less"
     alias catnp-"$long"="cat $file"
     alias viewnp-"$long"="cat $file"
     alias stat-"$long"="stat $file"
     alias edt"$short"="edit-$long"
+    alias gedt"$short"="edit-$long"
     alias cat"$short"="cat-$long"
     alias catnp"$short"="catnp-$long"
     alias st"$short"="stat-$long"
@@ -689,7 +691,7 @@ wtfis() {
         return
     fi
 
-    if ! alias "$1" 2>/dev/null && ! declare -f "$1" 2>/dev/null; then
+    if ! alias "$1" 2>/dev/null && ! declare -f "$1" 2>/dev/null && ! which "$1" 2>/dev/null; then
         echo "I don't know!"
     fi
 }
