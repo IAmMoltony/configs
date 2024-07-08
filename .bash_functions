@@ -247,14 +247,14 @@ mkecalias() {
     short=$2
     file=$3
     alias edit-"$long"="$EDITOR $file"
-    alias gedit-"$long"="$GEDITOR $file"
+    alias gedit-"$long"="$EDITOR -g $file"
     alias cat-"$long"="cat $file | less"
     alias view-"$long"="cat $file | less"
     alias catnp-"$long"="cat $file"
     alias viewnp-"$long"="cat $file"
     alias stat-"$long"="stat $file"
     alias edt"$short"="edit-$long"
-    alias gedt"$short"="edit-$long"
+    alias gedt"$short"="gedit-$long"
     alias cat"$short"="cat-$long"
     alias catnp"$short"="catnp-$long"
     alias st"$short"="stat-$long"
