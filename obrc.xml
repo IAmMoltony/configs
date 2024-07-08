@@ -281,6 +281,15 @@
         <menu>client-menu</menu>
       </action>
     </keybind>
+    <!-- Keybindings for tiling stuff -->
+    <keybind key="W-Left">
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>-1</y>
+        <width>50%</width>
+        <height>100%</height>
+      </action>
+    </keybind> 
     <!-- Take a screenshot of a window with scrot when Alt+Print are pressed -->
     <keybind key="A-Print">
       <action name="Execute">
