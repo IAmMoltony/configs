@@ -90,7 +90,6 @@ alias pshcfgspaipai='pshcfgs && paipai' # Push cfgs and paipia
 alias :e='vim' # Another vim user HOW MANY VIM USERS DO WE HAVE
 alias wine64='WINEPREFIX=~/.wine64 wine64' # Convenience: start Wine with the 64-bit prefix
 alias wine64cfg='WINEPREFIX=~/.wine64 winecfg' # Convenience 2: configure Wine with the 64-bit prefiix
-alias dlmuspaipai='dlmus && paipai' # Download music aand then pai pai
 alias gaming-th='cdth' # touhou
 alias gaming-thu='cdthu' # Touhou utilities like thscorefileconveretr
 alias thprefix='export WINEPREFIX=$HOME/Games/TouhouShared'
@@ -119,6 +118,7 @@ alias care='love .' # Start love2d
 alias dlmus='~/Music/music-lib/download' # Download music
 alias dlmusv='dlmus --verbose' # Download music (verbose edition)
 alias redlmus='~/Music/music-lib/redownload' # Re-download music
+alias mp3cmus='~/Music/music-lib/mp3conv' # Convert music to mp3
 alias szmus='~/Music/music-lib/diskspace' # Check how much space music takes up
 alias rmmus='~/Music/music-lib/delete.py' # Delete music
 alias sma='sudo mount -a' # Short sudo mount -a
