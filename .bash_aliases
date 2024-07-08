@@ -166,7 +166,7 @@ alias chkbrcnp='shellcheck --color=always ~/.bashrc' # Shellcheck bashrc (no pag
 alias chkbfnpc='shellcheck ~/.bash-configs/.bash_functions' # Shellcheck bash functions (no pager, no color)
 alias chkbanpc='shellcheck ~/.bash-configs/.bash_aliases' # Shellcheck bash aliases (no pager, no color)
 alias chkbrcnpc='shellcheck ~/.bashrc' # Shellcheck bashrc (no pager, no color)
-alias grncfg='grep -rn $HOME/configs' # gren -rn in configs dir
+alias grncfg='grep -rn $HOME/configs -e' # gren -rn in configs dir
 alias lsd='ls -d */' # Ls only dirs
 alias mtctl='~/configs/mathtestctl.py' # Math test control
 alias dwpms='~/desktop-wallpaper/make-symlinks.sh' # Make desktop wallpaper symlinks
