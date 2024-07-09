@@ -289,6 +289,14 @@
         <width>50%</width>
         <height>100%</height>
       </action>
+    </keybind>
+    <keybind key="W-Right">
+      <action name="MoveResizeTo">
+        <x>50%</x>
+        <y>-1</y>
+        <width>50%</width>
+        <height>100%</height>
+      </action>
     </keybind> 
     <!-- Take a screenshot of a window with scrot when Alt+Print are pressed -->
     <keybind key="A-Print">
@@ -440,6 +448,9 @@
       </mousebind>
     </context>
     <context name="Titlebar">
+      <mousebind button="Middle" action="Press">
+        <action name="Close"/>
+      </mousebind>
       <mousebind button="Left" action="Drag">
         <action name="Move"/>
       </mousebind>
