@@ -466,6 +466,7 @@ mkcdiralias ani ~/Bookmarks/Anime
 mkcdiralias gam ~/Games
 mkcdiralias th ~/Games/TouhouShared/drive_c
 mkcdiralias thu ~/Games/TouhouShared/drive_c/Touhou-Utilities
+mkcdiralias sld /etc/apt/sources.list.d
 
 # }}}
 
