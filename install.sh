@@ -39,6 +39,9 @@ mkdir -p "$HOME"/.config/openbox
 echo "Creating qutebrowser config dir"
 mkdir -p "$HOME"/.config/qutebrowser
 
+echo "Creating mpv config dir"
+mkdir -p "$HOME"/.config/mpv
+
 cpcfg .bashrc
 cpcfg .gitconfig
 cpcfg .profile
@@ -50,6 +53,7 @@ cpcfgd kitty.conf .config/kitty
 cpcfgd compton.conf .config/compton
 cpcfgd melonDS.ini .config/melonDS
 cpcfgd bleachbit.ini .config/bleachbit
+cpcfgd mpv.conf .config/mpv
 cpcfgdf i3cfg .config/i3/config
 cpcfgdf qutebrowser.py .config/qutebrowser/config.py
 cpcfgdf obrc.xml .config/openbox/rc.xml
