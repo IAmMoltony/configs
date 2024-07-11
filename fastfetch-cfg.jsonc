@@ -53,6 +53,10 @@
             "key": "mem\t\t"
         },
         {
+            "type": "swap",
+            "key": "swap\t\t"
+        },
+        {
             "type": "disk",
             "key": "disk (/)\t\t"
         },
