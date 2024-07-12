@@ -61,7 +61,7 @@ HISTFILESIZE=2000
 initmsg "env"
 
 export EDITOR=/bin/vim
-export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/configs/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/configs/bin:/usr/local/go/bin"
 export DOTNET_CLI_TELEMETRY_OPTOUT="true" # don't want no microsoft spying on me
 
 # }}}
