@@ -364,7 +364,7 @@ checkhsl() {
             read -n 1 -p "Delete? [y or n] " yn
             case $yn in
                 [Yy]* ) rm -rf ~/configs/HourlySyncLogs/*; echo "Deleted."; break;;
-                [Nn]* ) echo "Okay, keeping."; break;;
+                [Nn]* ) echo "Okay, keeping for some reason."; break;;
                 * ) echo "Please answer properly!";;
             esac
         done
