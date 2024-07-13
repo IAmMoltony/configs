@@ -25,16 +25,16 @@
        mouse into it, also raise the window -->
   </focus>
   <placement>
-    <policy>Smart</policy>
+    <policy>UnderMouse</policy>
     <!-- 'Smart' or 'UnderMouse' -->
     <center>yes</center>
     <!-- whether to place windows in the center of the free area found or
        the top left corner -->
-    <monitor>Primary</monitor>
+    <monitor>Mouse</monitor>
     <!-- with Smart placement on a multi-monitor system, try to place new windows
        on: 'Any' - any monitor, 'Mouse' - where the mouse is, 'Active' - where
        the active window is, 'Primary' - only on the primary monitor -->
-    <primaryMonitor>1</primaryMonitor>
+    <primaryMonitor>Mouse</primaryMonitor>
     <!-- The monitor where Openbox should place popup dialogs such as the
        focus cycling popup, or the desktop switch popup.  It can be an index
        from 1, specifying a particular monitor.  Or it can be one of the
@@ -128,7 +128,7 @@
       <name>deckstop 3</name>
       <name>deckstop 4</name>
     </names>
-    <popupTime>875</popupTime>
+    <popupTime>715</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
        desktops.  Set this to 0 to disable the popup. -->
   </desktops>
@@ -153,8 +153,10 @@
      Many programs reserve space automatically, but you can use this in other
      cases. -->
   <margins>
-    <top>24</top> <!-- Panel -->
-    <bottom>1</bottom> <!-- So I can right click the bottom of the screen and access reconfigure and stuff -->
+    <top>24</top>
+    <!-- Panel -->
+    <bottom>1</bottom>
+    <!-- So I can right click the bottom of the screen and access reconfigure and stuff -->
     <left>0</left>
     <right>0</right>
   </margins>
@@ -297,11 +299,11 @@
         <width>50%</width>
         <height>100%</height>
       </action>
-    </keybind> 
+    </keybind>
     <!-- Take a screenshot of a window with scrot when Alt+Print are pressed -->
     <keybind key="A-Print">
       <action name="Execute">
-          <command>~/configs/print.sh alt</command>
+        <command>~/configs/print.sh alt</command>
       </action>
     </keybind>
     <!-- Keybindings for window switching -->
@@ -358,7 +360,7 @@
     <!-- Launch scrot when Print is pressed -->
     <keybind key="Print">
       <action name="Execute">
-          <command>~/configs/print.sh</command>
+        <command>~/configs/print.sh</command>
       </action>
     </keybind>
     <!-- Launch rofi when the win plus dee -->
