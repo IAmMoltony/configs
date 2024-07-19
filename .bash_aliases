@@ -255,6 +255,8 @@ alias glf='git ls-files' # List git files
 alias i-forgor-submodules='git submodule update --init --recursive' # I FORGOR SUBMODULES!!!
 alias glogrv='git log --reverse' # I cannot believe I'm only now adding this
 alias glgrv='glogrv' # Like, could you believe it? I've had these aliases for over half a year, and still have not thought of a simple reverse-log alias?..
+alias gsw='git switch' # switch to some branch idk
+alias gswc='git switch -c' # Switch to some brach but like make it
 
 # }}}
 
