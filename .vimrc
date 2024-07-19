@@ -50,6 +50,7 @@ command! Ei3 e ~/.config/i3/config
 command! Edtpyreq tabnew ./requirements.txt
 command! Epyreq e ./requirements.txt
 command! Dnrun !dotnet run -v n
+command! Dnrunnb !dotnet run -v n --no-build
 command! Dnbuild !dotnet build -v n
 command! Dnbld !dotnet build -v n
 command! Dnfmt !dotnet format
