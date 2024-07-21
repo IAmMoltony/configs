@@ -709,6 +709,10 @@ wtfis() {
         return
     fi
 
+    if ! command -v "which" >/dev/null 2>&1; then
+        echo "Just a heads up, you don't have \`which' installed."
+    fi
+
     if ! alias "$1" 2>/dev/null && ! declare -f "$1" 2>/dev/null && ! which "$1" 2>/dev/null; then
         echo "I don't know!"
     fi
