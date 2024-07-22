@@ -1,5 +1,6 @@
 # vim:foldmethod=marker
 # shellcheck shell=bash
+# shellcheck disable=SC2142
 # Moltony's Bash Aliases
 
 # Error handling {{{
