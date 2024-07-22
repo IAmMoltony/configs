@@ -1,4 +1,5 @@
 # vim:foldmethod=marker
+# shellcheck shell=bash
 # Moltony's Bash Aliases
 
 # Error handling {{{
