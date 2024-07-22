@@ -211,14 +211,32 @@ glgdir() {
     builtin cd "$oldpwd" || return
 }
 
+# Generic dir git show head
+gshhdir() {
+    oldpwd="$(pwd)"
+    builtin cd "$1" || return
+    git show HEAD
+    builtin cd "$oldpwd" || return
+}
+
 # Git log in configs
 glgcfgs() {
     glgdir ~/configs
 }
 
+# Git show HEAD in configs
+gshhcfgs() {
+    gshhdir ~/configs
+}
+
 # Git log in savefiles
 glgsf() {
     glgdir ~/savefiles
+}
+
+# Git show HEAD in savefiles
+gshhsf() {
+    gshhdir ~/savefiles
 }
 
 # Alias-making functions {{{
