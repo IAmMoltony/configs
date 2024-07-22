@@ -200,7 +200,7 @@ cmrhsl() {
     mrhsl=$(ls -Art | tail -n 1)
     echo "Most recent HSL: $mrhsl"
     cat "$mrhsl"
-    builtin cd $oldpwd || return
+    builtin cd "$oldpwd" || return
 }
 
 # Generic dir git log
@@ -585,7 +585,7 @@ t_or_g() {
 mathtest() {
     trap 'mathtestnuhuh' SIGINT
     a=$(( RANDOM % 10 ))
-    b=$(($RANDOM % 10))
+    b=$(( RANDOM % 10 ))
     op[0]="+"
     op[1]="-"
     numops=${#op[@]}
@@ -762,7 +762,7 @@ vercfgs() {
 torrentchecker() {
     if ll ~/Downloads/*.torrent > /dev/null 2>&1; then
         echo "There are torrent files in the Downloads folder:"
-        find $(readlink -m ~/Downloads) -maxdepth 1 -name '*.torrent'
+        find "$(readlink -m ~/Downloads)" -maxdepth 1 -name '*.torrent'
         while true; do
             read -n 1 -p "Is it okay to delete them? [y or n] " yn
             case $yn in
@@ -798,7 +798,7 @@ lowspcthr() {
     if ! [[ $filecontent =~ $numberregex ]]; then
         echo "80"
     fi
-    echo $filecontent
+    echo "$filecontent"
 }
 
 # Set low spacethresgold
