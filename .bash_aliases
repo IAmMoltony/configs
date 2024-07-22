@@ -157,10 +157,11 @@ alias paixorg='sudo pkill -9 Xorg' # kill xorg with ease
 alias xlogout='sudo pkill -u $USER' # Log out
 alias aptrepos='grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*' # List apt repos
 alias dfs='dirfsp' # less typing less hedayhce
-alias ll='ls -alF' # ls with the list thing
-alias la='ls -A' # ls but show hidden
-alias l='ls -CF' # show the like executables with the little asterisk and when the directory the little slash ykwim
-alias lal='ls -CFA' # l and la combined
+alias ls='ls -CF --color=auto' # ls but with the little asterisk afte rht executables and slash after folders and shit
+alias ll='\ls -alF --color=auto' # ls with the list thing
+alias la='\ls -A --color=auto' # ls but show hidden
+alias l='ls' # me when the backwards compatibility
+alias lal='\ls -CFA --color=auto' # l and la combined
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias updrbrc='updcfgs && rbrc' # Update configs and then reload bashrc
 alias prettyjson='python -m json.tool' # Prettify json with a single, easy-to-remember command(tm)!
@@ -511,7 +512,6 @@ mkdiralias .......... l.......... s.......... c.......... cf.......... cr.......
 
 # --color=auto (colorado) aliases {{{
 
-mkcolorado ls
 mkcolorado dir
 mkcolorado vdir
 mkcolorado grep
