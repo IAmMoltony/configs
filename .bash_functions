@@ -58,7 +58,7 @@ catless() {
 
 # Convenience: make `cd' automagically ls
 cd() {
-    builtin cd "$@" && ls --color=auto
+    builtin cd "$@" && ls --color=auto -CF
 }
 
 # Git status of configs
