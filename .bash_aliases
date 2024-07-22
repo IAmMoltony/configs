@@ -186,6 +186,7 @@ alias mntsdb1='sudo mount /dev/sdb1 /mnt' # Mount sdb1
 alias mntsdb2='sudo mount /dev/sdb2 /mnt' # Mount sdb2 (TODO more sdbs and also sdc sdd)
 alias ejsdb='sudo eject /dev/sdb' # eject sdb
 alias r.='cd $(readlink -m $(pwd))' # go to the real current directory like if ur in a directory thats a symlink
+alias clipfile='xclip -selection c <' # Copy file to clipboard
 
 # }}}
 
