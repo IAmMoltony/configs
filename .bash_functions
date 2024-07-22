@@ -810,7 +810,12 @@ pipbsp() {
 ps1gitinfo() {
     branchname="$(git symbolic-ref HEAD 2>/dev/null)" || branchname="head chopped off"
     realbranchname="${branchname##refs/heads/}"
-    echo -e "[\033[38:5:202mgit\033[0m b=\033[38:5:48m$realbranchname\033[0m] "
+    c2dstr=""
+    c2d="$(git log --oneline --since=midnight | wc -l)"
+    if [ "$c2d" != "0" ]; then
+        c2dstr=" c2d=\033[38:5:48m$c2d\033[0m"
+    fi
+    echo -e "[\033[38:5:202mgit\033[0m b=\033[38:5:48m$realbranchname\033[0m$c2dstr] "
 }
 
 # Print what Rhythmbox song is playing rn
