@@ -247,6 +247,7 @@ alias gcm='git commit -m' # Do a commit (git)
 alias gcobj='git count-objects' # Count how many objects and how much the repo takes up (git)
 alias glgolrv='glogol --reverse' # Git log one line but in reverse
 alias gbch='git branch' # Git branch
+alias gbchvv='git branch -vv' # Git branch with more info
 alias gslog='git shortlog' # Git short log
 alias pshpaipai='git push && paipai' # Git push and papiap
 alias gshwnp='git --no-pager show' # Git show with no pager
