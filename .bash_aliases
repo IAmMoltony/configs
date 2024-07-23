@@ -279,7 +279,7 @@ alias glogrv='git log --reverse' # I cannot believe I'm only now adding this
 alias glgrv='glogrv' # Like, could you believe it? I've had these aliases for over half a year, and still have not thought of a simple reverse-log alias?..
 alias gsw='git switch' # switch to some branch idk
 alias gswc='git switch -c' # Switch to some brach but like make it
-alias gadbch='git fetch -p && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -r git branch -d' # Git auto delete branches
+alias gadbch='git fetch -p && LC_ALL=C git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -r git branch -d' # Git auto delete branches
 
 # }}}
 
