@@ -10,7 +10,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tomasiser/vim-code-dark'
 Plug 'wakatime/vim-wakatime'
 Plug 'vim-scripts/DoxygenToolkit.vim'
-Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 
 call plug#end()
@@ -87,13 +86,3 @@ set mousef
 set scf
 set mh
 set more
-
-" Nerd tree
-
-nnoremap <C-n> :NERDTreeToggle<CR>
-autocmd VimEnter * NERDTree | wincmd p
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
-autocmd BufEnter * if winnr() == winnr('h') && bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
-autocmd BufWinEnter * if &buftype != 'quickfix' && getcmdwintype() == '' | silent NERDTreeMirror | endif
-let g:NERDTreeFileLines = 1
