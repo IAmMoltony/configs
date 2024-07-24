@@ -376,6 +376,7 @@ mksuecalias releaseupgrades ru /etc/update-manager/release-upgrades
 mksuecalias refind rfd /boot/efi/efi/refind/refind.conf
 mksuecalias lightdm ldm /etc/lightdm/lightdm.conf
 mksuecalias lightdmgreeter ldmg /etc/lightdm/lightdm-gtk-greeter.conf
+mksuecalias etcdefgrub edg /etc/default/grub
 
 # }}}
 
