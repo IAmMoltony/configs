@@ -375,12 +375,6 @@
         <command>x-terminal-emulator</command>
       </action>
     </keybind>
-    <!-- and we cant forget one of the uselessest tools ever -->
-    <keybind key="W-S-t">
-      <action name="Execute">
-        <command>bash -c '$HOME/configs/typeth/typeth'</command>
-      </action>
-    </keybind>
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>

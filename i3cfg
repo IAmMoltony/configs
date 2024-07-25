@@ -240,6 +240,3 @@ for_window [class="Xfce4-taskmanager"] floating enable
 
 # make volume mixer float (makes it easier to adjust rhythmbox volume)
 for_window [class="Pavucontrol"] floating enable
-
-# Touhouhouhou
-bindsym $mod+Shift+T exec --no-startup-id ~/configs/bin/typeth/typeth
