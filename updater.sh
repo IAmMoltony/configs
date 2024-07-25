@@ -9,7 +9,7 @@ set -e
 
 cd $HOME/configs
 
-echo "Running configs updater v1.0"
+echo "Running configs updater v1.0.1"
 
 fetch_error() {
     echo "Failed to fetch remote. Update canceled."
@@ -24,7 +24,7 @@ pull_error() {
 do_update() {
     echo "Updating..."
     git pull || pull_error
-    echo "Update done."
+    echo "Update done. Run \`rbrc' to apply update."
     exit 0
 }
 
