@@ -7,7 +7,7 @@
 Hi, this is *configs*, a repository hosting my configurations for programs (such as `.bashrc`) and
 some scripts as well.
 
-## Installation
+## Installation 
 
 Copy-paste these commands to install all configs:
 
