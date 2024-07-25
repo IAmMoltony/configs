@@ -932,6 +932,8 @@ bashrc-postinit() {
 
     stty echo
 
+    $HOME/configs/updater.sh
+
     rm-roll # this is done at the end in order to make sure that rm works always in init
 }
 
