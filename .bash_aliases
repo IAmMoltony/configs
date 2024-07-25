@@ -363,6 +363,7 @@ mkecalias gitignore gi ./.gitignore
 mkecalias savefilesuser sfu ~/savefiles/user.json
 mkecalias mpvcfg mpv ~/.config/mpv/mpv.conf
 mkecalias gitcfg gcf ~/.gitconfig
+mkecalias mpvinp mpvi ~/.config/mpv/input.conf
 
 # }}}
 
