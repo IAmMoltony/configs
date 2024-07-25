@@ -274,44 +274,25 @@ mkcdiralias() {
 }
 
 # New edt + cat alias
-# Used like:
-#  mkecalias bashrc brc ~/.bashrc
-#  mkecalias long short file
 mkecalias() {
-    ((NumAutoBashAliases += 10))
-    long=$1
-    short=$2
-    file=$3
-    alias edit-"$long"="$EDITOR $file"
-    alias gedit-"$long"="$EDITOR -g $file"
-    alias cat-"$long"="cat $file | less"
-    alias view-"$long"="cat $file | less"
-    alias catnp-"$long"="cat $file"
-    alias viewnp-"$long"="cat $file"
-    alias stat-"$long"="stat $file"
-    alias edt"$short"="edit-$long"
-    alias gedt"$short"="gedit-$long"
-    alias cat"$short"="cat-$long"
-    alias catnp"$short"="catnp-$long"
-    alias st"$short"="stat-$long"
+    ((NumAutoBashAliases += 4))
+    short=$1
+    file=$2
+    alias edt"$short"="$EDITOR $file"
+    alias cat"$short"="cat $file | less"
+    alias catnp"$short"="cat $file"
+    alias st"$short"="stat $file"
 }
 
 # New edt + cat alias (sudo version)
 mksuecalias() {
-    ((NumAutoBashAliases += 10))
-    long=$1
-    short=$2
-    file=$3
-    alias edit-"$long"="sudo $EDITOR $file"
-    alias cat-"$long"="cat $file | less"
-    alias view-"$long"="cat $file | less"
-    alias catnp-"$long"="cat $file"
-    alias viewnp-"$long"="cat $file"
-    alias stat-"$long"="stat $file"
-    alias edt"$short"="edit-$long"
-    alias cat"$short"="cat-$long"
-    alias catnp"$short"="catnp-$long"
-    alias st"$short"="stat-$long"
+    ((NumAutoBashAliases += 4))
+    short=$1
+    file=$2
+    alias edt"$short"="sudo $EDITOR $file"
+    alias cat"$short"="cat $file | less"
+    alias catnp"$short"="cat $file"
+    alias st"$short"="stat $file"
 }
 
 # New --color=auto alias (color auto sounds like colorado)

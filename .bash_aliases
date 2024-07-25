@@ -332,52 +332,52 @@ fi
 
 # Edit-cat aliases {{{
 
-mkecalias bashrc brc ~/.bashrc
-mkecalias bashaliases ba ~/.bash-configs/.bash_aliases
-mkecalias custompath cp ~/.custompath
-mkecalias custompath cpath ~/.custompath
-mkecalias bashfuncs bf ~/.bash-configs/.bash_functions
-mkecalias vimrc vrc ~/.vimrc
-mkecalias conkyrc crc ~/.conkyrc
-mkecalias cronsync cs ~/configs/cronsync.sh
-mkecalias machinespecificstartupcommands mssc ~/.mssc
-mkecalias profile prf ~/.profile
-mkecalias kittyconf kc ~/.config/kitty/kitty.conf
-mkecalias birthday bd ~/.bday
-mkecalias birthday bday ~/.bday
-mkecalias fastfetchcfg ffc ~/configs/fastfetch-cfg.jsonc
-mkecalias i3config i3 ~/.config/i3/config
-mkecalias comptoncfg ct ~/.config/compton/compton.conf
-mkecalias userbashaliases uba ~/.bash-configs/.useraliases
-mkecalias userbashfuncs ubf ~/.bash-configs/.userfunctions
-mkecalias requirements pyreq ./requirements.txt
-mkecalias nonosharpsettings nsset ~/.local/share/nonoSharp/settings.json
-mkecalias savefilesreadme sfrdm ~/savefiles/README.md
-mkecalias desktopwpreadme dwprdm ~/desktop-wallpaper/README.md
-mkecalias notes nt ~/.local/share/notes/Notes/Notes
-mkecalias readme rdm ./README.md
-mkecalias openboxrc obrc ~/.config/openbox/rc.xml
-mkecalias openboxautostart obas ~/.config/openbox/autostart.sh
-mkecalias configsreadme cfgsrdm ~/configs/README.md
-mkecalias gitignore gi ./.gitignore
-mkecalias savefilesuser sfu ~/savefiles/user.json
-mkecalias mpvcfg mpv ~/.config/mpv/mpv.conf
-mkecalias gitcfg gcf ~/.gitconfig
-mkecalias mpvinp mpvi ~/.config/mpv/input.conf
+mkecalias brc ~/.bashrc
+mkecalias ba ~/.bash-configs/.bash_aliases
+mkecalias cp ~/.custompath
+mkecalias cpath ~/.custompath
+mkecalias bf ~/.bash-configs/.bash_functions
+mkecalias vrc ~/.vimrc
+mkecalias crc ~/.conkyrc
+mkecalias cs ~/configs/cronsync.sh
+mkecalias mssc ~/.mssc
+mkecalias prf ~/.profile
+mkecalias kc ~/.config/kitty/kitty.conf
+mkecalias bd ~/.bday
+mkecalias bday ~/.bday
+mkecalias ffc ~/configs/fastfetch-cfg.jsonc
+mkecalias i3 ~/.config/i3/config
+mkecalias ct ~/.config/compton/compton.conf
+mkecalias uba ~/.bash-configs/.useraliases
+mkecalias ubf ~/.bash-configs/.userfunctions
+mkecalias pyreq ./requirements.txt
+mkecalias nsset ~/.local/share/nonoSharp/settings.json
+mkecalias sfrdm ~/savefiles/README.md
+mkecalias dwprdm ~/desktop-wallpaper/README.md
+mkecalias nt ~/.local/share/notes/Notes/Notes
+mkecalias rdm ./README.md
+mkecalias obrc ~/.config/openbox/rc.xml
+mkecalias obas ~/.config/openbox/autostart.sh
+mkecalias cfgsrdm ~/configs/README.md
+mkecalias gi ./.gitignore
+mkecalias sfu ~/savefiles/user.json
+mkecalias mpv ~/.config/mpv/mpv.conf
+mkecalias gcf ~/.gitconfig
+mkecalias mpvi ~/.config/mpv/input.conf
 
 # }}}
 
 # Super-user edit-cat aliases {{{
 
-mksuecalias fstab fs /etc/fstab
-mksuecalias sourceslist srcl /etc/apt/sources.list
-mksuecalias sourceslist sl /etc/apt/sources.list
-mksuecalias samba smb /etc/samba/smb.conf
-mksuecalias releaseupgrades ru /etc/update-manager/release-upgrades
-mksuecalias refind rfd /boot/efi/efi/refind/refind.conf
-mksuecalias lightdm ldm /etc/lightdm/lightdm.conf
-mksuecalias lightdmgreeter ldmg /etc/lightdm/lightdm-gtk-greeter.conf
-mksuecalias etcdefgrub edg /etc/default/grub
+mksuecalias fs /etc/fstab
+mksuecalias srcl /etc/apt/sources.list
+mksuecalias sl /etc/apt/sources.list
+mksuecalias smb /etc/samba/smb.conf
+mksuecalias ru /etc/update-manager/release-upgrades
+mksuecalias rfd /boot/efi/efi/refind/refind.conf
+mksuecalias ldm /etc/lightdm/lightdm.conf
+mksuecalias ldmg /etc/lightdm/lightdm-gtk-greeter.conf
+mksuecalias edg /etc/default/grub
 
 # }}}
 
