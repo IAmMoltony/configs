@@ -58,5 +58,6 @@ cpcfgdf i3cfg .config/i3/config
 cpcfgdf qutebrowser.py .config/qutebrowser/config.py
 cpcfgdf obrc.xml .config/openbox/rc.xml
 cpcfgdf obautostart.sh .config/openbox/autostart.sh
+cpcfgdf mpvinput.conf .config/mpv/input.conf
 
 echo "Success"
