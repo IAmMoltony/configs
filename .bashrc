@@ -209,17 +209,6 @@ fi
 
 # }}}
 
-# MSSC {{{
-
-# Run Machine-Specific Startup Commands (MSSC)
-# This became necessary when I wanted to install nvm on WSL but I don't use nvm on my laptop
-if [ -f "$HOME/.mssc" ]; then
-    initmsg "mssc"
-    source "$HOME"/.mssc
-fi
-
-# }}}
-
 # Inconveniences {{{
 
 initmsg "inc"
@@ -265,6 +254,17 @@ elif command -v "neofetch" > /dev/null 2>&1; then
     echo
     neofetch
     fastfetchnag
+fi
+
+# }}}
+
+# MSSC {{{
+
+# Run Machine-Specific Startup Commands (MSSC)
+# This became necessary when I wanted to install nvm on WSL but I don't use nvm on my laptop
+if [ -f "$HOME/.mssc" ]; then
+    echo -e "\n\033[0m"
+    source "$HOME"/.mssc
 fi
 
 # }}}
