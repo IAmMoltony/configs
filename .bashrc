@@ -262,10 +262,15 @@ fi
 
 # Run Machine-Specific Startup Commands (MSSC)
 # This became necessary when I wanted to install nvm on WSL but I don't use nvm on my laptop
+
+stty echo
+
 if [ -f "$HOME/.mssc" ]; then
     echo -e "\n\033[0m"
     source "$HOME"/.mssc
 fi
+
+stty -echo
 
 # }}}
 
