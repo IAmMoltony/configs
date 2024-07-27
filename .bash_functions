@@ -915,6 +915,8 @@ bashrc-postinit() {
 
     $HOME/configs/updater.sh
 
+    ls
+
     rm-roll # this is done at the end in order to make sure that rm works always in init
 }
 
