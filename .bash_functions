@@ -881,7 +881,10 @@ bashrc-postinit() {
         echo -e "This computer has been up for \033[0;36m$(uptime -p | cut -c 4-)\033[0m."
     fi
 
-    echo -e "Network usage today: \033[0;33m$(vnstat --oneline | awk -F';' '{print $6}')\033[0m."
+    net_usagi="$(vnstat --oneline | awk -F';' '{print $6}')"
+    if [ -n "$net_usagi" ]; then
+        echo -e "Network usage today: \033[0;33m$net_usagi\033[0m."
+    fi
 
     if [ -d "$HOME/savefiles" ]; then
         echo "$(nctcfgs) commits in configs, $(nctsf) commits in savefiles."
