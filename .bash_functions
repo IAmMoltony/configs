@@ -348,28 +348,6 @@ countfilesindir() {
     return $nff
 }
 
-# Check hourly sync logs
-checkhsl() {
-    if [ ! -e "$HOME/configs/HourlySyncLogs" ]; then
-        echo "HSL directory not found or is not a directory, skipping HSL check."
-        return
-    fi
-    countfilesindir ~/configs/HourlySyncLogs
-
-    if (( $? > 30 )); then
-        countfilesindir ~/configs/HourlySyncLogs
-        echo "There are currently $? hourly sync log files."
-        while true; do
-            read -n 1 -p "Delete? [y or n] " yn
-            case $yn in
-                [Yy]* ) rm -rf ~/configs/HourlySyncLogs/*; echo "Deleted."; break;;
-                [Nn]* ) echo "Okay, keeping for some reason."; break;;
-                * ) echo "Please answer properly!";;
-            esac
-        done
-    fi
-}
-
 # Birthday checker
 bdaycheck() {
     if [ ! -f "$HOME/.bday" ]; then
@@ -894,10 +872,6 @@ bashrc-postinit() {
 
     if [ "$PIPENV_ACTIVE" == "1" ]; then
         echo "Running using pipenv."
-    fi
-
-    if [ "$PIPENV_ACTIVE" != "1" ]; then
-        checkhsl
     fi
 
     echo -e "\033[0;36m$(alias | wc -l)\033[0m aliases (\033[0;33m$NumAutoBashAliases\033[0m of which are automa$(t_or_g)ic) and \033[0;36m$(lsfuncs | wc -l)\033[0m functions are installed."
