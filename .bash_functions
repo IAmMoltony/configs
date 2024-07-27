@@ -876,7 +876,11 @@ bashrc-postinit() {
         echo -e "Hourly sync logs take up \033[1;33m$(du -sh ~/configs/HourlySyncLogs | awk '{ print $1 }').\033[0m"
     fi
 
-    echo -e "This computer has been up for \033[0;36m$(uptime -p | cut -c 4-)\033[0m."
+    if uptime -p >/dev/null 2>&1; then
+        # uptime -p OK
+        echo -e "This computer has been up for \033[0;36m$(uptime -p | cut -c 4-)\033[0m."
+    fi
+
     echo -e "Network usage today: \033[0;33m$(vnstat --oneline | awk -F';' '{print $6}')\033[0m."
 
     if [ -d "$HOME/savefiles" ]; then
