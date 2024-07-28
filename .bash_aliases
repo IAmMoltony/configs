@@ -159,7 +159,7 @@ alias aptrepos='grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*' # List a
 alias dfs='dirfsp' # less typing less hedayhce
 alias ls='ls -CF --color=auto' # ls but with the little asterisk afte rht executables and slash after folders and shit
 alias ll='\ls -alF --color=auto' # ls with the list thing
-alias la='\ls -A --color=auto' # ls but show hidden
+alias la='ls -A --color=auto' # ls but show hidden
 alias l='ls' # me when the backwards compatibility
 alias lal='\ls -CFA --color=auto' # l and la combined
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
