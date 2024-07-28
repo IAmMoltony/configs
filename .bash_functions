@@ -386,54 +386,9 @@ randomcurrency() {
     echo ${c[$index]}
 }
 
-# CLEANUP CHECKER 9000!!!
-cleanupchecker9000() {
-    if [ ! -f "$HOME/.restartssincecleanup" ]; then
-        echo "Restarts since cleanup file not found, creating"
-        echo "0" > "$HOME/.restartssincecleanup"
-    else
-        restartssincecleanup=$(cat "$HOME/.restartssincecleanup")
-        numberregex='^[0-9]+$'
-        if ! [[ $restartssincecleanup =~ $numberregex ]]; then
-            echo "Restarts since cleanup file is broken, recreating"
-            echo "0" > "$HOME/.restartssincecleanup"
-        else
-            ((restartssincecleanup++))
-            echo "$restartssincecleanup" > "$HOME/.restartssincecleanup"
-
-            if (( restartssincecleanup > 100 )); then
-                echo "You have gone a hundred shell restarts without cleanup."
-                while true; do
-                    read -n 1 -p "Cleanup? [y or n] " yn
-                    case $yn in
-                        [Yy]* ) echo "0" > "$HOME/.restartssincecleanup"; docleanupping; echo "Cleanup done."; break;;
-                        [Nn]* ) echo "Okay then."; break;;
-                        * ) echo "Please answer properly!";;
-                    esac
-                done
-            fi
-        fi
-    fi
-}
-
 # Reset restarts since cleanup file
 rrsc() {
     rm -f ~/.restartssincecleanup
-}
-
-# Do the actual cleanupping
-docleanupping() {
-    ~/configs/cleanupping
-    if command -v "apt" > /dev/null 2>&1; then
-        while true; do
-            read -n 1 -p "You seem to be on a Debian-based system. Run sudo apt update? [y or n] " yn
-            case $yn in
-                [Yy]* ) echo "Running!"; sudo apt update; echo "Done."; break;;
-                [Nn]* ) echo "Okay then."; break;;
-                * ) echo "Please answer properly!";;
-            esac
-        done
-    fi
 }
 
 # i like trains
@@ -846,9 +801,6 @@ bashrc-postinit() {
     fi
 
     hcs-is-enabled --color
-    if [ "$PIPENV_ACTIVE" != "1" ]; then
-        cleanupchecker9000
-    fi
 
     if [ -d "$HOME/configs/HourlySyncLogs" ]; then
         echo -e "Hourly sync logs take up \033[1;33m$(du -sh ~/configs/HourlySyncLogs | awk '{ print $1 }').\033[0m"
