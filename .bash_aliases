@@ -298,6 +298,15 @@ alias spsy='echo "no that would be stupid"' # This originally was an alias for `
 
 # }}}
 
+# Zypper aliases (openSUSE) {{{
+
+alias sziy='sudo zypper in -y' # install a package
+alias szry='sudo zypper rm -y' # Remove a package
+alias szdy='sudo zypper dup -y' # Distribution update
+alias szuy='sudo zypper up -y' # Update
+
+# }}}
+
 # SystemDeez Nuts aliases (systemd) {{{
 
 alias ssdr='sudo systemctl daemon-reload' # Reload systemctl daemon
