@@ -119,7 +119,7 @@ fi
 initmsg "ps1"
 
 # prompt customizatoin
-PS1='$(git rev-parse --is-inside-work-tree > /dev/null 2>&1 && ps1gitinfo )\[\e[0;35m\]\u \[\e[1;32m\]\w \[\e[0m\]$(randomcurrency) '
+PS1='$(git rev-parse --is-inside-work-tree > /dev/null 2>&1 && ps1gitinfo )\[\e[0;35m\]\u\[\e[0m\]@\[\e[0;35m\]\h \[\e[1;32m\]\w \[\e[0m\]$(randomcurrency) '
 PS2="ok and? "
 
 # }}}
