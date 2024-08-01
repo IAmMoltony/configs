@@ -21,6 +21,7 @@ trap 'baerrorhdlr $LINENO' ERR
 # Basic aliases {{{
 
 # this is a mess
+# TODO move .NET aliases in their own section
 
 alias rm='rm -iv' # Remove a file (verbose + confirm)
 alias cp='cp -v' # Copy a file (verbose)
@@ -86,7 +87,7 @@ alias ghs='grephist' # grephist short edition
 alias nano='vim' # YEAHHHH!!!
 alias emacs='vim' # EVEN MORE YEAHAAHAHAHAAHAHAHAHAHAHAHAHAHAHAHAHAHAHAUHSWFJ2WJFWERDJRTMOIBRMLKRTMKPRPMKELMETNJDNJDRNJSNRGNOKFNMR M,S MO2N!!!!!1mu9m1MU(m91
 alias code='vim' # Okay yeah I'm replacing every editor with vim
-alias ee='vim' # I've used Easy Editor like once ever on BSD
+alias ee='vim' # I've used Easy Editor like once ever when I tried to use FreeBSD but failed
 alias vi='vim' # iMprove Vi
 alias gvim='vim' # gVim sucks anyway imo
 alias ping='ping -c 5' # make ping stop after like 5 times that it pinged
@@ -99,7 +100,8 @@ alias syncpaipai='synccfgs && paipai' # Sync configs and say pai pai
 alias spaipai='syncpaipai' # Today's installment of Useless Aliases... Short version of `syncpaipai' !!!
 alias scfgsm='synccfgsm' # Short versoin alias thing ojgjo2joejfjojii243jrjoo2 2323oin23roin23r
 alias syncmrbrc='synccfgsm && relbrc' # Sync configs with message and rbrc TODO turn this into a function
-alias syncmrba='synccfgsm && relba' # Sync configs with message and rba
+alias syncmrba='synccfgsm && relba' # Sync configs with message and rba TODO function
+alias syncmrbf='synccfgsm && relbf' # Sync configs with message and rbf TODO function
 alias syncmpaipai='synccfgsm && paipai' # Sync configs with message and paipai
 alias saiy='sudo apt install -y' # Install p
 alias sary='sudo apt remove -y' # Rm p
