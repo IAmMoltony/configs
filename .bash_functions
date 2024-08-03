@@ -386,11 +386,6 @@ randomcurrency() {
     echo ${c[$index]}
 }
 
-# Reset restarts since cleanup file
-rrsc() {
-    rm -f ~/.restartssincecleanup
-}
-
 # i like trains
 paravozik() {
     while true; do
