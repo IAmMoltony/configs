@@ -460,6 +460,9 @@ mkcdiralias bkmk ~/Bookmarks
 mkcdiralias bk ~/Bookmarks
 mkcdiralias and ~/Bookmarks/Android\ partition # L sand
 mkcdiralias anime ~/Bookmarks/Anime
+mkcdiralias animemov ~/Bookmarks/Anime/movies
+mkcdiralias animeep ~/Bookmarks/Anime/episodes
+mkcdiralias animesub ~/Bookmarks/Anime/subtitles
 mkcdiralias cart ~/Bookmarks/Cartoons
 mkcdiralias dlimg ~/Bookmarks/Downloaded\ images
 mkcdiralias dli ~/Bookmarks/Downloaded\ images
@@ -505,7 +508,13 @@ mkcdiralias dwp ~/desktop-wallpaper
 mkcdiralias car ~/Bookmarks/Cute\ anime\ art
 mkcdiralias dlgth ~/Bookmarks/Game\ downloads\ \(Touhou\)
 mkcdiralias anim ~/Bookmarks/Anime
+mkcdiralias animmov ~/Bookmarks/Anime/movies
+mkcdiralias animep ~/Bookmarks/Anime/episodes
+mkcdiralias animsub ~/Bookmarks/Anime/subtitles
 mkcdiralias ani ~/Bookmarks/Anime
+mkcdiralias animov ~/Bookmarks/Anime/movies
+mkcdiralias aniep ~/Bookmarks/Anime/episodes
+mkcdiralias anisub ~/Bookmarks/Anime/subtitles
 mkcdiralias gam ~/Games
 mkcdiralias th ~/Games/TouhouShared/drive_c
 mkcdiralias thu ~/Games/TouhouShared/drive_c/Touhou-Utilities
