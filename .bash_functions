@@ -798,7 +798,7 @@ bashrc-postinit() {
     if [ "$dotw" == "Friday" ]; then
         echo "ITS FRIDAY!!!!!!!!!"
     else
-        echo -e "It is currently \033[0;36m$(LC_ALL=C date +"%H:%M %p")\033[0m on $(adelightful) \033[0;36m$dotw\033[0m."
+        echo -e "It is currently \033[0;36m$(LC_ALL=C date +"%I:%M %p")\033[0m on $(adelightful) \033[0;36m$dotw\033[0m."
     fi
 
     echo -e "Running configs version \033[0;32m$(vercfgs)\033[0m."
