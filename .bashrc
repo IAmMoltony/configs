@@ -241,6 +241,8 @@ fi
 #  3. neofetch (as fallback)
 # TODO remove copy pasting by adding fetch programs to a list
 
+BashrcFetchOk="1"
+
 if command -v "fastfetch" > /dev/null 2>&1; then
     initmsg "fetch"
     echo
@@ -255,6 +257,8 @@ elif command -v "neofetch" > /dev/null 2>&1; then
     echo
     neofetch
     fastfetchnag
+else
+    BashrcFetchOk="0"
 fi
 
 # }}}
@@ -277,7 +281,7 @@ stty -echo
 
 # Post-init stuff {{{
 
-bashrc-postinit
+bashrc-postinit "$BashrcFetchOk"
 
 trap - ERR
 trap SIGINT
