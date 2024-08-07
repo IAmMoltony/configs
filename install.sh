@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# TODO use XDG data directories
+
 cpcfg() {
     echo "Installing $1"
     cp "$1" "$HOME"/"$1"
