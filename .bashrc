@@ -63,6 +63,10 @@ initmsg "env"
 export EDITOR=/bin/vim
 export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/configs/bin:/usr/local/go/bin"
 export DOTNET_CLI_TELEMETRY_OPTOUT="true" # don't want no microsoft spying on me
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
 
 # }}}
 
