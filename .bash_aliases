@@ -210,6 +210,7 @@ alias ejsdb='sudo eject /dev/sdb' # eject sdb
 alias r.='cd $(readlink -m $(pwd))' # go to the real current directory like if ur in a directory thats a symlink
 alias clipfile='xclip -selection c <' # Copy file to clipboard
 alias sug='sudo update-grub' # Do you even KNOW how much time this saves???
+alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"' # XDG ninja suggested this
 
 # }}}
 
