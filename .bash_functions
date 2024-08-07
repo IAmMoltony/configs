@@ -786,7 +786,21 @@ ps1cs() {
     fi
 }
 
-# Bashrc post-init functions
+# Git clone until succeed
+gclnus() {
+    echo "Running git clone with args: $@ until succeed"
+    echo "Press C-c to exit"
+    while true; do
+        if ! git clone $@; then
+            echo "Failure try again"
+            continue
+        fi
+        break
+    done
+}
+
+# Bashrc post-init {{{
+
 bashrc-postinit() {
     # Argument 1 is set to "1" if fetch completed successfully.
     if [ "$1" == "1" ]; then
@@ -876,6 +890,8 @@ bashrc-postinit() {
 
     rm-roll # this is done at the end in order to make sure that rm works always in init
 }
+
+# }}}
 
 # User functions (Functions specific to the user, not synced to the github repo) {{{
 
