@@ -68,6 +68,13 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
 export NUGET_PACKAGES="$XDG_CACHE_HOME"/NuGetPackages
+export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
+export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
+export GOPATH="$XDG_DATA_HOME"/go
+export DOTNET_CLI_HOME="$XDG_DATA_HOME"/dotnet
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export HISTFILE="${XDG_STATE_HOME}"/bash/history
+export ANDROID_USER_HOME="$XDG_DATA_HOME"/android
 
 # }}}
 
