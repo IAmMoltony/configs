@@ -782,7 +782,7 @@ ps1cs() {
     if [ "$?" == "0" ]; then
         echo -e "\033[0;32mok\033[0m "
     else
-        echo -e "\033[0;31m$?\033[0m "
+        echo -e "\033[0;31muh\033[0m "
     fi
 }
 
