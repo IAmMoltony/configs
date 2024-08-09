@@ -219,7 +219,7 @@ alias dncln='dotnet clean -v n' # There is no reason for this to exist
 alias dnfmt='dotnet format' # .NET formatting
 alias dnme='dotnet mgcb-editor' # MGCB editor
 
-# }}
+# }}}
 
 # Git aliases {{{
 
