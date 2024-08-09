@@ -417,6 +417,7 @@ mksuecalias rfd /boot/efi/efi/refind/refind.conf
 mksuecalias ldm /etc/lightdm/lightdm.conf
 mksuecalias ldmg /etc/lightdm/lightdm-gtk-greeter.conf
 mksuecalias edg /etc/default/grub
+mksuecalias dnf /etc/dnf/dnf.conf
 
 # }}}
 
