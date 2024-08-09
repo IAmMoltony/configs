@@ -295,19 +295,25 @@ alias spsnc='sudo pacman -S --noconfirm --needed' # Install a package (arch linu
 alias sprnc='sudo pacman -R --noconfirm' # Remove a package (arch linux)
 alias spss='sudo pacman -Ss' # Search package (arch linux)
 alias sprnsnc='sudo pacman -Rns --noconfirm' # Something about removing pacman package idk (arch linux)
-alias spsc='sudo pacman -Sc --noconfirm' # I don't use arch anymore so can't say for sure
+alias spsc='sudo pacman -Sc --noconfirm' # I don't use arch anymore so can't say for sure (arch linux)
 alias spsu='sudo pacman -Su --noconfirm' # Update but not download package lists (arch linuh)
-alias archlnx-update='spsyu && ysyu' # Update normal pacman packages + aur
-alias spsy='echo "no that would be stupid"' # This originally was an alias for `sudo pacman -Sy` but i heard that's bad
+alias archlnx-update='spsyu && ysyu' # Update normal pacman packages + aur (arch linux)
+alias spsy='echo "no that would be stupid"' # This originally was an alias for `sudo pacman -Sy` but i heard that's bad (arch linux)
 
 # }}}
 
 # Zypper aliases (openSUSE) {{{
 
-alias sziy='sudo zypper in -y' # install a package
-alias szry='sudo zypper rm -y' # Remove a package
-alias szdy='sudo zypper dup -y' # Distribution update
-alias szuy='sudo zypper up -y' # Update
+alias sziy='sudo zypper in -y' # install a package (openSUSE)
+alias szry='sudo zypper rm -y' # Remove a package (openSUSE)
+alias szdy='sudo zypper dup -y' # Distribution update (openSUSE)
+alias szuy='sudo zypper up -y' # Update (openSUSE)
+
+# }}}
+
+# DNF aliases (Fedora) {{{
+
+alias sdiy='sudo dnf install -y' # Install package, assume "yes" on all prompts (Fedora)
 
 # }}}
 
