@@ -99,7 +99,7 @@ synccfgsm() {
     fi
     oldpwd="$(pwd)"
     builtin cd ~/configs || return
-    ./sync-commit.sh "$commitmsg"
+    ./sync-commit.sh "$commitmsg" || return 1
     builtin cd "$oldpwd" || return
 }
 
