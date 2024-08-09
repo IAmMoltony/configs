@@ -314,7 +314,11 @@ alias szuy='sudo zypper up -y' # Update (openSUSE)
 
 # DNF aliases (Fedora) {{{
 
-alias sdiy='sudo dnf install -y' # Install package, assume "yes" on all prompts (Fedora)
+alias sdiy='sudo dnf install -y' # Install packag (Fedora)
+alias sdry='sudo dnf remove -y' # Remove package (fedora)
+alias sdary='sudo dnf autoremove -y' # Remove useless packages (fedora)
+alias sdriy='sudo dnf reinstall -y' # Reinstall package (fedora)
+alias sduy='sudo dnf upgrade -y' # Update packages (fedora)
 
 # }}}
 
