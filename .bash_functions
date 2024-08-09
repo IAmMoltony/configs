@@ -832,9 +832,13 @@ bashrc-postinit() {
         echo -e "This computer has been up for \033[0;36m$(uptime -p | cut -c 4-)\033[0m."
     fi
 
-    net_usagi="$(vnstat --oneline | awk -F';' '{print $6}')"
-    if [ -n "$net_usagi" ]; then
-        echo -e "Network usage today: \033[0;33m$net_usagi\033[0m."
+    # show network usage if vnstat is a valid command
+    if command -v vnstat >/dev/null 2>&1; then
+        net_usagi="$(vnstat --oneline | awk -F';' '{print $6}')"
+        if [ -n "$net_usagi" ]; then
+            # vnstat gave non-empty string
+            echo -e "Network usage today: \033[0;33m$net_usagi\033[0m."
+        fi
     fi
 
     if [ -d "$HOME/savefiles" ]; then
