@@ -55,7 +55,6 @@ alias syncrbrc='synccfgs && relbrc' # Sync configs, reload bashrc
 alias ysnc='yay -S --noconfirm' # Install AUR package with yay
 alias ysyu='yay -Syu --noconfirm' # Update AUR packages with yay
 alias yrnc='yay -R --noconfirm' # Say pai pai to AUR package
-alias v='vim' # vim (I don't use this one xdddd)
 alias htop='btop' # btop is objectovely better
 alias srbrc='syncrbrc' # Wait this exists??? omg i forgor tbh
 alias scfgs='synccfgs' # Sync configs but the short version for literally no reason
@@ -63,12 +62,6 @@ alias math='bc -l' # Bring up a calculator
 alias weather='curl wttr.in/Shymkent' # View weather (for Shymkent)
 alias l.='ls -d .* --color=auto' # List only hidden files
 alias ghs='grephist' # grephist short edition
-alias nano='vim' # YEAHHHH!!!
-alias emacs='vim' # EVEN MORE YEAHAAHAHAHAAHAHAHAHAHAHAHAHAHAHAHAHAHAHAUHSWFJ2WJFWERDJRTMOIBRMLKRTMKPRPMKELMETNJDNJDRNJSNRGNOKFNMR M,S MO2N!!!!!1mu9m1MU(m91
-alias code='vim' # Okay yeah I'm replacing every editor with vim
-alias ee='vim' # I've used Easy Editor like once ever when I tried to use FreeBSD but failed
-alias vi='vim' # iMprove Vi
-alias gvim='vim' # gVim sucks anyway imo
 alias ping='ping -c 5' # make ping stop after like 5 times that it pinged
 alias ln='ln -iv' # ln but yo need to confirm and also verboosey
 alias i-am-root='sudo -i' # i am root
@@ -87,16 +80,12 @@ alias sary='sudo apt remove -y' # Rm p
 alias saud='sudo apt update' # Upd ps
 alias saug='sudo apt upgrade' # Upg ps
 alias pshcfgspaipai='pshcfgs && paipai' # Push cfgs and paipia
-alias :e='vim' # Another vim user HOW MANY VIM USERS DO WE HAVE
 alias wine64='WINEPREFIX=~/.wine64 wine64' # Convenience: start Wine with the 64-bit prefix
 alias wine64cfg='WINEPREFIX=~/.wine64 winecfg' # Convenience 2: configure Wine with the 64-bit prefiix
 alias gaming-th='cdth' # touhou
 alias gaming-thu='cdthu' # Touhou utilities like thscorefileconveretr
 alias thprefix='export WINEPREFIX=$HOME/Games/TouhouShared'
 alias catlessbf='catbf | less' # catbf with pager
-alias vimpi='vim +PlugInstall' # Install vim plugins
-alias vimpu='vim +PlugUpdate' # Update vim plugins
-alias vimpc='vim +PlugClean' # Clean vim plugins
 alias dirfspraw='du --max-depth=1 -h --all' # Analyze free space in directory (no sort)
 alias dirfsp='dirfspraw | sort -h' # Analyze free space in directory
 alias diurfsp='dirfsp' # are yuru happy do yuru happy aikotoba honjitsu no dokidoki sutekina happy day hajimemashou chuu chuu chuu chuu chuu la la
@@ -149,18 +138,6 @@ alias nctcfg='nctcfgs' # Num commits today in configs (bruh edition)
 alias ncycfg='ncycfgs' # Num commits yesterday in configs (bruh edition)
 alias dfsp='dirfsp' # Dirfsp shorthand
 alias rmrsc='rm -f ~/.restartssincecleanup' # Remov e the restarts since cleanup file
-alias chkbf='shellcheck --color=always ~/.bash-configs/.bash_functions | less' # Shellcheck bash functions
-alias chkba='shellcheck --color=always ~/.bash-configs/.bash_aliases | less' # Shellcheck bash aliases
-alias chkbrc='shellcheck --color=always ~/.bashrc | less' # Shellcheck bashrc
-alias chkbfnc='shellcheck ~/.bash-configs/.bash_functions | less' # Shellcheck bash functions (no color)
-alias chkbanc='shellcheck ~/.bash-configs/.bash_aliases | less' # Shellcheck bash aliases (no color)
-alias chkbrcnc='shellcheck ~/.bashrc | less' # Shellcheck bashrc (no color)
-alias chkbfnp='shellcheck --color=always ~/.bash-configs/.bash_functions' # Shellcheck bash functions (no pager)
-alias chkbanp='shellcheck --color=always ~/.bash-configs/.bash_aliases' # Shellcheck bash aliases (no pager)
-alias chkbrcnp='shellcheck --color=always ~/.bashrc' # Shellcheck bashrc (no pager)
-alias chkbfnpc='shellcheck ~/.bash-configs/.bash_functions' # Shellcheck bash functions (no pager, no color)
-alias chkbanpc='shellcheck ~/.bash-configs/.bash_aliases' # Shellcheck bash aliases (no pager, no color)
-alias chkbrcnpc='shellcheck ~/.bashrc' # Shellcheck bashrc (no pager, no color)
 alias grncfg='grep -rn $HOME/configs -e' # gren -rn in configs dir
 alias lsd='ls -d */' # Ls only dirs
 alias mtctl='~/configs/mathtestctl.py' # Math test control
@@ -174,7 +151,6 @@ alias echowinep='echo $WINEPREFIX' # Print the wineprefix to make sure im in the
 alias aliias='alias' # Alies
 alias debian-upgrade='sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y' # Update debian
 alias smd='sudo mkdir' # Create dir as superuser
-alias svim='sudo vim' # Vim as superuser
 alias mntsdb='sudo mount /dev/sdb /mnt' # Mount sdb
 alias mntsdb1='sudo mount /dev/sdb1 /mnt' # Mount sdb1
 alias mntsdb2='sudo mount /dev/sdb2 /mnt' # Mount sdb2 (TODO more sdbs and also sdc sdd)
@@ -327,12 +303,46 @@ alias sduy='sudo dnf upgrade -y' # Update packages (fedora)
 
 # }}}
 
-# SystemDeez Nuts aliases (systemd) {{{
+# Systemd(eez nuts) aliases (systemd) {{{
 
 alias ssdr='sudo systemctl daemon-reload' # Reload systemctl daemon
 alias ssdrsma='ssdr && sma' # Reload systemctl daemon and mount fstab
 alias ssst='sudo systemctl status' # View status of a service
 alias sssr='sudo systemctl start' # Start a service
+
+# }}}
+
+# Aliases related to vim in some way {{{
+
+alias v='vim' # vim (I don't use this one xdddd)
+alias nano='vim' # YEAHHHH!!!
+alias emacs='vim' # EVEN MORE YEAHAAHAHAHAAHAHAHAHAHAHAHAHAHAHAHAHAHAHAUHSWFJ2WJFWERDJRTMOIBRMLKRTMKPRPMKELMETNJDNJDRNJSNRGNOKFNMR M,S MO2N!!!!!1mu9m1MU(m91
+alias code='vim' # Okay yeah I'm replacing every editor with vim
+alias ee='vim' # I've used Easy Editor like once ever when I tried to use FreeBSD but failed
+alias vi='vim' # iMprove Vi
+alias gvim='vim' # gVim sucks anyway imo
+alias :e='vim' # Another vim user HOW MANY VIM USERS DO WE HAVE
+alias vimpi='vim +PlugInstall' # Install vim plugins
+alias vimpu='vim +PlugUpdate' # Update vim plugins
+alias vimpc='vim +PlugClean' # Clean vim plugins
+alias svim='sudo vim' # Vim as superuser
+
+# }}}
+
+# Aliases for checking scripts using shellcheck {{{
+
+alias chkbf='shellcheck --color=always ~/.bash-configs/.bash_functions | less' # Shellcheck bash functions
+alias chkba='shellcheck --color=always ~/.bash-configs/.bash_aliases | less' # Shellcheck bash aliases
+alias chkbrc='shellcheck --color=always ~/.bashrc | less' # Shellcheck bashrc
+alias chkbfnc='shellcheck ~/.bash-configs/.bash_functions | less' # Shellcheck bash functions (no color)
+alias chkbanc='shellcheck ~/.bash-configs/.bash_aliases | less' # Shellcheck bash aliases (no color)
+alias chkbrcnc='shellcheck ~/.bashrc | less' # Shellcheck bashrc (no color)
+alias chkbfnp='shellcheck --color=always ~/.bash-configs/.bash_functions' # Shellcheck bash functions (no pager)
+alias chkbanp='shellcheck --color=always ~/.bash-configs/.bash_aliases' # Shellcheck bash aliases (no pager)
+alias chkbrcnp='shellcheck --color=always ~/.bashrc' # Shellcheck bashrc (no pager)
+alias chkbfnpc='shellcheck ~/.bash-configs/.bash_functions' # Shellcheck bash functions (no pager, no color)
+alias chkbanpc='shellcheck ~/.bash-configs/.bash_aliases' # Shellcheck bash aliases (no pager, no color)
+alias chkbrcnpc='shellcheck ~/.bashrc' # Shellcheck bashrc (no pager, no color)
 
 # }}}
 
