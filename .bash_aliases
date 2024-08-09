@@ -211,7 +211,8 @@ alias r.='cd $(readlink -m $(pwd))' # go to the real current directory like if u
 alias clipfile='xclip -selection c <' # Copy file to clipboard
 alias sug='sudo update-grub' # Do you even KNOW how much time this saves???
 alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"' # XDG ninja suggested this
-alias adb='HOME="$XDG_DATA_HOME"/android adb'
+alias adb='HOME="$XDG_DATA_HOME"/android adb' # adb but xdg
+alias badwifiwget='wget -c --tries=0 --retry-connrefused --timeout=2 --wait=1' # sauce: https://www.schmidp.com/2009/03/03/downloading-a-file-over-an-unstable-connection-with-wget/
 
 # }}}
 
