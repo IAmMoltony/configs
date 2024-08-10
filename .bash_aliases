@@ -547,6 +547,7 @@ mkcdiralias th ~/Games/TouhouShared/drive_c
 mkcdiralias thu ~/Games/TouhouShared/drive_c/Touhou-Utilities
 mkcdiralias sld /etc/apt/sources.list.d
 mkcdiralias vm ~/VMs
+mkcdiralias mpv ~/.config/mpv
 
 # }}}
 
