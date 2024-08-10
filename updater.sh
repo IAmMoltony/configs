@@ -9,7 +9,7 @@ set -e
 
 cd $HOME/configs
 
-echo "Running configs updater v1.0.1"
+echo "Running configs updater v1.0.2"
 
 fetch_error() {
     echo "Failed to fetch remote. Update canceled."
@@ -17,7 +17,7 @@ fetch_error() {
 }
 
 pull_error() {
-    echo "Failed to pull updated. Update canceled."
+    echo "Failed to pull updates. Update canceled."
     exit 2
 }
 
@@ -43,7 +43,13 @@ if [ -z "$new_commits" ]; then
     exit 0
 fi
 
-echo "$(echo "$new_commits" | wc -l) updates available:"
+num_new_commits="$(echo "$new_commits" | wc -l)"
+updates_plural="s"
+if [ "$num_new_commits" == "1" ]; then
+    updates_plural=""
+fi
+
+echo "$num_new_commits update$updates_plural available:"
 echo "$new_commits"
 
 while true; do
