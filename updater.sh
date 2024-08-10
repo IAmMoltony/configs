@@ -2,16 +2,12 @@
 
 # Configs Updater
 # Checks if there are any updates, and if there are, prompts the user to update.
-# This is more or less a generic Git repo updater so I might release it
-# as a repo or a Gist.
-
-# TODO proper plural update in functions
 
 set -e
 
 cd $HOME/configs
 
-echo "Running configs updater v1.1"
+echo "Running configs updater v1.1.1"
 
 fetch_error() {
     echo "Failed to fetch remote. Update canceled."
@@ -19,30 +15,30 @@ fetch_error() {
 }
 
 pull_error() {
-    echo "Failed to pull updates. Update canceled."
+    echo "Failed to pull update$1. Update canceled."
     exit 2
 }
 
 do_update() {
-    echo "Downloading update..."
-    git pull || pull_error
-    echo "Update downloaded."
+    echo "Downloading update$1..."
+    git pull || pull_error "$1"
+    echo "Update$1 downloaded."
 }
 
 cancel_update() {
-    echo "Update canceled."
+    echo "Download canceled."
     exit 0
 }
 
 install_update() {
-    echo "Instaling update..."
+    echo "Instaling update$1..."
     ./install.sh
-    echo "Update installed."
+    echo "Update$1 installed."
     exit 0
 }
 
 cancel_install() {
-    echo "Installation canceled. Run updcfgs in your terminal to install update manually."
+    echo "Installation canceled. Run updcfgs in your terminal to install update$1 manually."
 }
 
 git fetch >/dev/null || fetch_error
@@ -67,7 +63,7 @@ echo "$new_commits"
 while true; do
     read -p "Download update$updates_plural? (y/n) " yn
     case $yn in
-        [Yy]* ) do_update; break;;
+        [Yy]* ) do_update "$updates_plural"; break;;
         [Nn]* ) cancel_update;;
         * ) echo "That's not an option!";;
     esac
@@ -76,8 +72,8 @@ done
 while true; do
     read -p "Install update$updates_plural? (y/n) " yn
     case $yn in
-        [Yy]* ) install_update;;
-        [Nn]* ) cancel_install;;
+        [Yy]* ) install_update "$updates_plural";;
+        [Nn]* ) cancel_install "$updates_plural";;
         * ) echo "That's not an option!";;
     esac
 done
