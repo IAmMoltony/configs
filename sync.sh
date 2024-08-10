@@ -32,5 +32,11 @@ cpcfgf .config/mpv/input.conf mpvinput.conf
 
 echo "Success"
 
-echo "Changed files:"
-git ls-files -m
+changed_files="$(git ls-files -m)"
+
+if [ -z "$changed_files" ]; then
+    echo "No changed files."
+else
+    echo "Changed files:"
+    echo "$changed_files"
+fi
