@@ -161,6 +161,8 @@ alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"' # XDG ninja suggested t
 alias adb='HOME="$XDG_DATA_HOME"/android adb' # adb but xdg
 alias badwifiwget='wget -c --tries=0 --retry-connrefused --timeout=2 --wait=1' # sauce: https://www.schmidp.com/2009/03/03/downloading-a-file-over-an-unstable-connection-with-wget/
 alias jjar='java -jar' # cacao
+alias ssctl='sudo systemctl' # Less typing more sudo rm -rf / --no-preserve-root
+alias ssdrsma='sudo systemctl daemon-reload && sudo mount -a' # remount shit
 
 # }}}
 
@@ -305,15 +307,6 @@ alias sdriy='sudo dnf reinstall -y' # Reinstall package (fedora)
 alias sdri='sudo dnf reinstall' # Reinstall package but "are you ok???" (Fed Ora)
 alias sduy='sudo dnf upgrade -y' # Update packages (fedora)
 alias sdu='sudo dnf upgrade' # Update packages but don't think it's gonna let you off the hook so easily (Pandora)
-
-# }}}
-
-# Systemd(eez nuts) aliases (systemd) {{{
-
-alias ssdr='sudo systemctl daemon-reload' # Reload systemctl daemon
-alias ssdrsma='ssdr && sma' # Reload systemctl daemon and mount fstab
-alias ssst='sudo systemctl status' # View status of a service
-alias sssr='sudo systemctl start' # Start a service
 
 # }}}
 
