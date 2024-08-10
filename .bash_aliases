@@ -21,7 +21,6 @@ trap 'baerrorhdlr $LINENO' ERR
 # Basic aliases {{{
 
 # this is a mess
-# TODO move .NET aliases in their own section
 
 alias rm='rm -iv' # Remove a file (verbose + confirm)
 alias cp='cp -v' # Copy a file (verbose)
