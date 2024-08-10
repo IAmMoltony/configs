@@ -17,7 +17,7 @@ cd ~/configs # go into the repo dir
 ./install-cascadia-code.sh # install cascadia code (OPTIONAL, don't run if you
                            # don't need the font)
 ./install.sh # install configurations
-source ~/.bashrc # reload bashrc 
+source ~/.bashrc # reload bashrc
 ```
 
 ## Scripts
