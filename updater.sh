@@ -5,11 +5,13 @@
 # This is more or less a generic Git repo updater so I might release it
 # as a repo or a Gist.
 
+# TODO proper plural update in functions
+
 set -e
 
 cd $HOME/configs
 
-echo "Running configs updater v1.0.2"
+echo "Running configs updater v1.1"
 
 fetch_error() {
     echo "Failed to fetch remote. Update canceled."
@@ -22,15 +24,25 @@ pull_error() {
 }
 
 do_update() {
-    echo "Updating..."
+    echo "Downloading update..."
     git pull || pull_error
-    echo "Update done. Run \`rbrc' to apply update."
-    exit 0
+    echo "Update downloaded."
 }
 
 cancel_update() {
     echo "Update canceled."
     exit 0
+}
+
+install_update() {
+    echo "Instaling update..."
+    ./install.sh
+    echo "Update installed."
+    exit 0
+}
+
+cancel_install() {
+    echo "Installation canceled. Run updcfgs in your terminal to install update manually."
 }
 
 git fetch >/dev/null || fetch_error
@@ -53,10 +65,19 @@ echo "$num_new_commits update$updates_plural available:"
 echo "$new_commits"
 
 while true; do
-    read -p "Update? (y/n) " yn
+    read -p "Download update$updates_plural? (y/n) " yn
     case $yn in
-        [Yy]* ) do_update;;
+        [Yy]* ) do_update; break;;
         [Nn]* ) cancel_update;;
+        * ) echo "That's not an option!";;
+    esac
+done
+
+while true; do
+    read -p "Install update$updates_plural? (y/n) " yn
+    case $yn in
+        [Yy]* ) install_update;;
+        [Nn]* ) cancel_install;;
         * ) echo "That's not an option!";;
     esac
 done
