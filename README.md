@@ -4,8 +4,8 @@
 
 [wrench icon](https://www.flaticon.com/free-icons/wrench)
 
-Hi, this is *configs*, a repository hosting my configurations for programs (such as `.bashrc`) and
-some scripts as well.
+Hi, this is *configs*, a repository hosting my configurations for programs (such
+as `.bashrc`) and some scripts as well.
 
 ## Installation
 
@@ -22,10 +22,9 @@ source ~/.bashrc # reload bashrc
 
 ## Scripts
 
-### HCS
+### Cron Sync
 
-HCS (Hourly Config Sync, also referred to as Cron Sync) is a convenient system
-for automatically backing up configs.
+Cron Sync is a convenient system for automatically backing up configs.
 
 See `CronSync.md`.
 
