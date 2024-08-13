@@ -17,6 +17,11 @@ cpcfgdf() {
     cp "$1" "$HOME"/"$2"
 }
 
+fastcomputermessage() {
+    echo "Done!"
+    echo "The new config file is optimized for a fast computer by default. You can choose using the 'mpvcfgset' command."
+}
+
 echo "Creating melonDS config dir"
 mkdir -p "$HOME"/.config/melonDS
 
@@ -55,11 +60,37 @@ cpcfgd kitty.conf .config/kitty
 cpcfgd compton.conf .config/compton
 cpcfgd melonDS.ini .config/melonDS
 cpcfgd bleachbit.ini .config/bleachbit
-cpcfgd mpv.conf .config/mpv
 cpcfgdf i3cfg .config/i3/config
 cpcfgdf qutebrowser.py .config/qutebrowser/config.py
 cpcfgdf obrc.xml .config/openbox/rc.xml
 cpcfgdf obautostart.sh .config/openbox/autostart.sh
 cpcfgdf mpvinput.conf .config/mpv/input.conf
+
+echo "Setting up mpv config symlink"
+
+if [ -L "$HOME"/.config/mpv/mpv.conf ]; then
+    echo "mpv config symlink already set up"
+elif [ -f "$HOME"/.config/mpv/mpv.conf ]; then
+    echo "mpv config file is NOT a symlink"
+    echo "Replace with symlink? A copy of the file will be created in $(pwd) under the name 'mpv.conf.old'."
+    read -p "(y = yes, n = no) : " yn
+    case $yn in
+        [Yy]* )
+            mv "$HOME"/.config/mpv/mpv.conf ./mpv.conf.old
+            ln -s "$(pwd)"/mpv-fastcomputer.conf "$HOME"/.config/mpv/mpv.conf
+            fastcomputermessage
+            ;;
+        [Nn]* )
+            echo "Okay, keeping the old config file."
+            ;;
+        * )
+            echo "I'll take this as a no."
+            ;;
+    esac
+else
+    echo "mpv config file not found, creating symlink"
+    ln -s "$(pwd)"/mpv-fastcomputer.conf "$HOME"/.config/mpv/mpv.conf
+    fastcomputermessage
+fi
 
 echo "Success"
