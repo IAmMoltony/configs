@@ -278,7 +278,7 @@ mkecalias() {
     ((NumAutoBashAliases += 4))
     short=$1
     file=$2
-    alias edt"$short"="$EDITOR $file"
+    alias edt"$short"="$EDITOR \$(readlink -m $file)"
     alias cat"$short"="cat $file | less"
     alias catnp"$short"="cat $file"
     alias st"$short"="stat $file"
