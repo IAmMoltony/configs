@@ -799,6 +799,47 @@ gclnus() {
     done
 }
 
+# Choose between mpv config for fast or slow computer
+mpvcfgset() {
+    # check if mpv config is ther
+    if [ ! -f "$HOME"/.config/mpv/mpv.conf ]; then
+        echo "mpv config not found"
+        echo "Please re-run the configs installer."
+        return 1
+    fi
+
+    # check if its a symlink
+    if [ ! -L "$HOME"/.config/mpv/mpv.conf ]; then
+        echo "mpv config is NOT a symlink"
+        echo "Please re-run the configs installer."
+        return 1
+    fi
+
+    # bash arrays are so fucking stupid
+    choices=("$HOME/configs/mpv-fastcomputer.conf" "$HOME/configs/mpv-slowcomputer.conf")
+    choice_indexes=${!choices[*]}
+    num_choices=${#choices[*]}
+
+    echo "mpv config is currently linked to $(readlink "$HOME"/.config/mpv/mpv.conf)"
+    echo "It can be linked to one of the following:"
+
+    # print every choice
+    for i in $choice_indexes; do
+        echo "$((i + 1)). ${choices[$i]}"
+    done
+
+    read -p "Choose what file to link to (enter a number from 1 to $num_choices): " choice
+    
+    choice_minus_one=$(( choice - 1 )) # yuh
+    if [[ ! " ${choice_indexes[@]} " =~ " $choice_minus_one " ]]; then
+        echo "That's not an option!"
+        return 1
+    fi
+
+    echo "Linking mpv config to ${choices[$choice_minus_one]}"
+    ln -sf "${choices[$choice_minus_one]}" "$HOME"/.config/mpv/mpv.conf
+}
+
 # Bashrc post-init {{{
 
 bashrc-postinit() {
