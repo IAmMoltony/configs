@@ -9,3 +9,4 @@ credentials.json
 Session.vim
 mts.json
 mpv.conf.old
+__pycache__/
