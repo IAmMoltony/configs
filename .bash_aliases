@@ -269,6 +269,7 @@ alias glgrv='glogrv' # Like, could you believe it? I've had these aliases for ov
 alias gsw='git switch' # switch to some branch idk
 alias gswc='git switch -c' # Switch to some brach but like make it
 alias gadbch="git fetch -p && LC_ALL=C git branch -vv | grep ': gone]' | awk '{print \$1}' | xargs -r git branch -d" # Git auto delete branches
+alias gpshf='git push --force' # Pushpushpush
 
 # }}}
 
