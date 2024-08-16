@@ -895,7 +895,21 @@ bashrc-postinit() {
     fi
 
     if [ -d "$HOME/savefiles" ]; then
-        echo "$(nctcfgs) commits in configs, $(nctsf) commits in savefiles."
+        nctc="$(nctcfgs)"
+        ncts="$(nctsf)"
+        if [ "$nctc" == "1" ] && [ "$ncts" != "1" ]; then
+            # 1 commit in configs, !1 commits in savefiles
+            echo "1 commit in configs, $ncts commits in savefiles."
+        elif [ "$nctc" != "1" ] && [ "$ncts" == "1" ]; then
+            # !1 commits in configs, 1 commit in savefiles
+            echo "$nctc commits in configs, 1 commit in savefiles."
+        elif [ "$nctc" == "1" ] && [ "$ncts" == "1" ]; then
+            # 1 commit in both
+            echo "1 commit in configs, 1 commit in savefiles."
+        else
+            # !1 commits in both
+            echo "$nctc commits in configs, $ncts commits in savefiles."
+        fi
     else
         echo "$(nctcfgs) commits in configs."
     fi
