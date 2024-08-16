@@ -163,6 +163,7 @@ alias badwifiwget='wget -c --tries=0 --retry-connrefused --timeout=2 --wait=1' #
 alias jjar='java -jar' # cacao
 alias ssctl='sudo systemctl' # Less typing more sudo rm -rf / --no-preserve-root
 alias ssdrsma='sudo systemctl daemon-reload && sudo mount -a' # remount shit
+alias hl='history | less' # h(istory) l(ess)
 
 # }}}
 
