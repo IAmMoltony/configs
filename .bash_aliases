@@ -466,6 +466,7 @@ mkexitalias iqut
 mkexitalias uqit
 mkexitalias iutq
 mkexitalias ituq
+mkexitalias qui
 
 # }}}
 
