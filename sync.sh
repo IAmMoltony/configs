@@ -23,7 +23,6 @@ cpcfg .conkyrc
 cpcfg .config/melonDS/melonDS.ini
 cpcfg .config/compton/compton.conf
 cpcfg .config/bleachbit/bleachbit.ini
-cpcfg .config/mpv/mpv.conf
 cpcfgf .config/qutebrowser/config.py qutebrowser.py
 cpcfgf .config/i3/config i3cfg
 cpcfgf .config/openbox/rc.xml obrc.xml
