@@ -258,13 +258,13 @@ mkexitalias() {
 # Argument 8: the directory
 mkdiralias() {
     ((NumAutoBashAliases += 7))
-    alias "$1"="cd \"$8\""
-    alias "b$1"="builtin cd \"$8\""
+    alias "$1"="cd \"$8\" && cd_or_nah"
+    alias "b$1"="builtin cd \"$8\" && bcd_or_nah"
     alias "$2"="ls \"$8\""
     alias "$3"="du $(readlink "$8" -m) --max-depth=1 --all -h | sort -h"
     alias "$4"="find $(readlink "$8" -m) -maxdepth 1 | wc -l"
     alias "$5"="cntfiles $(readlink "$8" -m)"
-    alias "$6"="cd $(readlink "$8" -m)"
+    alias "$6"="cd $(readlink "$8" -m) && cd_or_nah"
     alias "$7"="ls -A \"$8\""
 }
 
@@ -838,6 +838,18 @@ mpvcfgset() {
 
     echo "Linking mpv config to ${choices[$choice_minus_one]}"
     ln -sf "${choices[$choice_minus_one]}" "$HOME"/.config/mpv/mpv.conf
+}
+
+cd_or_nah() {
+    if [ -n "$1" ]; then
+        cd "$1" || return
+    fi
+}
+
+bcd_or_nah() {
+    if [ -n "$1" ]; then
+        builtin cd "$1" || return
+    fi
 }
 
 # Bashrc post-init {{{
