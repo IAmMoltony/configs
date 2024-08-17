@@ -29,3 +29,8 @@ fi
 if [ -f "$HOME/.cargo/env" ]; then
     . "$HOME/.cargo/env"
 fi
+
+
+# Added by Toolbox App
+export PATH="$PATH:/home/moltony/.local/share/JetBrains/Toolbox/scripts"
+
