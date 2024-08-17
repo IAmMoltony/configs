@@ -5,9 +5,12 @@
 
 set -e
 
-cd $HOME/configs
+cd $HOME/configs || {
+    echo "Directory $HOME/configs not found. Halting."
+    exit 3
+}
 
-echo "Running configs updater v1.1.2"
+echo "Running configs updater v1.2"
 
 fetch_error() {
     echo "Failed to fetch remote. Update canceled."
@@ -41,39 +44,43 @@ cancel_install() {
     echo "Installation canceled. Run updcfgs in your terminal to install update$1 manually."
 }
 
-git fetch >/dev/null || fetch_error
+main() {
+    git fetch >/dev/null || fetch_error
 
-branch_rn="$(git branch --show-current)"
-new_commits="$(git log ${branch_rn}..origin/${branch_rn} --oneline)"
+    branch_rn="$(git branch --show-current)"
+    new_commits="$(git log ${branch_rn}..origin/${branch_rn} --oneline)"
 
-if [ -z "$new_commits" ]; then
-    echo "Already up-to-date."
-    exit 0
-fi
+    if [ -z "$new_commits" ]; then
+        echo "Already up-to-date."
+        exit 0
+    fi
 
-num_new_commits="$(echo "$new_commits" | wc -l)"
-updates_plural="s"
-if [ "$num_new_commits" == "1" ]; then
-    updates_plural=""
-fi
+    num_new_commits="$(echo "$new_commits" | wc -l)"
+    updates_plural="s"
+    if [ "$num_new_commits" == "1" ]; then
+        updates_plural=""
+    fi
 
-echo "$num_new_commits update$updates_plural available:"
-echo "$new_commits"
+    echo "$num_new_commits update$updates_plural available:"
+    echo "$new_commits"
 
-while true; do
-    read -p "Download update$updates_plural? (y/n) " yn
-    case $yn in
-        [Yy]* ) do_update "$updates_plural"; break;;
-        [Nn]* ) cancel_update;;
-        * ) echo "That's not an option!";;
-    esac
-done
+    while true; do
+        read -p "Download update$updates_plural? (Y/n) " yn
+        yn="${yn:-y}"
+        case $yn in
+            [Yy]* ) do_update "$updates_plural"; break;;
+            [Nn]* ) cancel_update;;
+        esac
+    done
 
-while true; do
-    read -p "Install update$updates_plural? (y/n) " yn
-    case $yn in
-        [Yy]* ) install_update "$updates_plural";;
-        [Nn]* ) cancel_install "$updates_plural";;
-        * ) echo "That's not an option!";;
-    esac
-done
+    while true; do
+        read -p "Install update$updates_plural? (Y/n) " yn
+        yn="${yn:-y}"
+        case $yn in
+            [Yy]* ) install_update "$updates_plural";;
+            [Nn]* ) cancel_install "$updates_plural";;
+        esac
+    done
+}
+
+main "$@"
