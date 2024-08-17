@@ -7,7 +7,7 @@ set -e
 
 cd $HOME/configs
 
-echo "Running configs updater v1.1.1"
+echo "Running configs updater v1.1.2"
 
 fetch_error() {
     echo "Failed to fetch remote. Update canceled."
@@ -31,7 +31,7 @@ cancel_update() {
 }
 
 install_update() {
-    echo "Instaling update$1..."
+    echo "Installing update$1..."
     ./install.sh
     echo "Update$1 installed."
     exit 0
