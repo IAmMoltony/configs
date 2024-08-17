@@ -247,31 +247,10 @@ fi
 
 # *fetch {{{
 
-# Run somethingfetch everytime the shell is started in the following order:
-#  1. fastfetch (because it's fast) (and also cuz i have a custom config)
-#  2. pfetch (because it's sleek)
-#  3. neofetch (as fallback)
-# TODO remove copy pasting by adding fetch programs to a list
-
+# Run somethingfetch everytime the shell is started
 BashrcFetchOk="1"
-
-if command -v "fastfetch" > /dev/null 2>&1; then
-    initmsg "fetch"
-    echo
-    ffwcfg
-elif command -v "pfetch" > /dev/null 2>&1; then
-    initmsg "fetch"
-    echo
-    pfetch
-    fastfetchnag
-elif command -v "neofetch" > /dev/null 2>&1; then
-    initmsg "fetch"
-    echo
-    neofetch
-    fastfetchnag
-else
-    BashrcFetchOk="0"
-fi
+echo # absolutely required
+"$HOME"/configs/ultra_fetcher_9000.py || BashrcFetchOk="0"
 
 # }}}
 

@@ -23,7 +23,7 @@ set smartindent
 
 let g:mkdp_auto_start = 0
 
-" Color scheme: VSCode Dark
+" Color scheme: VSCode Dark (the irony)
 colorscheme codedark
 
 " Nums on/off custom command
@@ -57,6 +57,7 @@ command! Black !black %
 command! Pylint !pylint %
 command! Shck !shellcheck %
 command! Chx !chmod +x %
+command! Go !./%
 
 command! W w
 command! Q q

@@ -1,0 +1,16 @@
+{
+    "fetches":[
+        {
+            "exec": "neofetch",
+            "args": []
+        },
+        {
+            "exec": "pfetch",
+            "args": []
+        },
+        {
+            "exec": "fastfetch",
+            "args": ["-c", "~/configs/fastfetch-cfg.jsonc"]
+        }
+    ]
+}
