@@ -21,7 +21,7 @@ class Fetch:
     def run(self):
         if not is_real_command(self.execu):
             return False
-        
+
         expanded_args = []
         for arg in self.args:
             expanded_args.append(os.path.expanduser(arg))
