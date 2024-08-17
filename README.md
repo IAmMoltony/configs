@@ -4,6 +4,8 @@
 
 [wrench icon](https://www.flaticon.com/free-icons/wrench)
 
+[![CodeFactor](https://www.codefactor.io/repository/github/iammoltony/configs/badge)](https://www.codefactor.io/repository/github/iammoltony/configs)
+
 Hi, this is *configs*, a repository hosting my configurations for programs (such
 as `.bashrc`) and some scripts as well.
 
