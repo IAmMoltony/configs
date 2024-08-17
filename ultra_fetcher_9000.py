@@ -30,21 +30,27 @@ class Fetch:
 
         return status == 0
 
-def main():
-    cd_into_script_dir()
+def run_fetches(fetches):
+    for fetch in fetches:
+        if fetch.run():
+            sys.exit(0)
 
-    config = {}
-    with open("ultrafetcher9000cfg.json", "r", encoding="utf8") as ultrafetcher9000cfg:
-        config = json.load(ultrafetcher9000cfg)
-
+def parse_fetches(config):
     cfg_fetches = config["fetches"]
     fetches = []
     for fetch in cfg_fetches:
         fetches.append(Fetch(fetch["exec"], fetch["args"]))
+    return fetches
 
-    for fetch in fetches:
-        if fetch.run():
-            sys.exit(0)
+def load_config():
+    with open("ultrafetcher9000cfg.json", "r", encoding="utf8") as ultrafetcher9000cfg:
+        return json.load(ultrafetcher9000cfg)
+
+def main():
+    cd_into_script_dir()
+    config = load_config()
+    fetches = parse_fetches(config)
+    run_fetches(fetches)
 
     print("Unable to fetch")
     fetch_names = []
