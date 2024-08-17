@@ -911,7 +911,12 @@ bashrc-postinit() {
             echo "$nctc commits in configs, $ncts commits in savefiles."
         fi
     else
-        echo "$(nctcfgs) commits in configs."
+        nctc="$(nctcfgs)"
+        if [ "$nctc" == "1" ]; then
+            echo "1 commit in configs."
+        else
+            echo "$nctc commits in configs."
+        fi
     fi
 
     if [ "$PIPENV_ACTIVE" == "1" ]; then
