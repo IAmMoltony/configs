@@ -18,7 +18,7 @@ trap 'baerrorhdlr $LINENO' ERR
 
 # Manual aliases {{{
 
-# Basic aliases {{{
+# Miscellaneous aliases {{{
 
 # this is a mess
 
@@ -110,7 +110,7 @@ alias kittyfonts='kitty +list-fonts' # list fonts supported by kityy
 alias hsle='echo "Did you mean: hcse"'
 alias hsld='echo "Did you mean: hcsd"'
 alias hslie='echo "Did you mean: hcsie"'
-alias hcse='hcs-enable' # Enable HCS
+alias hcse='hcs-enable' # Enable HCS (even tho its called cron sync)
 alias hcsd='hcs-disable' # Disable HCS
 alias hcsie='hcs-is-enabled' # Check if HCS is enabled
 alias ffwcfg='fastfetch -c $HOME/configs/fastfetch-cfg.jsonc' # Run fastfetch with custom config
@@ -164,6 +164,7 @@ alias jjar='java -jar' # cacao
 alias ssctl='sudo systemctl' # Less typing more sudo rm -rf / --no-preserve-root
 alias ssdrsma='sudo systemctl daemon-reload && sudo mount -a' # remount shit
 alias hl='history | less' # h(istory) l(ess)
+alias fedora-anime-prepare='sudo dnf install @multimedia @sound-and-video ffmpeg-free gstreamer1-plugins-{bad-*,good-*,base} gstreamer1-plugin-openh264 gstreamer1-libav lame*' # Prepare a fedora system for watching japanese cartoons
 
 # }}}
 
