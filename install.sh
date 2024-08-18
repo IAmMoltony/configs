@@ -49,8 +49,10 @@ mkdir -p "$HOME"/.config/qutebrowser
 echo "Creating mpv config dir"
 mkdir -p "$HOME"/.config/mpv
 
+echo "Creating Git config dir"
+mkdir -p "$HOME"/.config/git
+
 cpcfg .bashrc
-cpcfg .gitconfig
 cpcfg .profile
 cpcfg .vimrc
 cpcfg .conkyrc
@@ -65,6 +67,7 @@ cpcfgdf qutebrowser.py .config/qutebrowser/config.py
 cpcfgdf obrc.xml .config/openbox/rc.xml
 cpcfgdf obautostart.sh .config/openbox/autostart.sh
 cpcfgdf mpvinput.conf .config/mpv/input.conf
+cpcfgdf .gitconfig .config/git/config
 
 echo "Setting up mpv config symlink"
 

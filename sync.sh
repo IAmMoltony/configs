@@ -13,7 +13,6 @@ cpcfgf() {
 mkdir .config/kitty -p
 
 cpcfg .bashrc
-cpcfg .gitconfig
 cpcfg .profile
 cpcfg .vimrc
 cpcfg .bash-configs/.bash_aliases
@@ -28,6 +27,7 @@ cpcfgf .config/i3/config i3cfg
 cpcfgf .config/openbox/rc.xml obrc.xml
 cpcfgf .config/openbox/autostart.sh obautostart.sh
 cpcfgf .config/mpv/input.conf mpvinput.conf
+cpcfgf .config/git/config .gitconfig
 
 echo "Success"
 
