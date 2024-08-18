@@ -852,6 +852,13 @@ bcd_or_nah() {
     fi
 }
 
+xdg_vars() {
+    echo "XDG_DATA_HOME = $XDG_DATA_HOME"
+    echo "XDG_STATE_HOME = $XDG_STATE_HOME"
+    echo "XDG_CACHE_HOME = $XDG_CACHE_HOME"
+    echo "XDG_CONFIG_HOME = $XDG_CONFIG_HOME"
+}
+
 # Bashrc post-init {{{
 
 bashrc-postinit() {
