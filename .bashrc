@@ -210,17 +210,6 @@ shopt -s checkwinsize # Check the window size (idk what this does)
 
 # }}}
 
-# WakaTime {{{
-
-wakatimesh="$HOME/dev/bash-wakatime/bash-wakatime.sh"
-
-if [ -f "$wakatimesh" ]; then
-    initmsg "wt"
-    source "$wakatimesh"
-fi
-
-# }}}
-
 # Inconveniences {{{
 
 initmsg "inc"
