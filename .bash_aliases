@@ -310,6 +310,8 @@ alias sdri='sudo dnf reinstall' # Reinstall package but "are you ok???" (Fed Ora
 alias sduy='sudo dnf upgrade -y' # Update packages (fedora)
 alias sdu='sudo dnf upgrade' # Update packages but don't think it's gonna let you off the hook so easily (Pandora)
 alias sdcp='sudo dnf clean packages' # Clean package cache (Fumofumo)
+alias sdgiy='sudo dnf group install -y' # Install a package group (Feora)
+alias sdgi='sudo dnf group install' # Install a package group. Make sure you do actually want it. (Dehors)
 
 # }}}
 
