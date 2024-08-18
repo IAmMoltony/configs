@@ -65,6 +65,7 @@ cd() {
 gstcfgs() {
     oldpwd="$(pwd)"
     builtin cd ~/configs || return
+    ./sync.sh
     git status
     builtin cd "$oldpwd" || return
 }
