@@ -407,7 +407,7 @@ mkecalias cfgsrdm ~/configs/README.md
 mkecalias gi ./.gitignore
 mkecalias sfu ~/savefiles/user.json
 mkecalias mpv ~/.config/mpv/mpv.conf
-mkecalias gcf ~/.gitconfig
+mkecalias gcf ~/.config/git/config
 mkecalias mpvi ~/.config/mpv/input.conf
 
 # }}}
