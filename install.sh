@@ -52,10 +52,12 @@ mkdir -p "$HOME"/.config/mpv
 echo "Creating Git config dir"
 mkdir -p "$HOME"/.config/git
 
+echo "Creating Conky config dir"
+mkdir -p "$HOME"/.config/conky
+
 cpcfg .bashrc
 cpcfg .profile
 cpcfg .vimrc
-cpcfg .conkyrc
 cpcfgd .bash_aliases .bash-configs
 cpcfgd .bash_functions .bash-configs
 cpcfgd kitty.conf .config/kitty
@@ -68,6 +70,7 @@ cpcfgdf obrc.xml .config/openbox/rc.xml
 cpcfgdf obautostart.sh .config/openbox/autostart.sh
 cpcfgdf mpvinput.conf .config/mpv/input.conf
 cpcfgdf .gitconfig .config/git/config
+cpcfgfg .conkyrc .config/conky/conkyrc
 
 echo "Setting up mpv config symlink"
 

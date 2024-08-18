@@ -18,7 +18,6 @@ cpcfg .vimrc
 cpcfg .bash-configs/.bash_aliases
 cpcfg .bash-configs/.bash_functions
 cpcfg .config/kitty/kitty.conf
-cpcfg .conkyrc
 cpcfg .config/melonDS/melonDS.ini
 cpcfg .config/compton/compton.conf
 cpcfg .config/bleachbit/bleachbit.ini
@@ -28,6 +27,7 @@ cpcfgf .config/openbox/rc.xml obrc.xml
 cpcfgf .config/openbox/autostart.sh obautostart.sh
 cpcfgf .config/mpv/input.conf mpvinput.conf
 cpcfgf .config/git/config .gitconfig
+cpcfgf .config/conky/conkyrc .conkyrc
 
 echo "Success"
 

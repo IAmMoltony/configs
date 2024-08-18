@@ -384,7 +384,7 @@ mkecalias cp ~/.custompath
 mkecalias cpath ~/.custompath
 mkecalias bf ~/.bash-configs/.bash_functions
 mkecalias vrc ~/.vimrc
-mkecalias crc ~/.conkyrc
+mkecalias crc ~/.config/conky/conkyrc
 mkecalias cs ~/configs/cronsync.sh
 mkecalias mssc ~/.mssc
 mkecalias prf ~/.profile
