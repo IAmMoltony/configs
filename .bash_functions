@@ -440,7 +440,7 @@ enablebchint() {
 
 # List TODOs in cfgs w/o .git
 todocfgs() {
-    grep --color --exclude-dir=.git -rnw ~/configs -e 'TODO'
+    grep --color --exclude-dir=.git -rn ~/configs -e "(?!')(?!\")TODO(?!')(?!\")"
 }
 
 # May the fourth be with you
@@ -609,7 +609,7 @@ grn2do() {
     if [ "$1" != "" ]; then
         dir="$1"
     fi
-    grep --color -rn "$dir" -e TODO
+    grep --color -rn "$dir" -e "(?!')(?!\")TODO(?!')(?!\")"
 }
 
 # Convert any file to a video

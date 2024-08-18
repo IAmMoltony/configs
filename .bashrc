@@ -79,6 +79,8 @@ export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export HISTFILE="${XDG_STATE_HOME}"/bash/history
 export ANDROID_USER_HOME="$XDG_DATA_HOME"/android
 
+mkdir -p "$XDG_STATE_HOME"/bash
+
 # }}}
 
 # Aliases and functions {{{
