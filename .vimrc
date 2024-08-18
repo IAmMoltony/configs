@@ -33,25 +33,40 @@ command! NumsOn set number
 " Bring some bash aliases to vim!
 command! Edtvrc tabnew ~/.vimrc
 command! Evrc e ~/.vimrc
+
 command! Relvrc source ~/.vimrc
 command! Rvrc source ~/.vimrc
+
 command! Edtbrc tabnew ~/.bashrc
 command! Ebrc e ~/.bashrc
+
 command! Edtba tabnew ~/configs/.bash_aliases
 command! Eba e ~/configs/.bash_aliases
+
+command! Edtuba tabnew ~/.config/bash-configs/useraliases
+command! Euba e ~/.config/bash-configs/useraliases
+
 command! Edtbf tabnew ~/configs/.bash_functions
 command! Ebf e ~/configs/.bash_functions
+
+command! Edtubf tabnew ~/.config/bash-configs/userfunctions
+command! Eubf e ~/.config/bash-configs/userfunctions
+
 command! Edtkc tabnew ~/.config/kitty/kitty.conf
 command! Ekc e ~/.config/kitty/kitty.conf
+
 command! Edti3 tabnew ~/.config/i3/config
 command! Ei3 e ~/.config/i3/config
+
 command! Edtpyreq tabnew ./requirements.txt
 command! Epyreq e ./requirements.txt
+
 command! Dnrun !dotnet run -v n
 command! Dnrunnb !dotnet run -v n --no-build
 command! Dnbuild !dotnet build -v n
 command! Dnbld !dotnet build -v n
 command! Dnfmt !dotnet format
+
 command! Care !love .
 command! Black !black %
 command! Pylint !pylint %

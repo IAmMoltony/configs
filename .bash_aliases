@@ -395,8 +395,8 @@ mkecalias bday ~/.bday
 mkecalias ffc ~/configs/fastfetch-cfg.jsonc
 mkecalias i3 ~/.config/i3/config
 mkecalias ct ~/.config/compton/compton.conf
-mkecalias uba ~/.config/bash-configs/.useraliases
-mkecalias ubf ~/.config/bash-configs/.userfunctions
+mkecalias uba ~/.config/bash-configs/useraliases
+mkecalias ubf ~/.config/bash-configs/userfunctions
 mkecalias pyreq ./requirements.txt
 mkecalias nsset ~/.local/share/nonoSharp/settings.json
 mkecalias sfrdm ~/savefiles/README.md
