@@ -37,10 +37,10 @@ command! Relvrc source ~/.vimrc
 command! Rvrc source ~/.vimrc
 command! Edtbrc tabnew ~/.bashrc
 command! Ebrc e ~/.bashrc
-command! Edtba tabnew ~/.bash-configs/.bash_aliases
-command! Eba e ~/.bash-configs/.bash_aliases
-command! Edtbf tabnew ~/.bash-configs/.bash_functions
-command! Ebf e ~/.bash-configs/.bash_functions
+command! Edtba tabnew ~/configs/.bash_aliases
+command! Eba e ~/configs/.bash_aliases
+command! Edtbf tabnew ~/configs/.bash_functions
+command! Ebf e ~/configs/.bash_functions
 command! Edtkc tabnew ~/.config/kitty/kitty.conf
 command! Ekc e ~/.config/kitty/kitty.conf
 command! Edti3 tabnew ~/.config/i3/config

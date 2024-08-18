@@ -31,8 +31,8 @@ alias md='mkdir' # DOS-inspired shortcut for mkdir
 alias rd='rmdir' # DOS-inspired shortcut for rmdir
 alias cls='echo "Tip: press C-l to clear."' # C-l
 alias reload-bashrc='source ~/.bashrc' # Reload BashRC
-alias reload-bashaliases='echo "Reloading aliases." && source ~/.bash-configs/.bash_aliases && echo "Done." && trap - ERR' # Reload Bash aliases
-alias reload-bashfuncs='echo "Reloading functions." && source ~/.bash-configs/.bash_functions && echo "Done." && trap - ERR' # Reload Bash functions
+alias reload-bashaliases='echo "Reloading aliases." && source ~/configs/.bash_aliases && echo "Done." && trap - ERR' # Reload Bash aliases
+alias reload-bashfuncs='echo "Reloading functions." && source ~/configs/.bash_functions && echo "Done." && trap - ERR' # Reload Bash functions
 alias lt='ls -lh --size -1 -S --classify' # ll + sort by size
 alias mnt="mount | awk -F ' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort" # Show mounted disks (no stuff like tmpfs or whatever)
 alias grephist='history | grep' # Search in comman history
@@ -338,17 +338,17 @@ alias svim='sudo vim' # Vim as superuser
 
 # Aliases for checking scripts using shellcheck {{{
 
-alias chkbf='shellcheck --color=always ~/.bash-configs/.bash_functions | less' # Shellcheck bash functions
-alias chkba='shellcheck --color=always ~/.bash-configs/.bash_aliases | less' # Shellcheck bash aliases
+alias chkbf='shellcheck --color=always ~/configs/bash_functions | less' # Shellcheck bash functions
+alias chkba='shellcheck --color=always ~/configs/bash_aliases | less' # Shellcheck bash aliases
 alias chkbrc='shellcheck --color=always ~/.bashrc | less' # Shellcheck bashrc
-alias chkbfnc='shellcheck ~/.bash-configs/.bash_functions | less' # Shellcheck bash functions (no color)
-alias chkbanc='shellcheck ~/.bash-configs/.bash_aliases | less' # Shellcheck bash aliases (no color)
+alias chkbfnc='shellcheck ~/configs/.bash_functions | less' # Shellcheck bash functions (no color)
+alias chkbanc='shellcheck ~/configs/.bash_aliases | less' # Shellcheck bash aliases (no color)
 alias chkbrcnc='shellcheck ~/.bashrc | less' # Shellcheck bashrc (no color)
-alias chkbfnp='shellcheck --color=always ~/.bash-configs/.bash_functions' # Shellcheck bash functions (no pager)
-alias chkbanp='shellcheck --color=always ~/.bash-configs/.bash_aliases' # Shellcheck bash aliases (no pager)
+alias chkbfnp='shellcheck --color=always ~/configs/.bash_functions' # Shellcheck bash functions (no pager)
+alias chkbanp='shellcheck --color=always ~/configs/.bash_aliases' # Shellcheck bash aliases (no pager)
 alias chkbrcnp='shellcheck --color=always ~/.bashrc' # Shellcheck bashrc (no pager)
-alias chkbfnpc='shellcheck ~/.bash-configs/.bash_functions' # Shellcheck bash functions (no pager, no color)
-alias chkbanpc='shellcheck ~/.bash-configs/.bash_aliases' # Shellcheck bash aliases (no pager, no color)
+alias chkbfnpc='shellcheck ~/configs/.bash_functions' # Shellcheck bash functions (no pager, no color)
+alias chkbanpc='shellcheck ~/configs/.bash_aliases' # Shellcheck bash aliases (no pager, no color)
 alias chkbrcnpc='shellcheck ~/.bashrc' # Shellcheck bashrc (no pager, no color)
 
 # }}}
@@ -379,10 +379,10 @@ fi
 # Edit-cat aliases {{{
 
 mkecalias brc ~/.bashrc
-mkecalias ba ~/.bash-configs/.bash_aliases
+mkecalias ba ~/configs/.bash_aliases
 mkecalias cp ~/.custompath
 mkecalias cpath ~/.custompath
-mkecalias bf ~/.bash-configs/.bash_functions
+mkecalias bf ~/configs/.bash_functions
 mkecalias vrc ~/.vimrc
 mkecalias crc ~/.config/conky/conkyrc
 mkecalias cs ~/configs/cronsync.sh
@@ -394,8 +394,8 @@ mkecalias bday ~/.bday
 mkecalias ffc ~/configs/fastfetch-cfg.jsonc
 mkecalias i3 ~/.config/i3/config
 mkecalias ct ~/.config/compton/compton.conf
-mkecalias uba ~/.bash-configs/.useraliases
-mkecalias ubf ~/.bash-configs/.userfunctions
+mkecalias uba ~/.config/bash-configs/.useraliases
+mkecalias ubf ~/.config/bash-configs/.userfunctions
 mkecalias pyreq ./requirements.txt
 mkecalias nsset ~/.local/share/nonoSharp/settings.json
 mkecalias sfrdm ~/savefiles/README.md
@@ -614,8 +614,13 @@ ubaerrorhdlr() {
 
 trap 'ubaerrorhdlr $LINENO' ERR
 
+# Migration from old user aliases location
 if [ -f "$HOME/.bash-configs/.useraliases" ]; then
-    source "$HOME/.bash-configs/.useraliases"
+    mv "$HOME/.bash-configs/.useraliases" "$HOME/.config/bash-configs/useraliases"
+fi
+
+if [ -f "$HOME/.config/bash-configs/useraliases" ]; then
+    source "$HOME/.config/bash-configs/useraliases"
 fi
 
 # }}}
