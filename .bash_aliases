@@ -164,7 +164,7 @@ alias jjar='java -jar' # cacao
 alias ssctl='sudo systemctl' # Less typing more sudo rm -rf / --no-preserve-root
 alias ssdrsma='sudo systemctl daemon-reload && sudo mount -a' # remount shit
 alias hl='history | less' # h(istory) l(ess)
-alias fedora-anime-prepare='sudo dnf install @multimedia @sound-and-video ffmpeg-free gstreamer1-plugins-{bad-*,good-*,base} gstreamer1-plugin-openh264 gstreamer1-libav lame*' # Prepare a fedora system for watching japanese cartoons
+alias fedora-anime-prepare='sudo dnf install -y @multimedia @sound-and-video ffmpeg-free gstreamer1-plugins-{bad-*,good-*,base} gstreamer1-plugin-openh264 gstreamer1-libav lame*' # Prepare a fedora system for watching japanese cartoons
 
 # }}}
 
