@@ -68,7 +68,7 @@ cpcfgdf obrc.xml .config/openbox/rc.xml
 cpcfgdf obautostart.sh .config/openbox/autostart.sh
 cpcfgdf mpvinput.conf .config/mpv/input.conf
 cpcfgdf .gitconfig .config/git/config
-cpcfgfg .conkyrc .config/conky/conkyrc
+cpcfgdf .conkyrc .config/conky/conkyrc
 
 echo "Setting up mpv config symlink"
 
