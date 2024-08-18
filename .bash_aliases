@@ -142,6 +142,7 @@ alias rmrsc='rm -f ~/.restartssincecleanup' # Remov e the restarts since cleanup
 alias grncfg='grep -rn $HOME/configs -e' # gren -rn in configs dir
 alias lsd='ls -d */' # Ls only dirs
 alias mtctl='~/configs/mathtestctl.py' # Math test control
+alias mctcl='mtctl' # Musspell
 alias dwpms='~/desktop-wallpaper/make-symlinks.sh' # Make desktop wallpaper symlinks
 alias please-change-my-wallpaper-right-now-ok='sudo systemctl start changewallpaper.service' # change wallpaper right now ok
 alias pshcfgssf='pshcfgs && pshsf' # push configs and savefiles
