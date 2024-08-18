@@ -15,8 +15,6 @@ mkdir .config/kitty -p
 cpcfg .bashrc
 cpcfg .profile
 cpcfg .vimrc
-cpcfg .bash-configs/.bash_aliases
-cpcfg .bash-configs/.bash_functions
 cpcfg .config/kitty/kitty.conf
 cpcfg .config/melonDS/melonDS.ini
 cpcfg .config/compton/compton.conf

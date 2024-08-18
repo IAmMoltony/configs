@@ -58,8 +58,6 @@ mkdir -p "$HOME"/.config/conky
 cpcfg .bashrc
 cpcfg .profile
 cpcfg .vimrc
-cpcfgd .bash_aliases .bash-configs
-cpcfgd .bash_functions .bash-configs
 cpcfgd kitty.conf .config/kitty
 cpcfgd compton.conf .config/compton
 cpcfgd melonDS.ini .config/melonDS

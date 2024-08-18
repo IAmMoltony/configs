@@ -82,15 +82,11 @@ export ANDROID_USER_HOME="$XDG_DATA_HOME"/android
 
 initmsg "fun" # kotlin moment
 
-if [ -f ~/.bash-configs/.bash_functions ]; then
-    . ~/.bash-configs/.bash_functions
-fi
+. ~/configs/.bash_functions
 
 initmsg "alias"
 
-if [ -f ~/.bash-configs/.bash_aliases ]; then
-    . ~/.bash-configs/.bash_aliases
-fi
+. ~/configs/.bash_aliases
 
 # BA and BF have their own error handler, this changes it
 # to the BashRC one
