@@ -10,7 +10,7 @@ cd $HOME/configs || {
     exit 3
 }
 
-echo "Running configs updater v1.2"
+echo "Running configs updater v1.2.1"
 
 fetch_error() {
     echo "Failed to fetch remote. Update canceled."
@@ -61,7 +61,7 @@ main() {
         updates_plural=""
     fi
 
-    echo "$num_new_commits update$updates_plural available:"
+    echo "$num_new_commits update$updates_plural available (listed newest to oldest):"
     echo "$new_commits"
 
     while true; do
