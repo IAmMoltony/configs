@@ -988,7 +988,7 @@ trap 'ubferrorhdlr $LINENO' ERR
 
 # Migration from old user functions location
 if [ -f "$HOME/.bash-configs/.userfunctions" ]; then
-    mv "$HOME/.bash-configs/.userfunctions" "$HOME/.config/bash-configs/userfunctions"
+    \mv "$HOME/.bash-configs/.userfunctions" "$HOME/.config/bash-configs/userfunctions"
 fi
 
 if [ -f "$HOME/.config/bash-configs/userfunctions" ]; then
