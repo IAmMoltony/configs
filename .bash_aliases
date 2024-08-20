@@ -410,6 +410,8 @@ mkecalias sfu ~/savefiles/user.json
 mkecalias mpv ~/.config/mpv/mpv.conf
 mkecalias gcf ~/.config/git/config
 mkecalias mpvi ~/.config/mpv/input.conf
+mkecalias mpvsc ~/configs/mpv-slowcomputer.conf
+mkecalias mpvfc ~/configs/mpv-fastcomputer.conf
 
 # }}}
 
