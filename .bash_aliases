@@ -287,7 +287,7 @@ alias sdgi='sudo dnf group install' # Install a package group. Make sure you do 
 
 # }}}
 
-# APT aliases (Debian/Ubuntu/The 10 million other distros based on these two)
+# APT aliases (Debian/Ubuntu/The 10 million other distros based on these two) {{{
 
 alias saiy='sudo apt install -y' # Install p
 alias sary='sudo apt remove -y' # Rm p
