@@ -29,75 +29,49 @@ alias mkdir='mkdir -v' # Create a directory (verbose)
 alias rmdir='rmdir -v' # Remove a directory (verbose)
 alias md='mkdir' # DOS-inspired shortcut for mkdir
 alias rd='rmdir' # DOS-inspired shortcut for rmdir
-alias cls='echo "Tip: press C-l to clear."' # C-l
+alias cls='echo "Tip: press C-l to clear."' # This used to be an alias for clear
 alias reload-bashrc='source ~/.bashrc' # Reload BashRC
 alias reload-bashaliases='echo "Reloading aliases." && source ~/configs/.bash_aliases && echo "Done." && trap - ERR' # Reload Bash aliases
 alias reload-bashfuncs='echo "Reloading functions." && source ~/configs/.bash_functions && echo "Done." && trap - ERR' # Reload Bash functions
-alias lt='ls -lh --size -1 -S --classify' # ll + sort by size
 alias mnt="mount | awk -F ' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort" # Show mounted disks (no stuff like tmpfs or whatever)
 alias grephist='history | grep' # Search in comman history
-alias lq='ls -tl -1' # List contents of dir, sort files by modification time and do a one-column display
-alias lqa='la -tl -1' # Same as lq but also show hidden files (including . and ..)
 alias cppb='rsync -ah --info=progress2' # Copy with a neat little progress par
 alias relbrc='reload-bashrc' # Short reload-bashrc alias
 alias relba='reload-bashaliases' # Short reload-bashaliases alias
 alias relbf='reload-bashfuncs' # Short reload-bashfuncs alias
 alias hd='hexdump -C' # Hexdump but pretty (the hd binary is not in every distro)
 alias mkaur='makepkg -si --noconfirm' # Make an AUR package
-alias mk='make' # make but short (i forgor about this one since `make` is short enough anyway)
 alias reboot='sudo reboot' # Reboot the computer
 alias freespc='df -h --total -x tmpfs -x efivarfs -x devtmpfs' # Check free space on the disk
 alias doxy='doxygen' # I'm too lazy to type 3 more characters
 alias h='history' # h(istory)
 alias shutdown='sudo shutdown now' # Shutdown NOW!
-alias syncrbrc='synccfgs && relbrc' # Sync configs, reload bashrc
 alias ysnc='yay -S --noconfirm' # Install AUR package with yay
 alias ysyu='yay -Syu --noconfirm' # Update AUR packages with yay
 alias yrnc='yay -R --noconfirm' # Say pai pai to AUR package
-alias htop='btop' # btop is objectovely better
-alias srbrc='syncrbrc' # Wait this exists??? omg i forgor tbh
-alias scfgs='synccfgs' # Sync configs but the short version for literally no reason
 alias math='bc -l' # Bring up a calculator
-alias weather='curl wttr.in/Shymkent' # View weather (for Shymkent)
-alias l.='ls -d .* --color=auto' # List only hidden files
 alias ghs='grephist' # grephist short edition
 alias ping='ping -c 5' # make ping stop after like 5 times that it pinged
 alias ln='ln -iv' # ln but yo need to confirm and also verboosey
 alias i-am-root='sudo -i' # i am root
-alias wget='wget -c' # Wget continue if stopped for whatever reason
 alias gaming='cdgam' # Go to folder with GAMING
 alias gaming-b='bcdgam' # gaming (builtin cd edition)
-alias syncpaipai='synccfgs && paipai' # Sync configs and say pai pai
-alias spaipai='syncpaipai' # Today's installment of Useless Aliases... Short version of `syncpaipai' !!!
-alias scfgsm='synccfgsm' # Short versoin alias thing ojgjo2joejfjojii243jrjoo2 2323oin23roin23r
-alias syncmrbrc='synccfgsm && relbrc' # Sync configs with message and rbrc TODO turn this into a function
-alias syncmrba='synccfgsm && relba' # Sync configs with message and rba TODO function
-alias syncmrbf='synccfgsm && relbf' # Sync configs with message and rbf TODO function
-alias syncmrbfba='synccfgsm && relbf && relba' # Sync configs with message, rbf and rba TODO function
-alias syncmrbabf='syncmrbfba' # Same as above but like (bf needs to be source before ba so same)
-alias syncmpaipai='synccfgsm && paipai' # Sync configs with message and paipai
-alias saiy='sudo apt install -y' # Install p
-alias sary='sudo apt remove -y' # Rm p
-alias saud='sudo apt update' # Upd ps
-alias saug='sudo apt upgrade' # Upg ps
 alias pshcfgspaipai='pshcfgs && paipai' # Push cfgs and paipia
-alias wine64='WINEPREFIX=~/.wine64 wine64' # Convenience: start Wine with the 64-bit prefix
-alias wine64cfg='WINEPREFIX=~/.wine64 winecfg' # Convenience 2: configure Wine with the 64-bit prefiix
+alias wine64='WINEPREFIX=~/.wine64 wine64' # Convenience: start Wine with the 64-bit prefix TODO xdg
+alias wine64cfg='WINEPREFIX=~/.wine64 winecfg' # Convenience 2: configure Wine with the 64-bit prefiix TODO xdg
 alias gaming-th='cdth' # touhou
 alias gaming-thu='cdthu' # Touhou utilities like thscorefileconveretr
-alias thprefix='export WINEPREFIX=$HOME/Games/TouhouShared'
+alias thprefix='export WINEPREFIX=$HOME/Games/TouhouShared' # Set current wine prefix to touhou prefix
 alias catlessbf='catbf | less' # catbf with pager
 alias dirfspraw='du --max-depth=1 -h --all' # Analyze free space in directory (no sort)
 alias dirfsp='dirfspraw | sort -h' # Analyze free space in directory
 alias diurfsp='dirfsp' # are yuru happy do yuru happy aikotoba honjitsu no dokidoki sutekina happy day hajimemashou chuu chuu chuu chuu chuu la la
 alias grn='grep -Irn' # Shortcut for grep -rn
-alias rmhsl='rm ~/configs/HourlySyncLogs -rf' # Remove hourly config sync logs
 alias rmun='find . -name "*.un~" -exec rm -f {} +' # Remove annoying Vim backup files
 alias rf='rm -rf' # h
 alias wine64tricks='WINEPREFIX=~/.wine64 winetricks' # Winetricks in 64-bit prefix
 alias thu='thunar' # Shorthand for thunar
 alias thubkmk='thu ~/Bookmarks &' # Start Thunar in the bookmarks folder
-alias grgpll='gr. && gpll' # Remove all local changes and pull
 alias restoreresolution='xrandr -s 1366x768' # Restore screen resolution
 alias care='love .' # Start love2d
 alias dlmus='~/Music/music-lib/download' # Download music
@@ -121,17 +95,10 @@ alias rba='relba' # Even less typing
 alias rbf='relbf' # Least typing
 alias paixorg='sudo pkill -9 Xorg' # kill xorg with ease
 alias xlogout='sudo pkill -u $USER' # Log out
-alias aptrepos='grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*' # List apt repos
 alias dfs='dirfsp' # less typing less hedayhce
-alias ls='ls -CF --color=auto' # ls but with the little asterisk afte rht executables and slash after folders and shit
-alias ll='\ls -alF --color=auto' # ls with the list thing
-alias la='ls -A --color=auto' # ls but show hidden
-alias l='ls' # me when the backwards compatibility
-alias lal='\ls -CFA --color=auto' # l and la combined
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias updrbrc='updcfgs && rbrc' # Update configs and then reload bashrc
 alias prettyjson='python -m json.tool' # Prettify json with a single, easy-to-remember command(tm)!
-alias gshwh='gshh' # In case i forgor
 alias areconf='autoreconf --verbose --install --force' # Autorceonf
 alias chx='chmod +x' # Too tired of chmod +x so i shorten it
 alias banger='sudo aplay /dev/mem' # PLAY THIS ABSOLUTE BANGER!!!
@@ -140,7 +107,6 @@ alias ncycfg='ncycfgs' # Num commits yesterday in configs (bruh edition)
 alias dfsp='dirfsp' # Dirfsp shorthand
 alias rmrsc='rm -f ~/.restartssincecleanup' # Remov e the restarts since cleanup file
 alias grncfg='grep -rn $HOME/configs -e' # gren -rn in configs dir
-alias lsd='ls -d */' # Ls only dirs
 alias mtctl='~/configs/mathtestctl.py' # Math test control
 alias mctcl='mtctl' # Musspell
 alias dwpms='~/desktop-wallpaper/make-symlinks.sh' # Make desktop wallpaper symlinks
@@ -151,7 +117,6 @@ alias sfabe='~/savefiles/autobackup.sh ENABLE' # Enable savefiles autobackup
 alias sfabd='~/savefiles/autobackup.sh DISABLE' # Disable savefiles autobackup
 alias echowinep='echo $WINEPREFIX' # Print the wineprefix to make sure im in the right one
 alias aliias='alias' # Alies
-alias debian-upgrade='sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y' # Update debian
 alias smd='sudo mkdir' # Create dir as superuser
 alias mntsdb='sudo mount /dev/sdb /mnt' # Mount sdb
 alias mntsdb1='sudo mount /dev/sdb1 /mnt' # Mount sdb1
@@ -160,7 +125,7 @@ alias ejsdb='sudo eject /dev/sdb' # eject sdb
 alias r.='cd $(readlink -m $(pwd))' # go to the real current directory like if ur in a directory thats a symlink
 alias clipfile='xclip -selection c <' # Copy file to clipboard
 alias sug='sudo update-grub' # Do you even KNOW how much time this saves???
-alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"' # XDG ninja suggested this
+alias wget='wget -c --hsts-file="$XDG_DATA_HOME/wget-hsts"' # XDG ninja suggested this
 alias adb='HOME="$XDG_DATA_HOME"/android adb' # adb but xdg
 alias badwifiwget='wget -c --tries=0 --retry-connrefused --timeout=2 --wait=1' # sauce: https://www.schmidp.com/2009/03/03/downloading-a-file-over-an-unstable-connection-with-wget/
 alias jjar='java -jar' # cacao
@@ -266,6 +231,7 @@ alias :G='git' # Git
 alias gpshpaipai='gpsh && paipai' # Git push pai pai
 alias gagcm='git add . && git commit -m' # Git add and commit
 alias gshh='git show HEAD' # Show head
+alias gshwh='gshh' # In case i forgor
 alias gshhnp='git --no-pager show HEAD' # Show head without pager
 alias gcaaem='git commit -a --allow-empty-message' # Commit with empty message
 alias glf='git ls-files' # List git files
@@ -276,6 +242,7 @@ alias gsw='git switch' # switch to some branch idk
 alias gswc='git switch -c' # Switch to some brach but like make it
 alias gadbch="git fetch -p && LC_ALL=C git branch -vv | grep ': gone]' | awk '{print \$1}' | xargs -r git branch -d" # Git auto delete branches
 alias gpshf='git push --force' # Pushpushpush
+alias grgpll='gr. && gpll' # Remove all local changes and pull
 
 # }}}
 
@@ -320,6 +287,17 @@ alias sdgi='sudo dnf group install' # Install a package group. Make sure you do 
 
 # }}}
 
+# APT aliases (Debian/Ubuntu/The 10 million other distros based on these two)
+
+alias saiy='sudo apt install -y' # Install p
+alias sary='sudo apt remove -y' # Rm p
+alias saud='sudo apt update' # Upd ps
+alias saug='sudo apt upgrade' # Upg ps
+alias aptrepos='grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*' # List apt repos
+alias debian-upgrade='sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y' # Update debian
+
+# }}}
+
 # Aliases related to vim in some way {{{
 
 alias v='vim' # vim (I don't use this one xdddd)
@@ -339,8 +317,8 @@ alias svim='sudo vim' # Vim as superuser
 
 # Aliases for checking scripts using shellcheck {{{
 
-alias chkbf='shellcheck --color=always ~/configs/bash_functions | less' # Shellcheck bash functions
-alias chkba='shellcheck --color=always ~/configs/bash_aliases | less' # Shellcheck bash aliases
+alias chkbf='shellcheck --color=always ~/configs/.bash_functions | less' # Shellcheck bash functions
+alias chkba='shellcheck --color=always ~/configs/.bash_aliases | less' # Shellcheck bash aliases
 alias chkbrc='shellcheck --color=always ~/.bashrc | less' # Shellcheck bashrc
 alias chkbfnc='shellcheck ~/configs/.bash_functions | less' # Shellcheck bash functions (no color)
 alias chkbanc='shellcheck ~/configs/.bash_aliases | less' # Shellcheck bash aliases (no color)
@@ -354,6 +332,38 @@ alias chkbrcnpc='shellcheck ~/.bashrc' # Shellcheck bashrc (no pager, no color)
 
 # }}}
 
+# ls variations {{{
+
+alias lt='ls -lh --size -1 -S --classify' # ll + sort by size
+alias lq='ls -tl -1' # List contents of dir, sort files by modification time and do a one-column display
+alias lqa='la -tl -1' # Same as lq but also show hidden files (including . and ..)
+alias l.='ls -d .* --color=auto' # List only hidden files
+alias ls='ls -CF --color=auto' # ls but with the little asterisk afte rht executables and slash after folders and shit
+alias ll='\ls -alF --color=auto' # ls with the list thing
+alias la='ls -A --color=auto' # ls but show hidden
+alias l='ls' # me when the backwards compatibility
+alias lal='\ls -CFA --color=auto' # l and la combined
+alias lsd='ls -d */' # Ls only dirs
+
+# }}}
+
+# Aliases for syncing configs {{{
+
+alias syncrbrc='synccfgs && relbrc' # Sync configs, reload bashrc
+alias srbrc='syncrbrc' # Wait this exists??? omg i forgor tbh
+alias scfgs='synccfgs' # Sync configs but the short version for literally no reason
+alias syncpaipai='synccfgs && paipai' # Sync configs and say pai pai
+alias spaipai='syncpaipai' # Today's installment of Useless Aliases... Short version of `syncpaipai' !!!
+alias scfgsm='synccfgsm' # Short versoin alias thing ojgjo2joejfjojii243jrjoo2 2323oin23roin23r
+alias syncmrbrc='synccfgsm && relbrc' # Sync configs with message and rbrc TODO turn this into a function
+alias syncmrba='synccfgsm && relba' # Sync configs with message and rba TODO function
+alias syncmrbf='synccfgsm && relbf' # Sync configs with message and rbf TODO function
+alias syncmrbfba='synccfgsm && relbf && relba' # Sync configs with message, rbf and rba TODO function
+alias syncmrbabf='syncmrbfba' # Same as above but like (bf needs to be source before ba so same)
+alias syncmpaipai='synccfgsm && paipai' # Sync configs with message and paipai
+
+# }}}
+
 # Conditional aliases {{{
 
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh" # Cool kitty ssh alias (kitty exclusive)
@@ -361,6 +371,11 @@ alias chkbrcnpc='shellcheck ~/.bashrc' # Shellcheck bashrc (no pager, no color)
 # if ~/.pipbsp is there, default pip to pipbsp
 if [ -f "$HOME/.pipbsp" ]; then
     alias pip='pipbsp'
+fi
+
+# if btop is installed, replace htop with btop
+if command -v btop >/dev/null 2>&1; then
+    alias htop='btop'
 fi
 
 # WSL aliases {{{

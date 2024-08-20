@@ -369,6 +369,7 @@ bdaycheck() {
 # Get a random currency sign
 randomcurrency() {
     # c stands for currencies
+    # TODO make this sorta functions more compacter
     c[0]="$"
     c[1]="₿"
     c[2]="¢"
@@ -384,7 +385,7 @@ randomcurrency() {
     c[12]="¥"
     size=${#c[@]}
     index=$(( RANDOM % size ))
-    echo ${c[$index]}
+    echo "${c[$index]}"
 }
 
 # i like trains
@@ -500,7 +501,7 @@ mathtest() {
     op[1]="-"
     numops=${#op[@]}
     operator=${op[$(( RANDOM % numops ))]}
-    realanswerwhichisdefinitelycorrect=$(( $a $operator $b ))
+    realanswerwhichisdefinitelycorrect=$(( $a "$operator" $b ))
     losercounter=0
     wrongcounter=0
     while true; do
@@ -970,7 +971,7 @@ bashrc-postinit() {
 
     stty echo
 
-    $HOME/configs/updater.sh
+    "$HOME"/configs/updater.sh
 
     rm-roll # this is done at the end in order to make sure that rm works always in init
 }
