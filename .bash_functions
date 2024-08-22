@@ -464,21 +464,9 @@ inconveniences() {
 # Random insult
 # I don't feel like swearing honestly
 random_insult() {
-    in[0]="big doofus"
-    in[1]="disappointment"
-    in[2]="failure"
-    in[3]="garbage truck"
-    in[4]="stupid"
-    in[5]="cabbagehead"
-    in[6]="silly goose"
-    in[7]="clown"
-    in[8]="potato brain"
-    in[9]="cirno"
-    in[10]="fricking lunatic"
-    in[11]="drongo"
-    numins=${#in[@]}
-    bruh=$(( RANDOM % numins ))
-    echo "${in[$bruh]}"
+    # thanks chatgpt for making this code shorter
+    local insults=("big doofus" "disappointment" "failure" "garbage truck" "stupid" "cabbagehead" "silly goose" "clown" "potato brain" "cirno" "fricking lunatic" "drongo")
+    echo "${insults[RANDOM % ${#insults[@]}]}"
 }
 
 # T or G?
