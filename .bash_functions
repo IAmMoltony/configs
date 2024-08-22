@@ -475,6 +475,7 @@ random_insult() {
     in[8]="potato brain"
     in[9]="cirno"
     in[10]="fricking lunatic"
+    in[11]="drongo"
     numins=${#in[@]}
     bruh=$(( RANDOM % numins ))
     echo "${in[$bruh]}"
