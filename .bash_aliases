@@ -576,6 +576,7 @@ mkcdiralias thu ~/Games/TouhouShared/drive_c/Touhou-Utilities
 mkcdiralias sld /etc/apt/sources.list.d
 mkcdiralias vm ~/VMs
 mkcdiralias mpv ~/.config/mpv
+mkcdiralias mpvs ~/.config/mpv/scripts
 mkcdiralias xdgcfg $XDG_CONFIG_HOME
 mkcdiralias xdgdat $XDG_DATA_HOME
 mkcdiralias xdgsta $XDG_STATE_HOME
