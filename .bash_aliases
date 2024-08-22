@@ -364,6 +364,36 @@ alias syncmpaipai='synccfgsm && paipai' # Sync configs with message and paipai
 
 # }}}
 
+# `quit' misspellings {{{
+
+alias quit='exit'
+alias qiut='exit'
+alias qtui='exit'
+alias quti='exit'
+alias qtiu='exit'
+alias tqui='exit'
+alias uiqt='exit'
+alias uqti='exit'
+alias qitu='exit'
+alias utqi='exit'
+alias itqu='exit'
+alias iqtu='exit'
+alias tqiu='exit'
+alias tuqi='exit'
+alias uitq='exit'
+alias tiuq='exit'
+alias iuqt='exit'
+alias tiqu='exit'
+alias tuiq='exit'
+alias utiq='exit'
+alias iqut='exit'
+alias uqit='exit'
+alias iutq='exit'
+alias ituq='exit'
+alias qui='exit'
+
+# }}}
+
 # Conditional aliases {{{
 
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh" # Cool kitty ssh alias (kitty exclusive)
@@ -443,56 +473,6 @@ mksuecalias ldm /etc/lightdm/lightdm.conf
 mksuecalias ldmg /etc/lightdm/lightdm-gtk-greeter.conf
 mksuecalias edg /etc/default/grub
 mksuecalias dnf /etc/dnf/dnf.conf
-
-# }}}
-
-# Exit aliases {{{
-
-mkexitalias paipai
-mkexitalias bye
-mkexitalias byebye
-mkexitalias baibai
-mkexitalias :q
-mkexitalias gtfo
-mkexitalias piapia
-mkexitalias pai
-mkexitalias eedtba
-mkexitalias rm-rol
-mkexitalias rn-roll
-mkexitalias exir
-mkexitalias pia
-mkexitalias qsqsqs
-mkexitalias sl
-
-# }}}
-
-# `quit' misspellings {{{
-
-mkexitalias quit
-mkexitalias qiut
-mkexitalias qtui
-mkexitalias quti
-mkexitalias qtiu
-mkexitalias tqui
-mkexitalias uiqt
-mkexitalias uqti
-mkexitalias qitu
-mkexitalias utqi
-mkexitalias itqu
-mkexitalias iqtu
-mkexitalias tqiu
-mkexitalias tuqi
-mkexitalias uitq
-mkexitalias tiuq
-mkexitalias iuqt
-mkexitalias tiqu
-mkexitalias tuiq
-mkexitalias utiq
-mkexitalias iqut
-mkexitalias uqit
-mkexitalias iutq
-mkexitalias ituq
-mkexitalias qui
 
 # }}}
 

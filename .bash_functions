@@ -242,12 +242,6 @@ gshhsf() {
 
 # Alias-making functions {{{
 
-# New exit alias
-mkexitalias() {
-    ((NumAutoBashAliases++))
-    alias "$1"='exit'
-}
-
 # Create new aliases for basic interaction with a directory
 # Argument 1: cd alias name (cdDIR) for cd'ing into the directory
 # Argument 2: ls alias name (lsDIR) for listing the contents of the directory
@@ -491,7 +485,7 @@ mathtest() {
     op[1]="-"
     numops=${#op[@]}
     operator=${op[$(( RANDOM % numops ))]}
-    realanswerwhichisdefinitelycorrect=$(( $a "$operator" $b ))
+    realanswerwhichisdefinitelycorrect=$(($a "$operator" $b))
     losercounter=0
     wrongcounter=0
     while true; do
@@ -722,7 +716,7 @@ rmlowspcthr() {
 
 # It doesn't actually break anything, it's just annoying.
 pipbsp() {
-    pip $@ --break-system-packages
+    pip "$@" --break-system-packages
 }
 
 # PS1 Git
@@ -766,7 +760,7 @@ fastfetchnag() {
 
 # Vim CoC install
 vimci() {
-    vim +"CocInstall $@"
+    vim +"CocInstall $*"
 }
 
 # PS1 command status
@@ -780,10 +774,10 @@ ps1cs() {
 
 # Git clone until succeed
 gclnus() {
-    echo "Running git clone with args: $@ until succeed"
+    echo "Running git clone with args: $* until succeed"
     echo "Press C-c to exit"
     while true; do
-        if ! git clone $@; then
+        if ! git clone "$@"; then
             echo "Failure try again"
             continue
         fi
@@ -943,14 +937,31 @@ bashrc-postinit() {
 
     if command -v "bc" > /dev/null 2>&1; then
         BashrcRuntime=$(echo "scale=3; ($BashrcEndTime - $BashrcStartTime) / 1" | bc -l)
-        echo "Shell initialized in $BashrcRuntime seconds with $BashrcNumErrors errors."
+        if [ "$BashrcNumErrors" == "0" ]; then
+            echo -e "Shell initialized in $BashrcRuntime seconds with \033[0;32m$BashrcNumErrors\033[0m errors."
+        else
+            echo -e "Shell initialized in $BashrcRuntime seconds with \033[0;31m$BashrcNumErrors\033[0m errors."
+        fi
     else
-        echo "Shell initialized with $BashrcNumErrors errors."
+        if [ "$BashrcNumErrors" == "0" ]; then
+            echo -e "Shell initialized with \033[0;32m$BashrcNumErrors\033[0m errors."
+        else
+            echo -e "Shell initialized with \033[0;31m$BashrcNumErrors\033[0m errors."
+        fi
     fi
 
     # TODO time BA and BF
-    echo "Aliases initialized with $BashAliasesNumErrors errors."
-    echo "Functions initialized with $BashFunctionsNumErrors errors."
+    if [ "$BashAliasesNumErrors" == "0" ]; then
+        echo -e "Aliases initialized with \033[0;32m$BashAliasesNumErrors\033[0m errors."
+    else
+        echo -e "Aliases initialized with \033[0;31m$BashAliasesNumErrors\033[0m errors."
+    fi
+
+    if [ "$BashFunctionsNumErrors" == "0" ]; then
+        echo -e "Functions initialized with \033[0;32m$BashFunctionsNumErrors\033[0m errors."
+    else
+        echo -e "Functions initialized with \033[0;31m$BashFunctionsNumErrors\033[0m errors."
+    fi
 
     # If bc isn't installed then tell
     if ! command -v "bc" > /dev/null 2>&1 && [ ! -f "$HOME/.idontwanttoinstallbc" ]; then
