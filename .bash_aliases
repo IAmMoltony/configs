@@ -284,6 +284,7 @@ alias sdu='sudo dnf upgrade' # Update packages but don't think it's gonna let yo
 alias sdcp='sudo dnf clean packages' # Clean package cache (Fumofumo)
 alias sdgiy='sudo dnf group install -y' # Install a package group (Feora)
 alias sdgi='sudo dnf group install' # Install a package group. Make sure you do actually want it. (Dehors)
+alias sdmc='sudo dnf makecache' # Make package cache (Insert word that sounds like "fedora" here)
 
 # }}}
 
