@@ -469,6 +469,7 @@ mksuecalias ldm /etc/lightdm/lightdm.conf
 mksuecalias ldmg /etc/lightdm/lightdm-gtk-greeter.conf
 mksuecalias edg /etc/default/grub
 mksuecalias dnf /etc/dnf/dnf.conf
+mksuecalias exp /etc/exports
 
 # }}}
 
