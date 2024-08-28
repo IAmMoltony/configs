@@ -323,9 +323,8 @@ alias svim='sudo vim' # Vim as superuser
 alias chkbf='shellcheck --color=always ~/configs/.bash_functions' # Shellcheck bash functions
 alias chkba='shellcheck --color=always ~/configs/.bash_aliases' # Shellcheck bash aliases
 alias chkbrc='shellcheck --color=always ~/.bashrc' # Shellcheck bashrc
-alias chkbfnc='shellcheck ~/configs/.bash_functions' # Shellcheck bash functions (no color)
-alias chkbanc='shellcheck ~/configs/.bash_aliases' # Shellcheck bash aliases (no color)
-alias chkbrcnc='shellcheck ~/.bashrc' # Shellcheck bashrc (no color)
+alias chkubf='shellcheck --color=always ~/.config/bash-configs/userfunctions' # Shellcheck user functions
+alias chkuba='shellcheck --color=always ~/.config/bash-configs/useraliases' # Shellcheck user aliases
 
 # }}}
 
