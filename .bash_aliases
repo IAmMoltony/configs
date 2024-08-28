@@ -134,6 +134,7 @@ alias ssdrsma='sudo systemctl daemon-reload && sudo mount -a' # remount shit
 alias hl='history | less' # h(istory) l(ess)
 alias xdg-ninja='~/dev/xdg-ninja/xdg-ninja.sh' # short
 alias mannp='man -P cat' # man no pager
+alias run-updater='~/configs/updater.sh' # Run configs updater
 
 # }}}
 
