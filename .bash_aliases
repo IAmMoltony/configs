@@ -37,6 +37,8 @@ alias mnt="mount | awk -F ' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | e
 alias grephist='history | grep' # Search in comman history
 alias cppb='rsync -h --info=progress2' # Copy with a neat little progress par
 alias scppb='sudo rsync -h --info=progress2' # Copy with a neat little progress par (SUPER USER EDITION)
+alias mvpb='cppb --remove-source-files' # Move with a neat little progress par
+alias smvpb='scppb --remove-source-files' # Move with a neat little progress par (SUPER USER EDITION)
 alias relbrc='reload-bashrc' # Short reload-bashrc alias
 alias relba='reload-bashaliases' # Short reload-bashaliases alias
 alias relbf='reload-bashfuncs' # Short reload-bashfuncs alias
