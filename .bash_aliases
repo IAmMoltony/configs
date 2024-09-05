@@ -36,6 +36,7 @@ alias reload-bashfuncs='echo "Reloading functions." && source ~/configs/.bash_fu
 alias mnt="mount | awk -F ' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort" # Show mounted disks (no stuff like tmpfs or whatever)
 alias grephist='history | grep' # Search in comman history
 alias cppb='rsync -ah --info=progress2' # Copy with a neat little progress par
+alias scppb='sudo rsync -ah --info=progress2' # Copy with a neat little progress par (SUPER USER EDITION)
 alias relbrc='reload-bashrc' # Short reload-bashrc alias
 alias relba='reload-bashaliases' # Short reload-bashaliases alias
 alias relbf='reload-bashfuncs' # Short reload-bashfuncs alias
