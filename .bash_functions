@@ -1,6 +1,8 @@
+#!/usr/bin/env bash
 # vim:foldmethod=marker
 # shellcheck shell=bash
 # Moltony's Bash Functions
+# Please do not remove the shebang. It is there so vim can understand that this is bash.
 
 # Error handling {{{
 
