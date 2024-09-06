@@ -80,14 +80,6 @@ pshcfgs() {
     builtin cd "$oldpwd" || return
 }
 
-# Push savefiles
-pshsf() {
-    oldpwd="$(pwd)"
-    builtin cd ~/savefiles || return
-    git push
-    builtin cd "$oldpwd" || return
-}
-
 # Sync configs with a message
 synccfgsm() {
     commitmsg="$1"
@@ -232,16 +224,6 @@ gshhcfgs() {
     gshhdir ~/configs
 }
 
-# Git log in savefiles
-glgsf() {
-    glgdir ~/savefiles
-}
-
-# Git show HEAD in savefiles
-gshhsf() {
-    gshhdir ~/savefiles
-}
-
 # Alias-making functions {{{
 
 # Create new aliases for basic interaction with a directory
@@ -316,26 +298,6 @@ cfg2dc() {
         git log --oneline --since=midnight
     fi
     builtin cd "$oldpwd" || return
-}
-
-# Today's commits in savefiles
-sf2dc() {
-    oldpwd="$(pwd)"
-    builtin cd ~/savefiles || return
-    if [ "$1" == "np" ]; then
-        git --no-pager log --oneline --since=midnight
-    else
-        git log --oneline --since=midnight
-    fi
-    builtin cd "$oldpwd" || return
-}
-
-# Today's commits in commits and savefiles
-cfgsf2dc() {
-    echo " Configs:"
-    cfg2dc np
-    echo " Savefiles:"
-    sf2dc np
 }
 
 # count files in dir
@@ -574,22 +536,6 @@ ncycfgs() {
     builtin cd "$oldpwd" || return
 }
 
-# Number of today's commits in savefiles
-nctsf() {
-    oldpwd="$(pwd)"
-    builtin cd ~/savefiles || return
-    git log --oneline --since=midnight | wc -l
-    builtin cd "$oldpwd" || return
-}
-
-# Number of yesterday's commits in savefiles
-ncysf() {
-    oldpwd="$(pwd)"
-    builtin cd ~/savefiles || return
-    git log --oneline --since=yesterday.midnight --until=midnight | wc -l
-    builtin cd "$oldpwd" || return
-}
-
 # grep todos
 grn2do() {
     dir="."
@@ -631,20 +577,6 @@ wtfis() {
     if ! alias "$1" 2>/dev/null && ! declare -f "$1" 2>/dev/null && ! which "$1" 2>/dev/null; then
         echo "I don't know!"
     fi
-}
-
-# count number of todays commits in: savefiles and configs
-nctcfgssf() {
-    echo "Configs: $(nctcfgs)"
-    echo "Savefiles: $(nctsf)"
-    echo "Total: $(( $(nctcfgs) + $(nctsf) ))"
-}
-
-# why do i have to make docs
-ncycfgssf() {
-    echo "Configs: $(ncycfgs)"
-    echo "Savefiles: $(ncysf)"
-    echo "Total: $(( $(ncycfgs) + $(ncysf) ))"
 }
 
 # Get configs version (commit hash and message)
@@ -889,29 +821,11 @@ bashrc-postinit() {
         fi
     fi
 
-    if [ -d "$HOME/savefiles" ]; then
-        nctc="$(nctcfgs)"
-        ncts="$(nctsf)"
-        if [ "$nctc" == "1" ] && [ "$ncts" != "1" ]; then
-            # 1 commit in configs, !1 commits in savefiles
-            echo "1 commit in configs, $ncts commits in savefiles."
-        elif [ "$nctc" != "1" ] && [ "$ncts" == "1" ]; then
-            # !1 commits in configs, 1 commit in savefiles
-            echo "$nctc commits in configs, 1 commit in savefiles."
-        elif [ "$nctc" == "1" ] && [ "$ncts" == "1" ]; then
-            # 1 commit in both
-            echo "1 commit in configs, 1 commit in savefiles."
-        else
-            # !1 commits in both
-            echo "$nctc commits in configs, $ncts commits in savefiles."
-        fi
+    nctc="$(nctcfgs)"
+    if [ "$nctc" == "1" ]; then
+        echo "1 commit in configs."
     else
-        nctc="$(nctcfgs)"
-        if [ "$nctc" == "1" ]; then
-            echo "1 commit in configs."
-        else
-            echo "$nctc commits in configs."
-        fi
+        echo "$nctc commits in configs."
     fi
 
     if [ "$PIPENV_ACTIVE" == "1" ]; then

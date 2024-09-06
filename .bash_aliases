@@ -114,10 +114,7 @@ alias mtctl='~/configs/mathtestctl.py' # Math test control
 alias mctcl='mtctl' # Musspell
 alias dwpms='~/desktop-wallpaper/make-symlinks.sh' # Make desktop wallpaper symlinks
 alias please-change-my-wallpaper-right-now-ok='sudo systemctl start changewallpaper.service' # change wallpaper right now ok
-alias pshcfgssf='pshcfgs && pshsf' # push configs and savefiles
 alias avgsizefiles="find './' -maxdepth 1 -ls | awk '{sum += \$7; n++;} END {printf \"%.0f\", sum/n;}' | numfmt --to=iec-i && echo && true" # get the average size of files rn
-alias sfabe='~/savefiles/autobackup.sh ENABLE' # Enable savefiles autobackup
-alias sfabd='~/savefiles/autobackup.sh DISABLE' # Disable savefiles autobackup
 alias echowinep='echo $WINEPREFIX' # Print the wineprefix to make sure im in the right one
 alias aliias='alias' # Alies
 alias smd='sudo mkdir' # Create dir as superuser
@@ -439,7 +436,6 @@ mkecalias uba ~/.config/bash-configs/useraliases
 mkecalias ubf ~/.config/bash-configs/userfunctions
 mkecalias pyreq ./requirements.txt
 mkecalias nsset ~/.local/share/nonoSharp/settings.json
-mkecalias sfrdm ~/savefiles/README.md
 mkecalias dwprdm ~/desktop-wallpaper/README.md
 mkecalias nt ~/.local/share/notes/Notes/Notes
 mkecalias rdm ./README.md
@@ -447,7 +443,6 @@ mkecalias obrc ~/.config/openbox/rc.xml
 mkecalias obas ~/.config/openbox/autostart.sh
 mkecalias cfgsrdm ~/configs/README.md
 mkecalias gi ./.gitignore
-mkecalias sfu ~/savefiles/user.json
 mkecalias mpv ~/.config/mpv/mpv.conf
 mkecalias gcf ~/.config/git/config
 mkecalias mpvi ~/.config/mpv/input.conf
@@ -534,7 +529,6 @@ mkcdiralias mcv ~/.minecraft/versions
 mkcdiralias mcmod ~/.minecraft/mods
 mkcdiralias mccr ~/.minecraft/crash-reports
 mkcdiralias mcshot ~/.minecraft/screenshots
-mkcdiralias sf ~/savefiles
 mkcdiralias dwp ~/desktop-wallpaper
 mkcdiralias car ~/Bookmarks/Cute\ anime\ art
 mkcdiralias dlgth ~/Bookmarks/Game\ downloads\ \(Touhou\)
