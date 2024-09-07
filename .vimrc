@@ -83,7 +83,7 @@ command! WQA wqa
 
 " Fix background
 set t_ut=
-_
+
 set backspace=indent,eol,start
 set autoread
 
