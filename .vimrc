@@ -1,5 +1,6 @@
 set nocompatible
 set number
+set relativenumber
 
 " Plugins
 
@@ -27,8 +28,8 @@ let g:mkdp_auto_start = 0
 colorscheme codedark
 
 " Nums on/off custom command
-command! NumsOff set nonumber
-command! NumsOn set number
+command! NumsOff set nonumber norelativenumber
+command! NumsOn set number relativenumber
 
 " Bring some bash aliases to vim!
 command! Edtvrc tabnew ~/.vimrc
@@ -82,7 +83,7 @@ command! WQA wqa
 
 " Fix background
 set t_ut=
-
+_
 set backspace=indent,eol,start
 set autoread
 
