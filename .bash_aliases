@@ -29,7 +29,6 @@ alias mkdir='mkdir -v' # Create a directory (verbose)
 alias rmdir='rmdir -v' # Remove a directory (verbose)
 alias md='mkdir' # DOS-inspired shortcut for mkdir
 alias rd='rmdir' # DOS-inspired shortcut for rmdir
-alias cls='echo "Tip: press C-l to clear."' # This used to be an alias for clear
 alias reload-bashrc='source ~/.bashrc' # Reload BashRC
 alias reload-bashaliases='echo "Reloading aliases." && source ~/configs/.bash_aliases && echo "Done." && trap - ERR' # Reload Bash aliases
 alias reload-bashfuncs='echo "Reloading functions." && source ~/configs/.bash_functions && echo "Done." && trap - ERR' # Reload Bash functions
