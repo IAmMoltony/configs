@@ -242,6 +242,7 @@ alias gswc='git switch -c' # Switch to some brach but like make it
 alias gadbch="git fetch -p && LC_ALL=C git branch -vv | grep ': gone]' | awk '{print \$1}' | xargs -r git branch -d" # Git auto delete branches
 alias gpshf='git push --force' # Pushpushpush
 alias grgpll='gr. && gpll' # Remove all local changes and pull
+alias gsw-='git switch -' # Switch to default branch
 
 # }}}
 
