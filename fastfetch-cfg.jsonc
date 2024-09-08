@@ -111,6 +111,10 @@
         {
             "type": "version",
             "key": "ver\t\t"
+        },
+        {
+            "type": "media",
+            "key": "playing\t\t"
         }
     ]
 }
