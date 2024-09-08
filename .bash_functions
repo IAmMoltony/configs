@@ -399,8 +399,7 @@ enablebchint() {
 
 # List TODOs in cfgs w/o .git
 todocfgs() {
-    echo "this function is currently broken i need to fix it"
-    grep --color --exclude-dir=.git -rn ~/configs -e "(?!')(?!\")TODO(?!')(?!\")"
+    grep --color --exclude-dir=.git -rn ~/configs -e "TODO"
 }
 
 # May the fourth be with you
