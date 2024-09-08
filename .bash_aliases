@@ -344,12 +344,7 @@ alias scfgs='synccfgs' # Sync configs but the short version for literally no rea
 alias syncpaipai='synccfgs && paipai' # Sync configs and say pai pai
 alias spaipai='syncpaipai' # Today's installment of Useless Aliases... Short version of `syncpaipai' !!!
 alias scfgsm='synccfgsm' # Short versoin alias thing ojgjo2joejfjojii243jrjoo2 2323oin23roin23r
-alias syncmrbrc='synccfgsm && relbrc' # Sync configs with message and rbrc TODO turn this into a function
-alias syncmrba='synccfgsm && relba' # Sync configs with message and rba TODO function
-alias syncmrbf='synccfgsm && relbf' # Sync configs with message and rbf TODO function
-alias syncmrbfba='synccfgsm && relbf && relba' # Sync configs with message, rbf and rba TODO function
 alias syncmrbabf='syncmrbfba' # Same as above but like (bf needs to be source before ba so same)
-alias syncmpaipai='synccfgsm && paipai' # Sync configs with message and paipai
 
 # }}}
 

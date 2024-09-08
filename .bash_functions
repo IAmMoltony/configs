@@ -104,6 +104,37 @@ synccfgsmdff() {
     synccfgsm "$@"
 }
 
+# Sync configs, then reload bashrc
+syncmrbrc() {
+    synccfgsm "$@"
+    source ~/.bashrc
+}
+
+# Sync configs, then reload aliases
+syncmrba() {
+    synccfgsm "$@"
+    source ~/configs/.bash_aliases
+}
+
+# Sync configs, then reload functions
+syncmrbf() {
+    synccfgsm "$@"
+    source ~/configs/.bash_functions
+}
+
+# Sync configs, then reload aliases and functions
+syncmrbfba() {
+    synccfgsm "$@"
+    source ~/configs/.bash_functions
+    source ~/configs/.bash_aliases
+}
+
+# Sync configs, then exit
+syncmpaipai() {
+    synccfgsm "$@"
+    exit
+}
+
 # Count all kinds of files in the current folder
 cntfiles() {
     dir="."
