@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# TODO use XDG data directories
-
 cpcfg() {
     echo "Installing $1"
     cp "$1" "$HOME"/"$1"
@@ -26,7 +24,7 @@ echo "Creating melonDS config dir"
 mkdir -p "$HOME"/.config/melonDS
 
 echo "Creating Bash config dir"
-mkdir -p "$HOME"/.bash-configs
+mkdir -p "$HOME"/.config/bash-configs
 
 echo "Creating Kitty config dir"
 mkdir -p "$HOME"/.config/kitty
