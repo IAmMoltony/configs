@@ -419,8 +419,6 @@ mkecalias cs ~/configs/cronsync.sh
 mkecalias mssc ~/.mssc
 mkecalias prf ~/.profile
 mkecalias kc ~/.config/kitty/kitty.conf
-mkecalias bd ~/.bday
-mkecalias bday ~/.bday
 mkecalias ffc ~/configs/fastfetch-cfg.jsonc
 mkecalias i3 ~/.config/i3/config
 mkecalias ct ~/.config/compton/compton.conf

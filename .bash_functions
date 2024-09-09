@@ -338,23 +338,6 @@ countfilesindir() {
     return $nff
 }
 
-# Birthday checker
-bdaycheck() {
-    if [ ! -f "$HOME/.bday" ]; then
-        return
-    fi
-
-    source ~/.bday
-    currentDate=$(LC_ALL=C date +"%b %d")
-    if [ "$currentDate" == "$BDAY_EARLY" ]; then
-        echo -e "Happy early birthday, \033[0;32m$USER!\033[0m"
-    elif [ "$currentDate" == "$BDAY_EXACT" ]; then
-        echo -e "Happy birthday, \033[0;32m$USER!\033[0m"
-    elif [ "$currentDate" == "$BDAY_LATE" ]; then
-        echo -e "Happy late birthday, \033[0;32m$USER!\033[0m"
-    fi
-}
-
 # Get a random currency sign
 randomcurrency() {
     # c stands for currencies
@@ -844,7 +827,7 @@ bashrc-postinit() {
 
     # show network usage if vnstat is a valid command
     if command -v vnstat >/dev/null 2>&1; then
-        net_usagi="$(vnstat --oneline | awk -F';' '{print $6}')"
+        net_usagi="$(vnstat --oneline | awk -F';' '{print $6}')" # うさぎ
         if [ -n "$net_usagi" ]; then
             # vnstat gave non-empty string
             echo -e "Network usage today: \033[0;33m$net_usagi\033[0m."
@@ -864,7 +847,6 @@ bashrc-postinit() {
 
     echo -e "\033[0;36m$(alias | wc -l)\033[0m aliases (\033[0;33m$NumAutoBashAliases\033[0m of which are automa$(t_or_g)ic) and \033[0;36m$(lsfuncs | wc -l)\033[0m functions are installed."
 
-    bdaycheck
     maythe4
     cirnoday
 
