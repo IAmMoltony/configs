@@ -238,6 +238,8 @@ alias gadbch="git fetch -p && LC_ALL=C git branch -vv | grep ': gone]' | awk '{p
 alias gpshf='git push --force' # Pushpushpush
 alias grgpll='gr. && gpll' # Remove all local changes and pull
 alias gsw-='git switch -' # Switch to default branch
+alias gplladbch='git pull && gadbch' # Pull and then auto-delete branches
+alias gsw-plladbch='git switch - && gplladbch' # Switch to main branch, then pull, then auto-delete branches
 
 # }}}
 
