@@ -837,6 +837,8 @@ bashrc-postinit() {
     nctc="$(nctcfgs)"
     if [ "$nctc" == "1" ]; then
         echo "1 commit in configs."
+    elif [ "$nctc" == "0" ]; then
+        echo "No commits in configs."
     else
         echo "$nctc commits in configs."
     fi
