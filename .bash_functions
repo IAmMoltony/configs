@@ -792,6 +792,24 @@ xdg_vars() {
     echo "XDG_CONFIG_HOME = $XDG_CONFIG_HOME"
 }
 
+gst() {
+    # so basically whenever i do some changes in git i tend to like run git statuds
+    # and gst was an alias for it
+    # and sometimes i run it in my home folder expecting it to git status the configs
+    # so this checks if im in home
+    # if i am it shows configs git status
+    # if not it does git status normally
+
+    if [ "$(pwd)" == "$HOME" ]; then
+        oldpwd="$(pwd)"
+        builtin cd "$HOME/configs" || return
+        git status "$@"
+        builtin cd "$oldpwd" || return
+    else
+        git status "$@"
+    fi
+}
+
 # Bashrc post-init {{{
 
 bashrc-postinit() {

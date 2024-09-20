@@ -183,7 +183,6 @@ alias gcam='git commit -am' # do commit
 alias gpsh='git push' # Push local changes to remote in git
 alias gpsht='git push --tags' # Push local tags to remote in git
 alias gpll='git pull' # Pull remote changes to local repo in git
-alias gst='git status' # Status of the repo (git)
 alias gftch='git fetch' # Fetch (git)
 alias gcln='git clone' # Clone a repo (git)
 alias gcfgg='git config --global' # Change/view global git configuration
