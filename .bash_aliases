@@ -246,6 +246,7 @@ alias gbchmf='git branch -M' # Force move/rename a branch
 alias gbchc='git branch -c' # Copy a branch
 alias gbchcf='git branch -C' # Force copy a branch
 alias gbcha='git branch -a' # List every branch ever
+alias glgolth='glgth --oneline' # git log tag..HEAD one line
 
 # }}}
 

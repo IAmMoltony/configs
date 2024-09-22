@@ -773,6 +773,7 @@ mpvcfgset() {
     ln -sf "${choices[$choice_minus_one]}" "$HOME"/.config/mpv/mpv.conf
 }
 
+# TODO write docs for other functions (i forgor???)
 cd_or_nah() {
     if [ -n "$1" ]; then
         cd "$1" || return
@@ -808,6 +809,10 @@ gst() {
     else
         git status "$@"
     fi
+}
+
+glgth() {
+    git log "$@"..HEAD
 }
 
 # Bashrc post-init {{{
