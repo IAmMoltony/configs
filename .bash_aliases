@@ -239,6 +239,13 @@ alias grgpll='gr. && gpll' # Remove all local changes and pull
 alias gsw-='git switch -' # Switch to default branch
 alias gplladbch='git pull && gadbch' # Pull and then auto-delete branches
 alias gsw-plladbch='git switch - && gplladbch' # Switch to main branch, then pull, then auto-delete branches
+alias gbchd='git branch -d' # Delete a branch
+alias gbchdf='git branch -D' # Force delete a branch
+alias gbchm='git branch -m' # Move/rename a branch
+alias gbchmf='git branch -M' # Force move/rename a branch
+alias gbchc='git branch -c' # Copy a branch
+alias gbchcf='git branch -C' # Force copy a branch
+alias gbcha='git branch -a' # List every branch ever
 
 # }}}
 
