@@ -773,19 +773,21 @@ mpvcfgset() {
     ln -sf "${choices[$choice_minus_one]}" "$HOME"/.config/mpv/mpv.conf
 }
 
-# TODO write docs for other functions (i forgor???)
+# cd if there's an argument
 cd_or_nah() {
     if [ -n "$1" ]; then
         cd "$1" || return
     fi
 }
 
+# cd_or_nah (builtin edition)
 bcd_or_nah() {
     if [ -n "$1" ]; then
         builtin cd "$1" || return
     fi
 }
 
+# Print the XDG variables (I forger often)
 xdg_vars() {
     echo "XDG_DATA_HOME = $XDG_DATA_HOME"
     echo "XDG_STATE_HOME = $XDG_STATE_HOME"
@@ -793,6 +795,7 @@ xdg_vars() {
     echo "XDG_CONFIG_HOME = $XDG_CONFIG_HOME"
 }
 
+# Git status.
 gst() {
     # so basically whenever i do some changes in git i tend to like run git statuds
     # and gst was an alias for it
@@ -811,6 +814,7 @@ gst() {
     fi
 }
 
+# Git log tag..HEAD
 glgth() {
     git log "$@"..HEAD
 }
