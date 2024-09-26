@@ -47,8 +47,8 @@ cancel_install() {
 main() {
     git fetch >/dev/null || fetch_error
 
-    branch_rn="$(git branch --show-current)"
-    new_commits="$(git log ${branch_rn}..origin/${branch_rn} --oneline)"
+    current_branch="$(git branch --show-current)"
+    new_commits="$(git log ${current_branch}..origin/${current_branch} --oneline)"
 
     if [ -z "$new_commits" ]; then
         echo "Already up-to-date."
