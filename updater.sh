@@ -5,7 +5,7 @@
 
 set -e
 
-cd $HOME/configs || {
+cd "$HOME"/configs || {
     echo "Directory $HOME/configs not found. Halting."
     exit 3
 }
@@ -48,7 +48,7 @@ main() {
     git fetch >/dev/null || fetch_error
 
     current_branch="$(git branch --show-current)"
-    new_commits="$(git log ${current_branch}..origin/${current_branch} --oneline)"
+    new_commits="$(git log "${current_branch}"..origin/"${current_branch}" --oneline)"
 
     if [ -z "$new_commits" ]; then
         echo "Already up-to-date."
