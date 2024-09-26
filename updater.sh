@@ -10,7 +10,7 @@ cd "$HOME"/configs || {
     exit 3
 }
 
-echo "Running configs updater v1.3"
+echo "Running configs updater v1.2.2"
 
 fetch_error() {
     echo "Failed to fetch remote. Update canceled."
