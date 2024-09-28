@@ -237,6 +237,14 @@ glgdir() {
     builtin cd "$oldpwd" || return
 }
 
+# Generic dir git log reverse
+glgrdir() {
+    oldpwd="$(pwd)"
+    builtin cd "$1" || return
+    git log --reverse
+    builtin cd "$oldpwd" || return
+}
+
 # Generic dir git show head
 gshhdir() {
     oldpwd="$(pwd)"
@@ -248,6 +256,11 @@ gshhdir() {
 # Git log in configs
 glgcfgs() {
     glgdir ~/configs
+}
+
+# Git log reverse in configs
+glgrcfgs() {
+    glgrdir ~/configs
 }
 
 # Git show HEAD in configs
