@@ -512,9 +512,6 @@ mkcdiralias wine ~/Bookmarks/Wine
 mkcdiralias wine64 ~/Bookmarks/Wine\ \(64-bit\)
 mkcdiralias winep ~/Bookmarks/Wine\ prefixes
 mkcdiralias book ~/Bookmarks/Books
-mkcdiralias wp ~/Bookmarks/Wallpaper
-mkcdiralias wpw ~/Bookmarks/Wallpaper\ \(working\ dir\)
-mkcdiralias dos ~/Bookmarks/DOS\ files
 mkcdiralias cam ~/Pictures/camera
 mkcdiralias cfg ~/configs
 mkcdiralias cfgs ~/configs
