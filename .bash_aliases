@@ -190,7 +190,6 @@ alias gcln='git clone' # Clone a repo (git)
 alias gcfgg='git config --global' # Change/view global git configuration
 alias gcfgun='gcfgg user.name' # Set user's name in git
 alias gcfgue='gcfgg user.email' # Ser user's email git
-alias gdff='git diff' # See the difference between local changes and last commit (git)
 alias gshw='git show' # Show differences between commit and a commit before that
 alias glogol='glog --oneline' # git log with each commit taking 1 line
 alias glgol='glogol' # Short glogol

@@ -828,6 +828,20 @@ gst() {
     fi
 }
 
+# Git diff.
+gdff() {
+    # same situation as gst
+
+    if [ "$(pwd)" == "$HOME" ]; then
+        oldpwd="$(pwd)"
+        builtin cd "$HOME/configs" || return
+        git diff "$@"
+        builtin cd "$oldpwd" || return
+    else
+        git diff "$@"
+    fi
+}
+
 # Git log tag..HEAD
 glgth() {
     git log "$@"..HEAD
