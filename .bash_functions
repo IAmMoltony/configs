@@ -911,23 +911,23 @@ bashrc-postinit() {
         BashAliasesRuntime=$(echo "scale=3; ($BashAliasesEndTime - $BashAliasesStartTime) / 1" | bc -l)
         BashFunctionsRuntime=$(echo "scale=3; ($BashFunctionsEndTime - $BashFunctionsStartTime) / 1" | bc -l)
 
+        RCErrorColor="\033[0;31m"
+        AliasesErrorColor="\033[0;31m"
+        FunctionsErrorColor="\033[0;31m"
+
         if [ "$BashrcNumErrors" == "0" ]; then
-            echo -e "Shell initialized in $BashrcRuntime seconds with \033[0;32m$BashrcNumErrors\033[0m errors."
-        else
-            echo -e "Shell initialized in $BashrcRuntime seconds with \033[0;31m$BashrcNumErrors\033[0m errors."
+            RCErrorColor="\033[0;32m"
         fi
-
         if [ "$BashAliasesNumErrors" == "0" ]; then
-            echo -e "Aliases initialized in $BashAliasesRuntime seconds with \033[0;32m$BashAliasesNumErrors\033[0m errors."
-        else
-            echo -e "Aliases initialized in $BashAliasesRuntime seconds with \033[0;31m$BashAliasesNumErrors\033[0m errors."
+            AliasesErrorColor="\033[0;32m"
+        fi
+        if [ "$BashFunctionsNumErrors" == "0" ]; then
+            FunctionsErrorColor="\033[0;32m"
         fi
 
-        if [ "$BashFunctionsNumErrors" == "0" ]; then
-            echo -e "Functions initialized in $BashFunctionsRuntime seconds with \033[0;32m$BashFunctionsNumErrors\033[0m errors."
-        else
-            echo -e "Functions initialized in $BashFunctionsRuntime seconds with \033[0;31m$BashFunctionsNumErrors\033[0m errors."
-        fi
+        echo -e "Shell initialized in $BashrcRuntime seconds with $RCErrorColor$BashrcNumErrors\033[0m errors."
+        echo -e "Aliases initialized in $BashAliasesRuntime seconds with $AliasesErrorColor$BashAliasesNumErrors\033[0m errors."
+        echo -e "Functions initialized in $BashFunctionsRuntime seconds with $FunctionsErrorColor$BashFunctionsNumErrors\033[0m errors."
     else
         if [ "$BashrcNumErrors" == "0" ]; then
             echo -e "Shell initialized with \033[0;32m$BashrcNumErrors\033[0m errors."
