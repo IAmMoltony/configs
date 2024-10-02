@@ -842,6 +842,20 @@ gdff() {
     fi
 }
 
+# Git log.
+glg() {
+    # ok
+
+    if [ "$(pwd)" == "$HOME" ]; then
+        oldpwd="$(pwd)"
+        builtin cd "$HOME/configs" || return
+        git log "$@"
+        builtin cd "$oldpwd" || return
+    else
+        git log "$@"
+    fi
+}
+
 # Git log tag..HEAD
 glgth() {
     git log "$@"..HEAD

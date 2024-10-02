@@ -174,7 +174,6 @@ alias plsh='gpllsh' # Pl'n'sh
 alias cdgr='cd `git rev-parse --show-toplevel`' # Go to root of git repository
 alias glog='git log' # Git log shortcut
 alias gloga='git log --all' # git log shortcut for all branches
-alias glg='glog' # glog but without the o
 alias glga='gloga' # gloga w/o o
 alias todayscommits='glog --oneline --since=midnight' # Show all commits starting from midnight
 alias numcommits='glog --oneline | wc -l' # Count total number of commits in the repo
