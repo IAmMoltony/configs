@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # vim:foldmethod=marker
 # shellcheck shell=bash
 # Moltony's Bash Functions
