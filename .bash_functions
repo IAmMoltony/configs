@@ -1,8 +1,6 @@
-#!/usr/bin/env bash
 # vim:foldmethod=marker
 # shellcheck shell=bash
 # Moltony's Bash Functions
-# Please do not remove the shebang. It is there so vim can understand that this is bash.
 
 # Error handling {{{
 
@@ -908,6 +906,7 @@ bashrc-postinit() {
     if command -v "bc" > /dev/null 2>&1; then
         BashrcRuntime=$(echo "scale=3; ($BashrcEndTime - $BashrcStartTime) / 1" | bc -l)
         BashAliasesRuntime=$(echo "scale=3; ($BashAliasesEndTime - $BashAliasesStartTime) / 1" | bc -l)
+
         if [ "$BashrcNumErrors" == "0" ]; then
             echo -e "Shell initialized in $BashrcRuntime seconds with \033[0;32m$BashrcNumErrors\033[0m errors."
         else
