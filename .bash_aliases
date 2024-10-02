@@ -3,6 +3,8 @@
 # shellcheck disable=SC2142
 # Moltony's Bash Aliases
 
+BashAliasesStartTime=$(date +%s.%N)
+
 # Error handling {{{
 
 BashAliasesNumErrors=0
@@ -614,3 +616,5 @@ if [ -f "$HOME/.config/bash-configs/useraliases" ]; then
 fi
 
 # }}}
+
+BashAliasesEndTime=$(date +%s.%N)

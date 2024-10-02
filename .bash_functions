@@ -907,10 +907,17 @@ bashrc-postinit() {
 
     if command -v "bc" > /dev/null 2>&1; then
         BashrcRuntime=$(echo "scale=3; ($BashrcEndTime - $BashrcStartTime) / 1" | bc -l)
+        BashAliasesRuntime=$(echo "scale=3; ($BashAliasesEndTime - $BashAliasesStartTime) / 1" | bc -l)
         if [ "$BashrcNumErrors" == "0" ]; then
             echo -e "Shell initialized in $BashrcRuntime seconds with \033[0;32m$BashrcNumErrors\033[0m errors."
         else
             echo -e "Shell initialized in $BashrcRuntime seconds with \033[0;31m$BashrcNumErrors\033[0m errors."
+        fi
+
+        if [ "$BashAliasesNumErrors" == "0" ]; then
+            echo -e "Aliases initialized in $BashAliasesRuntime seconds with \033[0;32m$BashAliasesNumErrors\033[0m errors."
+        else
+            echo -e "Aliases initialized in $BashAliasesRuntime seconds with \033[0;31m$BashAliasesNumErrors\033[0m errors."
         fi
     else
         if [ "$BashrcNumErrors" == "0" ]; then
@@ -918,13 +925,12 @@ bashrc-postinit() {
         else
             echo -e "Shell initialized with \033[0;31m$BashrcNumErrors\033[0m errors."
         fi
-    fi
 
-    # TODO time BA and BF
-    if [ "$BashAliasesNumErrors" == "0" ]; then
-        echo -e "Aliases initialized with \033[0;32m$BashAliasesNumErrors\033[0m errors."
-    else
-        echo -e "Aliases initialized with \033[0;31m$BashAliasesNumErrors\033[0m errors."
+        if [ "$BashAliasesNumErrors" == "0" ]; then
+            echo -e "Aliases initialized with \033[0;32m$BashAliasesNumErrors\033[0m errors."
+        else
+            echo -e "Aliases initialized with \033[0;31m$BashAliasesNumErrors\033[0m errors."
+        fi
     fi
 
     if [ "$BashFunctionsNumErrors" == "0" ]; then
