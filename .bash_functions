@@ -3,6 +3,8 @@
 # shellcheck shell=bash
 # Moltony's Bash Functions
 
+BashFunctionsStartTime=$(date +%s.%N)
+
 # Error handling {{{
 
 BashFunctionsNumErrors=0
@@ -907,6 +909,7 @@ bashrc-postinit() {
     if command -v "bc" > /dev/null 2>&1; then
         BashrcRuntime=$(echo "scale=3; ($BashrcEndTime - $BashrcStartTime) / 1" | bc -l)
         BashAliasesRuntime=$(echo "scale=3; ($BashAliasesEndTime - $BashAliasesStartTime) / 1" | bc -l)
+        BashFunctionsRuntime=$(echo "scale=3; ($BashFunctionsEndTime - $BashFunctionsStartTime) / 1" | bc -l)
 
         if [ "$BashrcNumErrors" == "0" ]; then
             echo -e "Shell initialized in $BashrcRuntime seconds with \033[0;32m$BashrcNumErrors\033[0m errors."
@@ -918,6 +921,12 @@ bashrc-postinit() {
             echo -e "Aliases initialized in $BashAliasesRuntime seconds with \033[0;32m$BashAliasesNumErrors\033[0m errors."
         else
             echo -e "Aliases initialized in $BashAliasesRuntime seconds with \033[0;31m$BashAliasesNumErrors\033[0m errors."
+        fi
+
+        if [ "$BashFunctionsNumErrors" == "0" ]; then
+            echo -e "Functions initialized in $BashFunctionsRuntime seconds with \033[0;32m$BashFunctionsNumErrors\033[0m errors."
+        else
+            echo -e "Functions initialized in $BashFunctionsRuntime seconds with \033[0;31m$BashFunctionsNumErrors\033[0m errors."
         fi
     else
         if [ "$BashrcNumErrors" == "0" ]; then
@@ -931,12 +940,12 @@ bashrc-postinit() {
         else
             echo -e "Aliases initialized with \033[0;31m$BashAliasesNumErrors\033[0m errors."
         fi
-    fi
 
-    if [ "$BashFunctionsNumErrors" == "0" ]; then
-        echo -e "Functions initialized with \033[0;32m$BashFunctionsNumErrors\033[0m errors."
-    else
-        echo -e "Functions initialized with \033[0;31m$BashFunctionsNumErrors\033[0m errors."
+        if [ "$BashFunctionsNumErrors" == "0" ]; then
+            echo -e "Functions initialized with \033[0;32m$BashFunctionsNumErrors\033[0m errors."
+        else
+            echo -e "Functions initialized with \033[0;31m$BashFunctionsNumErrors\033[0m errors."
+        fi
     fi
 
     # If bc isn't installed then tell
@@ -977,3 +986,4 @@ fi
 
 # }}}
 
+BashFunctionsEndTime=$(date +%s.%N)
