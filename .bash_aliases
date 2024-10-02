@@ -115,7 +115,7 @@ alias avgsizefiles="find './' -maxdepth 1 -ls | awk '{sum += \$7; n++;} END {pri
 alias echowinep='echo $WINEPREFIX' # Print the wineprefix to make sure im in the right one
 alias aliias='alias' # Alies
 alias smd='sudo mkdir' # Create dir as superuser
-alias r.='cd $(readlink -m $(pwd))' # go to the real current directory like if ur in a directory thats a symlink
+alias r.='cd "$(readlink -m "$(pwd)")"' # go to the real current directory like if ur in a directory thats a symlink
 alias clipfile='xclip -selection c <' # Copy file to clipboard
 alias sug='sudo update-grub' # Do you even KNOW how much time this saves???
 alias wget='wget -c --hsts-file="$XDG_DATA_HOME/wget-hsts"' # XDG ninja suggested this
