@@ -130,6 +130,7 @@ alias mannp='man -P cat' # man no pager
 alias run-updater='~/configs/updater.sh' # Run configs updater
 alias sefsa='sudo exportfs -a' # Network file system moment
 alias srd='sudo rmdir' # Remove dir as superuser
+alias mdp='mkdir -p' # ok
 
 # }}}
 
