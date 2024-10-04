@@ -11,16 +11,14 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tomasiser/vim-code-dark'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-sleuth'
 
 call plug#end()
 
 filetype plugin indent on
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
 syntax on
 set smartindent
+set autoindent
 
 let g:mkdp_auto_start = 0
 
