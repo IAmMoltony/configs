@@ -19,6 +19,8 @@ filetype plugin indent on
 syntax on
 set smartindent
 set autoindent
+set tabstop=4
+set expandtab
 
 let g:mkdp_auto_start = 0
 
