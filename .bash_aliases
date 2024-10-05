@@ -3,7 +3,7 @@
 # shellcheck disable=SC2142
 # Moltony's Bash Aliases
 
-BashAliasesStartTime=$(date +%s.%N)
+export BashAliasesStartTime=$(date +%s.%N)
 
 # Error handling {{{
 
@@ -619,4 +619,4 @@ fi
 
 # }}}
 
-BashAliasesEndTime=$(date +%s.%N)
+export BashAliasesEndTime=$(date +%s.%N)
