@@ -281,7 +281,7 @@ gshhcfgs() {
 # Argument 7: la alias name (laDIR) for listing the contents of the directory with hidden files
 # Argument 8: the directory
 mkdiralias() {
-    ((NumAutoBashAliases += 7))
+    ((NumAutoBashAliases += 8))
     alias "$1"="cd \"$8\" && cd_or_nah"
     alias "b$1"="builtin cd \"$8\" && bcd_or_nah"
     alias "$2"="ls \"$8\""
