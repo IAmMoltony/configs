@@ -449,6 +449,7 @@ mkecalias mpvi ~/.config/mpv/input.conf
 mkecalias mpvsc ~/configs/mpv-slowcomputer.conf
 mkecalias mpvfc ~/configs/mpv-fastcomputer.conf
 mkecalias gitcredentials ~/.git-credentials # the reason this alias has such a long name is because it's not meant to be used often and accident-proof
+mkecalias cml ./CMakeLists.txt
 
 # }}}
 
