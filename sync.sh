@@ -19,6 +19,7 @@ cpcfg .config/kitty/kitty.conf
 cpcfg .config/melonDS/melonDS.ini
 cpcfg .config/compton/compton.conf
 cpcfg .config/bleachbit/bleachbit.ini
+cpcfg .config/gdb/gdbinit
 cpcfgf .config/qutebrowser/config.py qutebrowser.py
 cpcfgf .config/i3/config i3cfg
 cpcfgf .config/openbox/rc.xml obrc.xml

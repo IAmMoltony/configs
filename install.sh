@@ -53,6 +53,9 @@ mkdir -p "$HOME"/.config/git
 echo "Creating Conky config dir"
 mkdir -p "$HOME"/.config/conky
 
+echo "Creating GDB config dir"
+mkdir -p "$HOME"/.config/gdb
+
 cpcfg .bashrc
 cpcfg .profile
 cpcfg .vimrc
@@ -60,6 +63,7 @@ cpcfgd kitty.conf .config/kitty
 cpcfgd compton.conf .config/compton
 cpcfgd melonDS.ini .config/melonDS
 cpcfgd bleachbit.ini .config/bleachbit
+cpcfgd gdbinit .config/gdb
 cpcfgdf i3cfg .config/i3/config
 cpcfgdf qutebrowser.py .config/qutebrowser/config.py
 cpcfgdf obrc.xml .config/openbox/rc.xml
