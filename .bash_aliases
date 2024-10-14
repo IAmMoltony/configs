@@ -131,6 +131,8 @@ alias run-updater='~/configs/updater.sh' # Run configs updater
 alias sefsa='sudo exportfs -a' # Network file system moment
 alias srd='sudo rmdir' # Remove dir as superuser
 alias mdp='mkdir -p' # ok
+alias cmb.='cmake --build .' # build here
+alias cmcb.='cmake --build . --target clean && cmake --build .' # clean then build here
 
 # }}}
 
