@@ -133,6 +133,9 @@ alias srd='sudo rmdir' # Remove dir as superuser
 alias mdp='mkdir -p' # ok
 alias cmb.='cmake --build .' # build here
 alias cmcb.='cmake --build . --target clean && cmake --build .' # clean then build here
+alias grepba='grep ~/configs/.bash_aliases -n -e' # grep bash aliases
+alias grepbf='grep ~/configs/.bash_functions -n -e' # grep bash functions
+alias grepbrc='grep ~/.bashrc -n -e' # grep bashrc
 
 # }}}
 
