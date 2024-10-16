@@ -136,6 +136,7 @@ alias cmcb.='cmake --build . --target clean && cmake --build .' # clean then bui
 alias grepba='grep ~/configs/.bash_aliases -n -e' # grep bash aliases
 alias grepbf='grep ~/configs/.bash_functions -n -e' # grep bash functions
 alias grepbrc='grep ~/.bashrc -n -e' # grep bashrc
+alias who-the-HELL-is-using-my-wifi='sudo nethogs' # who the HELL is using my wifi??????
 
 # }}}
 
