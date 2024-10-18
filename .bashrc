@@ -148,7 +148,6 @@ PS2="ok and? "
 if [ -f ~/.custompath ]; then
     initmsg "cp"
     # TODO function for reloading custom path at will
-    # TODO symlink bashrc??? like make it an option at least (why is this todo here out of all places)
     . ~/.custompath
     export PATH="$PATH:$CUSTOMPATH"
 fi
