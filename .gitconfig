@@ -2,7 +2,7 @@
 	name = IAmMoltony
 	email = koronavirusnyj@gmail.com
 [credential]
-	helper = libsecret
+	helper = store
 [credentials]
 	helper = store
 [merge]
