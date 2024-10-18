@@ -31,10 +31,11 @@ cpcfgf .config/conky/conkyrc .conkyrc
 echo "Success"
 
 changed_files="$(git ls-files -m)"
+changed_files_pad="$(echo "$changed_files" | sed 's/^/ /')"
 
 if [ -z "$changed_files" ]; then
     echo "No changed files."
 else
     echo "Changed files:"
-    echo "$changed_files"
+    echo "$changed_files_pad"
 fi
