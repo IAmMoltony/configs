@@ -857,7 +857,7 @@ glgth() {
 
 # random sudo prompt
 randomsudoprompt() {
-    local prompts=("enter ur password pretty please $USER chan (i will not tell anyone uwu): " "Quick! I don't have much time! Type in your password!" "I am once again asking for your password. " "Ehmm what was your password again?.. " "ton mot de passe: " "Permission denied... unless you tell me your password. " "You know the deal $USER. " "Super user do but only after you type your password. " "FREEZE!! Password NOW! " "go ahead put it in " "Enter your password or get fanum taxed: ") # had fun with this one
+    local prompts=("enter ur password pretty please $USER chan (i will not tell anyone uwu): " "Quick! I don't have much time! Type in your password!" "I am once again asking for your password. " "Ehmm what was your password again?.. " "ton mot de passe: " "Permission denied... unless you tell me your password. " "You know the deal $USER. " "Super user do but only after you type your password. " "FREEZE!! Password NOW! " "go ahead put it in " "Enter your password or get fanum taxed: " "rizz me up with ur password " "[sudo] password for your heart: ") # had fun with this one
     echo "${prompts[RANDOM % ${#prompts[@]}]}"
 }
 
