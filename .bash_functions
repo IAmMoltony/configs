@@ -354,8 +354,22 @@ countfilesindir() {
 
 # Get a random currency sign
 randomcurrency() {
-    local currencies=("$", "₿", "¢", "֏", "€", "₴", "₱", "£", "₽", "₹", "₸", "₩", "¥")
-    echo "${currencies[RANDOM % ${#currencies[@]}]}"
+    c[0]="$"
+    c[1]="₿"
+    c[2]="¢"
+    c[3]="֏"
+    c[4]="€"
+    c[5]="₴"
+    c[6]="₱"
+    c[7]="£"
+    c[8]="₽"
+    c[9]="₹"
+    c[10]="₸"
+    c[11]="₩"
+    c[12]="¥"
+    n=${#c[@]}
+    i=$(( RANDOM % n ))
+    echo "${c[$i]}"
 }
 
 # i like trains
@@ -446,7 +460,7 @@ random_insult() {
 # T or G?
 t_or_g() {
     local tg=("t", "t", "t", "t", "t", "g")
-    echo "${tg[RANDOM % ${#th[@]}]}"
+    echo "${tg[RANDOM % ${#tg[@]}]}"
 }
 
 # Math test~!
