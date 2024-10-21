@@ -354,28 +354,17 @@ countfilesindir() {
 
 # Get a random currency sign
 randomcurrency() {
-    # c stands for currencies
-    # TODO make this sorta functions more compacter
-    c[0]="$"
-    c[1]="₿"
-    c[2]="¢"
-    c[3]="֏"
-    c[4]="€"
-    c[5]="₴"
-    c[6]="₱"
-    c[7]="£"
-    c[8]="₽"
-    c[9]="₹"
-    c[10]="₸"
-    c[11]="₩"
-    c[12]="¥"
-    size=${#c[@]}
-    index=$(( RANDOM % size ))
-    echo "${c[$index]}"
+    local currencies=("$", "₿", "¢", "֏", "€", "₴", "₱", "£", "₽", "₹", "₸", "₩", "¥")
+    echo "${currencies[RANDOM % ${#currencies[@]}]}"
 }
 
 # i like trains
 paravozik() {
+    if ! command -v "sl" >/dev/null 2>&1; then
+        echo "Aww, you don't have sl installed."
+        return 1
+    fi
+
     while true; do
         \sl
     done
@@ -456,15 +445,8 @@ random_insult() {
 
 # T or G?
 t_or_g() {
-    tg[0]="t"
-    tg[1]="t"
-    tg[2]="t"
-    tg[3]="t"
-    tg[4]="t"
-    tg[5]="g"
-    numtgs=${#tg[@]}
-    egg=$(( RANDOM % numtgs ))
-    echo "${tg[$egg]}"
+    local tg=("t", "t", "t", "t", "t", "g")
+    echo "${tg[RANDOM % ${#th[@]}]}"
 }
 
 # Math test~!
@@ -472,10 +454,8 @@ mathtest() {
     trap 'mathtestnuhuh' SIGINT
     a=$(( RANDOM % 10 ))
     b=$(( RANDOM % 10 ))
-    op[0]="+"
-    op[1]="-"
-    numops=${#op[@]}
-    operator=${op[$(( RANDOM % numops ))]}
+    ops=("-", "+")
+    operator=${ops[RANDOM % ${#ops[@]}]}
     realanswerwhichisdefinitelycorrect=$(($a "$operator" $b))
     losercounter=0
     wrongcounter=0
