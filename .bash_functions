@@ -32,7 +32,7 @@ mdpcd() {
 
 # Sync configs
 synccfgs() {
-    oldpwd="$(pwd)"
+    local oldpwd="$(pwd)"
     builtin cd ~/configs || return
     ./sync-commit.sh
     builtin cd "$oldpwd" || return
@@ -40,7 +40,7 @@ synccfgs() {
 
 # Update configs
 updcfgs() {
-    oldpwd="$(pwd)"
+    local oldpwd="$(pwd)"
     builtin cd ~/configs || return
     ./update.sh
     builtin cd "$oldpwd" || return
@@ -48,7 +48,7 @@ updcfgs() {
 
 # Run git pull in configs
 pllcfgs() {
-    oldpwd="$(pwd)"
+    local oldpwd="$(pwd)"
     builtin cd ~/configs || return
     git pull
     builtin cd "$oldpwd" || return
@@ -66,7 +66,7 @@ cd() {
 
 # Git status of configs
 gstcfgs() {
-    oldpwd="$(pwd)"
+    local oldpwd="$(pwd)"
     builtin cd ~/configs || return
     ./sync.sh
     git status
@@ -75,7 +75,7 @@ gstcfgs() {
 
 # Push configs (e.g. incase of internet not being there when synccfgsing)
 pshcfgs() {
-    oldpwd="$(pwd)"
+    local oldpwd="$(pwd)"
     builtin cd ~/configs || return
     git push
     builtin cd "$oldpwd" || return
@@ -83,7 +83,7 @@ pshcfgs() {
 
 # Sync configs with a message
 synccfgsm() {
-    commitmsg="$1"
+    local commitmsg="$1"
 
     if [ "$commitmsg" == "" ]; then
         echo -n "Please enter commit message >"
@@ -93,7 +93,8 @@ synccfgsm() {
         echo "Please enter a commit message"
         return 1
     fi
-    oldpwd="$(pwd)"
+
+    local oldpwd="$(pwd)"
     builtin cd ~/configs || return
     ./sync-commit.sh "$commitmsg" || return 1
     builtin cd "$oldpwd" || return
@@ -138,7 +139,7 @@ syncmpaipai() {
 
 # Count all kinds of files in the current folder
 cntfiles() {
-    dir="."
+    local dir="."
     if [ "$1" != "" ]; then
         dir="$1"
     fi
@@ -156,7 +157,7 @@ cntfiles() {
 
 # Count all kinds of files in the current folder and all its subfolders
 cntfilesr() {
-    dir="."
+    local dir="."
     if [ "$1" != "" ]; then
         dir="$1"
     fi
@@ -174,7 +175,7 @@ cntfilesr() {
 
 # Git diff for configs
 dffcfgs() {
-    oldpwd="$(pwd)"
+    local oldpwd="$(pwd)"
     builtin cd ~/configs || return
     ./sync.sh
     git diff
@@ -183,7 +184,7 @@ dffcfgs() {
 
 # Git diff for configs (no pager)
 dffcfgsnp() {
-    oldpwd="$(pwd)"
+    local oldpwd="$(pwd)"
     builtin cd ~/configs || return
     ./sync.sh
     git --no-pager diff
@@ -222,9 +223,9 @@ newbkmk() {
 
 # View most recent HSL
 cmrhsl() {
-    oldpwd="$(pwd)"
+    local oldpwd="$(pwd)"
     builtin cd ~/configs/HourlySyncLogs || return
-    mrhsl=$(ls -Art | tail -n 1)
+    local mrhsl=$(ls -Art | tail -n 1)
     echo "Most recent HSL: $mrhsl"
     cat "$mrhsl"
     builtin cd "$oldpwd" || return
@@ -232,7 +233,7 @@ cmrhsl() {
 
 # Generic dir git log
 glgdir() {
-    oldpwd="$(pwd)"
+    local oldpwd="$(pwd)"
     builtin cd "$1" || return
     git log
     builtin cd "$oldpwd" || return
@@ -240,7 +241,7 @@ glgdir() {
 
 # Generic dir git log reverse
 glgrdir() {
-    oldpwd="$(pwd)"
+    local oldpwd="$(pwd)"
     builtin cd "$1" || return
     git log --reverse
     builtin cd "$oldpwd" || return
@@ -248,7 +249,7 @@ glgrdir() {
 
 # Generic dir git show head
 gshhdir() {
-    oldpwd="$(pwd)"
+    local oldpwd="$(pwd)"
     builtin cd "$1" || return
     git show HEAD
     builtin cd "$oldpwd" || return
@@ -300,8 +301,8 @@ mkcdiralias() {
 # New edt + cat alias
 mkecalias() {
     ((NumAutoBashAliases += 4))
-    short=$1
-    file=$2
+    local short=$1
+    local file=$2
     alias edt"$short"="$EDITOR \$(readlink -m $file)"
     alias cat"$short"="cat $file | less"
     alias catnp"$short"="cat $file"
@@ -311,8 +312,8 @@ mkecalias() {
 # New edt + cat alias (sudo version)
 mksuecalias() {
     ((NumAutoBashAliases += 4))
-    short=$1
-    file=$2
+    local short=$1
+    local file=$2
     alias edt"$short"="sudo $EDITOR $file"
     alias cat"$short"="cat $file | less"
     alias catnp"$short"="cat $file"
@@ -335,7 +336,7 @@ mkxtfalias() {
 
 # Today's commits in configs
 cfg2dc() {
-    oldpwd="$(pwd)"
+    local oldpwd="$(pwd)"
     builtin cd ~/configs || return
     if [ "$1" == "np" ]; then
         git --no-pager log --oneline --since=midnight
@@ -347,8 +348,8 @@ cfg2dc() {
 
 # count files in dir
 countfilesindir() {
-    nf=$(ls -Al "$1" | wc -l)
-    nff=$(( nf - 1 ))
+    local nf=$(ls -Al "$1" | wc -l)
+    local nff=$(( nf - 1 ))
     return $nff
 }
 
@@ -367,8 +368,8 @@ randomcurrency() {
     c[10]="₸"
     c[11]="₩"
     c[12]="¥"
-    n=${#c[@]}
-    i=$(( RANDOM % n ))
+    local n=${#c[@]}
+    local i=$(( RANDOM % n ))
     echo "${c[$i]}"
 }
 
@@ -399,8 +400,8 @@ adelightful() {
     d[4]="a pleasant"
     d[5]="a delicious" # why not
     d[6]="a heavenly"
-    size=${#d[@]}
-    i=$(( RANDOM % size ))
+    local size=${#d[@]}
+    local i=$(( RANDOM % size ))
     echo "${d[$i]}"
 }
 
@@ -443,7 +444,7 @@ maythe4() {
 # Inconveniences
 inconveniences() {
     rm-roll
-    yeah=$(( RANDOM % 100 ))
+    local yeah=$(( RANDOM % 100 ))
     if (( yeah <= 3 )); then
         ~/configs/math-test.sh
     fi
@@ -469,7 +470,7 @@ cirnoday() {
 
 # formating
 formating() {
-    file="$1"
+    local file="$1"
     if [ "$file" == "" ]; then
         echo "please giv file"
         return 1
@@ -486,7 +487,7 @@ formating() {
 
 # Number of today's commits in configs
 nctcfgs() {
-    oldpwd="$(pwd)"
+    local oldpwd="$(pwd)"
     builtin cd ~/configs || return
     git log --oneline --since=midnight | wc -l
     builtin cd "$oldpwd" || return
@@ -494,7 +495,7 @@ nctcfgs() {
 
 # Number of yesterday's commits in configs
 ncycfgs() {
-    oldpwd="$(pwd)"
+    local oldpwd="$(pwd)"
     builtin cd ~/configs || return
     git log --oneline --since=yesterday.midnight --until=midnight | wc -l
     builtin cd "$oldpwd" || return
@@ -502,7 +503,7 @@ ncycfgs() {
 
 # grep todos
 grn2do() {
-    dir="."
+    local dir="."
     if [ "$1" != "" ]; then
         dir="$1"
     fi
@@ -545,7 +546,7 @@ wtfis() {
 
 # Get configs version (commit hash and message)
 vercfgs() {
-    oldpwd="$(pwd)"
+    local oldpwd="$(pwd)"
     builtin cd ~/configs || return
     echo "$(git rev-parse --short HEAD) \"$(git log --format=%B -n 1 HEAD)\" (released $(LANG=en git show --no-patch --format="%ar" HEAD))"
     builtin cd "$oldpwd" || return
@@ -586,8 +587,8 @@ lowspcthr() {
         return
     fi
 
-    filecontent=$(cat "$HOME/.lowspcthr")
-    numberregex='^[0-9]+$'
+    local filecontent=$(cat "$HOME/.lowspcthr")
+    local numberregex='^[0-9]+$'
     if ! [[ $filecontent =~ $numberregex ]]; then
         echo "80"
     fi
@@ -619,10 +620,10 @@ pipbsp() {
 
 # PS1 Git
 ps1gitinfo() {
-    branchname="$(git symbolic-ref HEAD 2>/dev/null)" || branchname="head chopped off"
-    realbranchname="${branchname##refs/heads/}"
-    c2dstr=""
-    c2d="$(git log --oneline --since=midnight | wc -l)"
+    local branchname="$(git symbolic-ref HEAD 2>/dev/null)" || branchname="head chopped off"
+    local realbranchname="${branchname##refs/heads/}"
+    local c2dstr=""
+    local c2d="$(git log --oneline --since=midnight | wc -l)"
     if [ "$c2d" != "0" ]; then
         c2dstr=" c2d=\033[38:5:48m$c2d\033[0m"
     fi
@@ -639,8 +640,8 @@ rbsongrn() {
         return
     fi
 
-    songrn_raw="$(rhythmbox-client --print-playing-format="%tt")"
-    songrn=${songrn_raw%.*}
+    local songrn_raw="$(rhythmbox-client --print-playing-format="%tt")"
+    local songrn=${songrn_raw%.*}
     echo -e "Currently playing: \033[0;36m$songrn\033[0m" # I really like cyan
 }
 
@@ -700,9 +701,9 @@ mpvcfgset() {
     fi
 
     # bash arrays are so fucking stupid
-    choices=("$HOME/configs/mpv-fastcomputer.conf" "$HOME/configs/mpv-slowcomputer.conf")
-    choice_indexes=${!choices[*]}
-    num_choices=${#choices[*]}
+    local choices=("$HOME/configs/mpv-fastcomputer.conf" "$HOME/configs/mpv-slowcomputer.conf")
+    local choice_indexes=${!choices[*]}
+    local num_choices=${#choices[*]}
 
     echo "mpv config is currently linked to $(readlink "$HOME"/.config/mpv/mpv.conf)"
     echo "It can be linked to one of the following:"
@@ -714,7 +715,7 @@ mpvcfgset() {
 
     read -p "Choose what file to link to (enter a number from 1 to $num_choices): " choice
     
-    choice_minus_one=$(( choice - 1 )) # yuh
+    local choice_minus_one=$(( choice - 1 )) # yuh
     if [[ ! " ${choice_indexes[@]} " =~ " $choice_minus_one " ]]; then
         echo "That's not an option!"
         return 1
@@ -756,7 +757,7 @@ gst() {
     # if not it does git status normally
 
     if [ "$(pwd)" == "$HOME" ]; then
-        oldpwd="$(pwd)"
+        local oldpwd="$(pwd)"
         builtin cd "$HOME/configs" || return
         git status "$@"
         builtin cd "$oldpwd" || return
@@ -770,7 +771,7 @@ gdff() {
     # same situation as gst
 
     if [ "$(pwd)" == "$HOME" ]; then
-        oldpwd="$(pwd)"
+        local oldpwd="$(pwd)"
         builtin cd "$HOME/configs" || return
         git diff "$@"
         builtin cd "$oldpwd" || return
@@ -784,7 +785,7 @@ glg() {
     # ok
 
     if [ "$(pwd)" == "$HOME" ]; then
-        oldpwd="$(pwd)"
+        local oldpwd="$(pwd)"
         builtin cd "$HOME/configs" || return
         git log "$@"
         builtin cd "$oldpwd" || return
@@ -813,7 +814,7 @@ bashrc-postinit() {
     fi
 
     echo -e "Hi \033[0;32m${USER^}-chan\033[0m! This is \033[0;32m$(hostname)\033[0m."
-    dotw="$(LC_ALL=C date +"%A")"
+    local dotw="$(LC_ALL=C date +"%A")"
     if [ "$dotw" == "Friday" ]; then
         echo "ITS FRIDAY!!!!!!!!!"
     else
@@ -839,7 +840,7 @@ bashrc-postinit() {
 
     # show network usage if vnstat is a valid command
     if command -v vnstat >/dev/null 2>&1; then
-        net_usagi="$(vnstat --oneline | awk -F';' '{print $6}')" # うさぎ
+        local net_usagi="$(vnstat --oneline | awk -F';' '{print $6}')" # うさぎ
         if [ -n "$net_usagi" ]; then
             # vnstat gave non-empty string
             echo -e "Network usage today: \033[0;33m$net_usagi\033[0m."
@@ -875,11 +876,11 @@ bashrc-postinit() {
         echo -e "Run \033[0;36moklowspc\033[0m to disable the above message. Run \033[0;36msetlowspcthr\033[0m to change low space threshold."
     fi
 
-    BashrcEndTime=$(date +%s.%N)
+    local BashrcEndTime=$(date +%s.%N)
 
-    RCErrorColor="\033[0;31m"
-    AliasesErrorColor="\033[0;31m"
-    FunctionsErrorColor="\033[0;31m"
+    local RCErrorColor="\033[0;31m"
+    local AliasesErrorColor="\033[0;31m"
+    local FunctionsErrorColor="\033[0;31m"
 
     if [ "$BashrcNumErrors" == "0" ]; then
         RCErrorColor="\033[0;32m"
@@ -892,9 +893,9 @@ bashrc-postinit() {
     fi
 
     if command -v "bc" > /dev/null 2>&1; then
-        BashrcRuntime=$(echo "scale=3; ($BashrcEndTime - $BashrcStartTime) / 1" | bc -l)
-        BashAliasesRuntime=$(echo "scale=3; ($BashAliasesEndTime - $BashAliasesStartTime) / 1" | bc -l)
-        BashFunctionsRuntime=$(echo "scale=3; ($BashFunctionsEndTime - $BashFunctionsStartTime) / 1" | bc -l)
+        local BashrcRuntime=$(echo "scale=3; ($BashrcEndTime - $BashrcStartTime) / 1" | bc -l)
+        local BashAliasesRuntime=$(echo "scale=3; ($BashAliasesEndTime - $BashAliasesStartTime) / 1" | bc -l)
+        local BashFunctionsRuntime=$(echo "scale=3; ($BashFunctionsEndTime - $BashFunctionsStartTime) / 1" | bc -l)
 
         echo -e "Shell initialized in $BashrcRuntime seconds with $RCErrorColor$BashrcNumErrors\033[0m errors."
         echo -e "Aliases initialized in $BashAliasesRuntime seconds with $AliasesErrorColor$BashAliasesNumErrors\033[0m errors."

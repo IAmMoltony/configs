@@ -23,24 +23,24 @@ mathtestmain() {
     # Trap C-c to run the mathtestnuhuh function, so the user can't cheese by quitting.
     trap 'mathtestnuhuh' SIGINT
 
-    a=$(( RANDOM % 10 ))
-    b=$(( RANDOM % 10 ))
+    local a=$(( RANDOM % 10 ))
+    local b=$(( RANDOM % 10 ))
 
     # Choose a random operator: minus or plus.
-    ops=("-" "+")
-    operator=${ops[RANDOM % ${#ops[@]}]}
+    local ops=("-" "+")
+    local operator=${ops[RANDOM % ${#ops[@]}]}
 
     # Calculate the answer.
-    realanswerwhichisdefinitelycorrect=$(($a "$operator" $b))
+    local realanswerwhichisdefinitelycorrect=$(($a "$operator" $b))
 
-    losercounter=0
-    wrongcounter=0
+    local losercounter=0
+    local wrongcounter=0
     while true; do
         # Read user's answer.
         read -p "$a $operator $b = " usersanswerwhichisprobablyincorrect
 
         # Make sure it's a number using this regular expression below.
-        re='^-?[0-9]+$'
+        local re='^-?[0-9]+$'
         if ! [[ $usersanswerwhichisprobablyincorrect =~ $re ]]; then
             echo "Wtf?"
             (( losercounter++ ))
