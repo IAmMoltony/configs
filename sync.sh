@@ -12,7 +12,6 @@ cpcfgf() {
 
 mkdir .config/kitty -p
 
-cpcfg .bashrc
 cpcfg .profile
 cpcfg .vimrc
 cpcfg .config/kitty/kitty.conf
