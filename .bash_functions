@@ -465,16 +465,26 @@ t_or_g() {
 
 # Math test~!
 mathtest() {
+    # Trap C-c to run the mathtestnuhuh function, so the user can't cheese by quitting.
     trap 'mathtestnuhuh' SIGINT
+
     a=$(( RANDOM % 10 ))
     b=$(( RANDOM % 10 ))
+
+    # Choose a random operator: minus or plus.
     ops=("-" "+")
     operator=${ops[RANDOM % ${#ops[@]}]}
+
+    # Calculate the answer.
     realanswerwhichisdefinitelycorrect=$(($a "$operator" $b))
+
     losercounter=0
     wrongcounter=0
     while true; do
+        # Read user's answer.
         read -p "$a $operator $b = " usersanswerwhichisprobablyincorrect
+
+        # Make sure it's a number using this regular expression below.
         re='^-?[0-9]+$'
         if ! [[ $usersanswerwhichisprobablyincorrect =~ $re ]]; then
             echo "Wtf?"
@@ -487,16 +497,28 @@ mathtest() {
             continue
         fi
 
+        # There is a 5% chance for the math test to "slip its mind", and continue regardless of whether the user's answer is correct or not.
+        if [ $(( RANDOM % 100 )) -lt 5 ]; then
+            echo "That totally slipped my mind. Try again."
+            continue
+        fi
+
+        # Check the user's answer.
         if [ "$usersanswerwhichisprobablyincorrect" != "$realanswerwhichisdefinitelycorrect" ]; then
+            # Incorrect answer.
+
             (( losercounter++ ))
             if (( losercounter >= 5 )); then
                 echo "You just failed the math test. You should be ashamed."
                 ~/configs/mathtestctl.py addfail -n 1
                 break
             fi
+
             echo "That ain't correct mate! Try again you $(random_insult)!" # australia moment
             (( wrongcounter++ ))
         else
+            # Correct answer.
+
             echo "Correct! Continue with whatever the hell you were doing."
             ~/configs/mathtestctl.py addwrong -n $wrongcounter
             ~/configs/mathtestctl.py addright -n 1
@@ -504,6 +526,7 @@ mathtest() {
         fi
     done
 
+    # Unbind mathtestnuhuh from C-c.
     trap SIGINT
 }
 
