@@ -19,7 +19,7 @@ mathtestnuhuh() {
 }
 
 # Math test~!
-mathtest() {
+mathtestmain() {
     # Trap C-c to run the mathtestnuhuh function, so the user can't cheese by quitting.
     trap 'mathtestnuhuh' SIGINT
 
@@ -82,3 +82,5 @@ mathtest() {
     # Unbind mathtestnuhuh from C-c.
     trap SIGINT
 }
+
+mathtestmain
