@@ -138,6 +138,7 @@ alias grepbf='grep ~/configs/.bash_functions -n -e' # grep bash functions
 alias grepbrc='grep ~/.bashrc -n -e' # grep bashrc
 alias who-the-HELL-is-using-my-wifi='sudo nethogs' # who the HELL is using my wifi??????
 alias sudo='sudo -p "$(randomsudoprompt)"' # super user do
+alias djds='./manage.py runserver' # Run django server
 
 # }}}
 
