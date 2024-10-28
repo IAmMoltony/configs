@@ -564,6 +564,7 @@ mkcdiralias xdgdat $XDG_DATA_HOME
 mkcdiralias xdgsta $XDG_STATE_HOME
 mkcdiralias xdgcac $XDG_CACHE_HOME
 mkcdiralias ansdk ~/Android/Sdk
+mkcdiralias zim ~/Notebooks
 
 # }}}
 
