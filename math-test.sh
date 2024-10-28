@@ -51,12 +51,6 @@ mathtestmain() {
             continue
         fi
 
-        # There is a 5% chance for the math test to "slip its mind", and continue regardless of whether the user's answer is correct or not.
-        if [ $(( RANDOM % 100 )) -lt 5 ]; then
-            echo "That totally slipped my mind. Try again."
-            continue
-        fi
-
         # Check the user's answer.
         if [ "$usersanswerwhichisprobablyincorrect" != "$realanswerwhichisdefinitelycorrect" ]; then
             # Incorrect answer.
@@ -71,6 +65,12 @@ mathtestmain() {
             (( wrongcounter++ ))
         else
             # Correct answer.
+
+            # There is a 5% chance for the math test to "slip its mind", and continue regardless of whether the user's answer is correct or not.
+            if [ $(( RANDOM % 100 )) -lt 5 ]; then
+                echo "That totally slipped my mind. Try again."
+                continue
+            fi
 
             echo "Correct! Continue with whatever the hell you were doing."
             ~/configs/mathtestctl.py addwrong -n $wrongcounter
