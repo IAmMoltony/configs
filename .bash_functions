@@ -805,6 +805,16 @@ randomsudoprompt() {
     echo "${prompts[RANDOM % ${#prompts[@]}]}"
 }
 
+# qfeoijqefojidqfwjiojoieqfojiefoiefjwfeefiwjfejiefjiwofieojwefwoijefwoijfeoijfeoijf4jfjifjfi
+exit() {
+    local heheh=$(( RANDOM % 100 ))
+    if (( heheh <= 10 )); then
+        echo "Not until you solve a tiny little math problem."
+        ~/configs/math-test.sh
+    fi
+    builtin exit "$@"
+}
+
 # Bashrc post-init {{{
 
 bashrc-postinit() {
