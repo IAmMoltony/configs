@@ -6,7 +6,7 @@ import sys
 import json
 from dataclasses import dataclass
 
-__version__ = "1.0.1"
+__version__ = "1.1"
 
 
 @dataclass
@@ -19,9 +19,7 @@ class MathTestStats:
         return f"{self.num_wrong} wrong, {self.num_right} right, {self.num_fail} failed"
 
     def reset(self):
-        self.num_wrong = 0
-        self.num_right = 0
-        self.num_fail = 0
+        print("Nuh uh lil bro")
 
     def save(self):
         stats_dict = {"w": self.num_wrong, "r": self.num_right, "f": self.num_fail}
@@ -60,6 +58,10 @@ if __name__ == "__main__":
 
     set_wd()
     current_stats = load_current_stats()
+
+    if args.number < 0:
+        print("That would be cheating.")
+        sys.exit(1)
 
     if args.action == "view":
         print(current_stats)

@@ -96,13 +96,25 @@ mathtestmain() {
         # Make sure it's a number using this regular expression below.
         local re='^-?[0-9]+$'
         if ! [[ $usersanswerwhichisprobablyincorrect =~ $re ]]; then
-            echo "Wtf?"
-            (( losercounter++ ))
-            if (( losercounter >= 5 )); then
-                mathtestfailure
+            if (( SUPERBALLSmode )); then
+                insult="$(random_insult)"
+
+                echo "That's NOT EVEN A NUMBER you JERK!!!!"
+                echo "Scared of my math problem HUH!"
+                echo "Adding TEN THOUSAND FAILURES TO YOUR RECORD!!!!!!!!!"
+                ~/configs/mathtestctl.py addfail -n 10000
+                echo "That will teach you not to mess with me..."
+                echo "...you ${insult^^}!!!"
                 break
+            else
+                echo "Wtf?"
+                (( losercounter++ ))
+                if (( losercounter >= 5 )); then
+                    mathtestfailure
+                    break
+                fi
+                continue
             fi
-            continue
         fi
 
         # Check the user's answer.
