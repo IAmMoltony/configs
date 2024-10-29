@@ -59,9 +59,8 @@ if __name__ == "__main__":
     set_wd()
     current_stats = load_current_stats()
 
-    if args.number < 0:
-        print("That would be cheating.")
-        sys.exit(1)
+    if args.number is not None and args.number < 0:
+        print("That would be cheating. Get lost.")
 
     if args.action == "view":
         print(current_stats)
