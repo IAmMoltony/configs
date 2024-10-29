@@ -18,16 +18,70 @@ mathtestnuhuh() {
     echo "You MUST do the math test!!"
 }
 
+# Check for SUPER BALLS mode
+superballs() {
+    if [ $(( RANDOM % 100 )) -eq 1 ]; then
+        echo "SUPER BALLS mode activated!!! Prepare to DIE!!!"
+        return 0
+    fi
+
+    return 1
+}
+
+# Say a number really insultingly
+number_but_very_insultingly() {
+    declare -A digits=(
+        [0]="ZERO"
+        [1]="ONE"
+        [2]="TWO"
+        [3]="THREE"
+        [4]="FOUR"
+        [5]="FIVE"
+        [6]="SIX"
+        [7]="SEVEN"
+        [8]="EIGHT"
+        [9]="NINE"
+    )
+
+    local number="$1"
+    local what=""
+
+    for (( i=0; i<${#number}; i++ )); do
+        digit="${number:$i:1}"
+        result+="${digits[$digit]} "
+    done
+
+    echo "${result% }"
+}
+
 # Math test~!
 mathtestmain() {
     # Trap C-c to run the mathtestnuhuh function, so the user can't cheese by quitting.
     trap 'mathtestnuhuh' SIGINT
 
-    local a=$(( RANDOM % 10 ))
-    local b=$(( RANDOM % 10 ))
+    local SUPERBALLSmode=0
+    superballs && SUPERBALLSmode=1
+
+    if [ "$1" == "SUPERBALLStest" ]; then
+        echo "Testing SUPER BALLS mode. C-c handler disabled."
+        SUPERBALLSmode=1
+        trap SIGINT
+    fi
+
+    if (( SUPERBALLSmode )); then
+        local a=$(( RANDOM % 7000 + 2627 )) # 2627 chosen for no reason
+        local b=$(( RANDOM % 7000 + 2627 ))
+    else
+        local a=$(( RANDOM % 10 ))
+        local b=$(( RANDOM % 10 ))
+    fi
 
     # Choose a random operator: minus or plus.
-    local ops=("-" "+")
+    if (( SUPERBALLSmode )); then
+        local ops=("-" "+" "*")
+    else
+        local ops=("-" "+")
+    fi
     local operator=${ops[RANDOM % ${#ops[@]}]}
 
     # Calculate the answer.
@@ -55,6 +109,14 @@ mathtestmain() {
         if [ "$usersanswerwhichisprobablyincorrect" != "$realanswerwhichisdefinitelycorrect" ]; then
             # Incorrect answer.
 
+            if (( SUPERBALLSmode )); then
+                # In SUPER BALLS mode, when you fail a question it tries to do as much non-destructive destruction as possible.
+                echo "HAH! YOU FAILURE!! The answer was $(number_but_very_insultingly "$realanswerwhichisdefinitelycorrect")!!!!!!!!!!! HOW could you NOT ANSWER THAT CORRECTLY???"
+                echo "I used to walk to school in a TORNADO and walked UPHILL BOTH WAYS for TWENTY MILES across THE PACIFIC OCEAN!!!!! YOU ARE A COMPLETE DISAPPOINTMENT ${USER^^} and you KNOW THAT VERY WELL!!!!!!!!!!!!!!"
+                ~/configs/mathtestctl.py addfail -n 1
+                break
+            fi
+
             (( losercounter++ ))
             if (( losercounter >= 5 )); then
                 mathtestfailure
@@ -72,6 +134,12 @@ mathtestmain() {
                 continue
             fi
 
+            if (( SUPERBALLSmode )); then
+                echo "I bet you cheated."
+                ~/configs/mathtestctl.py addright -n 1
+                break
+            fi
+
             echo "Correct! Continue with whatever the hell you were doing."
             ~/configs/mathtestctl.py addwrong -n $wrongcounter
             ~/configs/mathtestctl.py addright -n 1
@@ -83,4 +151,4 @@ mathtestmain() {
     trap SIGINT
 }
 
-mathtestmain
+mathtestmain "$@"
