@@ -56,7 +56,6 @@ mkdir -p "$HOME"/.config/conky
 echo "Creating GDB config dir"
 mkdir -p "$HOME"/.config/gdb
 
-cpcfg .bashrc
 cpcfg .profile
 cpcfg .vimrc
 cpcfgd kitty.conf .config/kitty
