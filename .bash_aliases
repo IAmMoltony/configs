@@ -34,7 +34,7 @@ alias rd='rmdir' # DOS-inspired shortcut for rmdir
 alias reload-bashrc='source ~/.bashrc' # Reload BashRC
 alias reload-bashaliases='echo "Reloading aliases." && source ~/configs/.bash_aliases && echo "Done." && trap - ERR' # Reload Bash aliases
 alias reload-bashfuncs='echo "Reloading functions." && source ~/configs/.bash_functions && echo "Done." && trap - ERR' # Reload Bash functions
-alias mnt="mount | awk -F ' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort" # Show mounted disks (no stuff like tmpfs or whatever)
+alias mnt="mount | awk -F ' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | grep -E ^/dev/ | sort" # Show mounted disks (no stuff like tmpfs or whatever)
 alias grephist='history | grep' # Search in comman history
 alias relbrc='reload-bashrc' # Short reload-bashrc alias
 alias relba='reload-bashaliases' # Short reload-bashaliases alias
@@ -586,8 +586,6 @@ mkdiralias .......... l.......... s.......... c.......... cf.......... cr.......
 mkcolorado dir
 mkcolorado vdir
 mkcolorado grep
-mkcolorado fgrep
-mkcolorado egrep
 
 # }}}
 
