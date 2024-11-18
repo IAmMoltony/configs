@@ -484,18 +484,41 @@ mksuecalias hsts /etc/hosts
 
 # Common directory aliases {{{
 
-# TODO organize
-
 mkcdiralias dl ~/Downloads
 mkcdiralias doc ~/Documents
 mkcdiralias mus ~/Music
+mkcdiralias pic ~/Pictures
+mkcdiralias vid ~/Videos
+mkcdiralias hsl ~/configs/HourlySyncLogs
+mkcdiralias cam ~/Pictures/camera
+mkcdiralias cfg ~/configs
+mkcdiralias cfgs ~/configs
+mkcdiralias cfgbin ~/configs/bin
+mkcdiralias cfgsbin ~/configs/bin
+mkcdiralias sysd /etc/systemd/
+mkcdiralias sysdsys /etc/systemd/system
+mkcdiralias dwp ~/desktop-wallpaper
+mkcdiralias gam ~/Games
+mkcdiralias th ~/Games/TouhouShared/drive_c
+mkcdiralias thu ~/Games/TouhouShared/drive_c/Touhou-Utilities
+mkcdiralias sld /etc/apt/sources.list.d
+mkcdiralias vm ~/VMs
+mkcdiralias mpv ~/.config/mpv
+mkcdiralias mpvs ~/.config/mpv/scripts
+mkcdiralias ansdk ~/Android/Sdk
+mkcdiralias zim ~/Notebooks
+
+# music-lib {{{
+
 mkcdiralias muslib ~/Music/music-lib
 mkcdiralias ml ~/Music/music-lib
 mkcdiralias muslibmus ~/Music/music-lib/music
 mkcdiralias mlm ~/Music/music-lib/music
-mkcdiralias pic ~/Pictures
-mkcdiralias vid ~/Videos
-mkcdiralias hsl ~/configs/HourlySyncLogs
+
+# }}}
+
+# Bookmarks {{{
+
 mkcdiralias bm ~/Bookmarks
 mkcdiralias bkmk ~/Bookmarks
 mkcdiralias bk ~/Bookmarks
@@ -527,22 +550,6 @@ mkcdiralias wine ~/Bookmarks/Wine
 mkcdiralias wine64 ~/Bookmarks/Wine\ \(64-bit\)
 mkcdiralias winep ~/Bookmarks/Wine\ prefixes
 mkcdiralias book ~/Bookmarks/Books
-mkcdiralias cam ~/Pictures/camera
-mkcdiralias cfg ~/configs
-mkcdiralias cfgs ~/configs
-mkcdiralias cfgbin ~/configs/bin
-mkcdiralias cfgsbin ~/configs/bin
-mkcdiralias sysd /etc/systemd/
-mkcdiralias sysdsys /etc/systemd/system
-mkcdiralias mc ~/.minecraft
-mkcdiralias mcw ~/.minecraft/saves
-mkcdiralias mcrp ~/.minecraft/resourcepacks
-mkcdiralias mcv ~/.minecraft/versions
-mkcdiralias mcmod ~/.minecraft/mods
-mkcdiralias mccr ~/.minecraft/crash-reports
-mkcdiralias mcshot ~/.minecraft/screenshots
-mkcdiralias dwp ~/desktop-wallpaper
-mkcdiralias car ~/Bookmarks/Cute\ anime\ art
 mkcdiralias dlgth ~/Bookmarks/Game\ downloads\ \(Touhou\)
 mkcdiralias anim ~/Bookmarks/Anime
 mkcdiralias animmov ~/Bookmarks/Anime/movies
@@ -552,19 +559,29 @@ mkcdiralias ani ~/Bookmarks/Anime
 mkcdiralias animov ~/Bookmarks/Anime/movies
 mkcdiralias aniep ~/Bookmarks/Anime/episodes
 mkcdiralias anisub ~/Bookmarks/Anime/subtitles
-mkcdiralias gam ~/Games
-mkcdiralias th ~/Games/TouhouShared/drive_c
-mkcdiralias thu ~/Games/TouhouShared/drive_c/Touhou-Utilities
-mkcdiralias sld /etc/apt/sources.list.d
-mkcdiralias vm ~/VMs
-mkcdiralias mpv ~/.config/mpv
-mkcdiralias mpvs ~/.config/mpv/scripts
+
+# }}}
+
+# Minecraft {{{
+
+mkcdiralias mc ~/.minecraft
+mkcdiralias mcw ~/.minecraft/saves
+mkcdiralias mcrp ~/.minecraft/resourcepacks
+mkcdiralias mcv ~/.minecraft/versions
+mkcdiralias mcmod ~/.minecraft/mods
+mkcdiralias mccr ~/.minecraft/crash-reports
+mkcdiralias mcshot ~/.minecraft/screenshots
+
+# }}}
+
+# XDG {{{
+
 mkcdiralias xdgcfg $XDG_CONFIG_HOME
 mkcdiralias xdgdat $XDG_DATA_HOME
 mkcdiralias xdgsta $XDG_STATE_HOME
 mkcdiralias xdgcac $XDG_CACHE_HOME
-mkcdiralias ansdk ~/Android/Sdk
-mkcdiralias zim ~/Notebooks
+
+# }}}
 
 # }}}
 
