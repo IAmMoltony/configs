@@ -507,7 +507,7 @@ grn2do() {
     if [ "$1" != "" ]; then
         dir="$1"
     fi
-    grep --color -rn "$dir" -e "(?!')(?!\")TODO(?!')(?!\")"
+    grep --color -rn "$dir" -e "TODO"
 }
 
 # Convert any file to a video

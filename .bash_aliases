@@ -140,6 +140,7 @@ alias who-the-HELL-is-using-my-wifi='sudo nethogs' # who the HELL is using my wi
 alias sudo='sudo -p "$(randomsudoprompt)"' # super user do
 alias djrs='./manage.py runserver' # Run django server
 alias grntodo='grn2do' # Just like
+alias gren='grep' # I keep misspelling it.
 
 # }}}
 
