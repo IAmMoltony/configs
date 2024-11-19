@@ -139,6 +139,7 @@ alias grepbrc='grep ~/.bashrc -n -e' # grep bashrc
 alias who-the-HELL-is-using-my-wifi='sudo nethogs' # who the HELL is using my wifi??????
 alias sudo='sudo -p "$(randomsudoprompt)"' # super user do
 alias djrs='./manage.py runserver' # Run django server
+alias grntodo='grn2do' # Just like
 
 # }}}
 
