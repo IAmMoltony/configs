@@ -16,6 +16,7 @@ syscheck() {
     return 0
 }
 
+read -p
 echo "Welcome to the Configs Super Convenient Installer™!"
 echo "Shall I install configs for this user now?"
 
