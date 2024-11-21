@@ -57,7 +57,7 @@ def main():
     for fetch in fetches:
         fetch_names.append(fetch.execu)
     print(f"Tried: {', '.join(fetch_names)}")
-    print("Please make sure one of these program is in your path.")
+    print("Please make sure one of these programs is in your path.")
     sys.exit(1)
 
 if __name__ == "__main__":
