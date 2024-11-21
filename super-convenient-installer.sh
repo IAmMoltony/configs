@@ -1,13 +1,5 @@
 #!/usr/bin/env bash
 
-yesno() {
-    read -p "(y/N)? " yn
-    case $yn in
-        [Yy]* ) return 0;;
-        * ) return 1;;
-    esac
-}
-
 syscheck() {
     if ! command -v "git" >/dev/null 2>&1; then
         echo "Git is not installed on your system."
@@ -16,15 +8,7 @@ syscheck() {
     return 0
 }
 
-read -p
 echo "Welcome to the Configs Super Convenient Installer™!"
-echo "Shall I install configs for this user now?"
-
-if ! yesno; then
-    echo "Okay then!"
-    exit 0
-fi
-
 echo "Checking your system..."
 
 if ! syscheck; then
