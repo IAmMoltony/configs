@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 yesno() {
-    read -n 1 -p "(y/N)? " yn
+    read -p "(y/N)? " yn
     case $yn in
         [Yy]* ) return 0;;
         * ) return 1;;
