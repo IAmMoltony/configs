@@ -11,6 +11,19 @@ as `.bashrc`) and some scripts as well.
 
 ## Installation
 
+### Using the Super Convenient Installer™
+
+You can install configs with one command like so:
+
+```bash
+curl -sL https://raw.githubusercontent.com/IAmMoltony/configs/master/super-convenient-installer.sh | bash
+```
+
+Make sure you have `curl`, `git` and `bash` installed, though. The Super
+Convenient Installer™ will take care of everything else.
+
+### Manual Installation
+
 Copy-paste these commands to install all configs:
 
 ```bash
