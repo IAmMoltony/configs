@@ -903,9 +903,9 @@ bashrc-postinit() {
     fi
 
     if command -v "bc" > /dev/null 2>&1; then
-        local BashrcRuntime=$(echo "scale=3; ($BashrcEndTime - $BashrcStartTime) / 1" | bc -l)
-        local BashAliasesRuntime=$(echo "scale=3; ($BashAliasesEndTime - $BashAliasesStartTime) / 1" | bc -l)
-        local BashFunctionsRuntime=$(echo "scale=3; ($BashFunctionsEndTime - $BashFunctionsStartTime) / 1" | bc -l)
+        local BashrcRuntime=$(echo "scale=3; ($BashrcEndTime - $BashrcStartTime) / 1" | bc -l | awk '{if($0 ~ /^\./) print "0"$0; else print $0}')
+        local BashAliasesRuntime=$(echo "scale=3; ($BashAliasesEndTime - $BashAliasesStartTime) / 1" | bc -l | awk '{if($0 ~ /^\./) print "0"$0; else print $0}')
+        local BashFunctionsRuntime=$(echo "scale=3; ($BashFunctionsEndTime - $BashFunctionsStartTime) / 1" | bc -l | awk '{if($0 ~ /^\./) print "0"$0; else print $0}')
 
         echo -e "Shell initialized in $BashrcRuntime seconds with $RCErrorColor$BashrcNumErrors\033[0m errors."
         echo -e "Aliases initialized in $BashAliasesRuntime seconds with $AliasesErrorColor$BashAliasesNumErrors\033[0m errors."
