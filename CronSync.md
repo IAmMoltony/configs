@@ -4,6 +4,12 @@
 
 ## Setting up Cron Sync
 
+### Using a script (recommended)
+
+go to configs and: `./install-hcs.sh` it could not be easier
+
+### Manual (if you're into that)
+
 1. `crontab -e`
 
 1. put this: `0 * * * * DISPLAY=:0.0 /home/ur_username/configs/cronsync.sh`
