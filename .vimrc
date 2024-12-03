@@ -13,6 +13,7 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-sleuth'
 Plug 'preservim/NERDtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
 
@@ -70,6 +71,7 @@ command! Dnbuild !dotnet build -v n
 command! Dnbld !dotnet build -v n
 command! Dnfmt !dotnet format
 
+" Run shit
 command! Care !love .
 command! Black !black %
 command! Pylint !pylint %
@@ -77,6 +79,7 @@ command! Shck !shellcheck %
 command! Chx !chmod +x %
 command! Go !./%
 
+" Caps lock ahh
 command! W w
 command! Q q
 command! WQ wq
