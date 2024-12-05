@@ -142,6 +142,7 @@ alias djrs='./manage.py runserver' # Run django server
 alias grntodo='grn2do' # Just like
 alias gren='grep' # I keep misspelling it.
 alias convert='magick convert' # Nuh uh imv7
+alias sdcu='sudo docker compose up' # start the docker thing
 
 # }}}
 
