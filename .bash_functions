@@ -815,6 +815,24 @@ exit() {
     builtin exit "$@"
 }
 
+# update dnf till succeed
+sduyus() {
+    while true; do
+        if sudo dnf update; then
+            break
+        fi
+    done
+}
+
+# wget till suced
+wgetus() {
+    while true; do
+        if wget "$@"; then
+            break
+        fi
+    done
+}
+
 # Bashrc post-init {{{
 
 bashrc-postinit() {
