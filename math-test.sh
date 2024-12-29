@@ -28,6 +28,14 @@ superballs() {
     return 1
 }
 
+# MINNA!!!!!!!! CIRNO NO SANSUU KYOUSHITSU HAJIMARU YO!!!!!!!!!!!! ATAI MITAI TENSAI MEZASHITE GANBATTE ITTE NE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+function ⑨() {
+    if [ $(( RANDOM % 100 )) -le 5 ]; then
+        return 0
+    fi
+    return 1
+}
+
 # Say a number really insultingly
 number_but_very_insultingly() {
     declare -A digits=(
@@ -60,6 +68,10 @@ mathtestmain() {
     trap 'mathtestnuhuh' SIGINT
 
     local SUPERBALLSmode=0
+    ⑨ && {
+        ~/configs/math-test-cirno.sh
+        exit $?
+    }
     superballs && SUPERBALLSmode=1
 
     if [ "$1" == "SUPERBALLStest" ]; then
