@@ -143,7 +143,10 @@ WE_DO_A_BIT_OF_TROLLING() {
 
 # Infringe on copyright
 infringe_on_copyright() {
-    ffmpeg -i ~/configs/Cirno.wav -af "bass=g=20" -f alsa default > /dev/null 2>&1 &
+    while true; do
+        ffmpeg -i ~/configs/Cirno.wav -af "bass=g=20" -f alsa default > /dev/null 2>&1 &
+        sleep $(ffprobe -i ~/configs/Cirno.wav -show_entries format=duration -v quiet -of csv="p=0" | cut -d '.' -f 1)
+    done &
 }
 
 function main() {
