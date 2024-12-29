@@ -150,6 +150,11 @@ infringe_on_copyright() {
 }
 
 function main() {
+    # Now the following line is REALLY, R E A L L Y important.
+    # It makes sure that when the script stops, the song ALSO stops.
+    # Listening to high pitched bass boosted distorted first 5 seconds if cirno's perfect math class made me go insane.
+    trap 'kill $(jobs -p)' EXIT
+
     if [ $(( RANDOM % 50 )) -lt 0 ]; then
         WE_DO_A_BIT_OF_TROLLING
     fi
