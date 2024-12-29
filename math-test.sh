@@ -122,7 +122,7 @@ mathtestmain() {
             # Incorrect answer.
 
             if (( SUPERBALLSmode )); then
-                # In SUPER BALLS mode, when you fail a question it tries to do as much non-destructive destruction as possible.
+                # In SUPER BALLS mode, when you fail a question it tries to do as much psychological damage as possible.
                 echo "HAH! YOU FAILURE!! The answer was $(number_but_very_insultingly "$realanswerwhichisdefinitelycorrect")!!!!!!!!!!! HOW could you NOT ANSWER THAT CORRECTLY???"
                 echo "I used to walk to school in a TORNADO and walked UPHILL BOTH WAYS for TWENTY MILES across THE PACIFIC OCEAN!!!!! YOU ARE A COMPLETE DISAPPOINTMENT ${USER^^} and you KNOW THAT VERY WELL!!!!!!!!!!!!!!"
                 ~/configs/mathtestctl.py addfail -n 1
