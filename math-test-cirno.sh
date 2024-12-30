@@ -33,7 +33,6 @@ function vine_boom() {
 }
 
 function Over_the_top_intro() {
-    # TODO play cirnos perfect math class here
     clear
     vine_boom
     echo -e "\n\n\n\n\n           DO YOU KNOW WHAT TIME IT IS?"
