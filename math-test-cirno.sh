@@ -1,4 +1,6 @@
-function NINE() {
+#!/usr/bin/env bash
+
+NINE() {
     vine_boom
     echo "   ___"
     sleep 1
@@ -28,11 +30,11 @@ function NINE() {
     exit 69
 }
 
-function vine_boom() {
+vine_boom() {
     ffmpeg -i ~/configs/bell.wav -f alsa default > /dev/null 2>&1 &
 }
 
-function Over_the_top_intro() {
+Over_the_top_intro() {
     clear
     vine_boom
     echo -e "\n\n\n\n\n           DO YOU KNOW WHAT TIME IT IS?"
@@ -144,11 +146,11 @@ WE_DO_A_BIT_OF_TROLLING() {
 infringe_on_copyright() {
     while true; do
         ffmpeg -i ~/configs/Cirno.wav -af "bass=g=20" -f alsa default > /dev/null 2>&1 &
-        sleep $(ffprobe -i ~/configs/Cirno.wav -show_entries format=duration -v quiet -of csv="p=0" | cut -d '.' -f 1)
+        sleep "$(ffprobe -i ~/configs/Cirno.wav -show_entries format=duration -v quiet -of csv="p=0" | cut -d '.' -f 1)"
     done &
 }
 
-function main() {
+main() {
     # Now the following line is REALLY, R E A L L Y important.
     # It makes sure that when the script stops, the song ALSO stops.
     # Listening to high pitched bass boosted distorted first 5 seconds if cirno's perfect math class made me go insane.
