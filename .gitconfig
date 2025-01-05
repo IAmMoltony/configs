@@ -24,3 +24,5 @@
 [cola]
 	startupmode = folder
 	spellcheck = false
+[http]
+	postBuffer = 1048576000
