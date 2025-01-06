@@ -833,6 +833,11 @@ wgetus() {
     done
 }
 
+# Same as the clipfile alias but for wayland
+clipfile-wl() {
+    cat "$1" | wl-copy
+}
+
 # Bashrc post-init {{{
 
 bashrc-postinit() {
