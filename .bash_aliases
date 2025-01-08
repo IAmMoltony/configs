@@ -146,6 +146,8 @@ alias gren='grep' # I keep misspelling it.
 alias convert='magick convert' # Nuh uh imv7
 alias sdcu='sudo docker compose up' # start the docker thing
 alias wpf.='export WINEPREFIX=$(pwd)' # wine prefix in current folder
+alias sse0='sudo setenforce 0' # this alias and the one below it stem from me using docker which doesn't work if selinux enabled
+alias sse1='sudo setenforce 1' # i dont know why
 
 # }}}
 
