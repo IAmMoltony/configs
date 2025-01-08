@@ -373,19 +373,8 @@ randomcurrency() {
     echo "${c[$i]}"
 }
 
-# i like trains
-paravozik() {
-    if ! command -v "sl" >/dev/null 2>&1; then
-        echo "Aww, you don't have sl installed."
-        return 1
-    fi
-
-    while true; do
-        \sl
-    done
-}
-
 # List functions
+# Do not remove as it's used in postinit for function count.
 lsfuncs() {
     declare -f | grep -E '^[^_].* \(\)'
 }
@@ -443,10 +432,19 @@ maythe4() {
 
 # Inconveniences
 inconveniences() {
+    # Inconvenience 1: airhead rm
     rm-roll
+
+    # Inconvenience 2: Math test
     local yeah=$(( RANDOM % 100 ))
     if (( yeah <= 3 )); then
         ~/configs/math-test.sh
+    fi
+
+    # Inconvenience 3: 魔理沙は大変なものを盗んでいきました
+    local hell_yeah=$(( RANDOM % 100 ))
+    if (( hell_yeah <= 1 )); then
+        steal-your-precious-thing
     fi
 }
 
@@ -836,6 +834,33 @@ wgetus() {
 # Same as the clipfile alias but for wayland
 clipfile-wl() {
     cat "$1" | wl-copy
+}
+
+# Nose noes
+peanut_butter() {
+    local noses=("noes" "nose" "noes" "noes" "noes" "noes" "noes" "noes" )
+    echo "${noses[RANDOM % ${#noses[@]}]}"
+}
+
+# Do literally nothing
+do-literally-nothing() {
+    true
+}
+
+# da ze
+steal-your-precious-thing() {
+    # prevent the user from canceling the moratorium
+    trap 'do-literally-nothing' SIGINT
+    echo "Oh $(peanut_butter)!"
+    echo "Marisa stole your precious thing!"
+    echo "As a result, your terminal session will now be terminated da ze."
+    echo "Womp womp indeed."
+
+    # Dramatic pause...!
+    sleep 3.14159265359
+
+    # And die now
+    builtin exit
 }
 
 # Bashrc post-init {{{
