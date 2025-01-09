@@ -851,13 +851,15 @@ do-literally-nothing() {
 steal-your-precious-thing() {
     # prevent the user from canceling the moratorium
     trap 'do-literally-nothing' SIGINT
+
+    ffplay ~/configs/womp_womp.wav -nodisp > /dev/null 2>&1 &
     echo "Oh $(peanut_butter)!"
     echo "Marisa stole your precious thing!"
     echo "As a result, your terminal session will now be terminated da ze."
     echo "Womp womp indeed."
 
     # Dramatic pause...!
-    sleep 3.14159265359
+    sleep 12.6 # this used to be pi until the sound clip was added.
 
     # And die now
     builtin exit
