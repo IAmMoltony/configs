@@ -141,6 +141,12 @@ if [ -d "$HOME/.config/jellyfin-mpv-shim" ]; then
         [ -f "$HOME/.config/jellyfin-mpv-shim/input.conf" ] && mv "$HOME/.config/jellyfin-mpv-shim/input.conf" "$HOME/jellyfin_mpv_input.conf.old" || true
         ln -s "$HOME/.config/mpv/input.conf" "$HOME/.config/jellyfin-mpv-shim/input.conf"
     fi
+
+    if [ ! -L "$HOME/.config/jellyfin-mpv-shim/scripts" ]; then
+        echo "Setting up script directory symlink"
+        [ -d "$HOME/.config/jellyfin-mpv-shim/scripts" ] && mv "$HOME/.config/jellyfin-mpv-shim/scripts" "$HOME/jellyfin_mpv_scripts_old" || true
+        ln -s "$HOME/.config/mpv/scripts" "$HOME/.config/jellyfin-mpv-shim/scripts"
+    fi
 else
     echo "Jellyfin mpv shim config directory not found, skip symlink setup"
 fi
