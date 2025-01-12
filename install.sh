@@ -126,10 +126,23 @@ else
     echo "Done!"
 fi
 
-if [ -d "$HOME/.config/jellyfin-mpv-shim" ] && [ -L "$HOME/.config/mpv/mpv.conf" ]; then
-    echo "Setting up Jellyfin mpv shim config symlink"
-    mv "$HOME/.config/jellyfin-mpv-shim/mpv.conf" "$HOME/jellyfin_mpv.conf.old" || true
-    ln -s "$HOME"/.config/mpv/mpv.conf "$HOME/.config/jellyfin-mpv-shim/mpv.conf"
+if [ -d "$HOME/.config/jellyfin-mpv-shim" ]; then
+    echo "Setting up Jellyfin mpv shim symlinks"
+    echo "Any previous configuration will be moved to the home directory"
+
+    if [ ! -L "$HOME/.config/jellyfin-mpv-shim/mpv.conf" ] && [ -L "$HOME/.config/mpv/mpv.conf" ]; then
+        echo "Setting up mpv.conf symlink"
+        [ -f "$HOME/.config/jellyfin-mpv-shim/mpv.conf" ] && mv "$HOME/.config/jellyfin-mpv-shim/mpv.conf" "$HOME/jellyfin_mpv.conf.old" || true
+        ln -s "$HOME/.config/mpv/mpv.conf" "$HOME/.config/jellyfin-mpv-shim/mpv.conf"
+    fi
+
+    if [ ! -L "$HOME/.config/jellyfin-mpv-shim/input.conf" ]; then
+        echo "Setting up input.conf symlink"
+        [ -f "$HOME/.config/jellyfin-mpv-shim/input.conf" ] && mv "$HOME/.config/jellyfin-mpv-shim/input.conf" "$HOME/jellyfin_mpv_input.conf.old" || true
+        ln -s "$HOME/.config/mpv/input.conf" "$HOME/.config/jellyfin-mpv-shim/input.conf"
+    fi
+else
+    echo "Jellyfin mpv shim config directory not found, skip symlink setup"
 fi
 
 echo "Success"
