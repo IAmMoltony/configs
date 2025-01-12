@@ -126,4 +126,10 @@ else
     echo "Done!"
 fi
 
+if [ -d "$HOME/.config/jellyfin-mpv-shim" ] && [ -L "$HOME/.config/mpv/mpv.conf" ]; then
+    echo "Setting up Jellyfin mpv shim config symlink"
+    mv "$HOME/.config/jellyfin-mpv-shim/mpv.conf" "$HOME/jellyfin_mpv.conf.old" || true
+    ln -s "$HOME"/.config/mpv/mpv.conf "$HOME/.config/jellyfin-mpv-shim/mpv.conf"
+fi
+
 echo "Success"
