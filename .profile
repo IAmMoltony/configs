@@ -39,3 +39,4 @@ export PATH="$PATH:/home/moltony/.local/share/JetBrains/Toolbox/scripts"
 export PATH="$PATH:$HOME/.rvm/bin"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+. "/home/moltony/.local/share/cargo/env"

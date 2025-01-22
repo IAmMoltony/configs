@@ -862,7 +862,7 @@ steal-your-precious-thing() {
     sleep 12.6 # this used to be pi until the sound clip was added.
 
     # And die now
-    builtin exit
+    pkill -9 kitty
 }
 
 # chan kun or smh idk
