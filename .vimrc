@@ -119,3 +119,7 @@ autocmd BufWinEnter * if &buftype != 'quickfix' && getcmdwintype() == '' | silen
 
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
+
+" this ONE key combination has cost me HOURS of rewriting the same code
+" who the HELL came up with this???
+inoremap <C-u> <Nop>
