@@ -443,7 +443,8 @@ inconveniences() {
 
     # Inconvenience 3: 魔理沙は大変なものを盗んでいきました
     local hell_yeah=$(( RANDOM % 100 ))
-    if (( hell_yeah <= 1 )); then
+    local hell_yeah2=$(( RANDOM % 100 ))
+    if (( hell_yeah <= 1 )) && (( hell_yeah2 <= 1 )); then
         steal-your-precious-thing
     fi
 }
