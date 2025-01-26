@@ -120,14 +120,11 @@ alias smd='sudo mkdir' # Create dir as superuser
 alias r.='cd "$(readlink -m "$(pwd)")"' # go to the real current directory like if ur in a directory thats a symlink
 alias clipfile='xclip -selection c <' # Copy file to clipboard
 alias sug='sudo update-grub' # Do you even KNOW how much time this saves???
-alias wget='wget -c --hsts-file="$XDG_DATA_HOME/wget-hsts"' # XDG ninja suggested this
-alias adb='HOME="$XDG_DATA_HOME"/android adb' # adb but xdg
 alias badwifiwget='wget -c --tries=0 --retry-connrefused --timeout=2 --wait=1' # sauce: https://www.schmidp.com/2009/03/03/downloading-a-file-over-an-unstable-connection-with-wget/
 alias jjar='java -jar' # cacao
 alias ssctl='sudo systemctl' # Less typing more sudo rm -rf / --no-preserve-root
 alias ssdrsma='sudo systemctl daemon-reload && sudo mount -a' # remount shit
 alias hl='history | less' # h(istory) l(ess)
-alias xdg-ninja='~/dev/xdg-ninja/xdg-ninja.sh' # short
 alias mannp='man -P cat' # man no pager
 alias run-updater='~/configs/updater.sh' # Run configs updater
 alias sefsa='sudo exportfs -a' # Network file system moment
@@ -581,15 +578,6 @@ mkcdiralias mcv ~/.minecraft/versions
 mkcdiralias mcmod ~/.minecraft/mods
 mkcdiralias mccr ~/.minecraft/crash-reports
 mkcdiralias mcshot ~/.minecraft/screenshots
-
-# }}}
-
-# XDG {{{
-
-mkcdiralias xdgcfg $XDG_CONFIG_HOME
-mkcdiralias xdgdat $XDG_DATA_HOME
-mkcdiralias xdgsta $XDG_STATE_HOME
-mkcdiralias xdgcac $XDG_CACHE_HOME
 
 # }}}
 
