@@ -55,7 +55,6 @@ HISTFILESIZE=2000
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# TODO is this really the place to put this?
 \mkdir -p "$HOME/.config/bash-configs"
 
 # }}}

@@ -59,8 +59,8 @@ alias i-am-root='sudo -i' # i am root
 alias gaming='cdgam' # Go to folder with GAMING
 alias gaming-b='bcdgam' # gaming (builtin cd edition)
 alias pshcfgspaipai='pshcfgs && paipai' # Push cfgs and paipia
-alias wine64='WINEPREFIX=~/.wine64 wine64' # Convenience: start Wine with the 64-bit prefix TODO xdg
-alias wine64cfg='WINEPREFIX=~/.wine64 winecfg' # Convenience 2: configure Wine with the 64-bit prefiix TODO xdg
+alias wine64='WINEPREFIX=~/.wine64 wine64' # Convenience: start Wine with the 64-bit prefix
+alias wine64cfg='WINEPREFIX=~/.wine64 winecfg' # Convenience 2: configure Wine with the 64-bit prefiix
 alias gaming-th='cdth' # touhou
 alias gaming-thu='cdthu' # Touhou utilities like thscorefileconveretr
 alias thprefix='export WINEPREFIX=$HOME/Games/TouhouShared' # Set current wine prefix to touhou prefix
