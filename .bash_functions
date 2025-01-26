@@ -738,6 +738,14 @@ bcd_or_nah() {
     fi
 }
 
+# Print the XDG variables (I forger often)
+xdg_vars() {
+    echo "XDG_DATA_HOME = $XDG_DATA_HOME"
+    echo "XDG_STATE_HOME = $XDG_STATE_HOME"
+    echo "XDG_CACHE_HOME = $XDG_CACHE_HOME"
+    echo "XDG_CONFIG_HOME = $XDG_CONFIG_HOME"
+}
+
 # Git status.
 gst() {
     # so basically whenever i do some changes in git i tend to like run git statuds
