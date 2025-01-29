@@ -484,22 +484,6 @@ formating() {
     git commit -am "Format $file" # conveinent innit
 }
 
-# Number of today's commits in configs
-nctcfgs() {
-    local oldpwd="$(pwd)"
-    builtin cd ~/configs || return
-    git log --oneline --since=midnight | wc -l
-    builtin cd "$oldpwd" || return
-}
-
-# Number of yesterday's commits in configs
-ncycfgs() {
-    local oldpwd="$(pwd)"
-    builtin cd ~/configs || return
-    git log --oneline --since=yesterday.midnight --until=midnight | wc -l
-    builtin cd "$oldpwd" || return
-}
-
 # grep todos
 grn2do() {
     local dir="."
@@ -891,9 +875,6 @@ bashrc-postinit() {
         [ -n "$net_usagi" ] && echo -e "Network usage today: \033[0;33m$net_usagi\033[0m."
     fi
 
-    local nctc="$(nctcfgs)"
-    echo -e "${nctc//1/1 commit in configs.}${nctc//0/No commits in configs.}${nctc//[2-9]*/$nctc commits in configs.}"
-
     [ "$PIPENV_ACTIVE" == "1" ] && echo "Running using pipenv."
 
     echo -e "\033[0;36m$(alias | wc -l)\033[0m aliases (\033[0;33m$NumAutoBashAliases\033[0m of which are automa$(t_or_g)ic) and \033[0;36m$(lsfuncs | wc -l)\033[0m functions are installed."
@@ -916,14 +897,12 @@ bashrc-postinit() {
         local BashAliasesRuntime=$(echo "scale=3; ($BashAliasesEndTime - $BashAliasesStartTime) / 1" | bc -l | awk '{if($0 ~ /^\./) print "0"$0; else print $0}')
         local BashFunctionsRuntime=$(echo "scale=3; ($BashFunctionsEndTime - $BashFunctionsStartTime) / 1" | bc -l | awk '{if($0 ~ /^\./) print "0"$0; else print $0}')
 
-        echo -e "Shell initialized in $BashrcRuntime seconds with \033[0;31m$BashrcNumErrors\033[0m errors."
-        echo -e "Aliases initialized in $BashAliasesRuntime seconds with \033[0;31m$BashAliasesNumErrors\033[0m errors."
-        echo -e "Functions initialized in $BashFunctionsRuntime seconds with \033[0;31m$BashFunctionsNumErrors\033[0m errors."
-    else
-        echo -e "Shell initialized with \033[0;31m$BashrcNumErrors\033[0m errors."
-        echo -e "Aliases initialized with \033[0;31m$BashAliasesNumErrors\033[0m errors."
-        echo -e "Functions initialized with \033[0;31m$BashFunctionsNumErrors\033[0m errors."
+        echo "Initialized. Shell: $BashrcRuntime sec; aliases: $BashAliasesRuntime sec; functions: $BashFunctionsRuntime sec."
     fi
+
+    [ "$BashrcNumErrors" != 0 ] && echo "$BashrcNumErrors errors occured while initializing shell."
+    [ "$BashAliasesNumErrors" != 0 ] && echo "$BashAliasesNumErrors errors occured while initializing aliases."
+    [ "$BashFunctionsNumErrors" != 0 ] && echo "$BashFunctionsNumErrors errors occured while initializing functions."
 
     if ! command -v "bc" > /dev/null 2>&1 && [ ! -f "$HOME/.idontwanttoinstallbc" ]; then
         echo -e "Shell init timing is \033[0;31munavailable\033[0m."
