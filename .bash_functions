@@ -867,67 +867,41 @@ some_chan() {
 # Bashrc post-init {{{
 
 bashrc-postinit() {
-    # Argument 1 is set to "1" if fetch completed successfully.
     if [ "$1" == "1" ]; then
-        echo -e "\n\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0;35m=\033[0;34m=\033[0m"
+        echo -e "\n$(printf '=%.0s\033[0;35m\033[0;34m' {1..22})\033[0m"
     fi
 
     echo -e "Hi \033[0;32m${USER^}-$(some_chan)\033[0m! This is \033[0;32m$(hostname)\033[0m."
+
     local dotw="$(LC_ALL=C date +"%A")"
-    if [ "$dotw" == "Friday" ]; then
-        echo "ITS FRIDAY!!!!!!!!!"
-    else
-        echo -e "It is currently \033[0;36m$(LC_ALL=C date +"%I:%M %p")\033[0m on $(adelightful) \033[0;36m$dotw\033[0m."
-    fi
+    [ "$dotw" == "Friday" ] && echo "ITS FRIDAY!!!!!!!!!" || echo -e "It is currently \033[0;36m$(LC_ALL=C date +"%I:%M %p")\033[0m on $(adelightful) \033[0;36m$dotw\033[0m."
 
     echo -e "Running configs version \033[0;32m$(vercfgs)\033[0m."
 
-    if (( $(date +"%k") < 6 )); then
-        echo "Why are you up so late?"
-    fi
+    [ $(date +"%k") -lt 6 ] && echo "Why are you up so late?"
 
     hcs-is-enabled --color
 
-    if [ -d "$HOME/configs/HourlySyncLogs" ]; then
-        echo -e "Hourly sync logs take up \033[1;33m$(du -sh ~/configs/HourlySyncLogs | awk '{ print $1 }').\033[0m"
-    fi
+    [ -d "$HOME/configs/HourlySyncLogs" ] && echo -e "Hourly sync logs take up \033[1;33m$(du -sh ~/configs/HourlySyncLogs | awk '{ print $1 }').\033[0m"
 
-    if uptime -p >/dev/null 2>&1; then
-        # uptime -p OK
-        echo -e "This computer has been up for \033[0;36m$(uptime -p | cut -c 4-)\033[0m."
-    fi
+    [ "$(uptime -p)" ] && echo -e "This computer has been up for \033[0;36m$(uptime -p | cut -c 4-)\033[0m."
 
-    # show network usage if vnstat is a valid command
     if command -v vnstat >/dev/null 2>&1; then
-        local net_usagi="$(vnstat --oneline | awk -F';' '{print $6}')" # うさぎ
-        if [ -n "$net_usagi" ]; then
-            # vnstat gave non-empty string
-            echo -e "Network usage today: \033[0;33m$net_usagi\033[0m."
-        fi
+        local net_usagi="$(vnstat --oneline | awk -F';' '{print $6}')"
+        [ -n "$net_usagi" ] && echo -e "Network usage today: \033[0;33m$net_usagi\033[0m."
     fi
 
-    nctc="$(nctcfgs)"
-    if [ "$nctc" == "1" ]; then
-        echo "1 commit in configs."
-    elif [ "$nctc" == "0" ]; then
-        echo "No commits in configs."
-    else
-        echo "$nctc commits in configs."
-    fi
+    local nctc="$(nctcfgs)"
+    echo -e "${nctc//1/1 commit in configs.}${nctc//0/No commits in configs.}${nctc//[2-9]*/$nctc commits in configs.}"
 
-    if [ "$PIPENV_ACTIVE" == "1" ]; then
-        echo "Running using pipenv."
-    fi
+    [ "$PIPENV_ACTIVE" == "1" ] && echo "Running using pipenv."
 
     echo -e "\033[0;36m$(alias | wc -l)\033[0m aliases (\033[0;33m$NumAutoBashAliases\033[0m of which are automa$(t_or_g)ic) and \033[0;36m$(lsfuncs | wc -l)\033[0m functions are installed."
 
     maythe4
     cirnoday
 
-    if [ "$PIPENV_ACTIVE" != "1" ]; then
-        torrentchecker
-    fi
-
+    [ "$PIPENV_ACTIVE" != "1" ] && torrentchecker
     rbsongrn
 
     if (( $(fdspercent) >= $(lowspcthr))) && [ ! -f "$HOME/.oklowspc" ]; then
@@ -937,35 +911,20 @@ bashrc-postinit() {
 
     local BashrcEndTime=$(date +%s.%N)
 
-    local RCErrorColor="\033[0;31m"
-    local AliasesErrorColor="\033[0;31m"
-    local FunctionsErrorColor="\033[0;31m"
-
-    if [ "$BashrcNumErrors" == "0" ]; then
-        RCErrorColor="\033[0;32m"
-    fi
-    if [ "$BashAliasesNumErrors" == "0" ]; then
-        AliasesErrorColor="\033[0;32m"
-    fi
-    if [ "$BashFunctionsNumErrors" == "0" ]; then
-        FunctionsErrorColor="\033[0;32m"
-    fi
-
     if command -v "bc" > /dev/null 2>&1; then
         local BashrcRuntime=$(echo "scale=3; ($BashrcEndTime - $BashrcStartTime) / 1" | bc -l | awk '{if($0 ~ /^\./) print "0"$0; else print $0}')
         local BashAliasesRuntime=$(echo "scale=3; ($BashAliasesEndTime - $BashAliasesStartTime) / 1" | bc -l | awk '{if($0 ~ /^\./) print "0"$0; else print $0}')
         local BashFunctionsRuntime=$(echo "scale=3; ($BashFunctionsEndTime - $BashFunctionsStartTime) / 1" | bc -l | awk '{if($0 ~ /^\./) print "0"$0; else print $0}')
 
-        echo -e "Shell initialized in $BashrcRuntime seconds with $RCErrorColor$BashrcNumErrors\033[0m errors."
-        echo -e "Aliases initialized in $BashAliasesRuntime seconds with $AliasesErrorColor$BashAliasesNumErrors\033[0m errors."
-        echo -e "Functions initialized in $BashFunctionsRuntime seconds with $FunctionsErrorColor$BashFunctionsNumErrors\033[0m errors."
+        echo -e "Shell initialized in $BashrcRuntime seconds with \033[0;31m$BashrcNumErrors\033[0m errors."
+        echo -e "Aliases initialized in $BashAliasesRuntime seconds with \033[0;31m$BashAliasesNumErrors\033[0m errors."
+        echo -e "Functions initialized in $BashFunctionsRuntime seconds with \033[0;31m$BashFunctionsNumErrors\033[0m errors."
     else
-        echo -e "Shell initialized with $RCErrorColor$BashrcNumErrors\033[0m errors."
-        echo -e "Aliases initialized with $AliasesErrorColor$BashAliasesNumErrors\033[0m errors."
-        echo -e "Functions initialized with $FunctionsErrorColor$BashFunctionsNumErrors\033[0m errors."
+        echo -e "Shell initialized with \033[0;31m$BashrcNumErrors\033[0m errors."
+        echo -e "Aliases initialized with \033[0;31m$BashAliasesNumErrors\033[0m errors."
+        echo -e "Functions initialized with \033[0;31m$BashFunctionsNumErrors\033[0m errors."
     fi
 
-    # If bc isn't installed then tell
     if ! command -v "bc" > /dev/null 2>&1 && [ ! -f "$HOME/.idontwanttoinstallbc" ]; then
         echo -e "Shell init timing is \033[0;31munavailable\033[0m."
         echo "To enable shell init timing, please install bc on your system."
@@ -975,10 +934,8 @@ bashrc-postinit() {
     stty echo
 
     "$HOME"/configs/updater.sh
-
     ls --color=auto -CF
-
-    rm-roll # this is done at the end in order to make sure that rm works always in init
+    rm-roll
 }
 
 # }}}
