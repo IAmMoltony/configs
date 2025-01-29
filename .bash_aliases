@@ -400,6 +400,7 @@ alias iqut='exit'
 alias uqit='exit'
 alias iutq='exit'
 alias ituq='exit'
+alias qito='exit'
 alias qui='exit'
 
 # }}}
