@@ -263,8 +263,8 @@ alias gbchcf='git branch -C' # Force copy a branch
 alias gbcha='git branch -a' # List every branch ever
 alias glgolth='glgth --oneline' # git log tag..HEAD one line
 alias gchk='git checkout' # git checkout
-alias gpog='git push origin main' # git push to origin
-alias gpgh='git push github main' # git push to github
+alias gpog='git push origin' # git push to origin
+alias gpgh='git push github' # git push to github
 
 # }}}
 
