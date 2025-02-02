@@ -851,10 +851,6 @@ some_chan() {
 # Bashrc post-init {{{
 
 bashrc-postinit() {
-    if [ "$1" == "1" ]; then
-        echo -e "\n$(printf '=%.0s\033[0;35m\033[0;34m' {1..22})\033[0m"
-    fi
-
     echo -e "Hi \033[0;32m${USER^}-$(some_chan)\033[0m! This is \033[0;32m$(hostname)\033[0m."
 
     local dotw="$(LC_ALL=C date +"%A")"
