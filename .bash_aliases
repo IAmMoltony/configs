@@ -96,7 +96,7 @@ alias rbrc='relbrc' # Less typing
 alias rba='relba' # Even less typing
 alias rbf='relbf' # Least typing
 alias paixorg='sudo pkill -9 Xorg' # kill xorg with ease
-alias xlogout='sudo pkill -u $USER' # Log out (TODO does this work on wayland? i dont feel like logging out rn so i'll check later)
+alias xlogout='sudo pkill -u $USER' # Log out (works on wayland too)
 alias dfs='dirfsp' # less typing less hedayhce
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias updrbrc='updcfgs && rbrc' # Update configs and then reload bashrc
