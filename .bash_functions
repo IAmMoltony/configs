@@ -848,6 +848,18 @@ some_chan() {
     echo "${asdfghjkl[RANDOM % ${#asdfghjkl[@]}]}"
 }
 
+# check quality of picture
+imql() {
+    identify -verbose "$1" | grep "Quality"
+}
+
+# run docker without selinux
+s0sdcu() {
+    sudo setenforce 0
+    sudo docker compose up
+    sudo setenforce 1
+}
+
 # Bashrc post-init {{{
 
 bashrc-postinit() {
