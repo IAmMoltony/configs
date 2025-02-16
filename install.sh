@@ -20,41 +20,26 @@ fastcomputermessage() {
     echo "The new config file is optimized for a fast computer by default. You can choose using the 'mpvcfgset' command."
 }
 
-echo "Creating melonDS config dir"
-mkdir -p "$HOME"/.config/melonDS
+config_dirs=(
+    "$HOME/.config/melonDS"
+    "$HOME/.config/bash-configs"
+    "$HOME/.config/kitty"
+    "$HOME/.config/i3"
+    "$HOME/.config/compton"
+    "$HOME/.config/bleachbit"
+    "$HOME/.config/openbox"
+    "$HOME/.config/qutebrowser"
+    "$HOME/.config/mpv"
+    "$HOME/.config/git"
+    "$HOME/.config/conky"
+    "$HOME/.config/gdb"
+)
 
-echo "Creating Bash config dir"
-mkdir -p "$HOME"/.config/bash-configs
-
-echo "Creating Kitty config dir"
-mkdir -p "$HOME"/.config/kitty
-
-echo "Creating i3 config dir"
-mkdir -p "$HOME"/.config/i3
-
-echo "Creating compton config dir"
-mkdir -p "$HOME"/.config/compton
-
-echo "Creating BleachBit config dir"
-mkdir -p "$HOME"/.config/bleachbit
-
-echo "Creating Openbox config dir"
-mkdir -p "$HOME"/.config/openbox
-
-echo "Creating qutebrowser config dir"
-mkdir -p "$HOME"/.config/qutebrowser
-
-echo "Creating mpv config dir"
-mkdir -p "$HOME"/.config/mpv
-
-echo "Creating Git config dir"
-mkdir -p "$HOME"/.config/git
-
-echo "Creating Conky config dir"
-mkdir -p "$HOME"/.config/conky
-
-echo "Creating GDB config dir"
-mkdir -p "$HOME"/.config/gdb
+echo "Creating configuration directories..."
+for dir in "${config_dirs[@]}"; do
+    echo " $dir"
+    mkdir -p "$dir"
+done
 
 cpcfg .profile
 cpcfg .vimrc
