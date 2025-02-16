@@ -210,6 +210,84 @@ gagcmpsh() {
     git push
 }
 
+# Same as the 3 above but for the custom push aliases
+# (i use them for projects i keep both on local hosting and gh)
+
+###########################################################
+# github master
+gcampghms() {
+    git commit -am "$1"
+    git push github master
+}
+
+gcmpghms() {
+    git commit -m "$1"
+    git push github master
+}
+
+gagcmpghms() {
+    git add .
+    git commit -m "$1"
+    git push github master
+}
+
+###########################################################
+# github main
+
+gcampghmn() {
+    git commit -am "$1"
+    git push github main
+}
+
+gcmpghmn() {
+    git commit -m "$1"
+    git push github main
+}
+
+gagcmpghmn() {
+    git add .
+    git commit -m "$1"
+    git push github main
+}
+
+###########################################################
+# origin master
+
+gcampogms() {
+    git commit -am "$1"
+    git push origin master
+}
+
+gcmpogms() {
+    git commit -m "$1"
+    git push origin master
+}
+
+gagcmpogms() {
+    git add .
+    git commit -m "$1"
+    git push origin master
+}
+
+###########################################################
+# origin main
+
+gcampogmn() {
+    git commit -am "$1"
+    git push origin main
+}
+
+gcmpogmn() {
+    git commit -m "$1"
+    git push origin main
+}
+
+gagcmpogmn() {
+    git add .
+    git commit -m "$1"
+    git push origin main
+}
+
 # Create a bookmark
 newbkmk() {
     # check params
