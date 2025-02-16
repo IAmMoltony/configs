@@ -2,12 +2,20 @@
 
 cpcfg() {
     echo "Syncing $1"
-    cp "$HOME"/"$1" .
+    if [ -f "$HOME"/"$1" ]; then
+        cp "$HOME"/"$1" .
+    else
+        echo "Warning: Skipping file $1 because path $HOME/$1 not found."
+    fi
 }
 
 cpcfgf() {
     echo "Syncing $1 as $2"
-    cp "$HOME"/"$1" ./"$2"
+    if [ -f "$HOME"/"$1" ]; then
+        cp "$HOME"/"$1" ./"$2"
+    else
+        echo "Warning: Skipping file $1 because path $HOME/$1 not found."
+    fi
 }
 
 mkdir .config/kitty -p

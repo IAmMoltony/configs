@@ -74,7 +74,7 @@ alias rf='rm -rf' # h
 alias wine64tricks='WINEPREFIX=~/.wine64 winetricks' # Winetricks in 64-bit prefix
 alias thu='thunar' # Shorthand for thunar
 alias thubkmk='thu ~/Bookmarks &' # Start Thunar in the bookmarks folder
-alias restoreresolution='xrandr -s 1366x768' # Restore screen resolution
+alias restoreresolution='xrandr -s 1366x768' # Restore screen resolution. It's hardcoded in memory of my old laptop, which is now dead.
 alias care='love .' # Start love2d
 alias dlmus='~/Music/music-lib/download' # Download music
 alias dlmusv='dlmus --verbose' # Download music (verbose edition)
