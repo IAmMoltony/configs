@@ -269,6 +269,7 @@ alias gpogmn='git push origin main' # git push main to origin
 alias gpogms='git push origin master' # git push master to origin
 alias gpghmn='git push github main' # git push main to github
 alias gpghms='git push github master' # git push master to github
+alias gfch='git log --follow -p --' # view commit history and diffs for file
 
 # }}}
 
