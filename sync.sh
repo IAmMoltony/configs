@@ -33,7 +33,7 @@ cpcfgf .config/openbox/rc.xml obrc.xml
 cpcfgf .config/openbox/autostart.sh obautostart.sh
 cpcfgf .config/mpv/input.conf mpvinput.conf
 cpcfgf .config/git/config .gitconfig
-cpcfgf .config/conky/conkyrc .conkyrc
+cpcfgf .config/conky/conky.conf .conkyrc
 
 echo "Success"
 

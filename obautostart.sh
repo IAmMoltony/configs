@@ -12,5 +12,6 @@ lxpolkit &
 xfce4-panel --disable-wm-check &
 blueman-applet &
 onboard &
+liferea &
 
 notify-send "Init done!!"
