@@ -938,6 +938,19 @@ s0sdcu() {
     sudo setenforce 1
 }
 
+# confirm unzip
+cuz() {
+    zipinfo "$1"
+    while true; do
+        read -n 1 -p "ok? [y or n] " yn
+        case $yn in
+            [Yy]* ) unzip "$1"; break;;
+            [Nn]* ) echo "ok"; return 1;;
+            * ) echo "please answer properly";;
+        esac
+    done
+}
+
 # Bashrc post-init {{{
 
 bashrc-postinit() {
