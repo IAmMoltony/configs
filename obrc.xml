@@ -375,6 +375,12 @@
         <command>x-terminal-emulator</command>
       </action>
     </keybind>
+    <!-- Launch file manager when the win plus eee -->
+    <keybind key="W-e">
+      <action name="Execute">
+        <command>Thunar</command>
+      </action>
+    </keybind>
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
