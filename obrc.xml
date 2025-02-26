@@ -381,6 +381,12 @@
         <command>Thunar</command>
       </action>
     </keybind>
+    <!-- Launch firefox when the win plus eff -->
+    <keybind key="W-f">
+      <action name="Execute">
+        <command>firefox</command>
+      </action>
+    </keybind>
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
