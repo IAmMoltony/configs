@@ -387,6 +387,12 @@
         <command>firefox</command>
       </action>
     </keybind>
+    <!-- Launch lutris when the win plus ell (am i really going to continue this pattern for the other shortcuts i add?..) -->
+    <keybind key="W-l">
+      <action name="Execute">
+        <command>lutris</command>
+      </action>
+    </keybind>
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
