@@ -387,10 +387,28 @@
         <command>firefox</command>
       </action>
     </keybind>
-    <!-- Launch lutris when the win plus ell (am i really going to continue this pattern for the other shortcuts i add?..) -->
+    <!-- Launch lutris when the win plus ell -->
     <keybind key="W-l">
       <action name="Execute">
         <command>lutris</command>
+      </action>
+    </keybind>
+    <!-- Launch oblogout when the funny task manager key -->
+    <keybind key="C-A-Delete">
+      <action name="Execute">
+        <command>~/oblogout-py3/data/oblogout</command>
+      </action>
+    </keybind>
+    <!-- Launch tor browser when the win plus why for some reason (tea already taken) -->
+    <keybind key="W-y">
+      <action name="Execute">
+        <command>torbrowser-launcher</command>
+      </action>
+    </keybind>
+    <!-- reconfigure bc im too lazy to do it by right click then reconfirure -->
+    <keybind key="W-A-r">
+      <action name="Execute">
+        <command>~/configs/reconf.sh</command>
       </action>
     </keybind>
   </keyboard>

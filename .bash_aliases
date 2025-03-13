@@ -147,6 +147,7 @@ alias sse0='sudo setenforce 0' # this alias and the one below it stem from me us
 alias sse1='sudo setenforce 1' # i dont know why
 alias :wq='exit' # uohh
 alias :qa='exit' # hair ornament
+alias sdcb='sudo docker compose build' # build dockr
 
 # }}}
 
