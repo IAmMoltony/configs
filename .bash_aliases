@@ -46,7 +46,8 @@ alias mkaur='makepkg -si --noconfirm' # Make an AUR package
 alias reboot='sudo reboot' # Reboot the computer
 alias freespc='df -h --total -x tmpfs -x efivarfs -x devtmpfs' # Check free space on the disk
 alias doxy='doxygen' # I'm too lazy to type 3 more characters
-alias h='history' # h(istory)
+alias h='history | less' # h(istory)
+alias hh='history' # h(istory) (no paged)
 alias shutdown='sudo shutdown now' # Shutdown NOW!
 alias ysnc='yay -S --noconfirm' # Install AUR package with yay
 alias ysyu='yay -Syu --noconfirm' # Update AUR packages with yay
@@ -148,6 +149,7 @@ alias sse1='sudo setenforce 1' # i dont know why
 alias :wq='exit' # uohh
 alias :qa='exit' # hair ornament
 alias sdcb='sudo docker compose build' # build dockr
+alias c-='cd -' # go back
 
 # }}}
 
