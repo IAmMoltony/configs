@@ -563,7 +563,7 @@ mkcdiralias dlgt ~/Bookmarks/Game\ downloads\ \(Touhou\)
 mkcdiralias dlfonts ~/Bookmarks/Downloaded\ fonts
 mkcdiralias emugames ~/Bookmarks/Games\ \(emulator\)
 mkcdiralias iso ~/Bookmarks/ISOs
-mkcdiralias dev ~/Bookmarks/Programming
+mkcdiralias dev ~/dev
 mkcdiralias shot ~/Bookmarks/Screenshots
 mkcdiralias ws ~/Bookmarks/Website
 mkcdiralias web ~/Bookmarks/Website
