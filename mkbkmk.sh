@@ -15,7 +15,6 @@ ln -s "$HOME"/Downloads/games/windows/touhou "$HOME"/Bookmarks/Game\ downloads\ 
 ln -s "$HOME"/Downloads/fonts "$HOME"/Bookmarks/Downloaded\ fonts
 ln -s "$HOME"/Games/EmulatorGames "$HOME"/Bookmarks/Games\ \(emulator\)
 ln -s "$HOME"/Downloads/isos "$HOME"/Bookmarks/ISOs
-ln -s "$HOME"/dev "$HOME"/Bookmarks/Programming
 ln -s "$HOME"/Pictures/Screenshots "$HOME"/Bookmarks/Screenshots
 ln -s "$HOME"/dev/IAmMoltony.github.io "$HOME"/Bookmarks/Website
 ln -s "$HOME"/.wine "$HOME"/Bookmarks/Wine
