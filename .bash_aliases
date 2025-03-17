@@ -433,6 +433,11 @@ if command -v btop >/dev/null 2>&1; then
     alias htop='btop'
 fi
 
+# if we on wayland then clipfile always wayland
+if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
+    alias clipfile='clipfile-wl'
+fi
+
 # WSL aliases {{{
 
 if [ -f ~/imrunningonwsl ]; then
