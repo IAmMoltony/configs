@@ -947,7 +947,7 @@ exit() {
 # update dnf till succeed
 sduyus() {
     while true; do
-        if sudo dnf update; then
+        if sudo -p "$(randomsudoprompt)" dnf update; then
             break
         fi
     done
@@ -1009,9 +1009,9 @@ imql() {
 
 # run docker without selinux
 s0sdcu() {
-    sudo setenforce 0
+    sudo -p "$(randomsudoprompt)" setenforce 0
     sudo docker compose up
-    sudo setenforce 1
+    sudo -p "$(randomsudoprompt)" setenforce 1
 }
 
 # confirm unzip
