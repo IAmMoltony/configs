@@ -5,22 +5,7 @@
 
 oldpwd="$(pwd)"
 
-# TODO separate. they are copypasted both here and in loader
-
-builtin cd "$HOME/configs/module/$1" || {
-    echo "Couldn't enter module '$1' directory."
-    exit 1
-}
-
-if [[ ! -f "module.txt" ]]; then
-    echo "Module $1 does not contain a module file"
-    exit 2
-fi
-
-if ! command -v "shellcheck" > /dev/null 2>&1; then
-    echo "Please install shellcheck to perform module checks."
-    exit 3
-fi
+. "$HOME/configs/module/mdsc-init.sh"
 
 echo "Checking module $1"
 
