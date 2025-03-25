@@ -41,4 +41,4 @@ done < "module.txt"
 
 echo "Loaded module $1"
 
-builtin cd "$oldpwd" || return
+builtin cd "$oldpwd"
