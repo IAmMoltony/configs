@@ -64,4 +64,6 @@ clear
 
 load_module rc
 
+trap - ERR
+trap - SIGINT
 cd
