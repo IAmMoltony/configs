@@ -4,7 +4,7 @@ set -e
 
 DLCC_Wget() {
 
-    if ! wget https://github.com/microsoft/cascadia-code/releases/download/v2404.23/CascadiaCode-2404.23.zip; then
+    if ! wget https://github.com/microsoft/cascadia-code/releases/download/v2407.24/CascadiaCode-2407.24.zip; then
         # non-zero error code means bad
         echo "Failed to download cascadia code!!!! try again next time and make sure your internet workd!!!!"
         exit 1
@@ -12,7 +12,7 @@ DLCC_Wget() {
 }
 
 DLCC_Curl() {
-    if ! curl -O https://github.com/microsoft/cascadia-code/releases/download/v2404.23/CascadiaCode-2404.23.zip; then
+    if ! curl -O https://github.com/microsoft/cascadia-code/releases/download/v2407.24/CascadiaCode-2407.24.zip; then
         # non-zero error code means bad
         echo "failed to download cascadia code!!!!!! Try again next time and make sure that your wifi is plugged in"
         exit 1
@@ -53,7 +53,7 @@ fi
 
 # Extract the font
 echo "Extracting cascadia code ..."
-unzip CascadiaCode-2404.23.zip
+unzip CascadiaCode-2407.24.zip
 
 # install it
 # This installs system wide, I might want to add an option for installing for one user
