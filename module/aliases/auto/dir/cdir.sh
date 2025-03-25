@@ -23,6 +23,7 @@ mkcdiralias mpv ~/.config/mpv
 mkcdiralias mpvs ~/.config/mpv/scripts
 mkcdiralias ansdk ~/Android/Sdk
 mkcdiralias zim ~/Notebooks
+mkcdiralias mod ~/configs/module
 
 # music-lib {{{
 
