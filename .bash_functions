@@ -454,24 +454,26 @@ mkcdiralias() {
 
 # New edt + cat alias
 mkecalias() {
-    ((NumAutoBashAliases += 4))
+    ((NumAutoBashAliases += 5))
     local short=$1
     local file=$2
     alias edt"$short"="$EDITOR \$(readlink -m $file)"
     alias cat"$short"="cat $file | less"
     alias catnp"$short"="cat $file"
     alias st"$short"="stat $file"
+    alias clip"$short"="clipfile $file"
 }
 
 # New edt + cat alias (sudo version)
 mksuecalias() {
-    ((NumAutoBashAliases += 4))
+    ((NumAutoBashAliases += 5))
     local short=$1
     local file=$2
     alias edt"$short"="sudo $EDITOR $file"
     alias cat"$short"="cat $file | less"
     alias catnp"$short"="cat $file"
     alias st"$short"="stat $file"
+    alias clip"$short"="clipfile $file"
 }
 
 # New --color=auto alias (color auto sounds like colorado)
@@ -1085,10 +1087,7 @@ bashrc-postinit() {
         echo "To disable this message, run disablebchint."
     fi
 
-    stty echo
-
     "$HOME"/configs/updater.sh
-    ls --color=auto -CF
     rm-roll
 }
 

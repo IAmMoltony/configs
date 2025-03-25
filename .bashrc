@@ -12,12 +12,19 @@ esac
 
 BashrcStartTime=$(date +%s.%N)
 
+# This crap doesn't work in the module system for some reason so it's here {{{
+
 BashrcNumErrors=0
 
 # Error handling {{{
 
 brcerrorhdlr() {
-    echo " ! Shell Init error on line $1"
+    echo " ! ERROR occured in shell init. Stack trace:"
+    local i=0
+    while [ $i -lt ${#BASH_SOURCE[@]} ]; do
+        echo "    ${BASH_SOURCE[$i]}:${BASH_LINENO[$i]} in func ${FUNCNAME[$i]}"
+        ((i++))
+    done
     ((BashrcNumErrors++))
 }
 
@@ -31,77 +38,7 @@ trap 'echo "Nuh-uh!"' SIGINT
 
 # }}}
 
-clear
-
-initmsg() {
-    echo -ne "\033[0;36m$1 "
-}
-
-# Basic init {{{
-
-initmsg "sh"
-
-stty -echo
-set +o histexpand
-
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
-
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-\mkdir -p "$HOME/.config/bash-configs"
-
-# }}}
-
-# Environment {{{
-
-initmsg "env"
-
-export EDITOR=/bin/vim
-export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/configs/bin:/usr/local/go/bin:$HOME/bin:$HOME/.local/share/dotnet/.dotnet/tools"
-export DOTNET_CLI_TELEMETRY_OPTOUT="true" # don't want no microsoft spying on me
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_STATE_HOME="$HOME/.local/state"
-export XDG_CACHE_HOME="$HOME/.cache"
-export NUGET_PACKAGES="$XDG_CACHE_HOME"/NuGetPackages
-export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
-export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
-export GOPATH="$XDG_DATA_HOME"/go
-export DOTNET_CLI_HOME="$XDG_DATA_HOME"/dotnet
-export CARGO_HOME="$XDG_DATA_HOME"/cargo
-export HISTFILE="${XDG_STATE_HOME}"/bash/history
-export ANDROID_USER_HOME="$XDG_DATA_HOME"/android
-
-mkdir -p "$XDG_STATE_HOME"/bash
-
-# }}}
-
-# Aliases and functions {{{
-
-initmsg "fun" # kotlin moment
-
-. ~/configs/.bash_functions
-
-initmsg "alias"
-
-. ~/configs/.bash_aliases
-
-# BA and BF have their own error handler, this changes it
-# to the BashRC one
-trap 'brcerrorhdlr $LINENO' ERR
-
-# }}}
-
 # Programmable completion {{{
-
-initmsg "comp"
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -117,164 +54,14 @@ fi
 
 # }}}
 
-# WSL {{{
+# }}}
 
-[ -f imrunningonwsl ] && {
-    initmsg "wsl"
-    WslDisplay=$(grep nameserver /etc/resolv.conf | awk '{print $2}')
-    export DISPLAY="${WslDisplay}:0.0"
+load_module() {
+    source "$HOME/configs/module/loader.sh" "$1"
 }
 
-# }}}
+clear
 
-# Prompt customization {{{
+load_module rc
 
-initmsg "ps1"
-
-# prompt customizatoin
-PROMPT_DIRTRIM=3
-PS1='$(ps1cs)\[\e[0;34m\]\@\[\e[0m\] $(git rev-parse --is-inside-work-tree > /dev/null 2>&1 && ps1gitinfo )\[\e[0;35m\]\u\[\e[0m\]@\[\e[0;35m\]\h \[\e[1;32m\]\w \[\e[0m\]$(randomcurrency) '
-PS2="ok and? "
-
-# ^^^
-# dir trim: only last 3 folders displayed
-# ps1: [uh or ok depending on whether command success] [time] [if in git repo then git stuff] [user]@[hostname] [cwd] [random currency]
-
-# }}}
-
-# Custom path {{{
-
-if [ -f ~/.custompath ]; then
-    initmsg "cp"
-    # TODO function for reloading custom path at will
-    . ~/.custompath
-    export PATH="$PATH:$CUSTOMPATH"
-fi
-
-# }}}
-
-export HTDOCS=/opt/lampp/htdocs
-
-# devkitPro {{{
-
-initmsg "dkp"
-
-export DEVKITPRO=/opt/devkitpro
-export DEVKITARM=${DEVKITPRO}/devkitARM
-export DEVKITPPC=${DEVKITPRO}/devkitPPC
-
-# }}}
-
-# Intel compiler {{{
-
-if [ -f "$HOME/intel/oneapi/setvars.sh" ]; then
-    initmsg "intel"
-    source "$HOME"/intel/oneapi/setvars.sh
-fi
-
-# }}}
-
-# pfetch configuration {{{
-
-initmsg "pfetch"
-
-# do some pfetch configurationing
-export PF_INFO="ascii title os host kernel uptime pkgs memory editor wm de shell palette"
-
-# }}}
-
-# pnpm {{{
-
-initmsg "pnpm"
-
-export PNPM_HOME="$HOME/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-
-# }}}
-
-# Perl {{{
-
-initmsg "perl"
-
-PATH="$HOME/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
-
-# }}}
-
-# Shell options {{{
-
-initmsg "shopt"
-
-shopt -s cdspell # Spell-checker for the `cd' command
-shopt -s histappend # Append to history file instead of overwriting it
-shopt -s checkwinsize # Check the window size (idk what this does)
-
-# }}}
-
-# Inconveniences {{{
-
-initmsg "inc"
-
-PROMPT_COMMAND="inconveniences; $PROMPT_COMMAND"
-
-# }}}
-
-# Check if python is installed {{{
-
-initmsg "pychk"
-
-if ! command -v python3 > /dev/null 2>&1; then
-    clear
-    echo "!!!! ATTENTION !!!!"
-    echo "YOU DO NOT HAVE PYTHON 3 INSTALLED !!!!!!!"
-    echo "INSTALL NOW OR YOU WILL REGRET IT!!!!!!!!!!!!!"
-    read -p -e "press enter"
-    clear
-fi
-
-# }}}
-
-# *fetch {{{
-
-# Run somethingfetch everytime the shell is started
-BashrcFetchOk="1"
-echo # absolutely required
-"$HOME"/configs/ultra_fetcher_9000.py || BashrcFetchOk="0"
-
-# }}}
-
-# MSSC {{{
-
-# Run Machine-Specific Startup Commands (MSSC)
-# This became necessary when I wanted to install nvm on WSL but I don't use nvm on my laptop
-
-stty echo
-
-if [ -f "$HOME/.mssc" ]; then
-    echo -e "\n\033[0m"
-    source "$HOME"/.mssc
-fi
-
-stty -echo
-
-# }}}
-
-# Post-init stuff {{{
-
-bashrc-postinit "$BashrcFetchOk"
-
-trap - ERR
-trap SIGINT
-
-# }}}
-
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-. "/home/moltony/.local/share/cargo/env"
+cd

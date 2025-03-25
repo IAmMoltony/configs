@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+alias dnbld='dotnet build -v n' # Build a .NET solution with normal verbosity
+alias dnbuild='dnbld' # dnbld but less short
+alias dnbldn='dotnet build -v n' # Build a .NET solution with normal verbosity (alt spelling)
+alias dnbuildn='dnbldn' # dnbldn but less short
+alias dnbldm='dotnet build -v m' # Build a .NET solution with minimal verbosity
+alias dnbuildm='dnbldm' # dnbldm but less short
+alias dnbldq='dotnet build -v q' # Build a .NET solution quietly
+alias dnbuildq='dnbldq' # dnbldq but less short
+alias dnbldd='dotnet build -v d' # Build a .NET solution with detailed verbosity
+alias dnbuildd='dnbldd' # dnbldd but less short
+alias dnblddg='dotnet build -v diag' # Build a .NET solution VERY FRICKING LOUDLY!!!
+alias dnbuilddg='dnblddg' # dnblddg but less short
+alias dnblddiag='dnblddg' # alt spellig
+alias dnbuilddiag='dnblddg' # another alt spelling
+alias dnrun='dotnet run -v n' # Run a .NET solution with normal verbosity
+alias dnrunn='dotnet run -v n' # because why not
+alias dnrunm='dotnet run -v m' # Run a .NET solution with minimal verbosity
+alias dnrunq='dotnet run -v q' # Run a .NET solution quietly
+alias dnrunq='dotnet run -v d' # Run a .NET solution with detailed verbosity
+alias dnrunq='dotnet run -v diag' # Run a .NET solution VERY FRICKING LOUDLY!!!
+alias dnrunnb='dnrun --no-build' # Run a .NET solution but no build
+alias dnbuildrel='dotnet build -v n -c Release' # Build with release config
+alias dnbldrel='dnbuildrel' # Yeah
+alias dnrunrel='dotnet run -v n -c Release' # Run with release config
+alias dnclean='dotnet clean -v n' # dotnet clean
+alias dncln='dotnet clean -v n' # There is no reason for this to exist
+alias dnfmt='dotnet format' # .NET formatting
+alias dnme='dotnet mgcb-editor' # MGCB editor

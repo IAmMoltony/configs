@@ -1,0 +1,17 @@
+basic
+env
+aliasfunc
+wsl
+ps1
+cpath
+dkp
+intel
+pfetch
+pnpm
+perl
+shopt
+incon
+pychk
+fetch
+mssc
+postinit
