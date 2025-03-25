@@ -156,7 +156,7 @@ main() {
     # Listening to high pitched bass boosted distorted first 5 seconds if cirno's perfect math class made me go insane.
     trap 'kill $(jobs -p)' EXIT
 
-    if [ $(( RANDOM % 50 )) -lt 0 ]; then
+    if [ $(( RANDOM % 1000 )) -lt 1 ]; then
         WE_DO_A_BIT_OF_TROLLING
     fi
     infringe_on_copyright
