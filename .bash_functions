@@ -1033,30 +1033,30 @@ cuz() {
 
 bashrc-postinit() {
     # TODO maybe write a function for making the goofy ahh 6 space echo
-    echo -e "      \033[0;36m*\033[0m Hi \033[0;32m${USER^}-$(some_chan)\033[0m! This is \033[0;32m$(hostname)\033[0m."
+    echo -e "      \033[0;35m:)\033[0m Hi \033[0;32m${USER^}-$(some_chan)\033[0m! This is \033[0;32m$(hostname)\033[0m."
 
     local dotw="$(LC_ALL=C date +"%A")"
-    [ "$dotw" == "Friday" ] && echo "      \033[0;32m^\033[0m ITS FRIDAY!!!!!!!!!" || echo -e "      \033[0;36m*\033[0m It is currently \033[0;36m$(LC_ALL=C date +"%I:%M %p")\033[0m on $(adelightful) \033[0;36m$dotw\033[0m."
+    [ "$dotw" == "Friday" ] && echo "      \033[0;32m^^\033[0m ITS FRIDAY!!!!!!!!!" || echo -e "      \033[0;36m**\033[0m It is currently \033[0;36m$(LC_ALL=C date +"%I:%M %p")\033[0m on $(adelightful) \033[0;36m$dotw\033[0m."
 
-    echo -e "      \033[0;36m*\033[0m Configs version: $(vercfgs)."
+    echo -e "      \033[0;36m**\033[0m Configs version: $(vercfgs)."
 
-    [ $(date +"%k") -lt 6 ] && echo "\033[0;34m?\033[0m Why are you up so late?"
+    [ $(date +"%k") -lt 6 ] && echo "\033[0;34m??\033[0m Why are you up so late?"
 
-    echo -en "      \033[0;36m*\033[0m "
+    echo -en "      \033[0;36m**\033[0m "
     hcs-is-enabled --color
 
-    [ -d "$HOME/configs/HourlySyncLogs" ] && echo -e "      \033[0;36m*\033[0m Hourly sync logs take up \033[1;33m$(du -sh ~/configs/HourlySyncLogs | awk '{ print $1 }').\033[0m"
+    [ -d "$HOME/configs/HourlySyncLogs" ] && echo -e "      \033[0;36m**\033[0m Hourly sync logs take up \033[1;33m$(du -sh ~/configs/HourlySyncLogs | awk '{ print $1 }').\033[0m"
 
-    [ "$(uptime -p)" ] && echo -e "      \033[0;36m*\033[0m This computer has been up for \033[0;36m$(uptime -p | cut -c 4-)\033[0m."
+    [ "$(uptime -p)" ] && echo -e "      \033[0;36m**\033[0m This computer has been up for \033[0;36m$(uptime -p | cut -c 4-)\033[0m."
 
     if command -v vnstat >/dev/null 2>&1; then
         local net_usagi="$(vnstat --oneline | awk -F';' '{print $6}')"
-        [ -n "$net_usagi" ] && echo -e "      \033[0;36m*\033[0m Network usage today: \033[0;33m$net_usagi\033[0m."
+        [ -n "$net_usagi" ] && echo -e "      \033[0;36m**\033[0m Network usage today: \033[0;33m$net_usagi\033[0m."
     fi
 
-    [ "$PIPENV_ACTIVE" == "1" ] && echo "      \033[0;36m*\033[0m Running using pipenv."
+    [ "$PIPENV_ACTIVE" == "1" ] && echo "      \033[0;36m**\033[0m Running using pipenv."
 
-    echo -e "      \033[0;36m*\033[0m \033[0;36m$(alias | wc -l)\033[0m aliases (\033[0;33m$NumAutoBashAliases\033[0m of which are automa$(t_or_g)ic) and \033[0;36m$(lsfuncs | wc -l)\033[0m functions are installed."
+    echo -e "      \033[0;36m**\033[0m \033[0;36m$(alias | wc -l)\033[0m aliases (\033[0;33m$NumAutoBashAliases\033[0m of which are automa$(t_or_g)ic) and \033[0;36m$(lsfuncs | wc -l)\033[0m functions are installed."
 
     maythe4
     cirnoday
@@ -1065,8 +1065,8 @@ bashrc-postinit() {
     rbsongrn
 
     if (( $(fdspercent) >= $(lowspcthr))) && [ ! -f "$HOME/.oklowspc" ]; then
-        echo -e "      \033[0;31m!\033[0m \033[0;31mWARNING YOU ARE RUNNING DANGEROUSLY LOW ON SPACE!!!!!!!!!!!!!\033[0m"
-        echo -e "      \033[0;31m!\033[0m Run \033[0;36moklowspc\033[0m to disable the above message. Run \033[0;36msetlowspcthr\033[0m to change low space threshold."
+        echo -e "      \033[0;31m!!\033[0m \033[0;31mWARNING YOU ARE RUNNING DANGEROUSLY LOW ON SPACE!!!!!!!!!!!!!\033[0m"
+        echo -e "      \033[0;31m!!\033[0m Run \033[0;36moklowspc\033[0m to disable the above message. Run \033[0;36msetlowspcthr\033[0m to change low space threshold."
     fi
 
     local BashrcEndTime=$(date +%s.%N)
@@ -1076,17 +1076,17 @@ bashrc-postinit() {
         local BashAliasesRuntime=$(echo "scale=3; ($BashAliasesEndTime - $BashAliasesStartTime) / 1" | bc -l | awk '{if($0 ~ /^\./) print "0"$0; else print $0}')
         local BashFunctionsRuntime=$(echo "scale=3; ($BashFunctionsEndTime - $BashFunctionsStartTime) / 1" | bc -l | awk '{if($0 ~ /^\./) print "0"$0; else print $0}')
 
-        echo -e "      \033[0;36m*\033[0m Init time total: $BashrcRuntime sec; aliases: $BashAliasesRuntime sec; functions: $BashFunctionsRuntime sec."
+        echo -e "      \033[0;36m**\033[0m Init time total: $BashrcRuntime sec; aliases: $BashAliasesRuntime sec; functions: $BashFunctionsRuntime sec."
     fi
 
-    [ "$BashrcNumErrors" != 0 ] && echo -e "      \033[0;31m!\033[0m $BashrcNumErrors errors occured while initializing shell."
-    [ "$BashAliasesNumErrors" != 0 ] && echo -e "      \033[0;31m!\033[0m $BashAliasesNumErrors errors occured while initializing aliases."
-    [ "$BashFunctionsNumErrors" != 0 ] && echo -e "      \033[0;31m!\033[0m $BashFunctionsNumErrors errors occured while initializing functions."
+    [ "$BashrcNumErrors" != 0 ] && echo -e "      \033[0;31m!!\033[0m $BashrcNumErrors errors occured while initializing shell."
+    [ "$BashAliasesNumErrors" != 0 ] && echo -e "      \033[0;31m!!\033[0m $BashAliasesNumErrors errors occured while initializing aliases."
+    [ "$BashFunctionsNumErrors" != 0 ] && echo -e "      \033[0;31m!!\033[0m $BashFunctionsNumErrors errors occured while initializing functions."
 
     if ! command -v "bc" > /dev/null 2>&1 && [ ! -f "$HOME/.idontwanttoinstallbc" ]; then
-        echo -e "      \033[0;31m!\033[0m Shell init timing is \033[0;31munavailable\033[0m."
-        echo -e "      \033[0;31m!\033[0m To enable shell init timing, please install bc on your system."
-        echo -e "      \033[0;31m!\033[0m To disable this message, run \033[0;36mdisablebchint\033[0m."
+        echo -e "      \033[0;31m!!\033[0m Shell init timing is \033[0;31munavailable\033[0m."
+        echo -e "      \033[0;31m!!\033[0m To enable shell init timing, please install bc on your system."
+        echo -e "      \033[0;31m!!\033[0m To disable this message, run \033[0;36mdisablebchint\033[0m."
     fi
 
     "$HOME"/configs/updater.sh
