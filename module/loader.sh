@@ -43,7 +43,7 @@ done < "module.txt"
 local ModuleEndTime=$(date +%s.%N)
 if has_bc; then
     local ModuleRuntime=$(echo "scale=3; ($ModuleEndTime - $ModuleStartTime) / 1" | bc -l | awk '{if($0 ~ /^\./) print "0"$0; else print $0}')
-    echo "Load module $1 in $ModuleRuntime sec"
+    echo "Loaded module $1 in $ModuleRuntime sec"
 else
     echo "Loaded module $1"
 fi
