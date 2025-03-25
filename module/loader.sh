@@ -21,16 +21,17 @@ if [[ ! -f "module.txt" ]]; then
 fi
 
 echo "Loading module $1"
+local ModuleStartTime=$(date +%s.%N)
 
 while IFS= read -r module; do
     if [[ -f "$module.sh" ]]; then
         local module_clean_name="$(echo "$module" | sed 's/\//->/g')"
-        local ModuleStartTime=$(date +%s.%N)
+        local SubmoduleStartTime=$(date +%s.%N)
         . "$module.sh"
-        local ModuleEndTime=$(date +%s.%N)
+        local SubmoduleEndTime=$(date +%s.%N)
         if has_bc; then
-            local ModuleRuntime=$(echo "scale=3; ($ModuleEndTime - $ModuleStartTime) / 1" | bc -l | awk '{if($0 ~ /^\./) print "0"$0; else print $0}')
-            echo "  Loaded submodule $1->$module_clean_name in $ModuleRuntime sec"
+            local SubmoduleRuntime=$(echo "scale=3; ($SubmoduleEndTime - $SubmoduleStartTime) / 1" | bc -l | awk '{if($0 ~ /^\./) print "0"$0; else print $0}')
+            echo "  Loaded submodule $1->$module_clean_name in $SubmoduleRuntime sec"
         else
             echo "  Loaded submodule $1->$module_clean_name"
         fi
@@ -39,6 +40,12 @@ while IFS= read -r module; do
     fi
 done < "module.txt"
 
-echo "Loaded module $1"
+local ModuleEndTime=$(date +%s.%N)
+if has_bc; then
+    local ModuleRuntime=$(echo "scale=3; ($ModuleEndTime - $ModuleStartTime) / 1" | bc -l | awk '{if($0 ~ /^\./) print "0"$0; else print $0}')
+    echo "Load module $1 in $ModuleRuntime sec"
+else
+    echo "Loaded module $1"
+fi
 
 builtin cd "$oldpwd"
