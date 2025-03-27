@@ -32,6 +32,33 @@ trap 'brcerrorhdlr $LINENO' ERR
 
 # }}}
 
+# I make my own preexec lol {{{
+
+preexec() {
+    echo "uwu"
+}
+
+
+prepreexec() {
+    bashcmd="$BASH_COMMAND"
+    avoid=(
+        "inconveniences"
+        "builtin declare -F _ksi_prompt_command > /dev/null 2> /dev/null"
+        "_ksi_prompt_command"
+        "trap - ERR"
+        "trap - SIGINT"
+    )
+
+    if [[ " ${avoid[@]} " =~ " ${bashcmd} " ]]; then
+        return
+    fi
+    preexec
+}
+
+trap 'prepreexec' DEBUG
+
+# }}}
+
 # Ctrl-C prevention {{{
 
 trap 'echo "Nuh-uh!"' SIGINT
