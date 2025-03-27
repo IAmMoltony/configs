@@ -41,12 +41,24 @@ preexec() {
 
 prepreexec() {
     bashcmd="$BASH_COMMAND"
+    #echo "$bashcmd"
     avoid=(
         "inconveniences"
         "builtin declare -F _ksi_prompt_command > /dev/null 2> /dev/null"
         "_ksi_prompt_command"
         "trap - ERR"
         "trap - SIGINT"
+        "builtin unset KITTY_BASH_RCFILE KITTY_BASH_POSIX_ENV KITTY_BASH_ETC_LOCATION"
+        "builtin unset -f _ksi_sourceable"
+        "builtin export KITTY_SHELL_INTEGRATION=\"\$ksi_val\""
+        "builtin unset _ksi_i ksi_val kitty_bash_inject"
+        "[ \"\${BASH_VERSINFO:-0}\" -lt 4 ]"
+        "[[ \"\${_ksi_prompt[sourced]}\" == \"y\" ]]"
+        "builtin declare -A _ksi_prompt"
+        "_ksi_prompt=([cursor]='y' [title]='y' [mark]='y' [complete]='y' [cwd]='y' [sudo]='y' [ps0]='' [ps0_suffix]='' [ps1]='' [ps1_suffix]='' [ps2]='' [hostname_prefix]='' [sourced]='y' [last_reported_cwd]='')"
+        "_ksi_main"
+        "builtin unset -f _ksi_main"
+        "case :\$SHELLOPTS: in "
     )
 
     if [[ " ${avoid[@]} " =~ " ${bashcmd} " ]]; then
