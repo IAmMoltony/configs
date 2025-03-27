@@ -646,11 +646,7 @@ thinking() {
     done
 }
 
-# Random insult
-random_insult() {
-    local insults=("big doofus" "disappointment" "failure" "garbage truck" "stupid" "cabbagehead" "silly goose" "clown" "potato brain" "cirno" "fricking lunatic" "drongo")
-    echo "${insults[RANDOM % ${#insults[@]}]}"
-}
+source "$HOME/configs/random-insult.sh"
 
 # T or G?
 t_or_g() {

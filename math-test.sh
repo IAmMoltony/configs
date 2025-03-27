@@ -1,12 +1,6 @@
 #!/usr/bin/env bash
 
-# Random insult
-# TODO this is currently used both here and .bash_functions. Separate into its own file (module/common?)
-random_insult() {
-    # thanks chatgpt for making this code shorter
-    local insults=("big doofus" "disappointment" "failure" "garbage truck" "stupid" "cabbagehead" "silly goose" "clown" "potato brain" "cirno" "fricking lunatic" "drongo")
-    echo "${insults[RANDOM % ${#insults[@]}]}"
-}
+source "$HOME/configs/random-insult.sh"
 
 # This runs on failure
 mathtestfailure() {
