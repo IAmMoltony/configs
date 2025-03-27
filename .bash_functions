@@ -606,7 +606,7 @@ inconveniences() {
 
     # Inconvenience 4: ...uh...I'm thinking...
     local kek=$(( RANDOM % 100 ))
-    if (( kek <= 10 )); then
+    if (( kek <= 4 )); then
         thinking
     fi
 }
