@@ -36,6 +36,7 @@ trap 'brcerrorhdlr $LINENO' ERR
 
 preexec() {
     # TODO add pre-execution logic here...
+    true
 }
 
 
