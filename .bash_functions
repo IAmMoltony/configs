@@ -122,6 +122,7 @@ syncmrba() {
 syncmrbf() {
     synccfgsm "$@"
     source ~/configs/.bash_functions
+    trap - ERR
 }
 
 # Sync configs, then reload aliases and functions
@@ -129,6 +130,7 @@ syncmrbfba() {
     synccfgsm "$@"
     source ~/configs/.bash_functions
     source ~/configs/.bash_aliases
+    trap - ERR
 }
 
 # Sync configs, then exit
