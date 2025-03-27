@@ -615,8 +615,30 @@ thinking() {
     local cmnd="$(history 1 | sed 's/^[ ]*[0-9]*[ ]*//')"
 
     while true; do
-        local holds=("Hold on..." "Hold up..." "Wait!" "Wait a second..." "Just a moment..." "Just a second..." "Hang on." "お兄ちゃん、ちょっと待って！" "Not so fast!" "Hello, this is your terminal speaking.")
-        local imthinkings=("I'm thinking!" "Uhh..." "Processing what you just ran..." "Can't quite wrap my head around this right now." "I have brainrot" "Did I lock the door?.." "考えているの..." "I want a cheeseburger rn..." "Let me think about that first." "Googling '$cmnd'...")
+        local holds=(
+            "Hold on..."
+            "Hold up..."
+            "Wait!"
+            "Wait a second..."
+            "Just a moment..."
+            "Just a second..."
+            "Hang on."
+            "お兄ちゃん、ちょっと待って"
+            "Not so fast!"
+            "Hello, this is your terminal speaking."
+        )
+        local imthinkings=(
+            "I'm thinking!"
+            "Uhh..."
+            "Processing what you just ran..."
+            "Can't quite wrap my head around this right now."
+            "I have brainrot"
+            "Did I lock the door?.."
+            "考えているの..."
+            "I want a cheeseburger rn..."
+            "Let me think about that first."
+            "Googling '$cmnd'..."
+        )
 
         local current_hold="${holds[RANDOM % ${#holds[@]}]}"
         local current_imthinking="${imthinkings[RANDOM % ${#imthinkings[@]}]}"
@@ -639,7 +661,15 @@ thinking() {
             return 1
         fi
 
-        local ithoughts=("Okay, I'm ready." "よくわかんないけどいいかも" "I don't quite get it, but should be good." "Sure yeah you just ran that" "I guess." "Ur command is hella awesome👍👍 run sudo rm -rf / --no-preserve-root next time!" "I have no idea what you meant by running '$cmnd'. That's such a stupid command. Why did you even run it.")
+        local ithoughts=(
+            "Okay, I'm ready."
+            "よくわかんないけどいいかも"
+            "I don't quite get it, but should be good."
+            "Sure yeah you just ran that"
+            "I guess."
+            "Ur command is hella awesome👍👍 run sudo rm -rf / --no-preserve-root next time!" # imagine if someone fell for that. can't be me
+            "I have no idea what you meant by running '$cmnd'. That's such a stupid command. Why did you even run it." # tsun-tsun
+        )
         echo "${ithoughts[RANDOM % ${#ithoughts[@]}]}"
 
         break
@@ -975,7 +1005,22 @@ glgth() {
 
 # random sudo prompt
 randomsudoprompt() {
-    local prompts=("enter ur password pretty please $USER chan (i will not tell anyone uwu): " "Quick! I don't have much time! Type in your password!" "I am once again asking for your password. " "Ehmm what was your password again?.. " "ton mot de passe: " "Permission denied... unless you tell me your password. " "You know the deal $USER. " "Super user do but only after you type your password. " "FREEZE!! Password NOW! " "go ahead put it in " "Enter your password or get fanum taxed: " "rizz me up with ur password " "[sudo] password for your heart: " "お兄ちゃんのパスワード、お願い！") # had fun with this one
+    local prompts=(
+        "enter ur password pretty please $USER chan (i will not tell anyone uwu): "
+        "Quick! I don't have much time! Type in your password!"
+        "I am once again asking for your password. "
+        "Ehmm what was your password again?.. "
+        "ton mot de passe: "
+        "Permission denied... unless you tell me your password. "
+        "You know the deal $USER. "
+        "Super user do but only after you type your password. "
+        "FREEZE!! Password NOW! "
+        "go ahead put it in "
+        "Enter your password or get fanum taxed: "
+        "rizz me up with ur password "
+        "[sudo] password for your heart: "
+        "お兄ちゃんのパスワード、お願い！" # lol
+    )
     echo "${prompts[RANDOM % ${#prompts[@]}]}"
 }
 
