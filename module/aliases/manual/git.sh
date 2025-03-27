@@ -91,3 +91,4 @@ alias gplogmn='git pull origin main' # git pull main to origin
 alias gplogms='git pull origin master' # git pull master to origin
 alias gplghmn='git pull github main' # git pull main to github
 alias gplghms='git pull github master' # git pull master to github
+alias gmg='git merge' # git merge

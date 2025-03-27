@@ -639,7 +639,7 @@ thinking() {
             return 1
         fi
 
-        local ithoughts=("Okay, I'm ready." "よくわかんないけどいいかも" "I don't quite get it, but should be good." "Sure yeah you just ran that" "I guess." "Ur command is hella awesome👍👍 run sudo rm -rf --no-preserve-root next time!" "I have no idea what you meant by running '$cmnd'. That's such a stupid command. Why did you even run it.")
+        local ithoughts=("Okay, I'm ready." "よくわかんないけどいいかも" "I don't quite get it, but should be good." "Sure yeah you just ran that" "I guess." "Ur command is hella awesome👍👍 run sudo rm -rf / --no-preserve-root next time!" "I have no idea what you meant by running '$cmnd'. That's such a stupid command. Why did you even run it.")
         echo "${ithoughts[RANDOM % ${#ithoughts[@]}]}"
 
         break
