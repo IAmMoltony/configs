@@ -35,7 +35,7 @@ trap 'brcerrorhdlr $LINENO' ERR
 # I make my own preexec lol {{{
 
 preexec() {
-    echo "uwu"
+    # TODO add pre-execution logic here...
 }
 
 
@@ -59,6 +59,7 @@ prepreexec() {
         "_ksi_main"
         "builtin unset -f _ksi_main"
         "case :\$SHELLOPTS: in "
+        "cd_or_nah"
     )
 
     if [[ " ${avoid[@]} " =~ " ${bashcmd} " ]]; then
