@@ -1126,7 +1126,7 @@ bashrc-postinit() {
     echo -e "      \033[0;35m:)\033[0m Hi \033[0;32m${USER^}-$(some_chan)\033[0m! This is \033[0;32m$(hostname)\033[0m."
 
     local dotw="$(LC_ALL=C date +"%A")"
-    [ "$dotw" == "Friday" ] && echo "      \033[0;32m^^\033[0m ITS FRIDAY!!!!!!!!!" || echo -e "      \033[0;36m**\033[0m It is currently \033[0;36m$(LC_ALL=C date +"%I:%M %p")\033[0m on $(adelightful) \033[0;36m$dotw\033[0m."
+    [ "$dotw" == "Friday" ] && echo -e "      \033[0;32m^^\033[0m ITS FRIDAY!!!!!!!!!" || echo -e "      \033[0;36m**\033[0m It is currently \033[0;36m$(LC_ALL=C date +"%I:%M %p")\033[0m on $(adelightful) \033[0;36m$dotw\033[0m."
 
     echo -e "      \033[0;36m**\033[0m Configs version: $(vercfgs)."
 
