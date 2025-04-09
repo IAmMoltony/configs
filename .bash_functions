@@ -1212,4 +1212,6 @@ fi
 
 # }}}
 
+trap - ERR
+
 BashFunctionsEndTime=$(date +%s.%N)

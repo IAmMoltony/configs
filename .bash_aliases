@@ -6,4 +6,5 @@
 
 export BashAliasesStartTime=$(date +%s.%N)
 load_module aliases
+trap - ERR
 export BashAliasesEndTime=$(date +%s.%N)
