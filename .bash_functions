@@ -3,6 +3,8 @@
 # shellcheck shell=bash
 # Moltony's Bash Functions
 
+# TODO make this modular
+
 BashFunctionsStartTime=$(date +%s.%N)
 
 # Error handling {{{
@@ -1117,6 +1119,11 @@ cuz() {
             * ) echo "please answer properly";;
         esac
     done
+}
+
+# lq but reverse (see module aliases/manual/ls module)
+lqr() {
+    ls -tl -1 "$@" | tac
 }
 
 # Bashrc post-init {{{
