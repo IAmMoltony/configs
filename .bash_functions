@@ -1151,7 +1151,7 @@ bashrc-postinit() {
         [ -n "$net_usagi" ] && echo -e "      \033[0;36m**\033[0m Network usage today: \033[0;33m$net_usagi\033[0m."
     fi
 
-    [ "$PIPENV_ACTIVE" == "1" ] && echo "      \033[0;36m**\033[0m Running using pipenv."
+    [ "$PIPENV_ACTIVE" == "1" ] && echo -e "      \033[0;36m**\033[0m Running using pipenv."
 
     echo -e "      \033[0;36m**\033[0m \033[0;36m$(alias | wc -l)\033[0m aliases (\033[0;33m$NumAutoBashAliases\033[0m of which are automa$(t_or_g)ic) and \033[0;36m$(lsfuncs | wc -l)\033[0m functions are installed."
 
