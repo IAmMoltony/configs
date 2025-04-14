@@ -1,0 +1,6 @@
+errhandle
+mdcd
+cfgs
+cntfiles
+git
+misc
