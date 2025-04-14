@@ -14,8 +14,8 @@ manual/sync
 manual/quit
 manual/cond
 manual/wsl
-auto/ec
-auto/suec
+auto/ec/ec
+auto/ec/suec
 auto/dir/cdir
 auto/dir/parent
 auto/colorado

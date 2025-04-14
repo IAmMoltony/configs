@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 # this is a mess
+# which is why
+# TODO move stuff into submods
 
 alias rm='rm -iv' # Remove a file (verbose + confirm)
 alias cp='cp -v' # Copy a file (verbose)
@@ -17,6 +19,7 @@ alias grephist='history | grep' # Search in comman history
 alias relbrc='reload-bashrc' # Short reload-bashrc alias
 alias relba='reload-bashaliases' # Short reload-bashaliases alias
 alias relbf='reload-bashfuncs' # Short reload-bashfuncs alias
+alias relcp='reliadcpath' # Short reloadcpath...wait why is it spelled without a hyphen
 alias hd='hexdump -C' # Hexdump but pretty (the hd binary is not in every distro)
 alias mkaur='makepkg -si --noconfirm' # Make an AUR package
 alias reboot='sudo reboot' # Reboot the computer
@@ -72,6 +75,7 @@ alias ffwcfg='fastfetch -c $HOME/configs/fastfetch-cfg.jsonc' # Run fastfetch wi
 alias rbrc='relbrc' # Less typing
 alias rba='relba' # Even less typing
 alias rbf='relbf' # Least typing
+alias rcp='relcp' # Negative typing
 alias paixorg='sudo pkill -9 Xorg' # kill xorg with ease
 alias xlogout='sudo pkill -u $USER' # Log out (works on wayland too)
 alias dfs='dirfsp' # less typing less hedayhce

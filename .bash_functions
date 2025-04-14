@@ -1126,6 +1126,11 @@ lqr() {
     ls -tl -1 "$@" | tac
 }
 
+reloadcpath() {
+    . ~/.custompath
+    export PATH="$PATH:$CUSTOMPATH"
+}
+
 # Bashrc post-init {{{
 
 # Goofy ahh 6 space echo
