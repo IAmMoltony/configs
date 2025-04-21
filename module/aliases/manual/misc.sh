@@ -128,4 +128,4 @@ alias sse1='sudo setenforce 1' # i dont know why
 alias :wq='exit' # uohh
 alias :qa='exit' # hair ornament
 alias c-='cd -' # go back
-
+alias speedtest-cli='speedtest-cli --secure' # always forgor
