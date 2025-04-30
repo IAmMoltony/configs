@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-# this is a mess
-# which is why
-# TODO move stuff into submods
+# General dumping ground for random aliases.
+# TODO add some into modules.
 
 alias rm='rm -iv' # Remove a file (verbose + confirm)
 alias cp='cp -v' # Copy a file (verbose)
@@ -129,3 +128,6 @@ alias :wq='exit' # uohh
 alias :qa='exit' # hair ornament
 alias c-='cd -' # go back
 alias speedtest-cli='speedtest-cli --secure' # always forgor
+alias edtmod='vim ~/configs/module' # edit module (opens the file explorer thingie)
+alias edtba='vim ~/configs/module/aliases' # edit aliases
+alias edtbrcmod='vim ~/configs/module/rc' # edit brc module

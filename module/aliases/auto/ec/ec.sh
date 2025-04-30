@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 mkecalias brc ~/.bashrc
-mkecalias ba ~/configs/.bash_aliases
 mkecalias cp ~/.custompath
 mkecalias cpath ~/.custompath
 mkecalias bf ~/configs/.bash_functions
