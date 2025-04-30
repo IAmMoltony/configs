@@ -95,3 +95,4 @@ alias gmg='git merge' # git merge
 alias gpshu='git push -u' # git push upstream
 alias gpshuo='gpshu origin' # git push -u origin
 alias gtg='git tag' # git tag
+alias gtg-howto='echo "git tag -a tag-name -m message"' # cheet sheet
