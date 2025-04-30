@@ -94,3 +94,4 @@ alias gplghms='git pull github master' # git pull master to github
 alias gmg='git merge' # git merge
 alias gpshu='git push -u' # git push upstream
 alias gpshuo='gpshu origin' # git push -u origin
+alias gtg='git tag' # git tag
