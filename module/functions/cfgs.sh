@@ -114,3 +114,20 @@ dffcfgsnp() {
     git --no-pager diff
     builtin cd "$oldpwd" || return
 }
+
+# Today's commits in configs
+cfg2dc() {
+    local oldpwd="$(pwd)"
+    builtin cd ~/configs || return
+    if [ "$1" == "np" ]; then
+        git --no-pager log --oneline --since=midnight
+    else
+        git log --oneline --since=midnight
+    fi
+    builtin cd "$oldpwd" || return
+}
+
+# List TODOs in cfgs w/o .git
+todocfgs() {
+    grep --color --exclude-dir=.git -rn ~/configs -e "TODO"
+}

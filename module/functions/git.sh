@@ -17,7 +17,6 @@ gagcmpsh() {
     git push
 }
 
-# TODO separate submods for these?
 # Same as the 3 above but for the custom push aliases
 # (i use them for projects i keep both on local hosting and gh)
 
@@ -96,7 +95,6 @@ gagcmpghmnpaipai() {
     exit
 }
 
-
 ###########################################################
 # origin master
 
@@ -135,7 +133,6 @@ gagcmpogmspaipai() {
     exit
 }
 
-
 ###########################################################
 # origin main
 
@@ -172,4 +169,43 @@ gagcmpogmnpaipai() {
     git commit -m "$1"
     git push origin main
     exit
+}
+
+# Generic dir git log
+glgdir() {
+    local oldpwd="$(pwd)"
+    builtin cd "$1" || return
+    git log
+    builtin cd "$oldpwd" || return
+}
+
+# Generic dir git log reverse
+glgrdir() {
+    local oldpwd="$(pwd)"
+    builtin cd "$1" || return
+    git log --reverse
+    builtin cd "$oldpwd" || return
+}
+
+# Generic dir git show head
+gshhdir() {
+    local oldpwd="$(pwd)"
+    builtin cd "$1" || return
+    git show HEAD
+    builtin cd "$oldpwd" || return
+}
+
+# Git log in configs
+glgcfgs() {
+    glgdir ~/configs
+}
+
+# Git log reverse in configs
+glgrcfgs() {
+    glgrdir ~/configs
+}
+
+# Git show HEAD in configs
+gshhcfgs() {
+    gshhdir ~/configs
 }

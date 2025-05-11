@@ -23,16 +23,24 @@ trap 'bferrorhdlr $LINENO' ERR
 NumAutoBashAliases=0
 
 # Create dir and cd into it
+#
+#
+#
 mdcd() {
     mkdir "$1" && cd "$1" || return
 }
 
 # Create dir (with -p) and cd into it
+#
+#
+#
 mdpcd() {
     mkdir -p "$1" && cd "$1" || return
 }
 
 # Sync configs
+#
+#
 synccfgs() {
     local oldpwd="$(pwd)"
     builtin cd ~/configs || return
@@ -41,6 +49,8 @@ synccfgs() {
 }
 
 # Update configs
+#
+#
 updcfgs() {
     local oldpwd="$(pwd)"
     builtin cd ~/configs || return
@@ -49,6 +59,8 @@ updcfgs() {
 }
 
 # Run git pull in configs
+#
+#
 pllcfgs() {
     local oldpwd="$(pwd)"
     builtin cd ~/configs || return
@@ -67,6 +79,8 @@ cd() {
 }
 
 # Git status of configs
+#
+#
 gstcfgs() {
     local oldpwd="$(pwd)"
     builtin cd ~/configs || return
@@ -76,6 +90,8 @@ gstcfgs() {
 }
 
 # Push configs (e.g. incase of internet not being there when synccfgsing)
+#
+#
 pshcfgs() {
     local oldpwd="$(pwd)"
     builtin cd ~/configs || return
@@ -84,6 +100,8 @@ pshcfgs() {
 }
 
 # Sync configs with a message
+#
+#
 synccfgsm() {
     local commitmsg="$1"
 
@@ -103,24 +121,32 @@ synccfgsm() {
 }
 
 # Sync configs but show diff before
+#
+#
 synccfgsmdff() {
     dffcfgs
     synccfgsm "$@"
 }
 
 # Sync configs, then reload bashrc
+#
+#
 syncmrbrc() {
     synccfgsm "$@"
     source ~/.bashrc
 }
 
 # Sync configs, then reload aliases
+#
+#
 syncmrba() {
     synccfgsm "$@"
     source ~/configs/.bash_aliases
 }
 
 # Sync configs, then reload functions
+#
+#
 syncmrbf() {
     synccfgsm "$@"
     source ~/configs/.bash_functions
@@ -128,6 +154,8 @@ syncmrbf() {
 }
 
 # Sync configs, then reload aliases and functions
+#
+#
 syncmrbfba() {
     synccfgsm "$@"
     source ~/configs/.bash_functions
@@ -136,12 +164,16 @@ syncmrbfba() {
 }
 
 # Sync configs, then exit
+#
+#
 syncmpaipai() {
     synccfgsm "$@"
     exit
 }
 
 # Count all kinds of files in the current folder
+#
+#
 cntfiles() {
     local dir="."
     if [ "$1" != "" ]; then
@@ -160,6 +192,8 @@ cntfiles() {
 }
 
 # Count all kinds of files in the current folder and all its subfolders
+#
+#
 cntfilesr() {
     local dir="."
     if [ "$1" != "" ]; then
@@ -178,6 +212,8 @@ cntfilesr() {
 }
 
 # Git diff for configs
+#
+#
 dffcfgs() {
     local oldpwd="$(pwd)"
     builtin cd ~/configs || return
@@ -187,6 +223,8 @@ dffcfgs() {
 }
 
 # Git diff for configs (no pager)
+#
+# 
 dffcfgsnp() {
     local oldpwd="$(pwd)"
     builtin cd ~/configs || return
@@ -196,18 +234,24 @@ dffcfgsnp() {
 }
 
 # Git commit -am then push
+#
+#
 gcampsh() {
     git commit -am "$1"
     git push
 }
 
 # Git commit -m then push
+#
+#
 gcmpsh() {
     git commit -m "$1"
     git push
 }
 
 # Git add git commit -m the push
+#
+#
 gagcmpsh() {
     git add .
     git commit -m "$1"
@@ -219,34 +263,46 @@ gagcmpsh() {
 
 ###########################################################
 # github master
+#
+#
 gcampghms() {
     git commit -am "$1"
     git push github master
 }
 
+#
+#
 gcampghmspaipai() {
     git commit -am "$1"
     git push github master
     exit
 }
 
+#
+#
 gcmpghms() {
     git commit -m "$1"
     git push github master
 }
 
+#
+#
 gcmpghmspaipai() {
     git commit -m "$1"
     git push github master
     exit
 }
 
+#
+#
 gagcmpghms() {
     git add .
     git commit -m "$1"
     git push github master
 }
 
+#
+#
 gagcmpghmspaipai() {
     git add .
     git commit -m "$1"
@@ -257,34 +313,46 @@ gagcmpghmspaipai() {
 ###########################################################
 # github main
 
+#
+#
 gcampghmn() {
     git commit -am "$1"
     git push github main
 }
 
+#
+#
 gcampghmnpaipai() {
     git commit -am "$1"
     git push github main
     exit
 }
 
+#
+#
 gcmpghmn() {
     git commit -m "$1"
     git push github main
 }
 
+#
+#
 gcmpghmnpaipai() {
     git commit -m "$1"
     git push github main
     exit
 }
 
+#
+#
 gagcmpghmn() {
     git add .
     git commit -m "$1"
     git push github main
 }
 
+#
+#
 gagcmpghmnpaipai() {
     git add .
     git commit -m "$1"
@@ -295,34 +363,46 @@ gagcmpghmnpaipai() {
 ###########################################################
 # origin master
 
+#
+#
 gcampogms() {
     git commit -am "$1"
     git push origin master
 }
 
+#
+#
 gcampogmspaipai() {
     git commit -am "$1"
     git push origin master
     exit
 }
 
+#
+#
 gcmpogms() {
     git commit -m "$1"
     git push origin master
 }
 
+#
+#
 gcmpogmspaipai() {
     git commit -m "$1"
     git push origin master
     exit
 }
 
+#
+#
 gagcmpogms() {
     git add .
     git commit -m "$1"
     git push origin master
 }
 
+#
+#
 gagcmpogmspaipai() {
     git add .
     git commit -m "$1"
@@ -333,34 +413,46 @@ gagcmpogmspaipai() {
 ###########################################################
 # origin main
 
+#
+#
 gcampogmn() {
     git commit -am "$1"
     git push origin main
 }
 
+#
+#
 gcampogmnpaipai() {
     git commit -am "$1"
     git push origin main
     exit
 }
 
+#
+#
 gcmpogmn() {
     git commit -m "$1"
     git push origin main
 }
 
+#
+#
 gcmpogmnpaipai() {
     git commit -m "$1"
     git push origin main
     exit
 }
 
+#
+#
 gagcmpogmn() {
     git add .
     git commit -m "$1"
     git push origin main
 }
 
+#
+#
 gagcmpogmnpaipai() {
     git add .
     git commit -m "$1"
@@ -369,6 +461,8 @@ gagcmpogmnpaipai() {
 }
 
 # Create a bookmark
+#
+#
 newbkmk() {
     # check params
     if [ "$1" == "" ] || [ "$2" == "" ]; then
@@ -380,6 +474,8 @@ newbkmk() {
 }
 
 # View most recent HSL
+#
+#
 cmrhsl() {
     local oldpwd="$(pwd)"
     builtin cd ~/configs/HourlySyncLogs || return
@@ -390,6 +486,8 @@ cmrhsl() {
 }
 
 # Generic dir git log
+#
+#
 glgdir() {
     local oldpwd="$(pwd)"
     builtin cd "$1" || return
@@ -398,6 +496,8 @@ glgdir() {
 }
 
 # Generic dir git log reverse
+#
+#
 glgrdir() {
     local oldpwd="$(pwd)"
     builtin cd "$1" || return
@@ -406,6 +506,8 @@ glgrdir() {
 }
 
 # Generic dir git show head
+#
+#
 gshhdir() {
     local oldpwd="$(pwd)"
     builtin cd "$1" || return
@@ -414,16 +516,22 @@ gshhdir() {
 }
 
 # Git log in configs
+#
+#
 glgcfgs() {
     glgdir ~/configs
 }
 
 # Git log reverse in configs
+#
+#
 glgrcfgs() {
     glgrdir ~/configs
 }
 
 # Git show HEAD in configs
+#
+# 
 gshhcfgs() {
     gshhdir ~/configs
 }
@@ -439,6 +547,8 @@ gshhcfgs() {
 # Argument 6: cdr alias name (cdrDIR) for cd'ing into the directory but if it's a symlink, then go to wherever it points
 # Argument 7: la alias name (laDIR) for listing the contents of the directory with hidden files
 # Argument 8: the directory
+#
+#
 mkdiralias() {
     ((NumAutoBashAliases += 8))
     alias "$1"="cd \"$8\" && cd_or_nah"
@@ -452,11 +562,15 @@ mkdiralias() {
 }
 
 # mkdiralias but with common name patterns
+#
+#
 mkcdiralias() {
     mkdiralias cd"$1" ls"$1" sz"$1" cnt"$1" cntf"$1" cdr"$1" la"$1" "$2"
 }
 
 # New edt + cat alias
+#
+#
 mkecalias() {
     ((NumAutoBashAliases += 5))
     local short=$1
@@ -469,6 +583,8 @@ mkecalias() {
 }
 
 # New edt + cat alias (sudo version)
+#
+#
 mksuecalias() {
     ((NumAutoBashAliases += 5))
     local short=$1
@@ -481,12 +597,16 @@ mksuecalias() {
 }
 
 # New --color=auto alias (color auto sounds like colorado)
+#
+#
 mkcolorado() {
     ((NumAutoBashAliases++))
     alias "$1"="$1 --color=auto"
 }
 
 # New TERM=xterm-265color alias (some programs don't support xterm-kitty)
+#
+#
 mkxtfalias() {
     ((NumAutoBashAliases++))
     alias "$1"="TERM=xterm-256color $1"
@@ -495,6 +615,8 @@ mkxtfalias() {
 # }}}
 
 # Today's commits in configs
+#
+#
 cfg2dc() {
     local oldpwd="$(pwd)"
     builtin cd ~/configs || return
@@ -507,6 +629,8 @@ cfg2dc() {
 }
 
 # count files in dir
+#
+#
 countfilesindir() {
     local nf=$(ls -Al "$1" | wc -l)
     local nff=$(( nf - 1 ))
@@ -514,6 +638,8 @@ countfilesindir() {
 }
 
 # Get a random currency sign
+#
+#
 randomcurrency() {
     c[0]="$"
     c[1]="₿"
@@ -535,11 +661,15 @@ randomcurrency() {
 
 # List functions
 # Do not remove as it's used in postinit for function count.
+#
+#
 lsfuncs() {
     declare -f | grep -E '^[^_].* \(\)'
 }
 
 # a delightful, an exquisite, a beautiful, etc.
+#
+#
 adelightful() {
     # d stands for delight
     d[0]="a delightful"
@@ -555,11 +685,15 @@ adelightful() {
 }
 
 # Cat a config in the repo
+#
+#
 catcfgcfg() {
     cat ~/configs/"$1"
 }
 
 # Disable post-init message telling you to install bc if it's not installed
+#
+#
 disablebchint() {
     if [ -f "$HOME/.idontwanttoinstallbc" ]; then
         echo "The message is already disabled."
@@ -569,6 +703,8 @@ disablebchint() {
 }
 
 # Enable bc hint if that's your thing
+#
+#
 enablebchint() {
     if [ ! -f "$HOME/.idontwanttoinstallbc" ]; then
         echo "The message is already enabled."
@@ -579,11 +715,15 @@ enablebchint() {
 }
 
 # List TODOs in cfgs w/o .git
+#
+#
 todocfgs() {
     grep --color --exclude-dir=.git -rn ~/configs -e "TODO"
 }
 
 # May the fourth be with you
+#
+#
 maythe4() {
     if [ "$(LC_ALL='' date +"%b %d")" == "May 04" ]; then
         echo "May the fourth be with you!"
@@ -591,6 +731,8 @@ maythe4() {
 }
 
 # Inconveniences
+#
+#
 inconveniences() {
     # Inconvenience 1: airhead rm
     rm-roll
@@ -615,6 +757,8 @@ inconveniences() {
     fi
 }
 
+#
+#
 thinking() {
     local cmnd="$(history 1 | sed 's/^[ ]*[0-9]*[ ]*//')"
 
@@ -683,17 +827,23 @@ thinking() {
 source "$HOME/configs/random-insult.sh"
 
 # T or G?
+#
+#
 t_or_g() {
     local tg=("t" "t" "t" "t" "t" "g")
     echo "${tg[RANDOM % ${#tg[@]}]}"
 }
 
 # filled disk space percent
+#
+#
 fdspercent() {
     df -h / | tail -n 1 | awk '{print $5}' | sed 's/%//'
 }
 
 # cirno
+#
+#
 cirnoday() {
     if [ "$(LC_ALL='' date +"%d %m")" == "09 09" ]; then
         echo "Happy Cirno day! (9)" # The reason I don't use the ⑨ character is because it looks like shit in many monospc fonts
