@@ -131,3 +131,4 @@ alias speedtest-cli='speedtest-cli --secure' # always forgor
 alias edtmod='vim ~/configs/module' # edit module (opens the file explorer thingie)
 alias edtba='vim ~/configs/module/aliases' # edit aliases
 alias edtbrcmod='vim ~/configs/module/rc' # edit brc module
+alias upgrade-pip='pip install --upgrade pip' # upgrade pip
