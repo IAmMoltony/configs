@@ -1286,6 +1286,7 @@ exit() {
         while true; do
             echo "$(misspell_did) $(misspell_you) $(misspell_actually) $(misspell_want) $(misspell_to) $(misspell_exit) $(random_amount_of_question_marks)"
             read -n 1 -p "YES OR NO" yn
+            echo
             case $yn in
                 [Yy]* ) break;;
                 [Nn]* ) return;;
