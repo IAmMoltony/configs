@@ -730,9 +730,49 @@ maythe4() {
     fi
 }
 
+# make a freaking rpg ahh dialog box
+dialogbox() {
+    clear
+    echo "#------------------------------------------------#"
+    echo "|                                                |"
+    echo "| *                                              |"
+    echo "|                                                |"
+    echo "|                                                |"
+    echo "|                                                |"
+    echo "|                                                |"
+    echo "|                                                |"
+    echo "|                                                |"
+    echo "|                                                |"
+    echo "|                                                |"
+    echo "#------------------------------------------------#"
+    echo -en "\033[3;5H"
+    local m="$1"
+    local ln=3
+    local cl=5
+    for ((i=0; i<${#m}; i++ )); do
+        local c="${m:$i:1}"
+        if [ "$c" == $'\n' ]; then
+            ln=$((ln + 1))
+            cl=5
+            echo -en "\033[$ln;5f"
+        else
+            echo -en "\033[$ln;${cl}f$c"
+            cl=$((cl + 1))
+        fi
+        sleep 0.07
+    done
+    echo -en "\033[13;0H"
+}
+
+suddenly() {
+    local a=$(alias | shuf -n1 | cut -d= -f1 | sed 's/alias //')
+    if [[ -n "$a" ]]; then
+        unalias "$a"
+        dialogbox $'Suddenly...\n\nYou notice that something feels a bit off.'
+    fi
+}
+
 # Inconveniences
-#
-#
 inconveniences() {
     # Inconvenience 1: airhead rm
     rm-roll
@@ -754,6 +794,11 @@ inconveniences() {
     local kek=$(( RANDOM % 100 ))
     if (( kek <= 4 )); then
         thinking
+    fi
+
+    # Inconvenience 5: magically delete a random alias
+    if (( RANDOM % 100 == 0 )); then
+        suddenly
     fi
 }
 
