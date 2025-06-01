@@ -12,3 +12,5 @@ mksuecalias edg /etc/default/grub
 mksuecalias dnf /etc/dnf/dnf.conf
 mksuecalias exp /etc/exports
 mksuecalias hsts /etc/hosts
+mksuecalias mkc /etc/portage/make.conf
+mksuecalias bnr /etc/portage/binrepos.conf # ew binaries
