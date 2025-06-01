@@ -7,6 +7,7 @@ manual/pkg/pacman
 manual/pkg/zypper
 manual/pkg/dnf
 manual/pkg/apt
+manual/pkg/emerge
 manual/vim
 manual/chk
 manual/ls
