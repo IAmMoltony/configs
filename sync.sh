@@ -40,9 +40,29 @@ echo "Success"
 changed_files="$(git ls-files -m)"
 changed_files_pad="$(echo "$changed_files" | sed 's/^/ /')"
 
+new_files="$(git ls-files --others --exclude-standard)"
+new_files_pad="$(echo "$new_files" | sed 's/^/ /')"
+
+deleted_files="$(git ls-files --deleted)"
+deleted_files_pad="$(echo "$deleted_files" | sed 's/^/ /')"
+
 if [ -z "$changed_files" ]; then
     echo "No changed files."
 else
     echo "Changed files:"
     echo "$changed_files_pad"
+fi
+
+if [ -z "$new_files" ]; then
+    echo "No new files."
+else
+    echo "New files:"
+    echo "$new_files_pad"
+fi
+
+if [ -z "$deleted_files" ]; then
+    echo "No deleted files."
+else
+    echo "Deleted files:"
+    echo "$deleted_files_pad"
 fi
