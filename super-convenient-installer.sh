@@ -29,7 +29,18 @@ echo "Downloaded successfully!"
 echo "Running install script..."
 
 cd "$HOME/configs"
-./install.sh
+./install.sh -fsl
 
-echo "Configs installed!"
-echo "Please restart your shell to apply new shell configuration."
+echo
+echo "*============================*"
+echo "     Configs  Installed!      "
+echo "*============================*"
+echo 
+echo "Thank you for using the Super Convenient Installer™. Run this to reload your shell configuration:"
+echo
+echo "    source ~/.bashrc"
+echo
+echo "It is highly recommended to install a few packages to consider the system fully set-up."
+echo "Run this to install recommended software:"
+echo
+echo "    ~/configs/pkginst.sh"
