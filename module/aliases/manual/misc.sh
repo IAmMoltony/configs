@@ -133,3 +133,6 @@ alias edtba='vim ~/configs/module/aliases' # edit aliases
 alias edtbrcmod='vim ~/configs/module/rc' # edit brc module
 alias upgrade-pip='pip install --upgrade pip' # upgrade pip
 alias rebuild-kernel='sudo emerge --ask sys-kernel/gentoo-kernel' # utility alias for rebuilding kernel after changing config
+alias pcpp='playerctl play-pause' # play/pause music
+alias pcnx='playerctl next' # go to next track
+alias pcpr='playerctl previous' # go to previous track
