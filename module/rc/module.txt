@@ -1,6 +1,7 @@
 basic
 env
 aliasfunc
+rbenv
 wsl
 ps1
 cpath
