@@ -1035,9 +1035,9 @@ ps1gitinfo() {
     local realbranchname="${branchname##refs/heads/}"
     local c2dstr=""
     local c2d_log="$(git log --oneline --since=midnight 2>/dev/null || echo "")"
-    local c2d="$(echo "$c2d_log" | wc -c)"
-    if [ "$c2d" != "0" ]; then
-        c2dstr=" c2d=\033[38:5:48m$c2d\033[0m"
+    local c2d_bytes="$(echo "$c2d_log" | wc -c)"
+    if [ "$c2d_bytes" != "0" ]; then
+        c2dstr=" c2d=\033[38:5:48m$(echo "$c2d_log" | wc -l)\033[0m"
     fi
     echo -e "[\033[38:5:202mgit\033[0m b=\033[38:5:48m$realbranchname\033[0m$c2dstr] "
 }
