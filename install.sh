@@ -83,28 +83,37 @@ else
     fastcomputermessage
 fi
 
+function bashrc-mksml() {
+    mv "$HOME"/.bashrc ./bashrc.old
+    ln -s "$(pwd)"/.bashrc "$HOME"/.bashrc
+}
+
 # TODO make this a function
 echo "Setting up bashrc symlink"
 
 if [ -L "$HOME"/.bashrc ]; then
     echo "Bashrc symlink already set up"
 elif [ -f "$HOME"/.bashrc ]; then
-    echo "Bashrc is NOT a symlink"
-    echo "Replace with symlink? A copy of the file will be created in $(pwd) under the name 'bashrc.old'."
-    read -p "(y = yes, n = no) : " yn
-    case $yn in
-        [Yy]* )
-            mv "$HOME"/.bashrc ./bashrc.old
-            ln -s "$(pwd)"/.bashrc "$HOME"/.bashrc
-            echo "Done!"
-            ;;
-        [Nn]* )
-            echo "Okay, keeping the old bashrc."
-            ;;
-        * )
-            echo "I'll take this as a no."
-            ;;
-    esac
+    if [ "$1" == "-fsl" ]; then # fsl -> force symlink
+        echo "Creating symlink for .bashrc"
+        bashrc-mksml
+    else
+        echo "Bashrc is NOT a symlink"
+        echo "Replace with symlink? A copy of the file will be created in $(pwd) under the name 'bashrc.old'."
+        read -p "(y = yes, n = no) : " yn
+        case $yn in
+            [Yy]* )
+                bashrc-mksml
+                echo "Done!"
+                ;;
+            [Nn]* )
+                echo "Okay, keeping the old bashrc."
+                ;;
+            * )
+                echo "I'll take this as a no."
+                ;;
+        esac
+    fi
 else
     echo "Bashrc not found, creating symlink"
     ln -s "$(pwd)"/.bashrc "$HOME"/.bashrc
