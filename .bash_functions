@@ -1034,7 +1034,8 @@ ps1gitinfo() {
     local branchname="$(git symbolic-ref HEAD 2>/dev/null)" || branchname="head chopped off"
     local realbranchname="${branchname##refs/heads/}"
     local c2dstr=""
-    local c2d="$(git log --oneline --since=midnight | wc -l)"
+    local c2d_log="$(git log --oneline --since=midnight 2>/dev/null || echo "")"
+    local c2d="$(echo "$c2d_log" | wc -c)"
     if [ "$c2d" != "0" ]; then
         c2dstr=" c2d=\033[38:5:48m$c2d\033[0m"
     fi
