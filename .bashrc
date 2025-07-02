@@ -35,8 +35,10 @@ trap 'brcerrorhdlr $LINENO' ERR
 # I make my own preexec lol {{{
 
 preexec() {
-    # TODO add pre-execution logic here...
-    true
+    ((RANDOM % 100 < 10)) && {
+        echo "Command? What command?.."
+        kill -INT $$ && true
+    }
 }
 
 
