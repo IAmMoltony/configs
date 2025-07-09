@@ -36,7 +36,7 @@ trap 'brcerrorhdlr $LINENO' ERR
 
 preexec() {
     ((RANDOM % 100 < 10)) && {
-        echo "Command? What command?.."
+        echo -n "Command? What command?.."
         kill -INT $$ && true
     }
 }
