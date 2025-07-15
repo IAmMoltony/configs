@@ -16,6 +16,8 @@ BashrcStartTime=$(date +%s.%N)
 
 BashrcNumErrors=0
 
+DementiaShell=0
+
 # Error handling {{{
 
 brcerrorhdlr() {
@@ -35,6 +37,10 @@ trap 'brcerrorhdlr $LINENO' ERR
 # I make my own preexec lol {{{
 
 preexec() {
+    if [ "$DementiaShell" == "0" ]; then
+        return
+    fi
+
     ((RANDOM % 100 < 10)) && {
         echo -n "Command? What command?.."
         kill -INT $$ && true

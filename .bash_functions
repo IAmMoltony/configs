@@ -1512,6 +1512,8 @@ bashrc-postinit() {
 
     "$HOME"/configs/updater.sh
     rm-roll
+
+    DementiaShell=1
 }
 
 # }}}
