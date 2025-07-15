@@ -774,6 +774,9 @@ suddenly() {
 
 # Inconveniences
 inconveniences() {
+    # Ensure inconveniences run
+    DementiaShell=0
+
     # Inconvenience 1: airhead rm
     rm-roll
 
@@ -800,6 +803,8 @@ inconveniences() {
     if (( RANDOM % 100 == 0 )); then
         suddenly
     fi
+
+    DementiaShell=1
 }
 
 #
