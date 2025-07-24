@@ -14,6 +14,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-sleuth'
 Plug 'preservim/NERDtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
@@ -123,3 +124,9 @@ autocmd VimEnter * NERDTree | wincmd p
 " this ONE key combination has cost me HOURS of rewriting the same code
 " who the HELL came up with this???
 inoremap <C-u> <Nop>
+
+" the wild menu
+" so wild
+set wildmenu
+set wildmode=longest:full,full
+
