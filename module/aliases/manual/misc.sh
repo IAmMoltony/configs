@@ -137,3 +137,4 @@ alias pcpp='playerctl play-pause' # play/pause music
 alias pcnx='playerctl next' # go to next track
 alias pcpr='playerctl previous' # go to previous track
 alias pyt='pytest -sv' # shorthand
+alias pmbnitud='python -m build --no-isolation && twine upload dist/*' # shorthand
