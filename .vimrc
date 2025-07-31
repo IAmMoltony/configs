@@ -127,6 +127,12 @@ inoremap <C-u> <Nop>
 
 " the wild menu
 " so wild
+" idk what it does
 set wildmenu
 set wildmode=longest:full,full
 
+" Make the background transparent. I can watch Umamusume: Pretty Derby and
+" code at the same time!
+hi Normal ctermbg=None guibg=None
+hi NormalNC guibg=None ctermbg=None
+hi EndOfBuffer guibg=None ctermbg=None
