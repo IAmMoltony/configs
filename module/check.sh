@@ -10,7 +10,7 @@ oldpwd="$(pwd)"
 echo "Checking module $1"
 
 while IFS= read -r module; do
-    if [[ -f "$module.sh" ]] then
+    if [[ -f "$module.sh" ]]; then
         shellcheck "$module.sh"
     else
         echo "Sub-module '$1' not found."
