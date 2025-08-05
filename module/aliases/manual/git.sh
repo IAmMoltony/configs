@@ -100,3 +100,4 @@ alias gtg-howto='echo -e "annotated -> git tag -a tag-name -m message\nnot annot
 alias gppt='gpsh && gpsht' # push and tags
 alias gpshtf='gpsht --force' # force push tags
 alias gpptf='gppt --force' # psuh and tags force
+alias gpptghmnt='gppt && gpghmn --tags' # git push git push tags git push github main tags
