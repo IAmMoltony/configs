@@ -97,3 +97,6 @@ alias gpshu='git push -u' # git push upstream
 alias gpshuo='gpshu origin' # git push -u origin
 alias gtg='git tag' # git tag
 alias gtg-howto='echo -e "annotated -> git tag -a tag-name -m message\nnot annotated -> git tag tag-name\ndefault is HEAD, append commit hash to specify"' # cheet sheet
+alias gppt='gpsh && gpsht' # push and tags
+alias gpshtf='gpsht --force' # force push tags
+alias gpptf='gppt --force' # psuh and tags force
