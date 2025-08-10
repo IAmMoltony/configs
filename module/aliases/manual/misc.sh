@@ -141,3 +141,4 @@ alias pmbnitud='python -m build --no-isolation && twine upload dist/*' # shortha
 alias pi.='pip install .' # install pkg
 alias pi.pyt='pi. && pyt' # install and test
 alias mkmdir='mkdir' # f f f f f f f f e e e e e e e e
+alias diarybackup='backupchan preset upload diary' # upload my diary which i cherish the preshious
