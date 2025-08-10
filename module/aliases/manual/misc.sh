@@ -140,3 +140,4 @@ alias pyt='pytest -sv' # shorthand
 alias pmbnitud='python -m build --no-isolation && twine upload dist/*' # shorthand
 alias pi.='pip install .' # install pkg
 alias pi.pyt='pi. && pyt' # install and test
+alias mkmdir='mkdir' # f f f f f f f f e e e e e e e e
