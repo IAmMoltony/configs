@@ -14,3 +14,4 @@ mksuecalias exp /etc/exports
 mksuecalias hsts /etc/hosts
 mksuecalias mkc /etc/portage/make.conf
 mksuecalias bnr /etc/portage/binrepos.conf # ew binaries
+mksuecalias nix /etc/nixos/configuration.nix
