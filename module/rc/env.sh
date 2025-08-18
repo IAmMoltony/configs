@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export EDITOR='/usr/bin/env vim'
+export EDITOR=/bin/vim
 export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/configs/bin:/usr/local/go/bin:$HOME/bin:$HOME/.local/share/dotnet/.dotnet/tools"
 export DOTNET_CLI_TELEMETRY_OPTOUT="true" # don't want no microsoft spying on me
 export XDG_DATA_HOME="$HOME/.local/share"

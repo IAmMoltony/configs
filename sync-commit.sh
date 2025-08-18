@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Return 0 on successful push
 #        1 on successful commit, but no successful push
