@@ -1446,6 +1446,17 @@ reloadcpath() {
     export PATH="$PATH:$CUSTOMPATH"
 }
 
+# Print information about the distribution currently used (name and version)
+# for prompt
+dstrinfo() {
+    if [ -r /etc/os-release ]; then
+        . /etc/os-release
+        echo -e "[\033[0;32m$ID \033[0;36m${VERSION_ID%%.*}\033[0m]"
+    else
+        echo -e "[\033[0;31m???\033[0m]"
+    fi
+}
+
 # Bashrc post-init {{{
 
 # Goofy ahh 6 space echo
