@@ -18,3 +18,10 @@ export ANDROID_USER_HOME="$XDG_DATA_HOME"/android
 export HTDOCS=/opt/lampp/htdocs
 
 mkdir -p "$XDG_STATE_HOME"/bash
+
+# fnm
+FNM_PATH="/home/moltony/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
