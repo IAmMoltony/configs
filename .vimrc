@@ -31,6 +31,17 @@ let g:mkdp_auto_start = 0
 " Color scheme: VSCode Dark (the irony)
 colorscheme codedark
 
+" Make the background transparent. I can watch Umamusume: Pretty Derby and
+" code at the same time!
+" The only downside of this is that it throws a bunch of errors on startup.
+" I'm used to it.
+hi Normal guibg= None ctermbg=None
+hi NormalNC guibg=None ctermbg=None
+hi EndOfBuffer guibg=None ctermbg=None
+hi VertSplit guibg=None ctermbg=None
+hi StatusLine guibg=None ctermbg=None
+hi LineNr guibg=None ctermbg=None
+
 " Nums on/off custom command
 command! NumsOff set nonumber norelativenumber
 command! NumsOn set number relativenumber
@@ -131,8 +142,3 @@ inoremap <C-u> <Nop>
 set wildmenu
 set wildmode=longest:full,full
 
-" Make the background transparent. I can watch Umamusume: Pretty Derby and
-" code at the same time!
-hi Normal ctermbg=None guibg=None
-hi NormalNC guibg=None ctermbg=None
-hi EndOfBuffer guibg=None ctermbg=None
