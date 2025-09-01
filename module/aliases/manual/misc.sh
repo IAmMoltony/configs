@@ -144,3 +144,4 @@ alias mkmdir='mkdir' # f f f f f f f f e e e e e e e e
 alias diarybackup='backupchan preset upload diary' # upload my diary which i cherish the preshious
 alias rkgkbackup='backupchan preset upload rkgk' # upload my doodles
 alias p9m='pkill -9 mpv' # Kill mpv in case it breaks
+unalias wine # sybau🥀🥀
