@@ -41,6 +41,7 @@ preexec() {
         return
     fi
 
+    # DEMENTIA
     ((RANDOM % 100 < 10)) && {
         echo -n "Command? What command?.."
         kill -INT $$ && true

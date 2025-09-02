@@ -40,4 +40,6 @@ else
     echo -e "Loaded module \033[0;32m$1\033[0m"
 fi
 
+DementiaShell=0
 builtin cd "$oldpwd"
+DementiaShell=1
