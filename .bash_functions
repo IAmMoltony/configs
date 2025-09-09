@@ -896,7 +896,7 @@ fdspercent() {
 #
 cirnoday() {
     if [ "$(LC_ALL='' date +"%d %m")" == "09 09" ]; then
-        echo "Happy Cirno day! (9)" # The reason I don't use the ⑨ character is because it looks like shit in many monospc fonts
+        echo -e "\033[0;34m99\033[0m Happy Cirno day! (9)" # The reason I don't use the ⑨ character is because it looks like shit in many monospc fonts
     fi
 }
 
@@ -1474,6 +1474,13 @@ goofy_ahh_6_space_echo_without_newline() {
     echo -en "      $1"
 }
 
+# ...if the argument is non-empty
+goofy_ahh_6_space_echo_if_present() {
+    if ! [ -z "$1" ]; then
+        echo -e "      $1"
+    fi
+}
+
 bashrc-postinit() {
     goofy_ahh_6_space_echo "\033[0;35m:)\033[0m Hi \033[0;32m${USER^}-$(some_chan)\033[0m! This is \033[0;32m$(hostname)\033[0m."
 
@@ -1500,8 +1507,8 @@ bashrc-postinit() {
 
     goofy_ahh_6_space_echo "\033[0;36m**\033[0m \033[0;36m$(alias | wc -l)\033[0m aliases (\033[0;33m$NumAutoBashAliases\033[0m of which are automa$(t_or_g)ic) and \033[0;36m$(lsfuncs | wc -l)\033[0m functions are installed."
 
-    maythe4
-    cirnoday
+    goofy_ahh_6_space_echo_if_present "$(maythe4)"
+    goofy_ahh_6_space_echo_if_present "$(cirnoday)"
 
     [ "$PIPENV_ACTIVE" != "1" ] && torrentchecker
     rbsongrn
