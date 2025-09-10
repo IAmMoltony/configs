@@ -145,5 +145,6 @@ alias diarybackup='backupchan preset upload diary' # upload my diary which i che
 alias rkgkbackup='backupchan preset upload rkgk' # upload my doodles
 alias p9m='pkill -9 mpv' # Kill mpv in case it breaks
 alias :q='exit' # hjkl anyone?
+alias bchan='backupchan' # shorter
 
 unalias wine # sybau🥀🥀
