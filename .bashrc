@@ -37,6 +37,9 @@ trap 'brcerrorhdlr $LINENO' ERR
 # I make my own preexec lol {{{
 
 preexec() {
+    # I've yet to find the cause of this.
+    unalias wine
+
     if [ "$DementiaShell" == "0" ]; then
         return
     fi
