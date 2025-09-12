@@ -38,7 +38,7 @@ trap 'brcerrorhdlr $LINENO' ERR
 
 preexec() {
     # I've yet to find the cause of this.
-    unalias wine
+    unalias wine 2>/dev/null
 
     if [ "$DementiaShell" == "0" ]; then
         return
